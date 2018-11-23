@@ -734,7 +734,8 @@
 
 // new instance
 if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
-    alert("移动端请使用官方APP内置地图功能谢谢");
+    var pm = new pubgMap("#pubg-map-container", data);
+    pm.resetGrid().renderAll();
 } else if (!/Chrome|Firefox/i.test(navigator.userAgent)) {
     alert("对不起，浏览器不受支持");
 } else {
