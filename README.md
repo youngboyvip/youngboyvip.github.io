@@ -1,7 +1,8 @@
 # youngboy
 
 #### 项目介绍
-youngboy的个人网站
+youngboy的个人blog
+blog + bbs [www.youngboy.vip](www.youngboy.vip)
 
 
 #### 使用说明
