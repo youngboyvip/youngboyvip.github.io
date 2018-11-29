@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>No title | indigo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="基础流程报错流程自动检测检测设备的数值，自动报错给负责人，负责人处理后由巡查人员确认是否修好 定期检测（是否允许重复报错？）人工巡查扫描二维码记录巡查记录，发现损坏的设备后巡查人员扫描二维码后app弹出设备的详情页面，详情页面上有设备报错按钮，点击按钮跳到对应的表单页面填写表单上报给设备负责人 负责人报错负责人接到任务后，到达现场app扫描设备的二维码弹出设备详情，设备详情页面包含异常记录，和相对">
+<meta property="og:type" content="article">
+<meta property="og:title" content="No title">
+<meta property="og:url" content="http://yoursite.com/2018/11/29/activiti/index.html">
+<meta property="og:site_name" content="indigo">
+<meta property="og:description" content="基础流程报错流程自动检测检测设备的数值，自动报错给负责人，负责人处理后由巡查人员确认是否修好 定期检测（是否允许重复报错？）人工巡查扫描二维码记录巡查记录，发现损坏的设备后巡查人员扫描二维码后app弹出设备的详情页面，详情页面上有设备报错按钮，点击按钮跳到对应的表单页面填写表单上报给设备负责人 负责人报错负责人接到任务后，到达现场app扫描设备的二维码弹出设备详情，设备详情页面包含异常记录，和相对">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-10-18T03:21:11.332Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="No title">
+<meta name="twitter:description" content="基础流程报错流程自动检测检测设备的数值，自动报错给负责人，负责人处理后由巡查人员确认是否修好 定期检测（是否允许重复报错？）人工巡查扫描二维码记录巡查记录，发现损坏的设备后巡查人员扫描二维码后app弹出设备的详情页面，详情页面上有设备报错按钮，点击按钮跳到对应的表单页面填写表单上报给设备负责人 负责人报错负责人接到任务后，到达现场app扫描设备的二维码弹出设备详情，设备详情页面包含异常记录，和相对">
+    
+        <link rel="alternate" type="application/atom+xml" title="indigo" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">John Doe</h5>
+          <a href="mailto:634206017@qq.com" title="634206017@qq.com" class="mail">634206017@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/yscoder" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://www.weibo.com/ysweb" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/custom"  >
+                <i class="icon icon-lg icon-link"></i>
+                测试
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis"></div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title"></h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-11-29T08:46:20.762Z" itemprop="datePublished" class="page-time">
+  2018-11-29
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#基础流程"><span class="post-toc-number">1.</span> <span class="post-toc-text">基础流程</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#报错流程"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">报错流程</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#申请采购流程"><span class="post-toc-number">1.0.2.</span> <span class="post-toc-text">申请采购流程</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#入库流程"><span class="post-toc-number">1.0.3.</span> <span class="post-toc-text">入库流程</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#出库流程"><span class="post-toc-number">1.0.4.</span> <span class="post-toc-text">出库流程</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#报销流程"><span class="post-toc-number">1.0.5.</span> <span class="post-toc-text">报销流程</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#经费申请流程"><span class="post-toc-number">1.0.6.</span> <span class="post-toc-text">经费申请流程</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#检修计划审批流程"><span class="post-toc-number">1.0.7.</span> <span class="post-toc-text">检修计划审批流程</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Activiti-BPM平台"><span class="post-toc-number">2.</span> <span class="post-toc-text">Activiti BPM平台</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#目标"><span class="post-toc-number">3.</span> <span class="post-toc-text">目标</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#主要功能模块"><span class="post-toc-number">4.</span> <span class="post-toc-text">主要功能模块</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#组织架构模块"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">组织架构模块</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#业务建模模块"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">业务建模模块</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#表单模块"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">表单模块</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#流程模块"><span class="post-toc-number">4.4.</span> <span class="post-toc-text">流程模块</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#主要功能实现"><span class="post-toc-number">5.</span> <span class="post-toc-text">主要功能实现</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#一般使用流程"><span class="post-toc-number">6.</span> <span class="post-toc-text">一般使用流程</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#重点功能"><span class="post-toc-number">7.</span> <span class="post-toc-text">重点功能</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#业务建模"><span class="post-toc-number">7.1.</span> <span class="post-toc-text">业务建模</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#业务实体"><span class="post-toc-number">7.1.1.</span> <span class="post-toc-text">业务实体</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#业务对象"><span class="post-toc-number">7.1.2.</span> <span class="post-toc-text">业务对象</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#表单设计器"><span class="post-toc-number">7.2.</span> <span class="post-toc-text">表单设计器</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#表单模板"><span class="post-toc-number">7.2.1.</span> <span class="post-toc-text">表单模板</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#自定义对话框配置"><span class="post-toc-number">7.2.2.</span> <span class="post-toc-text">自定义对话框配置</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#表单设计"><span class="post-toc-number">7.2.3.</span> <span class="post-toc-text">表单设计</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#流程设计器"><span class="post-toc-number">7.3.</span> <span class="post-toc-text">流程设计器</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#可配置项"><span class="post-toc-number">8.</span> <span class="post-toc-text">可配置项</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#组织结构配置"><span class="post-toc-number">8.1.</span> <span class="post-toc-text">组织结构配置</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#流程权限控制"><span class="post-toc-number">8.2.</span> <span class="post-toc-text">流程权限控制</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#常用脚本配置"><span class="post-toc-number">8.3.</span> <span class="post-toc-text">常用脚本配置</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#流程配置项"><span class="post-toc-number">8.4.</span> <span class="post-toc-text">流程配置项</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#表单配置"><span class="post-toc-number">8.4.1.</span> <span class="post-toc-text">表单配置</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#表单字段授权"><span class="post-toc-number">8.4.2.</span> <span class="post-toc-text">表单字段授权</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#表单处理按钮配置"><span class="post-toc-number">8.4.3.</span> <span class="post-toc-text">表单处理按钮配置</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#流程节点事件配置（使用Groovy脚本配置）"><span class="post-toc-number">8.4.4.</span> <span class="post-toc-text">流程节点事件配置（使用Groovy脚本配置）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#开始结束节点事件配置（使用Groovy脚本配置）"><span class="post-toc-number">8.4.5.</span> <span class="post-toc-text">开始结束节点事件配置（使用Groovy脚本配置）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#流程节点跳转规则配置"><span class="post-toc-number">8.4.6.</span> <span class="post-toc-text">流程节点跳转规则配置</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#人员配置"><span class="post-toc-number">8.4.7.</span> <span class="post-toc-text">人员配置</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#节点类型配置（单实例或多实例）"><span class="post-toc-number">8.4.8.</span> <span class="post-toc-text">节点类型配置（单实例或多实例）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#流程通知配置"><span class="post-toc-number">8.4.9.</span> <span class="post-toc-text">流程通知配置</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-activiti"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title"></h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-11-29 16:46:20" datetime="2018-11-29T08:46:20.762Z"  itemprop="datePublished">2018-11-29</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="基础流程"><a href="#基础流程" class="headerlink" title="基础流程"></a>基础流程</h2><h4 id="报错流程"><a href="#报错流程" class="headerlink" title="报错流程"></a>报错流程</h4><p><strong>自动检测</strong><br>检测设备的数值，自动报错给负责人，负责人处理后由巡查人员确认是否修好</p>
+<p><strong>定期检测（是否允许重复报错？）</strong><br>人工巡查扫描二维码记录巡查记录，发现损坏的设备后巡查人员扫描二维码后app弹出设备的详情页面，详情页面上有设备报错按钮，点击按钮跳到对应的表单页面填写表单上报给设备负责人</p>
+<p><strong>负责人报错</strong><br>负责人接到任务后，到达现场app扫描设备的二维码弹出设备详情，设备详情页面包含异常记录，和相对应的任务，点击某个任务进入表单填写页面选择故障设备部件名称，选择故障原因，选择处理的方式，如果选择的是报废处理就需要显示相关配件的库存，如果库存不够负责人需要发起申请采购流程等待采购流程完成，如果库存足够需要去仓库领取相关配件，仓库人员需要发起出库流程开取相关单据审批后才允许配件出库，设备修好后由巡查人员确认是否修好</p>
+<p><strong>巡检人员复检</strong><br>巡检人员检查设备是否修好</p>
+<h4 id="申请采购流程"><a href="#申请采购流程" class="headerlink" title="申请采购流程"></a>申请采购流程</h4><p>物料需求部门（负责人）在新品申购上发起物料采购流程<br>采购人员根据<code>《物料采购申请单》</code>进行采购<br>采购完物品后需向供应单位索取正规单具（名称、数量、金额，签字或盖章）</p>
+<h4 id="入库流程"><a href="#入库流程" class="headerlink" title="入库流程"></a>入库流程</h4><p>采购人员采购完毕后，需将采购物品交仓库进行入库，仓库人员对采购物品验收后进行入库并开具<code>《入库单》</code></p>
+<h4 id="出库流程"><a href="#出库流程" class="headerlink" title="出库流程"></a>出库流程</h4><p>仓库人员填写出库单，交给相关负责人审批，审批后出库</p>
+<h4 id="报销流程"><a href="#报销流程" class="headerlink" title="报销流程"></a>报销流程</h4><p>采购人员持采购前审批的《物料采购申请单》，仓库开具的《入库单》和供应单位所开单具，到财务处申请报销，财务人员应认真核对数量及金额，并填写<code>领款凭证</code><br>送交总经理签字审批后，才能予以报销。</p>
+<h4 id="经费申请流程"><a href="#经费申请流程" class="headerlink" title="经费申请流程"></a>经费申请流程</h4><p>填写经费申请单-&gt;领导审批-&gt;财务部门审批-&gt;总经理审批-&gt;出纳处领款</p>
+<h4 id="检修计划审批流程"><a href="#检修计划审批流程" class="headerlink" title="检修计划审批流程"></a>检修计划审批流程</h4><p>发起人填写检修计划表单，相关负责人审批后发布</p>
+<h2 id="Activiti-BPM平台"><a href="#Activiti-BPM平台" class="headerlink" title="Activiti BPM平台"></a>Activiti BPM平台</h2><ul>
+<li>宏天EIP <a href="http://www.hotent.xyz:8093/login" target="_blank" rel="noopener">http://www.hotent.xyz:8093/login</a></li>
+<li>红讯 <a href="http://www.redxun.cn:8020/saweb/login.jsp" target="_blank" rel="noopener">http://www.redxun.cn:8020/saweb/login.jsp   admin  1</a></li>
+<li>agilebpm（开源） <a href="http://test.agilebpm.cn/login.html" target="_blank" rel="noopener">http://test.agilebpm.cn/login.html admin 1</a></li>
+</ul>
+<p>宏天EIP各个流程功能比较齐全，表单设计部分是拖拽式的设计，支持pc端表单和手机端表单，前台为anaglar单应用网页</p>
+<p>红讯平台表单设计器使用富文本编辑器实现，支持pc端表单和手机端表单，流程设计操作有些复杂</p>
+<p>agilebpm 功能与宏天EIP有部分类似，功能还算齐全，流程设计器UI做的比较粗糙，表单设计器使用富文本编辑器实现，支持pc端表单和手机端表单</p>
+<table>
+<thead>
+<tr>
+<th>平台</th>
+<th>权限转移</th>
+<th>流程干预</th>
+<th>沟通与抄送</th>
+<th>流程授权</th>
+<th>表单字段授权</th>
+<th>任务转办</th>
+<th>任务代理</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>宏天EIP</td>
+<td>有</td>
+<td>有</td>
+<td>有</td>
+<td>有</td>
+<td>有</td>
+<td>有</td>
+<td>有</td>
+</tr>
+<tr>
+<td>红讯</td>
+<td>无</td>
+<td>有</td>
+<td>有</td>
+<td>有</td>
+<td>有</td>
+<td>有</td>
+<td>有</td>
+</tr>
+<tr>
+<td>agilebpm</td>
+<td>无</td>
+<td>有</td>
+<td>无</td>
+<td>有</td>
+<td>有</td>
+<td>无</td>
+<td>无</td>
+</tr>
+</tbody>
+</table>
+<h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><p>简洁的配置流程和表单，有效的流程监控和干预，快速实现业务流程</p>
+<h2 id="主要功能模块"><a href="#主要功能模块" class="headerlink" title="主要功能模块"></a>主要功能模块</h2><ul>
+<li>组织架构模块</li>
+<li>业务建模模块</li>
+<li>表单模块</li>
+<li>流程模块</li>
+</ul>
+<h3 id="组织架构模块"><a href="#组织架构模块" class="headerlink" title="组织架构模块"></a>组织架构模块</h3><p>提供组织架构信息</p>
+<h3 id="业务建模模块"><a href="#业务建模模块" class="headerlink" title="业务建模模块"></a>业务建模模块</h3><p>提供业务数据保存、更新、表定义、业务对象定义、表字段控件定义等功能</p>
+<h3 id="表单模块"><a href="#表单模块" class="headerlink" title="表单模块"></a>表单模块</h3><p>提供表单的生成、表单高级控件的配置、表单对于业务数据增删改查的实现</p>
+<h3 id="流程模块"><a href="#流程模块" class="headerlink" title="流程模块"></a>流程模块</h3><p>拓展activiti的功能</p>
+<h2 id="主要功能实现"><a href="#主要功能实现" class="headerlink" title="主要功能实现"></a>主要功能实现</h2><ul>
+<li>流程监控<ul>
+<li>流程干预</li>
+<li>权限转移</li>
+<li>流转过程</li>
+</ul>
+</li>
+<li>流程应用<ul>
+<li>同意</li>
+<li>驳回</li>
+<li>沟通</li>
+<li>保存</li>
+<li>终止</li>
+<li>抄送</li>
+<li>反对</li>
+<li>转办</li>
+<li>流转</li>
+<li>打印</li>
+<li>撤回</li>
+<li>延期</li>
+<li>流程授权</li>
+<li>表单字段授权</li>
+</ul>
+</li>
+<li>业务建模<ul>
+<li>实体管理</li>
+<li>业务对象</li>
+<li>生成物理表</li>
+<li>外部表映射</li>
+</ul>
+</li>
+<li>流程视图<ul>
+<li>发起流程</li>
+<li>代表任务</li>
+<li>已办任务</li>
+<li>办结流程</li>
+<li>转办代理</li>
+<li>代办预警</li>
+<li>沟通与抄送</li>
+</ul>
+</li>
+</ul>
+<h2 id="一般使用流程"><a href="#一般使用流程" class="headerlink" title="一般使用流程"></a>一般使用流程</h2><p>业务建模 —&gt; 设计表单 —&gt; 设计流程 —&gt; 配置流程 -<br>—&gt; 发布流程 —&gt; 使用流程</p>
+<h2 id="重点功能"><a href="#重点功能" class="headerlink" title="重点功能"></a>重点功能</h2><h3 id="业务建模"><a href="#业务建模" class="headerlink" title="业务建模"></a>业务建模</h3><h4 id="业务实体"><a href="#业务实体" class="headerlink" title="业务实体"></a>业务实体</h4><p>业务实体对应数据库中的表或数据，用户可以选择生成物理表或以json格式存在数据库中</p>
+<h4 id="业务对象"><a href="#业务对象" class="headerlink" title="业务对象"></a>业务对象</h4><p>业务实体可能会关联其他表，所以业务对象是用来管理业务实体之间的关系的对象，设计表单时会用到业务对象</p>
+<h3 id="表单设计器"><a href="#表单设计器" class="headerlink" title="表单设计器"></a>表单设计器</h3><h4 id="表单模板"><a href="#表单模板" class="headerlink" title="表单模板"></a>表单模板</h4><p>生成表单的模板使用freemark或其他模板引擎实现</p>
+<h4 id="自定义对话框配置"><a href="#自定义对话框配置" class="headerlink" title="自定义对话框配置"></a>自定义对话框配置</h4><p>表单处理过程中与用户交互的对话框，如选择职务或选择用户等功能</p>
+<h4 id="表单设计"><a href="#表单设计" class="headerlink" title="表单设计"></a>表单设计</h4><p>使用富文本编辑器输出内容为html，有些平台可以拖拽生成表单输出的数据为json</p>
+<h3 id="流程设计器"><a href="#流程设计器" class="headerlink" title="流程设计器"></a>流程设计器</h3><p>拖拽生成流程，配置流程</p>
+<h2 id="可配置项"><a href="#可配置项" class="headerlink" title="可配置项"></a>可配置项</h2><blockquote>
+<p>脚本均为Groovy脚本</p>
+</blockquote>
+<h3 id="组织结构配置"><a href="#组织结构配置" class="headerlink" title="组织结构配置"></a>组织结构配置</h3><p>提供接口整合自己系统的组织架构</p>
+<h3 id="流程权限控制"><a href="#流程权限控制" class="headerlink" title="流程权限控制"></a>流程权限控制</h3><p>把流程授权给指定的用户或组，只有授权的用户才可以启动流程</p>
+<h3 id="常用脚本配置"><a href="#常用脚本配置" class="headerlink" title="常用脚本配置"></a>常用脚本配置</h3><p>脚本可以访问spring容器中的对象或引用静态类的方法，同时也可以访问流程变量</p>
+<h3 id="流程配置项"><a href="#流程配置项" class="headerlink" title="流程配置项"></a>流程配置项</h3><h4 id="表单配置"><a href="#表单配置" class="headerlink" title="表单配置"></a>表单配置</h4><ul>
+<li>全局表单<ul>
+<li>手机表单</li>
+<li>pc表单</li>
+</ul>
+</li>
+<li>局部表单<ul>
+<li>手机表单</li>
+<li>pc表单</li>
+</ul>
+</li>
+</ul>
+<h4 id="表单字段授权"><a href="#表单字段授权" class="headerlink" title="表单字段授权"></a>表单字段授权</h4><p>指定表单中字段的修改(w)和只读(r)权限</p>
+<h4 id="表单处理按钮配置"><a href="#表单处理按钮配置" class="headerlink" title="表单处理按钮配置"></a>表单处理按钮配置</h4><p>流程处理过程中显示的按钮，可以在流程设计的时候定义，按钮的属性和动作由后台配置</p>
+<h4 id="流程节点事件配置（使用Groovy脚本配置）"><a href="#流程节点事件配置（使用Groovy脚本配置）" class="headerlink" title="流程节点事件配置（使用Groovy脚本配置）"></a>流程节点事件配置（使用Groovy脚本配置）</h4><ul>
+<li>前置事件</li>
+<li>后置事件</li>
+</ul>
+<h4 id="开始结束节点事件配置（使用Groovy脚本配置）"><a href="#开始结束节点事件配置（使用Groovy脚本配置）" class="headerlink" title="开始结束节点事件配置（使用Groovy脚本配置）"></a>开始结束节点事件配置（使用Groovy脚本配置）</h4><ul>
+<li>开始事件</li>
+<li>结束时间</li>
+<li>人工终止事件</li>
+</ul>
+<h4 id="流程节点跳转规则配置"><a href="#流程节点跳转规则配置" class="headerlink" title="流程节点跳转规则配置"></a>流程节点跳转规则配置</h4><ul>
+<li>手动选择某一个节点</li>
+<li>使用脚本选择</li>
+</ul>
+<h4 id="人员配置"><a href="#人员配置" class="headerlink" title="人员配置"></a>人员配置</h4><ul>
+<li>手动选择组织结构的一个维度</li>
+<li>通过脚本配置</li>
+<li>流程历史审批人</li>
+<li>系统节点执行人</li>
+</ul>
+<h4 id="节点类型配置（单实例或多实例）"><a href="#节点类型配置（单实例或多实例）" class="headerlink" title="节点类型配置（单实例或多实例）"></a>节点类型配置（单实例或多实例）</h4><h4 id="流程通知配置"><a href="#流程通知配置" class="headerlink" title="流程通知配置"></a>流程通知配置</h4><p>流程结束开始或有任务时通知用户，有多种通知方式配置</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2018-10-18T03:21:11.332Z" itemprop="dateUpdated">2018-10-18 11:21:11</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2018/11/29/activiti/" target="_blank" rel="external">http://yoursite.com/2018/11/29/activiti/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="http://yoursite.com">
+            <img src="/img/avatar.jpg" alt="John Doe">
+            John Doe
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/11/29/activiti/&title=indigo&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/11/29/activiti/&title=indigo&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/11/29/activiti/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=indigo&url=http://yoursite.com/2018/11/29/activiti/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2018/11/29/activiti/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018/11/29/hello-world/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Hello World</h4>
+      </a>
+    </div>
+  
+
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>John Doe &copy; 2015 - 2018</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/11/29/activiti/&title=《No title》 — indigo&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/11/29/activiti/&title=《No title》 — indigo&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/11/29/activiti/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《No title》 — indigo&url=http://yoursite.com/2018/11/29/activiti/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2018/11/29/activiti/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2018/11/29/activiti/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
