@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="./lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="./lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="./css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="./images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="./images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="youngboy">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="这是【备战春招/秋招系列】的第二篇文章，主要是简单地介绍如何去准备面试。 不论是校招还是社招都避免不了各种面试、笔试，如何去准备这些东西就显得格外重要。不论是笔试还是面试都是有章可循的，我这个“有章可循”说的意思只是说应对技术面试是可以提前准备。 我其实特别不喜欢那种临近考试就提前背啊记啊各种题的行为，非常反对！我觉得这种方法特别极端，而且在稍有一点经验的面试官面前是根本没有用的。建议大家还是一步">
+<meta name="keywords" content="youngboy的个人blog">
+<meta property="og:type" content="article">
+<meta property="og:title" content="interviewPrepare">
+<meta property="og:url" content="http://www.youngboy.vip/2019/01/11/11/112/index.html">
+<meta property="og:site_name" content="youngboy">
+<meta property="og:description" content="这是【备战春招/秋招系列】的第二篇文章，主要是简单地介绍如何去准备面试。 不论是校招还是社招都避免不了各种面试、笔试，如何去准备这些东西就显得格外重要。不论是笔试还是面试都是有章可循的，我这个“有章可循”说的意思只是说应对技术面试是可以提前准备。 我其实特别不喜欢那种临近考试就提前背啊记啊各种题的行为，非常反对！我觉得这种方法特别极端，而且在稍有一点经验的面试官面前是根本没有用的。建议大家还是一步">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-01-11T04:03:50.525Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="interviewPrepare">
+<meta name="twitter:description" content="这是【备战春招/秋招系列】的第二篇文章，主要是简单地介绍如何去准备面试。 不论是校招还是社招都避免不了各种面试、笔试，如何去准备这些东西就显得格外重要。不论是笔试还是面试都是有章可循的，我这个“有章可循”说的意思只是说应对技术面试是可以提前准备。 我其实特别不喜欢那种临近考试就提前背啊记啊各种题的行为，非常反对！我觉得这种方法特别极端，而且在稍有一点经验的面试官面前是根本没有用的。建议大家还是一步">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: './',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.youngboy.vip/2019/01/11/11/112/">
+
+
+
+
+
+  <title>interviewPrepare | youngboy</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="./" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">youngboy</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">Java大杂烩</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="./" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="./about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="./categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="./archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="./schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br>
+            
+            日程表
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.youngboy.vip./2019/01/11/11/112/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="youngboy">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="./images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="youngboy">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">interviewPrepare</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-11T12:04:08+08:00">
+                2019-01-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="./categories/面试必备/" itemprop="url" rel="index">
+                    <span itemprop="name">面试必备</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>这是【备战春招/秋招系列】的第二篇文章，主要是简单地介绍如何去准备面试。</p>
+<p>不论是校招还是社招都避免不了各种面试、笔试，如何去准备这些东西就显得格外重要。不论是笔试还是面试都是有章可循的，我这个“有章可循”说的意思只是说应对技术面试是可以提前准备。 我其实特别不喜欢那种临近考试就提前背啊记啊各种题的行为，非常反对！我觉得这种方法特别极端，而且在稍有一点经验的面试官面前是根本没有用的。建议大家还是一步一个脚印踏踏实实地走。</p>
+<h3 id="1-如何获取大厂面试机会？"><a href="#1-如何获取大厂面试机会？" class="headerlink" title="1  如何获取大厂面试机会？"></a>1  如何获取大厂面试机会？</h3><p><strong>在讲如何获取大厂面试机会之前，先来给大家科普/对比一下两个校招非常常见的概念——春招和秋招。</strong></p>
+<ol>
+<li><strong>招聘人数</strong> ：秋招多于春招 ；</li>
+<li><strong>招聘时间</strong> ： 秋招一般7月左右开始，大概一直持续到10月底。<font color="red">但是大厂（如BAT）都会早开始早结束，所以一定要把握好时间。</font>春招最佳时间为3月，次佳时间为4月，进入5月基本就不会再有春招了（金三银四）。  </li>
+<li><strong>应聘难度</strong> ：秋招略大于春招；</li>
+<li><strong>招聘公司：</strong>  秋招数量多，而春招数量较少，一般为秋招的补充。 </li>
+</ol>
+<p><strong>综上，一般来说，秋招的含金量明显是高于春招的。</strong></p>
+<p><strong>下面我就说一下我自己知道的一些方法，不过应该也涵盖了大部分获取面试机会的方法。</strong></p>
+<ol>
+<li><strong>关注大厂官网，随时投递简历（走流程的网申）；</strong></li>
+<li><strong>线下参加宣讲会，直接投递简历；</strong></li>
+<li><strong>找到师兄师姐/认识的人，帮忙内推（能够让你避开网申简历筛选，笔试筛选，还是挺不错的，不过也还是需要你的简历够棒）；</strong></li>
+<li><strong>博客发文被看中/Github优秀开源项目作者，大厂内部人员邀请你面试；</strong></li>
+<li><strong>求职类网站投递简历（不是太推荐，适合海投）；</strong></li>
+</ol>
+<p>除了这些方法，我也遇到过这样的经历：有些大公司的一些部门可能暂时没招够人，然后如果你的亲戚或者朋友刚好在这个公司，而你正好又在寻求offer，那么面试机会基本上是有了，而且这种面试的难度好像一般还普遍比其他正规面试低很多。</p>
+<h3 id="2-面试前的准备"><a href="#2-面试前的准备" class="headerlink" title="2  面试前的准备"></a>2  面试前的准备</h3><h3 id="2-1-准备自己的自我介绍"><a href="#2-1-准备自己的自我介绍" class="headerlink" title="2.1 准备自己的自我介绍"></a>2.1 准备自己的自我介绍</h3><p>从HR面、技术面到高管面/部门主管面，面试官一般会让你先自我介绍一下，所以好好准备自己的自我介绍真的非常重要。网上一般建议的是准备好两份自我介绍：一份对hr说的，主要讲能突出自己的经历，会的编程技术一语带过；另一份对技术面试官说的，主要讲自己会的技术细节，项目经验，经历那些就一语带过。</p>
+<p>我这里简单分享一下我自己的自我介绍的一个简单的模板吧：</p>
+<blockquote>
+<p>面试官，您好！我叫某某。大学时间我主要利用课外时间学习某某。在校期间参与过一个某某系统的开发，另外，自己学习过程中也写过很多系统比如某某系统。在学习之余，我比较喜欢通过博客整理分享自己所学知识。我现在是某某社区的认证作者，写过某某很不错的文章。另外，我获得过某某奖,我的Github上开源的某个项目已经有多少Star了。</p>
+</blockquote>
+<h3 id="2-2-关于着装"><a href="#2-2-关于着装" class="headerlink" title="2.2 关于着装"></a>2.2 关于着装</h3><p>穿西装、打领带、小皮鞋？NO！NO！NO！这是互联网公司面试又不是去走红毯，所以你只需要穿的简单大方就好，不需要太正式。</p>
+<h3 id="2-3-随身带上自己的成绩单和简历"><a href="#2-3-随身带上自己的成绩单和简历" class="headerlink" title="2.3 随身带上自己的成绩单和简历"></a>2.3 随身带上自己的成绩单和简历</h3><p>有的公司在面试前都会让你交一份成绩单和简历当做面试中的参考。</p>
+<h3 id="2-4-如果需要笔试就提前刷一些笔试题"><a href="#2-4-如果需要笔试就提前刷一些笔试题" class="headerlink" title="2.4 如果需要笔试就提前刷一些笔试题"></a>2.4 如果需要笔试就提前刷一些笔试题</h3><p>平时空闲时间多的可以刷一下笔试题目（牛客网上有很多）。但是不要只刷面试题，不动手code，程序员不是为了考试而存在的。</p>
+<h3 id="2-5-花时间一些逻辑题"><a href="#2-5-花时间一些逻辑题" class="headerlink" title="2.5 花时间一些逻辑题"></a>2.5 花时间一些逻辑题</h3><p>面试中发现有些公司都有逻辑题测试环节，并且都把逻辑笔试成绩作为很重要的一个参考。</p>
+<h3 id="2-6-准备好自己的项目介绍"><a href="#2-6-准备好自己的项目介绍" class="headerlink" title="2.6 准备好自己的项目介绍"></a>2.6 准备好自己的项目介绍</h3><p>如果有项目的话，技术面试第一步，面试官一般都是让你自己介绍一下你的项目。你可以从下面几个方向来考虑：</p>
+<ol>
+<li>对项目整体设计的一个感受（面试官可能会让你画系统的架构图）</li>
+<li>在这个项目中你负责了什么、做了什么、担任了什么角色</li>
+<li>从这个项目中你学会了那些东西，使用到了那些技术，学会了那些新技术的使用</li>
+<li>另外项目描述中，最好可以体现自己的综合素质，比如你是如何协调项目组成员协同开发的或者在遇到某一个棘手的问题的时候你是如何解决的又或者说你在这个项目用了什么技术实现了什么功能比如:用redis做缓存提高访问速度和并发量、使用消息队列削峰和降流等等。</li>
+</ol>
+<h3 id="2-7-提前准备技术面试"><a href="#2-7-提前准备技术面试" class="headerlink" title="2.7 提前准备技术面试"></a>2.7 提前准备技术面试</h3><p>搞清楚自己面试中可能涉及哪些知识点、那些知识点是重点。面试中哪些问题会被经常问到、自己改如何回答。(强烈不推荐背题，第一：通过背这种方式你能记住多少？能记住多久？第二：背题的方式的学习很难坚持下去！)</p>
+<h3 id="2-7-面试之前做好定向复习"><a href="#2-7-面试之前做好定向复习" class="headerlink" title="2.7 面试之前做好定向复习"></a>2.7 面试之前做好定向复习</h3><p>所谓定向复习就是专门针对你要面试的公司来复习。比如你在面试之前可以在网上找找有没有你要面试的公司的面经。</p>
+<p>举个栗子：在我面试 ThoughtWorks 的前几天我就在网上找了一些关于 ThoughtWorks 的技术面的一些文章。然后知道了 ThoughtWorks 的技术面会让我们在之前做的作业的基础上增加一个或两个功能，所以我提前一天就把我之前做的程序重新重构了一下。然后在技术面的时候，简单的改了几行代码之后写个测试就完事了。如果没有提前准备，我觉得 20 分钟我很大几率会完不成这项任务。</p>
+<h1 id="3-面试之后复盘"><a href="#3-面试之后复盘" class="headerlink" title="3 面试之后复盘"></a>3 面试之后复盘</h1><p>如果失败，不要灰心；如果通过，切勿狂喜。面试和工作实际上是两回事，可能很多面试未通过的人，工作能力比你强的多，反之亦然。我个人觉得面试也像是一场全新的征程，失败和胜利都是平常之事。所以，劝各位不要因为面试失败而灰心、丧失斗志。也不要因为面试通过而沾沾自喜，等待你的将是更美好的未来，继续加油！</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="./2019/01/11/11/111/" rel="next" title="books">
+                <i class="fa fa-chevron-left"></i> books
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="./2019/01/11/11/113/" rel="prev" title="手把手教你用Markdown写一份高质量的简历">
+                手把手教你用Markdown写一份高质量的简历 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">youngboy</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="./archives/">
+              
+                  <span class="site-state-item-count">66</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="./categories/index.html">
+                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-如何获取大厂面试机会？"><span class="nav-number">1.</span> <span class="nav-text">1  如何获取大厂面试机会？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-面试前的准备"><span class="nav-number">2.</span> <span class="nav-text">2  面试前的准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-准备自己的自我介绍"><span class="nav-number">3.</span> <span class="nav-text">2.1 准备自己的自我介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-关于着装"><span class="nav-number">4.</span> <span class="nav-text">2.2 关于着装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-随身带上自己的成绩单和简历"><span class="nav-number">5.</span> <span class="nav-text">2.3 随身带上自己的成绩单和简历</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-如果需要笔试就提前刷一些笔试题"><span class="nav-number">6.</span> <span class="nav-text">2.4 如果需要笔试就提前刷一些笔试题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-5-花时间一些逻辑题"><span class="nav-number">7.</span> <span class="nav-text">2.5 花时间一些逻辑题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-6-准备好自己的项目介绍"><span class="nav-number">8.</span> <span class="nav-text">2.6 准备好自己的项目介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-7-提前准备技术面试"><span class="nav-number">9.</span> <span class="nav-text">2.7 提前准备技术面试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-7-面试之前做好定向复习"><span class="nav-number">10.</span> <span class="nav-text">2.7 面试之前做好定向复习</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#3-面试之后复盘"><span class="nav-number"></span> <span class="nav-text">3 面试之后复盘</span></a></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">youngboy</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="./lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="./lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="./lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="./lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="./lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="./lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="./js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="./js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="./js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="./js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="./js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="./js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="./js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

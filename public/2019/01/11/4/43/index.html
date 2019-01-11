@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="./lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="./lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="./css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="./images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="./images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="youngboy">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Spring相关教程/资料： 官网相关  Spring官网 Spring系列主要项目 从配置到安全性，Web应用到大数据 - 无论您的应用程序的基础架构需求如何，都有一个Spring Project来帮助您构建它。 从小处着手，根据需要使用 - Spring是通过设计模块化的。  Spring官网指南 无论您在构建什么，这些指南都旨在尽可能快地提高您的工作效率 - 使用Spring团队推荐的最新S">
+<meta name="keywords" content="youngboy的个人blog">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spring学习与面试">
+<meta property="og:url" content="http://www.youngboy.vip/2019/01/11/4/43/index.html">
+<meta property="og:site_name" content="youngboy">
+<meta property="og:description" content="Spring相关教程/资料： 官网相关  Spring官网 Spring系列主要项目 从配置到安全性，Web应用到大数据 - 无论您的应用程序的基础架构需求如何，都有一个Spring Project来帮助您构建它。 从小处着手，根据需要使用 - Spring是通过设计模块化的。  Spring官网指南 无论您在构建什么，这些指南都旨在尽可能快地提高您的工作效率 - 使用Spring团队推荐的最新S">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/5/22/16387903ee72c831?w=709&h=56&f=png&s=4673">
+<meta property="og:updated_time" content="2019-01-11T04:03:50.476Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Spring学习与面试">
+<meta name="twitter:description" content="Spring相关教程/资料： 官网相关  Spring官网 Spring系列主要项目 从配置到安全性，Web应用到大数据 - 无论您的应用程序的基础架构需求如何，都有一个Spring Project来帮助您构建它。 从小处着手，根据需要使用 - Spring是通过设计模块化的。  Spring官网指南 无论您在构建什么，这些指南都旨在尽可能快地提高您的工作效率 - 使用Spring团队推荐的最新S">
+<meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2018/5/22/16387903ee72c831?w=709&h=56&f=png&s=4673">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: './',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.youngboy.vip/2019/01/11/4/43/">
+
+
+
+
+
+  <title>Spring学习与面试 | youngboy</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="./" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">youngboy</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">Java大杂烩</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="./" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="./about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="./categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="./archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="./schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br>
+            
+            日程表
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.youngboy.vip./2019/01/11/4/43/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="youngboy">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="./images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="youngboy">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Spring学习与面试</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-11T12:04:08+08:00">
+                2019-01-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="./categories/主流框架/" itemprop="url" rel="index">
+                    <span itemprop="name">主流框架</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Spring相关教程-资料："><a href="#Spring相关教程-资料：" class="headerlink" title="Spring相关教程/资料："></a>Spring相关教程/资料：</h1><blockquote>
+<h2 id="官网相关"><a href="#官网相关" class="headerlink" title="官网相关"></a>官网相关</h2></blockquote>
+<p> <a href="https://spring.io/" target="_blank" rel="noopener">Spring官网</a></p>
+<p><a href="https://spring.io/projects" target="_blank" rel="noopener">Spring系列主要项目</a></p>
+<p>从配置到安全性，Web应用到大数据 - 无论您的应用程序的基础架构需求如何，都有一个Spring Project来帮助您构建它。 从小处着手，根据需要使用 - Spring是通过设计模块化的。</p>
+<p> <a href="https://spring.io/guides" target="_blank" rel="noopener">Spring官网指南</a></p>
+<p>无论您在构建什么，这些指南都旨在尽可能快地提高您的工作效率 - 使用Spring团队推荐的最新Spring项目发布和技术。</p>
+<p> <a href="https://blog.csdn.net/tangtong1/article/details/51326887" target="_blank" rel="noopener">Spring官方文档翻译（1~6章）</a></p>
+<blockquote>
+<h2 id="系统学习教程："><a href="#系统学习教程：" class="headerlink" title="系统学习教程："></a>系统学习教程：</h2></blockquote>
+<h3 id="文档："><a href="#文档：" class="headerlink" title="文档："></a>文档：</h3><p> <a href="http://wiki.jikexueyuan.com/project/spring/transaction-management.html" target="_blank" rel="noopener">极客学院Spring Wiki</a></p>
+<p> <a href="https://www.w3cschool.cn/wkspring/f6pk1ic8.html" target="_blank" rel="noopener">Spring W3Cschool教程 </a></p>
+<h3 id="视频："><a href="#视频：" class="headerlink" title="视频："></a>视频：</h3><p><a href="http://study.163.com/course/courseMain.htm?courseId=1004475015#/courseDetail?tab=1&amp;35" target="_blank" rel="noopener">网易云课堂——58集精通java教程Spring框架开发</a></p>
+<p> <a href="https://www.imooc.com/" target="_blank" rel="noopener">慕课网相关视频</a></p>
+<p><strong>黑马视频（非常推荐）：</strong><br>微信公众号：“<strong>Java面试通关手册</strong>”后台回复“<strong>资源分享第一波</strong>”免费领取。</p>
+<blockquote>
+<h2 id="一些常用的东西"><a href="#一些常用的东西" class="headerlink" title="一些常用的东西"></a>一些常用的东西</h2></blockquote>
+<p><a href="https://docs.spring.io/spring/docs/4.3.17.RELEASE/javadoc-api/" target="_blank" rel="noopener">Spring Framework 4.3.17.RELEASE API</a></p>
+<p>默认浏览器打开，当需要查某个类的作用的时候，可以在浏览器通过ctrl+f搜索。</p>
+<h1 id="面试必备知识点"><a href="#面试必备知识点" class="headerlink" title="面试必备知识点"></a>面试必备知识点</h1><blockquote>
+<h2 id="SpringAOP-IOC实现原理"><a href="#SpringAOP-IOC实现原理" class="headerlink" title="SpringAOP,IOC实现原理"></a>SpringAOP,IOC实现原理</h2></blockquote>
+<p>AOP实现原理、动态代理和静态代理、Spring IOC的初始化过程、IOC原理、自己实现怎么实现一个IOC容器？这些东西都是经常会被问到的。</p>
+<p><a href="http://www.coolblog.xyz/2018/01/18/自己动手实现的-Spring-IOC-和-AOP-上篇/" target="_blank" rel="noopener">自己动手实现的 Spring IOC 和 AOP - 上篇</a></p>
+<p><a href="http://www.coolblog.xyz/2018/01/18/自己动手实现的-Spring-IOC-和-AOP-下篇/" target="_blank" rel="noopener">自己动手实现的 Spring IOC 和 AOP - 下篇</a></p>
+<h3 id="AOP："><a href="#AOP：" class="headerlink" title="AOP："></a>AOP：</h3><p>AOP思想的实现一般都是基于 <strong>代理模式</strong> ，在JAVA中一般采用JDK动态代理模式，但是我们都知道，<strong>JDK动态代理模式只能代理接口而不能代理类</strong>。因此，Spring AOP 会这样子来进行切换，因为Spring AOP 同时支持 CGLIB、ASPECTJ、JDK动态代理。</p>
+<ul>
+<li>如果目标对象的实现类实现了接口，Spring AOP 将会采用 JDK 动态代理来生成 AOP 代理类；</li>
+<li>如果目标对象的实现类没有实现接口，Spring AOP 将会采用 CGLIB 来生成 AOP 代理类——不过这个选择过程对开发者完全透明、开发者也无需关心。</li>
+</ul>
+<p><a href="http://www.cnblogs.com/puyangsky/p/6218925.html" target="_blank" rel="noopener">※静态代理、JDK动态代理、CGLIB动态代理讲解</a></p>
+<p>我们知道AOP思想的实现一般都是基于 <strong>代理模式</strong> ，所以在看下面的文章之前建议先了解一下静态代理以及JDK动态代理、CGLIB动态代理的实现方式。</p>
+<p><a href="https://juejin.im/post/5aa7818af265da23844040c6" target="_blank" rel="noopener">Spring AOP 入门</a></p>
+<p>带你入门的一篇文章。这篇文章主要介绍了AOP中的基本概念：5种类型的通知（Before，After，After-returning，After-throwing，Around）；Spring中对AOP的支持：AOP思想的实现一般都是基于代理模式，在JAVA中一般采用JDK动态代理模式，Spring AOP 同时支持 CGLIB、ASPECTJ、JDK动态代理，</p>
+<p><a href="https://juejin.im/post/5a55af9e518825734d14813f" target="_blank" rel="noopener">※Spring AOP 基于AspectJ注解如何实现AOP</a></p>
+<p><strong>AspectJ是一个AOP框架，它能够对java代码进行AOP编译（一般在编译期进行），让java代码具有AspectJ的AOP功能（当然需要特殊的编译器）</strong>，可以这样说AspectJ是目前实现AOP框架中最成熟，功能最丰富的语言，更幸运的是，AspectJ与java程序完全兼容，几乎是无缝关联，因此对于有java编程基础的工程师，上手和使用都非常容易</p>
+<p>Spring注意到AspectJ在AOP的实现方式上依赖于特殊编译器(ajc编译器)，因此Spring很机智回避了这点，转向采用动态代理技术的实现原理来构建Spring AOP的内部机制（动态织入），这是与AspectJ（静态织入）最根本的区别。</p>
+<p><a href="https://www.imooc.com/learn/869" target="_blank" rel="noopener">※探秘Spring AOP（慕课网视频，很不错）</a></p>
+<p>慕课网视频，讲解的很不错，详细且深入</p>
+<p><a href="https://blog.csdn.net/fighterandknight/article/details/51209822" target="_blank" rel="noopener">spring源码剖析（六）AOP实现原理剖析</a></p>
+<p>通过源码分析Spring AOP的原理</p>
+<h3 id="IOC："><a href="#IOC：" class="headerlink" title="IOC："></a>IOC：</h3><p>Spring IOC的初始化过程：<br><img src="https://user-gold-cdn.xitu.io/2018/5/22/16387903ee72c831?w=709&amp;h=56&amp;f=png&amp;s=4673" alt="Spring IOC的初始化过程"></p>
+<p><a href="https://www.cnblogs.com/wang-meng/p/5597490.html" target="_blank" rel="noopener">[Spring框架]Spring IOC的原理及详解。</a></p>
+<p><a href="https://yikun.github.io/2015/05/29/Spring-IOC核心源码学习/" target="_blank" rel="noopener">Spring IOC核心源码学习</a></p>
+<p>比较简短，推荐阅读。</p>
+<p><a href="https://javadoop.com/post/spring-ioc" target="_blank" rel="noopener">Spring IOC 容器源码分析</a></p>
+<p>强烈推荐，内容详尽，而且便于阅读。</p>
+<blockquote>
+<h2 id="Spring事务管理"><a href="#Spring事务管理" class="headerlink" title="Spring事务管理"></a>Spring事务管理</h2></blockquote>
+<p><a href="https://juejin.im/post/5b00c52ef265da0b95276091" target="_blank" rel="noopener">可能是最漂亮的Spring事务管理详解</a></p>
+<p><a href="https://juejin.im/post/5b010f27518825426539ba38" target="_blank" rel="noopener">Spring编程式和声明式事务实例讲解</a></p>
+<blockquote>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2></blockquote>
+<p><strong>Spring单例与线程安全：</strong></p>
+<p><a href="http://www.cnblogs.com/chengxuyuanzhilu/p/6404991.html" target="_blank" rel="noopener">Spring框架中的单例模式（源码解读）</a></p>
+<p>单例模式是一种常用的软件设计模式。通过单例模式可以保证系统中一个类只有一个实例。spring依赖注入时，使用了 多重判断加锁 的单例模式。</p>
+<blockquote>
+<h2 id="Spring源码阅读"><a href="#Spring源码阅读" class="headerlink" title="Spring源码阅读"></a>Spring源码阅读</h2></blockquote>
+<p>阅读源码不仅可以加深我们对Spring设计思想的理解，提高自己的编码水品，还可以让自己字面试中如鱼得水。下面的是Github上的一个开源的Spring源码阅读，大家有时间可以看一下，当然你如果有时间也可以自己慢慢研究源码。</p>
+<h3 id="Spring源码阅读-1"><a href="#Spring源码阅读-1" class="headerlink" title="Spring源码阅读"></a><a href="https://github.com/seaswalker/Spring" target="_blank" rel="noopener">Spring源码阅读</a></h3><ul>
+<li><a href="https://github.com/seaswalker/Spring/blob/master/note/Spring.md" target="_blank" rel="noopener">spring-core</a><ul>
+<li><a href="https://github.com/seaswalker/Spring/blob/master/note/spring-aop.md" target="_blank" rel="noopener">spring-aop</a></li>
+<li><a href="https://github.com/seaswalker/Spring/blob/master/note/spring-context.md" target="_blank" rel="noopener">spring-context</a></li>
+<li><a href="https://github.com/seaswalker/Spring/blob/master/note/spring-task.md" target="_blank" rel="noopener">spring-task</a></li>
+<li><a href="https://github.com/seaswalker/Spring/blob/master/note/spring-transaction.md" target="_blank" rel="noopener">spring-transaction</a></li>
+<li><a href="https://github.com/seaswalker/Spring/blob/master/note/spring-mvc.md" target="_blank" rel="noopener">spring-mvc</a></li>
+<li><a href="https://github.com/seaswalker/Spring/blob/master/note/guava-cache.md" target="_blank" rel="noopener">guava-cache</a></li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="./2019/01/11/4/42/" rel="next" title="SpringMVC 工作原理详解">
+                <i class="fa fa-chevron-left"></i> SpringMVC 工作原理详解
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="./2019/01/11/4/44/" rel="prev" title="ZooKeeper">
+                ZooKeeper <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">youngboy</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="./archives/">
+              
+                  <span class="site-state-item-count">66</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="./categories/index.html">
+                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Spring相关教程-资料："><span class="nav-number">1.</span> <span class="nav-text">Spring相关教程/资料：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#官网相关"><span class="nav-number">1.1.</span> <span class="nav-text">官网相关</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#系统学习教程："><span class="nav-number">1.2.</span> <span class="nav-text">系统学习教程：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#文档："><span class="nav-number">1.2.1.</span> <span class="nav-text">文档：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#视频："><span class="nav-number">1.2.2.</span> <span class="nav-text">视频：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一些常用的东西"><span class="nav-number">1.3.</span> <span class="nav-text">一些常用的东西</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#面试必备知识点"><span class="nav-number">2.</span> <span class="nav-text">面试必备知识点</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SpringAOP-IOC实现原理"><span class="nav-number">2.1.</span> <span class="nav-text">SpringAOP,IOC实现原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#AOP："><span class="nav-number">2.1.1.</span> <span class="nav-text">AOP：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IOC："><span class="nav-number">2.1.2.</span> <span class="nav-text">IOC：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Spring事务管理"><span class="nav-number">2.2.</span> <span class="nav-text">Spring事务管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他"><span class="nav-number">2.3.</span> <span class="nav-text">其他</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Spring源码阅读"><span class="nav-number">2.4.</span> <span class="nav-text">Spring源码阅读</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Spring源码阅读-1"><span class="nav-number">2.4.1.</span> <span class="nav-text">Spring源码阅读</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">youngboy</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="./lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="./lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="./lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="./lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="./lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="./lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="./js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="./js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="./js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="./js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="./js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="./js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="./js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

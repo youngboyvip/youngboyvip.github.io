@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="./lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="./lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="./css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="./images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="./images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="youngboy">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="IO流学习总结 一　Java IO，硬骨头也能变软 二　java IO体系的学习总结 三　Java IO面试题   NIO与AIO学习总结 一 Java NIO 概览 二 Java NIO 之 Buffer(缓冲区) 三 Java NIO 之 Channel（通道） 四 Java NIO之Selector（选择器） 五 Java NIO之拥抱Path和Files 六 NIO学习总结以及NIO新">
+<meta name="keywords" content="youngboy的个人blog">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java IO与NIO">
+<meta property="og:url" content="http://www.youngboy.vip/2019/01/11/3/36/index.html">
+<meta property="og:site_name" content="youngboy">
+<meta property="og:description" content="IO流学习总结 一　Java IO，硬骨头也能变软 二　java IO体系的学习总结 三　Java IO面试题   NIO与AIO学习总结 一 Java NIO 概览 二 Java NIO 之 Buffer(缓冲区) 三 Java NIO 之 Channel（通道） 四 Java NIO之Selector（选择器） 五 Java NIO之拥抱Path和Files 六 NIO学习总结以及NIO新">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/5/16/16367d4fd1ce1b46?w=720&h=1080&f=jpeg&s=69522">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/5/16/16367d673b0e268d?w=720&h=535&f=jpeg&s=46081">
+<meta property="og:updated_time" content="2019-01-11T04:03:50.449Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java IO与NIO">
+<meta name="twitter:description" content="IO流学习总结 一　Java IO，硬骨头也能变软 二　java IO体系的学习总结 三　Java IO面试题   NIO与AIO学习总结 一 Java NIO 概览 二 Java NIO 之 Buffer(缓冲区) 三 Java NIO 之 Channel（通道） 四 Java NIO之Selector（选择器） 五 Java NIO之拥抱Path和Files 六 NIO学习总结以及NIO新">
+<meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2018/5/16/16367d4fd1ce1b46?w=720&h=1080&f=jpeg&s=69522">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: './',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.youngboy.vip/2019/01/11/3/36/">
+
+
+
+
+
+  <title>Java IO与NIO | youngboy</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="./" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">youngboy</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">Java大杂烩</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="./" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="./about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="./categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="./archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="./schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br>
+            
+            日程表
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.youngboy.vip./2019/01/11/3/36/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="youngboy">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="./images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="youngboy">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Java IO与NIO</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-11T12:04:08+08:00">
+                2019-01-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="./categories/Java相关/" itemprop="url" rel="index">
+                    <span itemprop="name">Java相关</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <!-- MarkdownTOC -->
+<ul>
+<li><a href="#io流学习总结">IO流学习总结</a><ul>
+<li><a href="#一-java-io，硬骨头也能变软">一　Java IO，硬骨头也能变软</a></li>
+<li><a href="#二-java-io体系的学习总结">二　java IO体系的学习总结</a></li>
+<li><a href="#三-java-io面试题">三　Java IO面试题</a></li>
+</ul>
+</li>
+<li><a href="#nio与aio学习总结">NIO与AIO学习总结</a><ul>
+<li><a href="#一-java-nio-概览">一 Java NIO 概览</a></li>
+<li><a href="#二-java-nio-之-buffer缓冲区">二 Java NIO 之 Buffer(缓冲区)</a></li>
+<li><a href="#三-java-nio-之-channel（通道）">三 Java NIO 之 Channel（通道）</a></li>
+<li><a href="#四-java-nio之selector（选择器）">四 Java NIO之Selector（选择器）</a></li>
+<li><a href="#五-java-nio之拥抱path和files">五 Java NIO之拥抱Path和Files</a></li>
+<li><a href="#六-nio学习总结以及nio新特性介绍">六 NIO学习总结以及NIO新特性介绍</a></li>
+<li><a href="#七-java-nio-asynchronousfilechannel异步文件通">七 Java NIO AsynchronousFileChannel异步文件通</a></li>
+<li><a href="#八-高并发java（8）：nio和aio">八 高并发Java（8）：NIO和AIO</a></li>
+</ul>
+</li>
+<li><a href="#推荐阅读">推荐阅读</a><ul>
+<li><a href="#在-java-7-中体会-nio2-异步执行的快乐">在 Java 7 中体会 NIO.2 异步执行的快乐</a></li>
+<li><a href="#java-aio总结与示例">Java AIO总结与示例</a></li>
+</ul>
+</li>
+</ul>
+<!-- /MarkdownTOC -->
+<h2 id="IO流学习总结"><a href="#IO流学习总结" class="headerlink" title="IO流学习总结"></a>IO流学习总结</h2><h3 id="一-Java-IO，硬骨头也能变软"><a href="#一-Java-IO，硬骨头也能变软" class="headerlink" title="一　Java IO，硬骨头也能变软"></a><a href="https://mp.weixin.qq.com/s?__biz=MzU4NDQ4MzU5OA==&amp;mid=2247483981&amp;idx=1&amp;sn=6e5c682d76972c8d2cf271a85dcf09e2&amp;chksm=fd98542ccaefdd3a70428e9549bc33e8165836855edaa748928d16c1ebde9648579d3acaac10#rd" target="_blank" rel="noopener">一　Java IO，硬骨头也能变软</a></h3><p><strong>（1） 按操作方式分类结构图：</strong></p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/5/16/16367d4fd1ce1b46?w=720&amp;h=1080&amp;f=jpeg&amp;s=69522" alt="按操作方式分类结构图："></p>
+<p><strong>（2）按操作对象分类结构图</strong></p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/5/16/16367d673b0e268d?w=720&amp;h=535&amp;f=jpeg&amp;s=46081" alt="按操作对象分类结构图"></p>
+<h3 id="二-java-IO体系的学习总结"><a href="#二-java-IO体系的学习总结" class="headerlink" title="二　java IO体系的学习总结"></a><a href="https://blog.csdn.net/nightcurtis/article/details/51324105" target="_blank" rel="noopener">二　java IO体系的学习总结</a></h3><ol>
+<li><strong>IO流的分类：</strong><ul>
+<li>按照流的流向分，可以分为输入流和输出流；</li>
+<li>按照操作单元划分，可以划分为字节流和字符流；</li>
+<li>按照流的角色划分为节点流和处理流。</li>
+</ul>
+</li>
+<li><p><strong>流的原理浅析:</strong></p>
+<p>java Io流共涉及40多个类，这些类看上去很杂乱，但实际上很有规则，而且彼此之间存在非常紧密的联系， Java Io流的40多个类都是从如下4个抽象类基类中派生出来的。</p>
+<ul>
+<li><strong>InputStream/Reader</strong>: 所有的输入流的基类，前者是字节输入流，后者是字符输入流。</li>
+<li><strong>OutputStream/Writer</strong>: 所有输出流的基类，前者是字节输出流，后者是字符输出流。</li>
+</ul>
+</li>
+<li><strong>常用的io流的用法</strong> </li>
+</ol>
+<h3 id="三-Java-IO面试题"><a href="#三-Java-IO面试题" class="headerlink" title="三　Java IO面试题"></a><a href="https://mp.weixin.qq.com/s?__biz=MzU4NDQ4MzU5OA==&amp;mid=2247483985&amp;idx=1&amp;sn=38531c2cee7b87f125df7aef41637014&amp;chksm=fd985430caefdd26b0506aa84fc26251877eccba24fac73169a4d6bd1eb5e3fbdf3c3b940261#rd" target="_blank" rel="noopener">三　Java IO面试题</a></h3><h2 id="NIO与AIO学习总结"><a href="#NIO与AIO学习总结" class="headerlink" title="NIO与AIO学习总结"></a>NIO与AIO学习总结</h2><h3 id="一-Java-NIO-概览"><a href="#一-Java-NIO-概览" class="headerlink" title="一 Java NIO 概览"></a><a href="https://mp.weixin.qq.com/s?__biz=MzU4NDQ4MzU5OA==&amp;mid=2247483956&amp;idx=1&amp;sn=57692bc5b7c2c6dfb812489baadc29c9&amp;chksm=fd985455caefdd4331d828d8e89b22f19b304aa87d6da73c5d8c66fcef16e4c0b448b1a6f791#rd" target="_blank" rel="noopener">一 Java NIO 概览</a></h3><ol>
+<li><p><strong>NIO简介</strong>:</p>
+<p>Java NIO 是 java 1.4, 之后新出的一套IO接口NIO中的N可以理解为Non-blocking，不单纯是New。</p>
+</li>
+<li><p><strong>NIO的特性/NIO与IO区别:</strong></p>
+<ul>
+<li>1)IO是面向流的，NIO是面向缓冲区的；</li>
+<li>2)IO流是阻塞的，NIO流是不阻塞的;</li>
+<li>3)NIO有选择器，而IO没有。</li>
+</ul>
+</li>
+<li><p><strong>读数据和写数据方式:</strong></p>
+<ul>
+<li><p>从通道进行数据读取 ：创建一个缓冲区，然后请求通道读取数据。</p>
+</li>
+<li><p>从通道进行数据写入 ：创建一个缓冲区，填充数据，并要求通道写入数据。</p>
+</li>
+</ul>
+</li>
+<li><p><strong>NIO核心组件简单介绍</strong></p>
+<ul>
+<li><strong>Channels</strong></li>
+<li><strong>Buffers</strong></li>
+<li><strong>Selectors</strong></li>
+</ul>
+</li>
+</ol>
+<h3 id="二-Java-NIO-之-Buffer-缓冲区"><a href="#二-Java-NIO-之-Buffer-缓冲区" class="headerlink" title="二 Java NIO 之 Buffer(缓冲区)"></a><a href="https://mp.weixin.qq.com/s?__biz=MzU4NDQ4MzU5OA==&amp;mid=2247483961&amp;idx=1&amp;sn=f67bef4c279e78043ff649b6b03fdcbc&amp;chksm=fd985458caefdd4e3317ccbdb2d0a5a70a5024d3255eebf38183919ed9c25ade536017c0a6ba#rd" target="_blank" rel="noopener">二 Java NIO 之 Buffer(缓冲区)</a></h3><ol>
+<li><strong>Buffer(缓冲区)介绍:</strong><ul>
+<li>Java NIO Buffers用于和NIO Channel交互。 我们从Channel中读取数据到buffers里，从Buffer把数据写入到Channels；</li>
+<li>Buffer本质上就是一块内存区；</li>
+<li>一个Buffer有三个属性是必须掌握的，分别是：capacity容量、position位置、limit限制。</li>
+</ul>
+</li>
+<li><strong>Buffer的常见方法</strong><ul>
+<li>Buffer clear()</li>
+<li>Buffer flip()</li>
+<li>Buffer rewind()</li>
+<li>Buffer position(int newPosition)</li>
+</ul>
+</li>
+<li><p><strong>Buffer的使用方式/方法介绍:</strong></p>
+<ul>
+<li><p>分配缓冲区（Allocating a Buffer）:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ByteBuffer buf = ByteBuffer.allocate(<span class="number">28</span>);<span class="comment">//以ByteBuffer为例子</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>写入数据到缓冲区（Writing Data to a Buffer）</p>
+<p><strong>写数据到Buffer有两种方法：</strong></p>
+<p>1.从Channel中写数据到Buffer</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> bytesRead = inChannel.read(buf); <span class="comment">//read into buffer.</span></span><br></pre></td></tr></table></figure>
+<p>2.通过put写数据：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">buf.put(<span class="number">127</span>);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p><strong>Buffer常用方法测试</strong></p>
+<p> 说实话，NIO编程真的难，通过后面这个测试例子，你可能才能勉强理解前面说的Buffer方法的作用。</p>
+</li>
+</ol>
+<h3 id="三-Java-NIO-之-Channel（通道）"><a href="#三-Java-NIO-之-Channel（通道）" class="headerlink" title="三 Java NIO 之 Channel（通道）"></a><a href="https://mp.weixin.qq.com/s?__biz=MzU4NDQ4MzU5OA==&amp;mid=2247483966&amp;idx=1&amp;sn=d5cf18c69f5f9ec2aff149270422731f&amp;chksm=fd98545fcaefdd49296e2c78000ce5da277435b90ba3c03b92b7cf54c6ccc71d61d13efbce63#rd" target="_blank" rel="noopener">三 Java NIO 之 Channel（通道）</a></h3><ol>
+<li><strong>Channel（通道）介绍</strong><ul>
+<li>通常来说NIO中的所有IO都是从 Channel（通道） 开始的。 </li>
+<li>NIO Channel通道和流的区别：</li>
+</ul>
+</li>
+<li><strong>FileChannel的使用</strong></li>
+<li><strong>SocketChannel和ServerSocketChannel的使用</strong></li>
+<li><strong>️DatagramChannel的使用</strong></li>
+<li><strong>Scatter / Gather</strong><ul>
+<li>Scatter: 从一个Channel读取的信息分散到N个缓冲区中(Buufer).</li>
+<li>Gather: 将N个Buffer里面内容按照顺序发送到一个Channel.</li>
+</ul>
+</li>
+<li><strong>通道之间的数据传输</strong><ul>
+<li>在Java NIO中如果一个channel是FileChannel类型的，那么他可以直接把数据传输到另一个channel。</li>
+<li>transferFrom() :transferFrom方法把数据从通道源传输到FileChannel</li>
+<li>transferTo() :transferTo方法把FileChannel数据传输到另一个channel</li>
+</ul>
+</li>
+</ol>
+<h3 id="四-Java-NIO之Selector（选择器）"><a href="#四-Java-NIO之Selector（选择器）" class="headerlink" title="四 Java NIO之Selector（选择器）"></a><a href="https://mp.weixin.qq.com/s?__biz=MzU4NDQ4MzU5OA==&amp;mid=2247483970&amp;idx=1&amp;sn=d5e2b133313b1d0f32872d54fbdf0aa7&amp;chksm=fd985423caefdd354b587e57ce6cf5f5a7bec48b9ab7554f39a8d13af47660cae793956e0f46#rd" target="_blank" rel="noopener">四 Java NIO之Selector（选择器）</a></h3><ol>
+<li><strong>Selector（选择器）介绍</strong><ul>
+<li>Selector 一般称 为选择器 ，当然你也可以翻译为 多路复用器 。它是Java NIO核心组件中的一个，用于检查一个或多个NIO Channel（通道）的状态是否处于可读、可写。如此可以实现单线程管理多个channels,也就是可以管理多个网络链接。</li>
+<li>使用Selector的好处在于： 使用更少的线程来就可以来处理通道了， 相比使用多个线程，避免了线程上下文切换带来的开销。</li>
+</ul>
+</li>
+<li><p><strong>Selector（选择器）的使用方法介绍</strong></p>
+<ul>
+<li><p>Selector的创建</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Selector selector = Selector.open();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>注册Channel到Selector(Channel必须是非阻塞的)</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">channel.configureBlocking(<span class="keyword">false</span>);</span><br><span class="line">SelectionKey key = channel.register(selector, Selectionkey.OP_READ);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>SelectionKey介绍</p>
+<p>一个SelectionKey键表示了一个特定的通道对象和一个特定的选择器对象之间的注册关系。</p>
+</li>
+<li><p>从Selector中选择channel(Selecting Channels via a Selector)</p>
+<p>选择器维护注册过的通道的集合，并且这种注册关系都被封装在SelectionKey当中.</p>
+</li>
+<li><p>停止选择的方法</p>
+<p>wakeup()方法 和close()方法。</p>
+</li>
+</ul>
+</li>
+<li><p><strong>模板代码</strong></p>
+<p>有了模板代码我们在编写程序时，大多数时间都是在模板代码中添加相应的业务代码。</p>
+</li>
+<li><strong>客户端与服务端简单交互实例</strong></li>
+</ol>
+<h3 id="五-Java-NIO之拥抱Path和Files"><a href="#五-Java-NIO之拥抱Path和Files" class="headerlink" title="五 Java NIO之拥抱Path和Files"></a><a href="https://mp.weixin.qq.com/s?__biz=MzU4NDQ4MzU5OA==&amp;mid=2247483976&amp;idx=1&amp;sn=2296c05fc1b840a64679e2ad7794c96d&amp;chksm=fd985429caefdd3f48e2ee6fdd7b0f6fc419df90b3de46832b484d6d1ca4e74e7837689c8146&amp;token=537240785&amp;lang=zh_CN#rd" target="_blank" rel="noopener">五 Java NIO之拥抱Path和Files</a></h3><p><strong>一 文件I/O基石：Path：</strong></p>
+<ul>
+<li>创建一个Path</li>
+<li>File和Path之间的转换，File和URI之间的转换</li>
+<li>获取Path的相关信息</li>
+<li>移除Path中的冗余项</li>
+</ul>
+<p><strong>二 拥抱Files类：</strong></p>
+<ul>
+<li>Files.exists() 检测文件路径是否存在</li>
+<li>Files.createFile() 创建文件</li>
+<li>Files.createDirectories()和Files.createDirectory()创建文件夹</li>
+<li>Files.delete()方法 可以删除一个文件或目录</li>
+<li>Files.copy()方法可以吧一个文件从一个地址复制到另一个位置</li>
+<li>获取文件属性</li>
+<li>遍历一个文件夹</li>
+<li>Files.walkFileTree()遍历整个目录</li>
+</ul>
+<h3 id="六-NIO学习总结以及NIO新特性介绍"><a href="#六-NIO学习总结以及NIO新特性介绍" class="headerlink" title="六 NIO学习总结以及NIO新特性介绍"></a><a href="https://blog.csdn.net/a953713428/article/details/64907250" target="_blank" rel="noopener">六 NIO学习总结以及NIO新特性介绍</a></h3><ul>
+<li><strong>内存映射：</strong></li>
+</ul>
+<p>这个功能主要是为了提高大文件的读写速度而设计的。内存映射文件(memory-mappedfile)能让你创建和修改那些大到无法读入内存的文件。有了内存映射文件，你就可以认为文件已经全部读进了内存，然后把它当成一个非常大的数组来访问了。将文件的一段区域映射到内存中，比传统的文件处理速度要快很多。内存映射文件它虽然最终也是要从磁盘读取数据，但是它并不需要将数据读取到OS内核缓冲区，而是直接将进程的用户私有地址空间中的一部分区域与文件对象建立起映射关系，就好像直接从内存中读、写文件一样，速度当然快了。</p>
+<h3 id="七-Java-NIO-AsynchronousFileChannel异步文件通"><a href="#七-Java-NIO-AsynchronousFileChannel异步文件通" class="headerlink" title="七 Java NIO AsynchronousFileChannel异步文件通"></a><a href="http://wiki.jikexueyuan.com/project/java-nio-zh/java-nio-asynchronousfilechannel.html" target="_blank" rel="noopener">七 Java NIO AsynchronousFileChannel异步文件通</a></h3><p>Java7中新增了AsynchronousFileChannel作为nio的一部分。AsynchronousFileChannel使得数据可以进行异步读写。</p>
+<h3 id="八-高并发Java（8）：NIO和AIO"><a href="#八-高并发Java（8）：NIO和AIO" class="headerlink" title="八 高并发Java（8）：NIO和AIO"></a><a href="http://www.importnew.com/21341.html" target="_blank" rel="noopener">八 高并发Java（8）：NIO和AIO</a></h3><h2 id="推荐阅读"><a href="#推荐阅读" class="headerlink" title="推荐阅读"></a>推荐阅读</h2><h3 id="在-Java-7-中体会-NIO-2-异步执行的快乐"><a href="#在-Java-7-中体会-NIO-2-异步执行的快乐" class="headerlink" title="在 Java 7 中体会 NIO.2 异步执行的快乐"></a><a href="https://www.ibm.com/developerworks/cn/java/j-lo-nio2/index.html" target="_blank" rel="noopener">在 Java 7 中体会 NIO.2 异步执行的快乐</a></h3><h3 id="Java-AIO总结与示例"><a href="#Java-AIO总结与示例" class="headerlink" title="Java AIO总结与示例"></a><a href="https://blog.csdn.net/x_i_y_u_e/article/details/52223406" target="_blank" rel="noopener">Java AIO总结与示例</a></h3><p>AIO是异步IO的缩写，虽然NIO在网络操作中，提供了非阻塞的方法，但是NIO的IO行为还是同步的。对于NIO来说，我们的业务线程是在IO操作准备好时，得到通知，接着就由这个线程自行进行IO操作，IO操作本身是同步的。</p>
+<p><strong>欢迎关注我的微信公众号:”Java面试通关手册”（一个有温度的微信公众号，期待与你共同进步~~~坚持原创，分享美文，分享各种Java学习资源）：</strong></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="./2019/01/11/3/35/" rel="next" title="J2EE基础知识">
+                <i class="fa fa-chevron-left"></i> J2EE基础知识
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="./2019/01/11/3/37/" rel="prev" title="Java基础知识">
+                Java基础知识 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">youngboy</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="./archives/">
+              
+                  <span class="site-state-item-count">66</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="./categories/index.html">
+                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#IO流学习总结"><span class="nav-number">1.</span> <span class="nav-text">IO流学习总结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一-Java-IO，硬骨头也能变软"><span class="nav-number">1.1.</span> <span class="nav-text">一　Java IO，硬骨头也能变软</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二-java-IO体系的学习总结"><span class="nav-number">1.2.</span> <span class="nav-text">二　java IO体系的学习总结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三-Java-IO面试题"><span class="nav-number">1.3.</span> <span class="nav-text">三　Java IO面试题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NIO与AIO学习总结"><span class="nav-number">2.</span> <span class="nav-text">NIO与AIO学习总结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一-Java-NIO-概览"><span class="nav-number">2.1.</span> <span class="nav-text">一 Java NIO 概览</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二-Java-NIO-之-Buffer-缓冲区"><span class="nav-number">2.2.</span> <span class="nav-text">二 Java NIO 之 Buffer(缓冲区)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三-Java-NIO-之-Channel（通道）"><span class="nav-number">2.3.</span> <span class="nav-text">三 Java NIO 之 Channel（通道）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四-Java-NIO之Selector（选择器）"><span class="nav-number">2.4.</span> <span class="nav-text">四 Java NIO之Selector（选择器）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五-Java-NIO之拥抱Path和Files"><span class="nav-number">2.5.</span> <span class="nav-text">五 Java NIO之拥抱Path和Files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#六-NIO学习总结以及NIO新特性介绍"><span class="nav-number">2.6.</span> <span class="nav-text">六 NIO学习总结以及NIO新特性介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#七-Java-NIO-AsynchronousFileChannel异步文件通"><span class="nav-number">2.7.</span> <span class="nav-text">七 Java NIO AsynchronousFileChannel异步文件通</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#八-高并发Java（8）：NIO和AIO"><span class="nav-number">2.8.</span> <span class="nav-text">八 高并发Java（8）：NIO和AIO</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#推荐阅读"><span class="nav-number">3.</span> <span class="nav-text">推荐阅读</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#在-Java-7-中体会-NIO-2-异步执行的快乐"><span class="nav-number">3.1.</span> <span class="nav-text">在 Java 7 中体会 NIO.2 异步执行的快乐</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java-AIO总结与示例"><span class="nav-number">3.2.</span> <span class="nav-text">Java AIO总结与示例</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">youngboy</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="./lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="./lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="./lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="./lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="./lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="./lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="./js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="./js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="./js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="./js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="./js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="./js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="./js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
