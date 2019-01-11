@@ -3,17 +3,17 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: indigo
-subtitle:
-description:
-keywords:
-author: John Doe
-language:
-timezone:
+title: youngboy
+subtitle: Java大杂烩
+description: Java相关文章和Activiti相关文章
+keywords: youngboy的个人blog
+author: youngboy
+language: zh-Hans
+timezone: Asia/Shanghai
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: http://www.youngboy.vip
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -73,7 +73,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: indigo
+theme: next
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
