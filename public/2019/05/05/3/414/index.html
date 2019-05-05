@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/youngboy/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/youngboy/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/youngboy/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/youngboy/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/youngboy/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/youngboy/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/youngboy/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="youngboy">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="多线程系列文章下列文章，我都更新在了我的博客专栏：Java并发编程指南。   Java多线程学习（一）Java多线程入门 Java多线程学习（二）synchronized关键字（1） Java多线程学习（二）synchronized关键字（2） Java多线程学习（三）volatile关键字 Java多线程学习（四）等待/通知（wait/notify）机制  Java多线程学习（五）线程间通信知">
+<meta name="keywords" content="youngboy的个人blog">
+<meta property="og:type" content="article">
+<meta property="og:title" content="多线程系列">
+<meta property="og:url" content="http://www.youngboy.vip/2019/05/05/3/414/index.html">
+<meta property="og:site_name" content="youngboy">
+<meta property="og:description" content="多线程系列文章下列文章，我都更新在了我的博客专栏：Java并发编程指南。   Java多线程学习（一）Java多线程入门 Java多线程学习（二）synchronized关键字（1） Java多线程学习（二）synchronized关键字（2） Java多线程学习（三）volatile关键字 Java多线程学习（四）等待/通知（wait/notify）机制  Java多线程学习（五）线程间通信知">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/8/4/16504e0cb6bac32e?w=758&h=772&f=jpeg&s=247210">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/8/4/16504e245ceb3ea9?w=1028&h=490&f=jpeg&s=203811">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/8/4/16504e3d98213324?w=1448&h=439&f=jpeg&s=245012">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/8/4/16504e4ab69d8d58">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/3/25/1625d2a9188ec021?w=1254&h=452&f=jpeg&s=229471">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/8/4/16504e618d6886c5?w=1146&h=427&f=jpeg&s=220573">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/3/27/1626755a8e9a8774?w=1197&h=571&f=jpeg&s=258439">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/4/7/162a01b71ebc4842?w=1067&h=517&f=png&s=36857">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/5/31/163b4379a605fa18?w=1560&h=752&f=png&s=56361">
+<meta property="og:updated_time" content="2019-05-05T03:18:43.322Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="多线程系列">
+<meta name="twitter:description" content="多线程系列文章下列文章，我都更新在了我的博客专栏：Java并发编程指南。   Java多线程学习（一）Java多线程入门 Java多线程学习（二）synchronized关键字（1） Java多线程学习（二）synchronized关键字（2） Java多线程学习（三）volatile关键字 Java多线程学习（四）等待/通知（wait/notify）机制  Java多线程学习（五）线程间通信知">
+<meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2018/8/4/16504e0cb6bac32e?w=758&h=772&f=jpeg&s=247210">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/youngboy/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.youngboy.vip/2019/05/05/3/414/">
+
+
+
+
+
+  <title>多线程系列 | youngboy</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/youngboy/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">youngboy</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">Java大杂烩</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/youngboy/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/youngboy/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/youngboy/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/youngboy/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/youngboy/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br>
+            
+            日程表
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.youngboy.vip/youngboy/2019/05/05/3/414/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="youngboy">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/youngboy/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="youngboy">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">多线程系列</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-05T11:18:43+08:00">
+                2019-05-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/youngboy/categories/Java相关/" itemprop="url" rel="index">
+                    <span itemprop="name">Java相关</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<h2 id="多线程系列文章"><a href="#多线程系列文章" class="headerlink" title="多线程系列文章"></a>多线程系列文章</h2><p>下列文章，我都更新在了我的博客专栏：<a href="https://blog.csdn.net/column/details/20860.html" target="_blank" rel="noopener">Java并发编程指南</a>。</p>
+</blockquote>
+<ol>
+<li><a href="http://blog.csdn.net/qq_34337272/article/details/79640870" target="_blank" rel="noopener">Java多线程学习（一）Java多线程入门</a></li>
+<li><a href="http://blog.csdn.net/qq_34337272/article/details/79655194" target="_blank" rel="noopener">Java多线程学习（二）synchronized关键字（1）</a></li>
+<li><a href="http://blog.csdn.net/qq_34337272/article/details/79670775" target="_blank" rel="noopener">Java多线程学习（二）synchronized关键字（2）</a></li>
+<li><a href="http://blog.csdn.net/qq_34337272/article/details/79680771" target="_blank" rel="noopener">Java多线程学习（三）volatile关键字</a></li>
+<li><p><a href="http://blog.csdn.net/qq_34337272/article/details/79690279" target="_blank" rel="noopener">Java多线程学习（四）等待/通知（wait/notify）机制</a></p>
+</li>
+<li><p><a href="http://blog.csdn.net/qq_34337272/article/details/79694226" target="_blank" rel="noopener">Java多线程学习（五）线程间通信知识点补充</a></p>
+</li>
+<li><a href="http://blog.csdn.net/qq_34337272/article/details/79714196" target="_blank" rel="noopener">Java多线程学习（六）Lock锁的使用</a></li>
+<li><a href="https://blog.csdn.net/qq_34337272/article/details/79844051" target="_blank" rel="noopener">Java多线程学习（七）并发编程中一些问题</a></li>
+<li><a href="https://blog.csdn.net/qq_34337272/article/details/79959271" target="_blank" rel="noopener">Java多线程学习（八）线程池与Executor 框架</a></li>
+</ol>
+<blockquote>
+<h2 id="多线程系列文章重要知识点与思维导图"><a href="#多线程系列文章重要知识点与思维导图" class="headerlink" title="多线程系列文章重要知识点与思维导图"></a>多线程系列文章重要知识点与思维导图</h2></blockquote>
+<h3 id="Java多线程学习（一）Java多线程入门"><a href="#Java多线程学习（一）Java多线程入门" class="headerlink" title="Java多线程学习（一）Java多线程入门"></a>Java多线程学习（一）Java多线程入门</h3><p><img src="https://user-gold-cdn.xitu.io/2018/8/4/16504e0cb6bac32e?w=758&amp;h=772&amp;f=jpeg&amp;s=247210" alt></p>
+<h3 id="Java多线程学习（二）synchronized关键字（1）"><a href="#Java多线程学习（二）synchronized关键字（1）" class="headerlink" title="Java多线程学习（二）synchronized关键字（1）"></a>Java多线程学习（二）synchronized关键字（1）</h3><p><img src="https://user-gold-cdn.xitu.io/2018/8/4/16504e245ceb3ea9?w=1028&amp;h=490&amp;f=jpeg&amp;s=203811" alt></p>
+<p>注意：<strong>可重入锁的概念</strong>。</p>
+<p>   另外要注意：<strong>synchronized取得的锁都是对象锁，而不是把一段代码或方法当做锁。</strong> 如果多个线程访问的是同一个对象，哪个线程先执行带synchronized关键字的方法，则哪个线程就持有该方法，那么其他线程只能呈等待状态。如果多个线程访问的是多个对象则不一定，因为多个对象会产生多个锁。</p>
+<h3 id="Java多线程学习（二）synchronized关键字（2）"><a href="#Java多线程学习（二）synchronized关键字（2）" class="headerlink" title="Java多线程学习（二）synchronized关键字（2）"></a>Java多线程学习（二）synchronized关键字（2）</h3><p><img src="https://user-gold-cdn.xitu.io/2018/8/4/16504e3d98213324?w=1448&amp;h=439&amp;f=jpeg&amp;s=245012" alt="思维导图"></p>
+<p>   <strong>注意：</strong></p>
+<ul>
+<li>其他线程执行对象中<strong>synchronized同步方法</strong>（上一节我们介绍过，需要回顾的可以看上一节的文章）和<strong>synchronized(this)代码块</strong>时呈现同步效果;</li>
+<li><p><strong>如果两个线程使用了同一个“对象监视器”（synchronized(object)）,运行结果同步，否则不同步</strong>.</p>
+<p><strong>synchronized关键字加到static静态方法</strong>和<strong>synchronized(class)代码块</strong>上都是是给<strong>Class类</strong>上锁，而<strong>synchronized关键字加到非static静态方法</strong>上是给<strong>对象</strong>上锁。</p>
+<p>数据类型String的常量池属性:<strong>在Jvm中具有String常量池缓存的功能</strong></p>
+</li>
+</ul>
+<h3 id="Java多线程学习（三）volatile关键字"><a href="#Java多线程学习（三）volatile关键字" class="headerlink" title="Java多线程学习（三）volatile关键字"></a>Java多线程学习（三）volatile关键字</h3><p><img src="https://user-gold-cdn.xitu.io/2018/8/4/16504e4ab69d8d58" alt="volatile关键字"><br>   <strong>注意：</strong></p>
+<p>   <strong>synchronized关键字</strong>和<strong>volatile关键字</strong>比较</p>
+<h3 id="Java多线程学习（四）等待-通知（wait-notify）机制"><a href="#Java多线程学习（四）等待-通知（wait-notify）机制" class="headerlink" title="Java多线程学习（四）等待/通知（wait/notify）机制"></a>Java多线程学习（四）等待/通知（wait/notify）机制</h3><p><img src="https://user-gold-cdn.xitu.io/2018/3/25/1625d2a9188ec021?w=1254&amp;h=452&amp;f=jpeg&amp;s=229471" alt="本节思维导图"></p>
+<h3 id="Java多线程学习（五）线程间通信知识点补充"><a href="#Java多线程学习（五）线程间通信知识点补充" class="headerlink" title="Java多线程学习（五）线程间通信知识点补充"></a>Java多线程学习（五）线程间通信知识点补充</h3><p><img src="https://user-gold-cdn.xitu.io/2018/8/4/16504e618d6886c5?w=1146&amp;h=427&amp;f=jpeg&amp;s=220573" alt="本节思维导图"><br>   <strong>注意：</strong> ThreadLocal类主要解决的就是让每个线程绑定自己的值，可以将ThreadLocal类形象的比喻成存放数据的盒子，盒子中可以存储每个线程的私有数据。</p>
+<h3 id="Java多线程学习（六）Lock锁的使用"><a href="#Java多线程学习（六）Lock锁的使用" class="headerlink" title="Java多线程学习（六）Lock锁的使用"></a>Java多线程学习（六）Lock锁的使用</h3><p>   <img src="https://user-gold-cdn.xitu.io/2018/3/27/1626755a8e9a8774?w=1197&amp;h=571&amp;f=jpeg&amp;s=258439" alt="本节思维导图"></p>
+<h3 id="Java多线程学习（七）并发编程中一些问题"><a href="#Java多线程学习（七）并发编程中一些问题" class="headerlink" title="Java多线程学习（七）并发编程中一些问题"></a>Java多线程学习（七）并发编程中一些问题</h3><p><img src="https://user-gold-cdn.xitu.io/2018/4/7/162a01b71ebc4842?w=1067&amp;h=517&amp;f=png&amp;s=36857" alt="思维导图"></p>
+<h3 id="Java多线程学习（八）线程池与Executor-框架"><a href="#Java多线程学习（八）线程池与Executor-框架" class="headerlink" title="Java多线程学习（八）线程池与Executor 框架"></a>Java多线程学习（八）线程池与Executor 框架</h3><p><img src="https://user-gold-cdn.xitu.io/2018/5/31/163b4379a605fa18?w=1560&amp;h=752&amp;f=png&amp;s=56361" alt="本节思维导图"></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/youngboy/2019/05/05/3/34/" rel="next" title="HashMap">
+                <i class="fa fa-chevron-left"></i> HashMap
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/youngboy/2019/05/05/3/412/" rel="prev" title="synchronized">
+                synchronized <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">youngboy</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/youngboy/archives/">
+              
+                  <span class="site-state-item-count">126</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/youngboy/categories/index.html">
+                  <span class="site-state-item-count">40</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#多线程系列文章"><span class="nav-number">1.</span> <span class="nav-text">多线程系列文章</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多线程系列文章重要知识点与思维导图"><span class="nav-number">2.</span> <span class="nav-text">多线程系列文章重要知识点与思维导图</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Java多线程学习（一）Java多线程入门"><span class="nav-number">2.1.</span> <span class="nav-text">Java多线程学习（一）Java多线程入门</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java多线程学习（二）synchronized关键字（1）"><span class="nav-number">2.2.</span> <span class="nav-text">Java多线程学习（二）synchronized关键字（1）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java多线程学习（二）synchronized关键字（2）"><span class="nav-number">2.3.</span> <span class="nav-text">Java多线程学习（二）synchronized关键字（2）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java多线程学习（三）volatile关键字"><span class="nav-number">2.4.</span> <span class="nav-text">Java多线程学习（三）volatile关键字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java多线程学习（四）等待-通知（wait-notify）机制"><span class="nav-number">2.5.</span> <span class="nav-text">Java多线程学习（四）等待/通知（wait/notify）机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java多线程学习（五）线程间通信知识点补充"><span class="nav-number">2.6.</span> <span class="nav-text">Java多线程学习（五）线程间通信知识点补充</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java多线程学习（六）Lock锁的使用"><span class="nav-number">2.7.</span> <span class="nav-text">Java多线程学习（六）Lock锁的使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java多线程学习（七）并发编程中一些问题"><span class="nav-number">2.8.</span> <span class="nav-text">Java多线程学习（七）并发编程中一些问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java多线程学习（八）线程池与Executor-框架"><span class="nav-number">2.9.</span> <span class="nav-text">Java多线程学习（八）线程池与Executor 框架</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">youngboy</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/youngboy/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/youngboy/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/youngboy/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/youngboy/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/youngboy/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/youngboy/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/youngboy/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/youngboy/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/youngboy/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/youngboy/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/youngboy/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/youngboy/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/youngboy/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

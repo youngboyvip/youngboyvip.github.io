@@ -1,0 +1,2540 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/youngboy/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/youngboy/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/youngboy/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/youngboy/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/youngboy/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/youngboy/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/youngboy/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="youngboy">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Java相关文章和Activiti相关文章">
+<meta name="keywords" content="youngboy的个人blog">
+<meta property="og:type" content="website">
+<meta property="og:title" content="youngboy">
+<meta property="og:url" content="http://www.youngboy.vip/page/9/index.html">
+<meta property="og:site_name" content="youngboy">
+<meta property="og:description" content="Java相关文章和Activiti相关文章">
+<meta property="og:locale" content="zh-Hans">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="youngboy">
+<meta name="twitter:description" content="Java相关文章和Activiti相关文章">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/youngboy/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.youngboy.vip/page/9/">
+
+
+
+
+
+  <title>youngboy</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/youngboy/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">youngboy</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">Java大杂烩</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/youngboy/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/youngboy/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/youngboy/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/youngboy/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/youngboy/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br>
+            
+            日程表
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.youngboy.vip/youngboy/2019/05/05/python/22/222/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="youngboy">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/youngboy/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="youngboy">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/youngboy/2019/05/05/python/22/222/" itemprop="url">02.数据采集和解析</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-05T11:18:43+08:00">
+                2019-05-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/youngboy/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/youngboy/categories/python/Day66-75/" itemprop="url" rel="index">
+                    <span itemprop="name">Day66-75</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="数据采集和解析"><a href="#数据采集和解析" class="headerlink" title="数据采集和解析"></a>数据采集和解析</h2><p>通过<a href="./01.网络爬虫和相关工具.md">《网络爬虫和相关工具》</a>一文，我们已经了解到了开发一个爬虫需要做的工作以及一些常见的问题，至此我们可以对爬虫开发需要做的工作以及相关的技术做一个简单的汇总，这其中可能会有一些我们之前没有使用过的第三方库，不过别担心，这些内容我们稍后都会一一讲到。</p>
+<ol>
+<li>下载数据 - urllib / requests / aiohttp。</li>
+<li>解析数据 - re / lxml / beautifulsoup4（bs4）/ pyquery。</li>
+<li>缓存和持久化 - pymysql / sqlalchemy / peewee/ redis / pymongo。</li>
+<li>生成数字签名 - hashlib。</li>
+<li>序列化和压缩 - pickle / json / zlib。</li>
+<li>调度器 - 进程（multiprocessing） / 线程（threading） / 协程（coroutine）。</li>
+</ol>
+<h3 id="HTML页面分析"><a href="#HTML页面分析" class="headerlink" title="HTML页面分析"></a>HTML页面分析</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>首页<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello, world!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>这是一个神奇的网站！<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">hr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">h2</span>&gt;</span>这是一个例子程序<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>静夜思<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"foo"</span>&gt;</span>床前明月光<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">"bar"</span>&gt;</span>疑似地上霜<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"foo"</span>&gt;</span>举头望明月<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"http://www.baidu.com"</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span>低头思故乡<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"foo"</span> <span class="attr">href</span>=<span class="string">"http://www.qq.com"</span>&gt;</span>腾讯网<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"./img/pretty-girl.png"</span> <span class="attr">alt</span>=<span class="string">"美女"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"./img/hellokitty.png"</span> <span class="attr">alt</span>=<span class="string">"凯蒂猫"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"/static/img/pretty-girl.png"</span> <span class="attr">alt</span>=<span class="string">"美女"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">table</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">th</span>&gt;</span>姓名<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">th</span>&gt;</span>上场时间<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">th</span>&gt;</span>得分<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">th</span>&gt;</span>篮板<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">th</span>&gt;</span>助攻<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>如果你对上面的代码并不感到陌生，那么你一定知道HTML页面通常由三部分构成，分别是用来承载内容的Tag（标签）、负责渲染页面的CSS（层叠样式表）以及控制交互式行为的JavaScript。通常，我们可以在浏览器的右键菜单中通过“查看网页源代码”的方式获取网页的代码并了解页面的结构；当然，我们也可以通过浏览器提供的开发人员工具来了解网页更多的信息。</p>
+<h4 id="使用requests获取页面"><a href="#使用requests获取页面" class="headerlink" title="使用requests获取页面"></a>使用requests获取页面</h4><ol>
+<li><p>GET请求和POST请求。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"> </span><br></pre></td></tr></table></figure>
+</li>
+<li><p>URL参数和请求头。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"> </span><br></pre></td></tr></table></figure>
+</li>
+<li><p>复杂的POST请求（文件上传）。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"> </span><br></pre></td></tr></table></figure>
+</li>
+<li><p>操作Cookie。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"> </span><br></pre></td></tr></table></figure>
+</li>
+<li><p>设置代理服务器。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"> </span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<blockquote>
+<p>说明：关于requests的详细用法可以参考它的<a href="http://docs.python-requests.org/zh_CN/latest/user/quickstart.html" target="_blank" rel="noopener">官方文档</a>。</p>
+</blockquote>
+<h3 id="四种采集方式"><a href="#四种采集方式" class="headerlink" title="四种采集方式"></a>四种采集方式</h3><h4 id="四种采集方式的比较"><a href="#四种采集方式的比较" class="headerlink" title="四种采集方式的比较"></a>四种采集方式的比较</h4><table>
+<thead>
+<tr>
+<th>抓取方法</th>
+<th>速度</th>
+<th>使用难度</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>正则表达式</td>
+<td>快</td>
+<td>困难</td>
+<td>常用正则表达式<br>在线正则表达式测试</td>
+</tr>
+<tr>
+<td>lxml</td>
+<td>快</td>
+<td>一般</td>
+<td>需要安装C语言依赖库<br>唯一支持XML的解析器</td>
+</tr>
+<tr>
+<td>Beautiful</td>
+<td>较快/较慢（取决于解析器）</td>
+<td>简单</td>
+<td></td>
+</tr>
+<tr>
+<td>PyQuery</td>
+<td>较快</td>
+<td>简单</td>
+<td>Python版的jQuery</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>说明：Beautiful的解析器包括：Python标准库（html.parser）、lxml的HTML解析器、lxml的XML解析器和html5lib。</p>
+</blockquote>
+<h4 id="使用正则表达式"><a href="#使用正则表达式" class="headerlink" title="使用正则表达式"></a>使用正则表达式</h4><p>如果你对正则表达式没有任何的概念，那么推荐先阅读<a href>《正则表达式30分钟入门教程》</a>，然后再阅读我们之前讲解在Python中如何使用正则表达式一文。</p>
+<h4 id="使用XPath和Lxml"><a href="#使用XPath和Lxml" class="headerlink" title="使用XPath和Lxml"></a>使用XPath和Lxml</h4><h4 id="BeautifulSoup的使用"><a href="#BeautifulSoup的使用" class="headerlink" title="BeautifulSoup的使用"></a>BeautifulSoup的使用</h4><p>BeautifulSoup是一个可以从HTML或XML文件中提取数据的Python库。它能够通过你喜欢的转换器实现惯用的文档导航、查找、修改文档的方式。</p>
+<ol>
+<li>遍历文档树<ul>
+<li>获取标签</li>
+<li>获取标签属性</li>
+<li>获取标签内容</li>
+<li>获取子（孙）节点</li>
+<li>获取父节点/祖先节点</li>
+<li>获取兄弟节点</li>
+</ul>
+</li>
+<li>搜索树节点<ul>
+<li>find / find_all：字符串、正则表达式、列表、True、函数或Lambda。</li>
+<li>select_one / select：CSS选择器</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p>说明：更多内容可以参考BeautifulSoup的<a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/index.zh.html" target="_blank" rel="noopener">官方文档</a>。</p>
+</blockquote>
+<h4 id="PyQuery的使用"><a href="#PyQuery的使用" class="headerlink" title="PyQuery的使用"></a>PyQuery的使用</h4><p>pyquery相当于jQuery的Python实现，可以用于解析HTML网页。</p>
+<h3 id="实例-获取知乎发现上的问题链接"><a href="#实例-获取知乎发现上的问题链接" class="headerlink" title="实例 - 获取知乎发现上的问题链接"></a>实例 - 获取知乎发现上的问题链接</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> urljoin</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    headers = &#123;<span class="string">'user-agent'</span>: <span class="string">'Baiduspider'</span>&#125;</span><br><span class="line">    proxies = &#123;</span><br><span class="line">        <span class="string">'http'</span>: <span class="string">'http://122.114.31.177:808'</span></span><br><span class="line">    &#125;</span><br><span class="line">    base_url = <span class="string">'https://www.zhihu.com/'</span></span><br><span class="line">    seed_url = urljoin(base_url, <span class="string">'explore'</span>)</span><br><span class="line">    resp = requests.get(seed_url,</span><br><span class="line">                        headers=headers,</span><br><span class="line">                        proxies=proxies)</span><br><span class="line">    soup = BeautifulSoup(resp.text, <span class="string">'lxml'</span>)</span><br><span class="line">    href_regex = re.compile(<span class="string">r'^/question'</span>)</span><br><span class="line">    link_set = set()</span><br><span class="line">    <span class="keyword">for</span> a_tag <span class="keyword">in</span> soup.find_all(<span class="string">'a'</span>, &#123;<span class="string">'href'</span>: href_regex&#125;):</span><br><span class="line">        <span class="keyword">if</span> <span class="string">'href'</span> <span class="keyword">in</span> a_tag.attrs:</span><br><span class="line">            href = a_tag.attrs[<span class="string">'href'</span>]</span><br><span class="line">            full_url = urljoin(base_url, href)</span><br><span class="line">            link_set.add(full_url)</span><br><span class="line">    print(<span class="string">'Total %d question pages found.'</span> % len(link_set))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.youngboy.vip/youngboy/2019/05/05/python/22/223/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="youngboy">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/youngboy/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="youngboy">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/youngboy/2019/05/05/python/22/223/" itemprop="url">03.存储数据</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-05T11:18:43+08:00">
+                2019-05-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/youngboy/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/youngboy/categories/python/Day66-75/" itemprop="url" rel="index">
+                    <span itemprop="name">Day66-75</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="存储数据"><a href="#存储数据" class="headerlink" title="存储数据"></a>存储数据</h2><h3 id="存储海量数据"><a href="#存储海量数据" class="headerlink" title="存储海量数据"></a>存储海量数据</h3><p>数据持久化的首选方案应该是关系型数据库，关系型数据库的产品很多，包括：Oracle、MySQL、SQLServer、PostgreSQL等。如果要存储海量的低价值数据，文档数据库也是不错的选择，MongoDB是文档数据库中的佼佼者，之前我们已经讲解过MongDB的相关知识，在此不再进行赘述。</p>
+<h3 id="数据缓存"><a href="#数据缓存" class="headerlink" title="数据缓存"></a>数据缓存</h3><p>通过<a href="./02.数据采集和解析.md">《网络数据采集和解析》</a>一文，我们已经知道了如何从指定的页面中抓取数据，以及如何保存抓取的结果，但是我们没有考虑过这么一种情况，就是我们可能需要从已经抓取过的页面中提取出更多的数据，重新去下载这些页面对于规模不大的网站倒是问题也不大，但是如果能够把这些页面缓存起来，对应用的性能会有明显的改善。可以使用Redis来提供高速缓存服务，关于Redis的知识，我们在<a href="../Day36-40/NoSQL入门.md">《NoSQL入门》</a>一文中已经做过简要的介绍。</p>
+<h3 id="实例-缓存知乎发现上的链接和页面代码"><a href="#实例-缓存知乎发现上的链接和页面代码" class="headerlink" title="实例 - 缓存知乎发现上的链接和页面代码"></a>实例 - 缓存知乎发现上的链接和页面代码</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> hashlib <span class="keyword">import</span> sha1</span><br><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> urljoin</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> pickle</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> zlib</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"><span class="keyword">from</span> redis <span class="keyword">import</span> Redis</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="comment"># 指定种子页面</span></span><br><span class="line">    base_url = <span class="string">'https://www.zhihu.com/'</span></span><br><span class="line">    seed_url = urljoin(base_url, <span class="string">'explore'</span>)</span><br><span class="line">    <span class="comment"># 创建Redis客户端</span></span><br><span class="line">    client = Redis(host=<span class="string">'1.2.3.4'</span>, port=<span class="number">6379</span>, password=<span class="string">'1qaz2wsx'</span>)</span><br><span class="line">    <span class="comment"># 设置用户代理(否则访问会被拒绝)</span></span><br><span class="line">    headers = &#123;<span class="string">'user-agent'</span>: <span class="string">'Baiduspider'</span>&#125;</span><br><span class="line">    <span class="comment"># 通过requests模块发送GET请求并指定用户代理</span></span><br><span class="line">    resp = requests.get(seed_url, headers=headers)</span><br><span class="line">    <span class="comment"># 创建BeautifulSoup对象并指定使用lxml作为解析器</span></span><br><span class="line">    soup = BeautifulSoup(resp.text, <span class="string">'lxml'</span>)</span><br><span class="line">    href_regex = re.compile(<span class="string">r'^/question'</span>)</span><br><span class="line">    <span class="comment"># 将URL处理成SHA1摘要(长度固定更简短)</span></span><br><span class="line">    hasher_proto = sha1()</span><br><span class="line">    <span class="comment"># 查找所有href属性以/question打头的a标签</span></span><br><span class="line">    <span class="keyword">for</span> a_tag <span class="keyword">in</span> soup.find_all(<span class="string">'a'</span>, &#123;<span class="string">'href'</span>: href_regex&#125;):</span><br><span class="line">        <span class="comment"># 获取a标签的href属性值并组装完整的URL</span></span><br><span class="line">        href = a_tag.attrs[<span class="string">'href'</span>]</span><br><span class="line">        full_url = urljoin(base_url, href)</span><br><span class="line">        <span class="comment"># 传入URL生成SHA1摘要</span></span><br><span class="line">        hasher = hasher_proto.copy()</span><br><span class="line">        hasher.update(full_url.encode(<span class="string">'utf-8'</span>))</span><br><span class="line">        field_key = hasher.hexdigest()</span><br><span class="line">        <span class="comment"># 如果Redis的键'zhihu'对应的hash数据类型中没有URL的摘要就访问页面并缓存</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> client.hexists(<span class="string">'zhihu'</span>, field_key):</span><br><span class="line">            html_page = requests.get(full_url, headers=headers).text</span><br><span class="line">            <span class="comment"># 对页面进行序列化和压缩操作</span></span><br><span class="line">            zipped_page = zlib.compress(pickle.dumps(html_page))</span><br><span class="line">            <span class="comment"># 使用hash数据类型保存URL摘要及其对应的页面代码</span></span><br><span class="line">            client.hset(<span class="string">'zhihu'</span>, field_key, zipped_page)</span><br><span class="line">    <span class="comment"># 显示总共缓存了多少个页面</span></span><br><span class="line">    print(<span class="string">'Total %d question pages found.'</span> % client.hlen(<span class="string">'zhihu'</span>))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.youngboy.vip/youngboy/2019/05/05/python/22/224/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="youngboy">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/youngboy/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="youngboy">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/youngboy/2019/05/05/python/22/224/" itemprop="url">04.并发下载</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-05T11:18:43+08:00">
+                2019-05-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/youngboy/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/youngboy/categories/python/Day66-75/" itemprop="url" rel="index">
+                    <span itemprop="name">Day66-75</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="并发下载"><a href="#并发下载" class="headerlink" title="并发下载"></a>并发下载</h2><h3 id="多线程和多进程回顾"><a href="#多线程和多进程回顾" class="headerlink" title="多线程和多进程回顾"></a>多线程和多进程回顾</h3><p>在前面的<a href="../Day01-15/Day13/进程和线程.md">《进程和线程》</a>一文中，我们已经对在Python中使用多进程和多线程实现并发编程进行了简明的讲解，在此我们补充几个知识点。</p>
+<h4 id="threading-local类"><a href="#threading-local类" class="headerlink" title="threading.local类"></a>threading.local类</h4><p>使用线程时最不愿意遇到的情况就是多个线程竞争资源，在这种情况下为了保证资源状态的正确性，我们可能需要对资源进行加锁保护的处理，这一方面会导致程序失去并发性，另外如果多个线程竞争多个资源时，还有可能因为加锁方式的不当导致<a href="https://zh.wikipedia.org/wiki/%E6%AD%BB%E9%94%81" target="_blank" rel="noopener">死锁</a>。要解决多个线程竞争资源的问题，其中一个方案就是让每个线程都持有资源的副本（拷贝），这样每个线程可以操作自己所持有的资源，从而规避对资源的竞争。</p>
+<p>要实现将资源和持有资源的线程进行绑定的操作，最简单的做法就是使用threading模块的local类，在网络爬虫开发中，就可以使用local类为每个线程绑定一个MySQL数据库连接或Redis客户端对象，这样通过线程可以直接获得这些资源，既解决了资源竞争的问题，又避免了在函数和方法调用时传递这些资源。具体的请参考本章多线程爬取“手机搜狐网”（Redis版）的实例代码。</p>
+<h4 id="concurrent-futures模块"><a href="#concurrent-futures模块" class="headerlink" title="concurrent.futures模块"></a>concurrent.futures模块</h4><p>Python3.2带来了<code>concurrent.futures</code> 模块，这个模块包含了线程池和进程池、管理并行编程任务、处理非确定性的执行流程、进程/线程同步等功能。关于这部分的内容推荐大家阅读<a href="http://python-parallel-programmning-cookbook.readthedocs.io/zh_CN/latest/index.html" target="_blank" rel="noopener">《Python并行编程》</a>。</p>
+<h4 id="分布式进程"><a href="#分布式进程" class="headerlink" title="分布式进程"></a>分布式进程</h4><p>使用多进程的时候，可以将进程部署在多个主机节点上，Python的<code>multiprocessing</code>模块不但支持多进程，其中<code>managers</code>子模块还支持把多进程部署到多个节点上。当然，要部署分布式进程，首先需要一个服务进程作为调度者，进程之间通过网络进行通信来实现对进程的控制和调度，由于<code>managers</code>模块已经对这些做出了很好的封装，因此在无需了解网络通信细节的前提下，就可以编写分布式多进程应用。具体的请参照本章分布式多进程爬取“手机搜狐网”的实例代码。</p>
+<h3 id="协程和异步I-O"><a href="#协程和异步I-O" class="headerlink" title="协程和异步I/O"></a>协程和异步I/O</h3><h4 id="协程的概念"><a href="#协程的概念" class="headerlink" title="协程的概念"></a>协程的概念</h4><p>协程（coroutine）通常又称之为微线程或纤程，它是相互协作的一组子程序（函数）。所谓相互协作指的是在执行函数A时，可以随时中断去执行函数B，然后又中断继续执行函数A。注意，这一过程并不是函数调用（因为没有调用语句），整个过程看似像多线程，然而协程只有一个线程执行。协程通过<code>yield</code>关键字和 <code>send()</code>操作来转移执行权，协程之间不是调用者与被调用者的关系。</p>
+<p>协程的优势在于以下两点：</p>
+<ol>
+<li>执行效率极高，因为子程序（函数）切换不是线程切换，由程序自身控制，没有切换线程的开销。</li>
+<li>不需要多线程的锁机制，因为只有一个线程，也不存在竞争资源的问题，当然也就不需要对资源加锁保护，因此执行效率高很多。</li>
+</ol>
+<blockquote>
+<p>说明：协程适合处理的是I/O密集型任务，处理CPU密集型任务并不是它的长处，如果要提升CPU的利用率可以考虑“多进程+协程”的模式。</p>
+</blockquote>
+<h4 id="历史回顾"><a href="#历史回顾" class="headerlink" title="历史回顾"></a>历史回顾</h4><ol>
+<li>Python 2.2：第一次提出了生成器（最初称之为迭代器）的概念（PEP 255）。</li>
+<li>Python 2.5：引入了将对象发送回暂停了的生成器这一特性即生成器的<code>send()</code>方法（PEP 342）。</li>
+<li>Python 3.3：添加了<code>yield from</code>特性，允许从迭代器中返回任何值（注意生成器本身也是迭代器），这样我们就可以串联生成器并且重构出更好的生成器。</li>
+<li>Python 3.4：引入<code>asyncio.coroutine</code>装饰器用来标记作为协程的函数，协程函数和<code>asyncio</code>及其事件循环一起使用，来实现异步I/O操作。</li>
+<li>Python 3.5：引入了<code>async</code>和<code>await</code>，可以使用<code>async def</code>来定义一个协程函数，这个函数中不能包含任何形式的<code>yield</code>语句，但是可以使用<code>return</code>或<code>await</code>从协程中返回值。</li>
+</ol>
+<h4 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h4><ol>
+<li><p>生成器 - 数据的生产者。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> time <span class="keyword">import</span> sleep</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 倒计数生成器</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">countdown</span><span class="params">(n)</span>:</span></span><br><span class="line">    <span class="keyword">while</span> n &gt; <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">yield</span> n</span><br><span class="line">        n -= <span class="number">1</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">for</span> num <span class="keyword">in</span> countdown(<span class="number">5</span>):</span><br><span class="line">        print(<span class="string">f'Countdown: <span class="subst">&#123;num&#125;</span>'</span>)</span><br><span class="line">        sleep(<span class="number">1</span>)</span><br><span class="line">    print(<span class="string">'Countdown Over!'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+<p>生成器还可以叠加来组成生成器管道，代码如下所示。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Fibonacci数生成器</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fib</span><span class="params">()</span>:</span></span><br><span class="line">    a, b = <span class="number">0</span>, <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        a, b = b, a + b</span><br><span class="line">        <span class="keyword">yield</span> a</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 偶数生成器</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">even</span><span class="params">(gen)</span>:</span></span><br><span class="line">    <span class="keyword">for</span> val <span class="keyword">in</span> gen:</span><br><span class="line">        <span class="keyword">if</span> val % <span class="number">2</span> == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">yield</span> val</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    gen = even(fib())</span><br><span class="line">    <span class="keyword">for</span> _ <span class="keyword">in</span> range(<span class="number">10</span>):</span><br><span class="line">        print(next(gen))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>协程 - 数据的消费者。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> time <span class="keyword">import</span> sleep</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 生成器 - 数据生产者</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">countdown_gen</span><span class="params">(n, consumer)</span>:</span></span><br><span class="line">    consumer.send(<span class="literal">None</span>)</span><br><span class="line">    <span class="keyword">while</span> n &gt; <span class="number">0</span>:</span><br><span class="line">        consumer.send(n)</span><br><span class="line">        n -= <span class="number">1</span></span><br><span class="line">    consumer.send(<span class="literal">None</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 协程 - 数据消费者</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">countdown_con</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        n = <span class="keyword">yield</span></span><br><span class="line">        <span class="keyword">if</span> n:</span><br><span class="line">            print(<span class="string">f'Countdown <span class="subst">&#123;n&#125;</span>'</span>)</span><br><span class="line">            sleep(<span class="number">1</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            print(<span class="string">'Countdown Over!'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    countdown_gen(<span class="number">5</span>, countdown_con())</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>说明：上面代码中countdown_gen函数中的第1行consumer.send(None)是为了激活生成器，通俗的说就是让生成器执行到有yield关键字的地方挂起，当然也可以通过next(consumer)来达到同样的效果。如果不愿意每次都用这样的代码来“预激”生成器，可以写一个包装器来完成该操作，代码如下所示。</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> wraps</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">coroutine</span><span class="params">(fn)</span>:</span></span><br><span class="line"></span><br><span class="line"><span class="meta">    @wraps(fn)</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">wrapper</span><span class="params">(*args, **kwargs)</span>:</span></span><br><span class="line">        gen = fn(*args, **kwargs)</span><br><span class="line">        next(gen)</span><br><span class="line">        <span class="keyword">return</span> gen</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> wrapper</span><br></pre></td></tr></table></figure>
+<p>这样就可以使用<code>@coroutine</code>装饰器对协程进行预激操作，不需要再写重复代码来激活协程。</p>
+</li>
+<li><p>异步I/O - 非阻塞式I/O操作。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> asyncio</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@asyncio.coroutine</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">countdown</span><span class="params">(name, n)</span>:</span></span><br><span class="line">    <span class="keyword">while</span> n &gt; <span class="number">0</span>:</span><br><span class="line">        print(<span class="string">f'Countdown[<span class="subst">&#123;name&#125;</span>]: <span class="subst">&#123;n&#125;</span>'</span>)</span><br><span class="line">        <span class="keyword">yield</span> <span class="keyword">from</span> asyncio.sleep(<span class="number">1</span>)</span><br><span class="line">        n -= <span class="number">1</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    loop = asyncio.get_event_loop()</span><br><span class="line">    tasks = [</span><br><span class="line">        countdown(<span class="string">"A"</span>, <span class="number">10</span>), countdown(<span class="string">"B"</span>, <span class="number">5</span>),</span><br><span class="line">    ]</span><br><span class="line">    loop.run_until_complete(asyncio.wait(tasks))</span><br><span class="line">    loop.close()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>async</code>和<code>await</code>。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> asyncio</span><br><span class="line"><span class="keyword">import</span> aiohttp</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">def</span> <span class="title">download</span><span class="params">(url)</span>:</span></span><br><span class="line">    print(<span class="string">'Fetch:'</span>, url)</span><br><span class="line">    <span class="keyword">async</span> <span class="keyword">with</span> aiohttp.ClientSession() <span class="keyword">as</span> session:</span><br><span class="line">        <span class="keyword">async</span> <span class="keyword">with</span> session.get(url) <span class="keyword">as</span> resp:</span><br><span class="line">            print(url, <span class="string">'---&gt;'</span>, resp.status)</span><br><span class="line">            print(url, <span class="string">'---&gt;'</span>, resp.cookies)</span><br><span class="line">            print(<span class="string">'\n\n'</span>, <span class="keyword">await</span> resp.text())</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    loop = asyncio.get_event_loop()</span><br><span class="line">    urls = [</span><br><span class="line">        <span class="string">'https://www.baidu.com'</span>,</span><br><span class="line">        <span class="string">'http://www.sohu.com/'</span>,</span><br><span class="line">        <span class="string">'http://www.sina.com.cn/'</span>,</span><br><span class="line">        <span class="string">'https://www.taobao.com/'</span>,</span><br><span class="line">        <span class="string">'https://www.jd.com/'</span></span><br><span class="line">    ]</span><br><span class="line">    tasks = [download(url) <span class="keyword">for</span> url <span class="keyword">in</span> urls]</span><br><span class="line">    loop.run_until_complete(asyncio.wait(tasks))</span><br><span class="line">    loop.close()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+<p>上面的代码使用了<a href="https://github.com/aio-libs/aiohttp" target="_blank" rel="noopener">AIOHTTP</a>这个非常著名的第三方库，它实现了HTTP客户端和HTTP服务器的功能，对异步操作提供了非常好的支持，有兴趣可以阅读它的<a href="https://aiohttp.readthedocs.io/en/stable/" target="_blank" rel="noopener">官方文档</a>。</p>
+</li>
+</ol>
+<h3 id="实例-多线程爬取“手机搜狐网”所有页面"><a href="#实例-多线程爬取“手机搜狐网”所有页面" class="headerlink" title="实例 - 多线程爬取“手机搜狐网”所有页面"></a>实例 - 多线程爬取“手机搜狐网”所有页面</h3><p>下面我们把之间讲的所有知识结合起来，用面向对象的方式实现一个爬取“手机搜狐网”的多线程爬虫。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pickle</span><br><span class="line"><span class="keyword">import</span> zlib</span><br><span class="line"><span class="keyword">from</span> enum <span class="keyword">import</span> Enum, unique</span><br><span class="line"><span class="keyword">from</span> hashlib <span class="keyword">import</span> sha1</span><br><span class="line"><span class="keyword">from</span> random <span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">from</span> threading <span class="keyword">import</span> Thread, current_thread, local</span><br><span class="line"><span class="keyword">from</span> time <span class="keyword">import</span> sleep</span><br><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> urlparse</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> pymongo</span><br><span class="line"><span class="keyword">import</span> redis</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"><span class="keyword">from</span> bson <span class="keyword">import</span> Binary</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@unique</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SpiderStatus</span><span class="params">(Enum)</span>:</span></span><br><span class="line">    IDLE = <span class="number">0</span></span><br><span class="line">    WORKING = <span class="number">1</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">decode_page</span><span class="params">(page_bytes, charsets=<span class="params">(<span class="string">'utf-8'</span>,)</span>)</span>:</span></span><br><span class="line">    page_html = <span class="literal">None</span></span><br><span class="line">    <span class="keyword">for</span> charset <span class="keyword">in</span> charsets:</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            page_html = page_bytes.decode(charset)</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">except</span> UnicodeDecodeError:</span><br><span class="line">            <span class="keyword">pass</span></span><br><span class="line">    <span class="keyword">return</span> page_html</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Retry</span><span class="params">(object)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, *, retry_times=<span class="number">3</span>,</span></span></span><br><span class="line"><span class="function"><span class="params">                 wait_secs=<span class="number">5</span>, errors=<span class="params">(Exception, )</span>)</span>:</span></span><br><span class="line">        self.retry_times = retry_times</span><br><span class="line">        self.wait_secs = wait_secs</span><br><span class="line">        self.errors = errors</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__call__</span><span class="params">(self, fn)</span>:</span></span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">wrapper</span><span class="params">(*args, **kwargs)</span>:</span></span><br><span class="line">            <span class="keyword">for</span> _ <span class="keyword">in</span> range(self.retry_times):</span><br><span class="line">                <span class="keyword">try</span>:</span><br><span class="line">                    <span class="keyword">return</span> fn(*args, **kwargs)</span><br><span class="line">                <span class="keyword">except</span> self.errors <span class="keyword">as</span> e:</span><br><span class="line">                    print(e)</span><br><span class="line">                    sleep((random() + <span class="number">1</span>) * self.wait_secs)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> wrapper</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Spider</span><span class="params">(object)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.status = SpiderStatus.IDLE</span><br><span class="line"></span><br><span class="line"><span class="meta">    @Retry()</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">fetch</span><span class="params">(self, current_url, *, charsets=<span class="params">(<span class="string">'utf-8'</span>, )</span>,</span></span></span><br><span class="line"><span class="function"><span class="params">              user_agent=None, proxies=None)</span>:</span></span><br><span class="line">        thread_name = current_thread().name</span><br><span class="line">        print(<span class="string">f'[<span class="subst">&#123;thread_name&#125;</span>]: <span class="subst">&#123;current_url&#125;</span>'</span>)</span><br><span class="line">        headers = &#123;<span class="string">'user-agent'</span>: user_agent&#125; <span class="keyword">if</span> user_agent <span class="keyword">else</span> &#123;&#125;</span><br><span class="line">        resp = requests.get(current_url,</span><br><span class="line">                            headers=headers, proxies=proxies)</span><br><span class="line">        <span class="keyword">return</span> decode_page(resp.content, charsets) \</span><br><span class="line">            <span class="keyword">if</span> resp.status_code == <span class="number">200</span> <span class="keyword">else</span> <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">parse</span><span class="params">(self, html_page, *, domain=<span class="string">'m.sohu.com'</span>)</span>:</span></span><br><span class="line">        soup = BeautifulSoup(html_page, <span class="string">'lxml'</span>)</span><br><span class="line">        <span class="keyword">for</span> a_tag <span class="keyword">in</span> soup.body.select(<span class="string">'a[href]'</span>):</span><br><span class="line">            parser = urlparse(a_tag.attrs[<span class="string">'href'</span>])</span><br><span class="line">            scheme = parser.scheme <span class="keyword">or</span> <span class="string">'http'</span></span><br><span class="line">            netloc = parser.netloc <span class="keyword">or</span> domain</span><br><span class="line">            <span class="keyword">if</span> scheme != <span class="string">'javascript'</span> <span class="keyword">and</span> netloc == domain:</span><br><span class="line">                path = parser.path</span><br><span class="line">                query = <span class="string">'?'</span> + parser.query <span class="keyword">if</span> parser.query <span class="keyword">else</span> <span class="string">''</span></span><br><span class="line">                full_url = <span class="string">f'<span class="subst">&#123;scheme&#125;</span>://<span class="subst">&#123;netloc&#125;</span><span class="subst">&#123;path&#125;</span><span class="subst">&#123;query&#125;</span>'</span></span><br><span class="line">                redis_client = thread_local.redis_client</span><br><span class="line">                <span class="keyword">if</span> <span class="keyword">not</span> redis_client.sismember(<span class="string">'visited_urls'</span>, full_url):</span><br><span class="line">                    redis_client.rpush(<span class="string">'m_sohu_task'</span>, full_url)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">extract</span><span class="params">(self, html_page)</span>:</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">store</span><span class="params">(self, data_dict)</span>:</span></span><br><span class="line">        <span class="comment"># redis_client = thread_local.redis_client</span></span><br><span class="line">        <span class="comment"># mongo_db = thread_local.mongo_db</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SpiderThread</span><span class="params">(Thread)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name, spider)</span>:</span></span><br><span class="line">        super().__init__(name=name, daemon=<span class="literal">True</span>)</span><br><span class="line">        self.spider = spider</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">run</span><span class="params">(self)</span>:</span></span><br><span class="line">        redis_client = redis.Redis(host=<span class="string">'1.2.3.4'</span>, port=<span class="number">6379</span>, password=<span class="string">'1qaz2wsx'</span>)</span><br><span class="line">        mongo_client = pymongo.MongoClient(host=<span class="string">'1.2.3.4'</span>, port=<span class="number">27017</span>)</span><br><span class="line">        thread_local.redis_client = redis_client</span><br><span class="line">        thread_local.mongo_db = mongo_client.msohu </span><br><span class="line">        <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">            current_url = redis_client.lpop(<span class="string">'m_sohu_task'</span>)</span><br><span class="line">            <span class="keyword">while</span> <span class="keyword">not</span> current_url:</span><br><span class="line">                current_url = redis_client.lpop(<span class="string">'m_sohu_task'</span>)</span><br><span class="line">            self.spider.status = SpiderStatus.WORKING</span><br><span class="line">            current_url = current_url.decode(<span class="string">'utf-8'</span>)</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> redis_client.sismember(<span class="string">'visited_urls'</span>, current_url):</span><br><span class="line">                redis_client.sadd(<span class="string">'visited_urls'</span>, current_url)</span><br><span class="line">                html_page = self.spider.fetch(current_url)</span><br><span class="line">                <span class="keyword">if</span> html_page <span class="keyword">not</span> <span class="keyword">in</span> [<span class="literal">None</span>, <span class="string">''</span>]:</span><br><span class="line">                    hasher = hasher_proto.copy()</span><br><span class="line">                    hasher.update(current_url.encode(<span class="string">'utf-8'</span>))</span><br><span class="line">                    doc_id = hasher.hexdigest()</span><br><span class="line">                    sohu_data_coll = mongo_client.msohu.webpages</span><br><span class="line">                    <span class="keyword">if</span> <span class="keyword">not</span> sohu_data_coll.find_one(&#123;<span class="string">'_id'</span>: doc_id&#125;):</span><br><span class="line">                        sohu_data_coll.insert_one(&#123;</span><br><span class="line">                            <span class="string">'_id'</span>: doc_id,</span><br><span class="line">                            <span class="string">'url'</span>: current_url,</span><br><span class="line">                            <span class="string">'page'</span>: Binary(zlib.compress(pickle.dumps(html_page)))</span><br><span class="line">                        &#125;)</span><br><span class="line">                    self.spider.parse(html_page)</span><br><span class="line">            self.spider.status = SpiderStatus.IDLE</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">is_any_alive</span><span class="params">(spider_threads)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> any([spider_thread.spider.status == SpiderStatus.WORKING</span><br><span class="line">                <span class="keyword">for</span> spider_thread <span class="keyword">in</span> spider_threads])</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">thread_local = local()</span><br><span class="line">hasher_proto = sha1()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    redis_client = redis.Redis(host=<span class="string">'1.2.3.4'</span>, port=<span class="number">6379</span>, password=<span class="string">'1qaz2wsx'</span>)</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> redis_client.exists(<span class="string">'m_sohu_task'</span>):</span><br><span class="line">        redis_client.rpush(<span class="string">'m_sohu_task'</span>, <span class="string">'http://m.sohu.com/'</span>)</span><br><span class="line"></span><br><span class="line">    spider_threads = [SpiderThread(<span class="string">'thread-%d'</span> % i, Spider())</span><br><span class="line">                      <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>)]</span><br><span class="line">    <span class="keyword">for</span> spider_thread <span class="keyword">in</span> spider_threads:</span><br><span class="line">        spider_thread.start()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> redis_client.exists(<span class="string">'m_sohu_task'</span>) <span class="keyword">or</span> is_any_alive(spider_threads):</span><br><span class="line">        sleep(<span class="number">5</span>)</span><br><span class="line"></span><br><span class="line">    print(<span class="string">'Over!'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.youngboy.vip/youngboy/2019/05/05/python/22/225/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="youngboy">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/youngboy/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="youngboy">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/youngboy/2019/05/05/python/22/225/" itemprop="url">05.解析动态内容</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-05T11:18:43+08:00">
+                2019-05-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/youngboy/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/youngboy/categories/python/Day66-75/" itemprop="url" rel="index">
+                    <span itemprop="name">Day66-75</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="解析动态内容"><a href="#解析动态内容" class="headerlink" title="解析动态内容"></a>解析动态内容</h2><p>根据权威机构发布的全球互联网可访问性审计报告，全球约有四分之三的网站其内容或部分内容是通过JavaScript动态生成的，这就意味着在浏览器窗口中“查看网页源代码”时无法在HTML代码中找到这些内容，也就是说我们之前用的抓取数据的方式无法正常运转了。解决这样的问题基本上有两种方案，一是JavaScript逆向工程；另一种是渲染JavaScript获得渲染后的内容。</p>
+<h3 id="JavaScript逆向工程"><a href="#JavaScript逆向工程" class="headerlink" title="JavaScript逆向工程"></a>JavaScript逆向工程</h3><p>下面我们以“360图片”网站为例，说明什么是JavaScript逆向工程。其实所谓的JavaScript逆向工程就是找到通过Ajax技术动态获取数据的接口。在浏览器中输入<a href="http://image.so.com/z?ch=beauty" target="_blank" rel="noopener">http://image.so.com/z?ch=beauty</a>就可以打开“360图片”的“美女”版块，如下图所示。</p>
+<p><img src="./res/image360-website.png" alt></p>
+<p>但是当我们在浏览器中通过右键菜单“显示网页源代码”的时候，居然惊奇的发现页面的HTML代码中连一个<code>&lt;img&gt;</code>标签都没有，那么我们看到的图片是怎么显示出来的呢？原来所有的图片都是通过JavaScript动态加载的，而在浏览器的“开发人员工具”的“网络”中可以找到获取这些图片数据的网络API接口，如下图所示。</p>
+<p><img src="./res/api-image360.png" alt></p>
+<p>那么结论就很简单了，只要我们找到了这些网络API接口，那么就能通过这些接口获取到数据，当然实际开发的时候可能还要对这些接口的参数以及接口返回的数据进行分析，了解每个参数的意义以及返回的JSON数据的格式，这样才能在我们的爬虫中使用这些数据。</p>
+<p>关于如何从网络API中获取JSON格式的数据并提取出我们需要的内容，在之前的<a href="../Day01-15/Day11/文件和异常.md">《文件和异常》</a>一文中已经讲解过了，这里不再进行赘述。</p>
+<h3 id="使用Selenium"><a href="#使用Selenium" class="headerlink" title="使用Selenium"></a>使用Selenium</h3><p>尽管很多网站对自己的网络API接口进行了保护，增加了获取数据的难度，但是只要经过足够的努力，绝大多数还是可以被逆向工程的，但是在实际开发中，我们可以通过浏览器渲染引擎来避免这些繁琐的工作，WebKit就是一个利用的渲染引擎。</p>
+<p>WebKit的代码始于1998年的KHTML项目，当时它是Konqueror浏览器的渲染引擎。2001年，苹果公司从这个项目的代码中衍生出了WebKit并应用于Safari浏览器，早期的Chrome浏览器也使用了该内核。在Python中，我们可以通过Qt框架获得WebKit引擎并使用它来渲染页面获得动态内容，关于这个内容请大家自行阅读<a href="http://python.jobbole.com/84600/" target="_blank" rel="noopener">《爬虫技术:动态页面抓取超级指南》</a>一文。</p>
+<p>如果没有打算用上面所说的方式来渲染页面并获得动态内容，其实还有一种替代方案就是使用自动化测试工具Selenium，它提供了浏览器自动化的API接口，这样就可以通过操控浏览器来获取动态内容。首先可以使用pip来安装Selenium。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 install selenium</span><br></pre></td></tr></table></figure>
+<p>下面以“阿里V任务”的“直播服务”为例，来演示如何使用Selenium获取到动态内容并抓取主播图片。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    resp = requests.get(<span class="string">'https://v.taobao.com/v/content/live?catetype=704&amp;from=taonvlang'</span>)</span><br><span class="line">    soup = BeautifulSoup(resp.text, <span class="string">'lxml'</span>)</span><br><span class="line">    <span class="keyword">for</span> img_tag <span class="keyword">in</span> soup.select(<span class="string">'img[src]'</span>):</span><br><span class="line">        print(img_tag.attrs[<span class="string">'src'</span>])</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+<p>运行上面的程序会发现没有任何的输出，因为页面的HTML代码上根本找不到<code>&lt;img&gt;</code>标签。接下来我们使用Selenium来获取到页面上的动态内容，再提取主播图片。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.common.keys <span class="keyword">import</span> Keys</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    driver = webdriver.Chrome()</span><br><span class="line">    driver.get(<span class="string">'https://v.taobao.com/v/content/live?catetype=704&amp;from=taonvlang'</span>)</span><br><span class="line">    soup = BeautifulSoup(driver.page_source, <span class="string">'lxml'</span>)</span><br><span class="line">    <span class="keyword">for</span> img_tag <span class="keyword">in</span> soup.body.select(<span class="string">'img[src]'</span>):</span><br><span class="line">        print(img_tag.attrs[<span class="string">'src'</span>])</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+<p>在上面的程序中，我们通过Selenium实现对Chrome浏览器的操控，如果要操控其他的浏览器，可以创对应的浏览器对象，例如Firefox、IE等。运行上面的程序，如果看到如下所示的错误提示，那是说明我们还没有将Chrome浏览器的驱动添加到PATH环境变量中，也没有在程序中指定Chrome浏览器驱动所在的位置。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">selenium.common.exceptions.WebDriverException: Message: 'chromedriver' executable needs to be in PATH. Please see https://sites.google.com/a/chromium.org/chromedriver/home</span><br></pre></td></tr></table></figure>
+<p>为了解决上面的问题，可以到Selenium的<a href="https://www.seleniumhq.org" target="_blank" rel="noopener">官方网站</a>找到浏览器驱动的下载链接并下载需要的驱动，在Linux或macOS系统下可以通过下面的命令来设置PATH环境变量，Windows下配置环境变量也非常简单，不清楚的可以自行了解。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export PATH=$PATH:/Users/Hao/Downloads/Tools/chromedriver/</span><br></pre></td></tr></table></figure>
+<p>其中<code>/Users/Hao/Downloads/Tools/chromedriver/</code>就是chromedriver所在的路径。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.youngboy.vip/youngboy/2019/05/05/python/22/226/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="youngboy">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/youngboy/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="youngboy">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/youngboy/2019/05/05/python/22/226/" itemprop="url">06.表单交互和验证码处理</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-05T11:18:43+08:00">
+                2019-05-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/youngboy/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/youngboy/categories/python/Day66-75/" itemprop="url" rel="index">
+                    <span itemprop="name">Day66-75</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="表单交互和验证码处理"><a href="#表单交互和验证码处理" class="headerlink" title="表单交互和验证码处理"></a>表单交互和验证码处理</h2><h3 id="提交表单"><a href="#提交表单" class="headerlink" title="提交表单"></a>提交表单</h3><h4 id="手动提交"><a href="#手动提交" class="headerlink" title="手动提交"></a>手动提交</h4><h4 id="自动提交"><a href="#自动提交" class="headerlink" title="自动提交"></a>自动提交</h4><h3 id="验证码处理"><a href="#验证码处理" class="headerlink" title="验证码处理"></a>验证码处理</h3><h4 id="加载验证码"><a href="#加载验证码" class="headerlink" title="加载验证码"></a>加载验证码</h4><h4 id="光学字符识别"><a href="#光学字符识别" class="headerlink" title="光学字符识别"></a>光学字符识别</h4><p>光学字符识别（OCR）是从图像中抽取文本的工具，可以应用于公安、电信、物流、金融等诸多行业，例如识别车牌，身份证扫描识别、名片信息提取等。在爬虫开发中，如果遭遇了有文字验证码的表单，就可以利用OCR来进行验证码处理。Tesseract-OCR引擎最初是由惠普公司开发的光学字符识别系统，目前发布在Github上，由Google赞助开发。</p>
+<p><img src="./res/tesseract.gif" alt></p>
+<h4 id="改善OCR"><a href="#改善OCR" class="headerlink" title="改善OCR"></a>改善OCR</h4><h4 id="处理更复杂的验证码"><a href="#处理更复杂的验证码" class="headerlink" title="处理更复杂的验证码"></a>处理更复杂的验证码</h4><p>很多网站为了分别出提供验证码的是人还是机器使用了更为复杂的验证码，例如拼图验证码、点触验证码、九宫格验证码等。关于这方面的知识，在崔庆才同学的<a href="http://www.ituring.com.cn/book/2003" target="_blank" rel="noopener">《Python 3网络爬虫开发实战》</a>有较为详细的讲解，有兴趣的可以购买阅读。</p>
+<h4 id="验证码处理服务"><a href="#验证码处理服务" class="headerlink" title="验证码处理服务"></a>验证码处理服务</h4>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.youngboy.vip/youngboy/2019/05/05/python/22/227/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="youngboy">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/youngboy/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="youngboy">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/youngboy/2019/05/05/python/22/227/" itemprop="url">07.Scrapy入门</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-05T11:18:43+08:00">
+                2019-05-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/youngboy/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/youngboy/categories/python/Day66-75/" itemprop="url" rel="index">
+                    <span itemprop="name">Day66-75</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Scrapy爬虫框架入门"><a href="#Scrapy爬虫框架入门" class="headerlink" title="Scrapy爬虫框架入门"></a>Scrapy爬虫框架入门</h2><h3 id="Scrapy概述"><a href="#Scrapy概述" class="headerlink" title="Scrapy概述"></a>Scrapy概述</h3><p>Scrapy是Python开发的一个非常流行的网络爬虫框架，可以用来抓取Web站点并从页面中提取结构化的数据，被广泛的用于数据挖掘、数据监测和自动化测试等领域。下图展示了Scrapy的基本架构，其中包含了主要组件和系统的数据处理流程（图中带数字的红色箭头）。</p>
+<p><img src="./res/scrapy-architecture.png" alt></p>
+<h4 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h4><ol>
+<li>Scrapy引擎（Engine）：Scrapy引擎是用来控制整个系统的数据处理流程。</li>
+<li>调度器（Scheduler）：调度器从Scrapy引擎接受请求并排序列入队列，并在Scrapy引擎发出请求后返还给它们。</li>
+<li>下载器（Downloader）：下载器的主要职责是抓取网页并将网页内容返还给蜘蛛（Spiders）。</li>
+<li>蜘蛛（Spiders）：蜘蛛是有Scrapy用户自定义的用来解析网页并抓取特定URL返回的内容的类，每个蜘蛛都能处理一个域名或一组域名，简单的说就是用来定义特定网站的抓取和解析规则。</li>
+<li>条目管道（Item Pipeline）：条目管道的主要责任是负责处理有蜘蛛从网页中抽取的数据条目，它的主要任务是清理、验证和存储数据。当页面被蜘蛛解析后，将被发送到条目管道，并经过几个特定的次序处理数据。每个条目管道组件都是一个Python类，它们获取了数据条目并执行对数据条目进行处理的方法，同时还需要确定是否需要在条目管道中继续执行下一步或是直接丢弃掉不处理。条目管道通常执行的任务有：清理HTML数据、验证解析到的数据（检查条目是否包含必要的字段）、检查是不是重复数据（如果重复就丢弃）、将解析到的数据存储到数据库（关系型数据库或NoSQL数据库）中。</li>
+<li>中间件（Middlewares）：中间件是介于Scrapy引擎和其他组件之间的一个钩子框架，主要是为了提供自定义的代码来拓展Scrapy的功能，包括下载器中间件和蜘蛛中间件。</li>
+</ol>
+<h4 id="数据处理流程"><a href="#数据处理流程" class="headerlink" title="数据处理流程"></a>数据处理流程</h4><p>Scrapy的整个数据处理流程由Scrapy引擎进行控制，通常的运转流程包括以下的步骤：</p>
+<ol>
+<li><p>引擎询问蜘蛛需要处理哪个网站，并让蜘蛛将第一个需要处理的URL交给它。</p>
+</li>
+<li><p>引擎让调度器将需要处理的URL放在队列中。</p>
+</li>
+<li><p>引擎从调度那获取接下来进行爬取的页面。</p>
+</li>
+<li><p>调度将下一个爬取的URL返回给引擎，引擎将它通过下载中间件发送到下载器。</p>
+</li>
+<li><p>当网页被下载器下载完成以后，响应内容通过下载中间件被发送到引擎；如果下载失败了，引擎会通知调度器记录这个URL，待会再重新下载。</p>
+</li>
+<li><p>引擎收到下载器的响应并将它通过蜘蛛中间件发送到蜘蛛进行处理。</p>
+</li>
+<li><p>蜘蛛处理响应并返回爬取到的数据条目，此外还要将需要跟进的新的URL发送给引擎。</p>
+</li>
+<li><p>引擎将抓取到的数据条目送入条目管道，把新的URL发送给调度器放入队列中。</p>
+</li>
+</ol>
+<p>上述操作中的2-8步会一直重复直到调度器中没有需要请求的URL，爬虫停止工作。</p>
+<h3 id="安装和使用Scrapy"><a href="#安装和使用Scrapy" class="headerlink" title="安装和使用Scrapy"></a>安装和使用Scrapy</h3><p>可以先创建虚拟环境并在虚拟环境下使用pip安装scrapy。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>项目的目录结构如下图所示。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">(venv) $ tree</span><br><span class="line">.</span><br><span class="line">|____ scrapy.cfg</span><br><span class="line">|____ douban</span><br><span class="line">| |____ spiders</span><br><span class="line">| | |____ __init__.py</span><br><span class="line">| | |____ __pycache__</span><br><span class="line">| |____ __init__.py</span><br><span class="line">| |____ __pycache__</span><br><span class="line">| |____ middlewares.py</span><br><span class="line">| |____ settings.py</span><br><span class="line">| |____ items.py</span><br><span class="line">| |____ pipelines.py</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>说明：Windows系统的命令行提示符下有tree命令，但是Linux和MacOS的终端是没有tree命令的，可以用下面给出的命令来定义tree命令，其实是对find命令进行了定制并别名为tree。 </p>
+<p><code>alias tree=&quot;find . -print | sed -e &#39;s;[^/]*/;|____;g;s;____|; |;g&#39;&quot;</code></p>
+<p>Linux系统也可以通过yum或其他的包管理工具来安装tree。</p>
+<p><code>yum install tree</code></p>
+</blockquote>
+<p>根据刚才描述的数据处理流程，基本上需要我们做的有以下几件事情：</p>
+<ol>
+<li><p>在items.py文件中定义字段，这些字段用来保存数据，方便后续的操作。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Define here the models for your scraped items</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># See documentation in:</span></span><br><span class="line"><span class="comment"># https://doc.scrapy.org/en/latest/topics/items.html</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> scrapy</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DoubanItem</span><span class="params">(scrapy.Item)</span>:</span></span><br><span class="line"></span><br><span class="line">    name = scrapy.Field()</span><br><span class="line">    year = scrapy.Field()</span><br><span class="line">    score = scrapy.Field()</span><br><span class="line">    director = scrapy.Field()</span><br><span class="line">    classification = scrapy.Field()</span><br><span class="line">    actor = scrapy.Field()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在spiders文件夹中编写自己的爬虫。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(venv) $ scrapy genspider movie movie.douban.com --template=crawl</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> scrapy</span><br><span class="line"><span class="keyword">from</span> scrapy.selector <span class="keyword">import</span> Selector</span><br><span class="line"><span class="keyword">from</span> scrapy.linkextractors <span class="keyword">import</span> LinkExtractor</span><br><span class="line"><span class="keyword">from</span> scrapy.spiders <span class="keyword">import</span> CrawlSpider, Rule</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> douban.items <span class="keyword">import</span> DoubanItem</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MovieSpider</span><span class="params">(CrawlSpider)</span>:</span></span><br><span class="line">    name = <span class="string">'movie'</span></span><br><span class="line">    allowed_domains = [<span class="string">'movie.douban.com'</span>]</span><br><span class="line">    start_urls = [<span class="string">'https://movie.douban.com/top250'</span>]</span><br><span class="line">    rules = (</span><br><span class="line">        Rule(LinkExtractor(allow=(<span class="string">r'https://movie.douban.com/top250\?start=\d+.*'</span>))),</span><br><span class="line">        Rule(LinkExtractor(allow=(<span class="string">r'https://movie.douban.com/subject/\d+'</span>)), callback=<span class="string">'parse_item'</span>),</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">parse_item</span><span class="params">(self, response)</span>:</span></span><br><span class="line">        sel = Selector(response)</span><br><span class="line">        item = DoubanItem()</span><br><span class="line">        item[<span class="string">'name'</span>]=sel.xpath(<span class="string">'//*[@id="content"]/h1/span[1]/text()'</span>).extract()</span><br><span class="line">        item[<span class="string">'year'</span>]=sel.xpath(<span class="string">'//*[@id="content"]/h1/span[2]/text()'</span>).re(<span class="string">r'\((\d+)\)'</span>)</span><br><span class="line">        item[<span class="string">'score'</span>]=sel.xpath(<span class="string">'//*[@id="interest_sectl"]/div/p[1]/strong/text()'</span>).extract()</span><br><span class="line">        item[<span class="string">'director'</span>]=sel.xpath(<span class="string">'//*[@id="info"]/span[1]/a/text()'</span>).extract()</span><br><span class="line">        item[<span class="string">'classification'</span>]= sel.xpath(<span class="string">'//span[@property="v:genre"]/text()'</span>).extract()</span><br><span class="line">        item[<span class="string">'actor'</span>]= sel.xpath(<span class="string">'//*[@id="info"]/span[3]/a[1]/text()'</span>).extract()</span><br><span class="line">        <span class="keyword">return</span> item</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>说明：上面我们通过Scrapy提供的爬虫模板创建了Spider，其中的rules中的LinkExtractor对象会自动完成对新的链接的解析，该对象中有一个名为extract_link的回调方法。Scrapy支持用XPath语法和CSS选择器进行数据解析，对应的方法分别是xpath和css，上面我们使用了XPath语法对页面进行解析，如果不熟悉XPath语法可以看看后面的补充说明。</p>
+</blockquote>
+<p>到这里，我们已经可以通过下面的命令让爬虫运转起来。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">(venv)$</span> scrapy crawl movie</span><br></pre></td></tr></table></figure>
+<p>可以在控制台看到爬取到的数据，如果想将这些数据保存到文件中，可以通过<code>-o</code>参数来指定文件名，Scrapy支持我们将爬取到的数据导出成JSON、CSV、XML、pickle、marshal等格式。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">(venv)$</span> scrapy crawl moive -o result.json</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在pipelines.py中完成对数据进行持久化的操作。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Define your item pipelines here</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Don't forget to add your pipeline to the ITEM_PIPELINES setting</span></span><br><span class="line"><span class="comment"># See: https://doc.scrapy.org/en/latest/topics/item-pipeline.html</span></span><br><span class="line"><span class="keyword">import</span> pymongo</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> scrapy.exceptions <span class="keyword">import</span> DropItem</span><br><span class="line"><span class="keyword">from</span> scrapy.conf <span class="keyword">import</span> settings</span><br><span class="line"><span class="keyword">from</span> scrapy <span class="keyword">import</span> log</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DoubanPipeline</span><span class="params">(object)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        connection = pymongo.MongoClient(settings[<span class="string">'MONGODB_SERVER'</span>], settings[<span class="string">'MONGODB_PORT'</span>])</span><br><span class="line">        db = connection[settings[<span class="string">'MONGODB_DB'</span>]]</span><br><span class="line">        self.collection = db[settings[<span class="string">'MONGODB_COLLECTION'</span>]]</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">process_item</span><span class="params">(self, item, spider)</span>:</span></span><br><span class="line">        <span class="comment">#Remove invalid data</span></span><br><span class="line">        valid = <span class="literal">True</span></span><br><span class="line">        <span class="keyword">for</span> data <span class="keyword">in</span> item:</span><br><span class="line">          <span class="keyword">if</span> <span class="keyword">not</span> data:</span><br><span class="line">            valid = <span class="literal">False</span></span><br><span class="line">            <span class="keyword">raise</span> DropItem(<span class="string">"Missing %s of blogpost from %s"</span> %(data, item[<span class="string">'url'</span>]))</span><br><span class="line">        <span class="keyword">if</span> valid:</span><br><span class="line">        <span class="comment">#Insert data into database</span></span><br><span class="line">            new_moive=[&#123;</span><br><span class="line">                <span class="string">"name"</span>:item[<span class="string">'name'</span>][<span class="number">0</span>],</span><br><span class="line">                <span class="string">"year"</span>:item[<span class="string">'year'</span>][<span class="number">0</span>],</span><br><span class="line">                <span class="string">"score"</span>:item[<span class="string">'score'</span>],</span><br><span class="line">                <span class="string">"director"</span>:item[<span class="string">'director'</span>],</span><br><span class="line">                <span class="string">"classification"</span>:item[<span class="string">'classification'</span>],</span><br><span class="line">                <span class="string">"actor"</span>:item[<span class="string">'actor'</span>]</span><br><span class="line">            &#125;]</span><br><span class="line">            self.collection.insert(new_moive)</span><br><span class="line">            log.msg(<span class="string">"Item wrote to MongoDB database %s/%s"</span> %</span><br><span class="line">            (settings[<span class="string">'MONGODB_DB'</span>], settings[<span class="string">'MONGODB_COLLECTION'</span>]),</span><br><span class="line">            level=log.DEBUG, spider=spider) </span><br><span class="line">        <span class="keyword">return</span> item</span><br></pre></td></tr></table></figure>
+<p>利用Pipeline我们可以完成以下操作：</p>
+<ul>
+<li>清理HTML数据，验证爬取的数据。</li>
+<li>丢弃重复的不必要的内容。</li>
+<li>将爬取的结果进行持久化操作。</li>
+</ul>
+</li>
+<li><p>修改settings.py文件对项目进行配置。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Scrapy settings for douban project</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># For simplicity, this file contains only settings considered important or</span></span><br><span class="line"><span class="comment"># commonly used. You can find more settings consulting the documentation:</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#     https://doc.scrapy.org/en/latest/topics/settings.html</span></span><br><span class="line"><span class="comment">#     https://doc.scrapy.org/en/latest/topics/downloader-middleware.html</span></span><br><span class="line"><span class="comment">#     https://doc.scrapy.org/en/latest/topics/spider-middleware.html</span></span><br><span class="line"></span><br><span class="line">BOT_NAME = <span class="string">'douban'</span></span><br><span class="line"></span><br><span class="line">SPIDER_MODULES = [<span class="string">'douban.spiders'</span>]</span><br><span class="line">NEWSPIDER_MODULE = <span class="string">'douban.spiders'</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Crawl responsibly by identifying yourself (and your website) on the user-agent</span></span><br><span class="line">USER_AGENT = <span class="string">'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_3) AppleWebKit/536.5 (KHTML, like Gecko) Chrome/19.0.1084.54 Safari/536.5'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Obey robots.txt rules</span></span><br><span class="line">ROBOTSTXT_OBEY = <span class="literal">True</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Configure maximum concurrent requests performed by Scrapy (default: 16)</span></span><br><span class="line"><span class="comment"># CONCURRENT_REQUESTS = 32</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Configure a delay for requests for the same website (default: 0)</span></span><br><span class="line"><span class="comment"># See https://doc.scrapy.org/en/latest/topics/settings.html#download-delay</span></span><br><span class="line"><span class="comment"># See also autothrottle settings and docs</span></span><br><span class="line">DOWNLOAD_DELAY = <span class="number">3</span></span><br><span class="line">RANDOMIZE_DOWNLOAD_DELAY = <span class="literal">True</span></span><br><span class="line"><span class="comment"># The download delay setting will honor only one of:</span></span><br><span class="line"><span class="comment"># CONCURRENT_REQUESTS_PER_DOMAIN = 16</span></span><br><span class="line"><span class="comment"># CONCURRENT_REQUESTS_PER_IP = 16</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Disable cookies (enabled by default)</span></span><br><span class="line">COOKIES_ENABLED = <span class="literal">True</span></span><br><span class="line"></span><br><span class="line">MONGODB_SERVER = <span class="string">'120.77.222.217'</span></span><br><span class="line">MONGODB_PORT = <span class="number">27017</span></span><br><span class="line">MONGODB_DB = <span class="string">'douban'</span></span><br><span class="line">MONGODB_COLLECTION = <span class="string">'movie'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Disable Telnet Console (enabled by default)</span></span><br><span class="line"><span class="comment"># TELNETCONSOLE_ENABLED = False</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Override the default request headers:</span></span><br><span class="line"><span class="comment"># DEFAULT_REQUEST_HEADERS = &#123;</span></span><br><span class="line"><span class="comment">#   'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',</span></span><br><span class="line"><span class="comment">#   'Accept-Language': 'en',</span></span><br><span class="line"><span class="comment"># &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Enable or disable spider middlewares</span></span><br><span class="line"><span class="comment"># See https://doc.scrapy.org/en/latest/topics/spider-middleware.html</span></span><br><span class="line"><span class="comment"># SPIDER_MIDDLEWARES = &#123;</span></span><br><span class="line"><span class="comment">#    'douban.middlewares.DoubanSpiderMiddleware': 543,</span></span><br><span class="line"><span class="comment"># &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Enable or disable downloader middlewares</span></span><br><span class="line"><span class="comment"># See https://doc.scrapy.org/en/latest/topics/downloader-middleware.html</span></span><br><span class="line"><span class="comment"># DOWNLOADER_MIDDLEWARES = &#123;</span></span><br><span class="line"><span class="comment">#    'douban.middlewares.DoubanDownloaderMiddleware': 543,</span></span><br><span class="line"><span class="comment"># &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Enable or disable extensions</span></span><br><span class="line"><span class="comment"># See https://doc.scrapy.org/en/latest/topics/extensions.html</span></span><br><span class="line"><span class="comment"># EXTENSIONS = &#123;</span></span><br><span class="line"><span class="comment">#    'scrapy.extensions.telnet.TelnetConsole': None,</span></span><br><span class="line"><span class="comment"># &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Configure item pipelines</span></span><br><span class="line"><span class="comment"># See https://doc.scrapy.org/en/latest/topics/item-pipeline.html</span></span><br><span class="line">ITEM_PIPELINES = &#123;</span><br><span class="line">    <span class="string">'douban.pipelines.DoubanPipeline'</span>: <span class="number">400</span>,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">LOG_LEVEL = <span class="string">'DEBUG'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Enable and configure the AutoThrottle extension (disabled by default)</span></span><br><span class="line"><span class="comment"># See https://doc.scrapy.org/en/latest/topics/autothrottle.html</span></span><br><span class="line"><span class="comment">#AUTOTHROTTLE_ENABLED = True</span></span><br><span class="line"><span class="comment"># The initial download delay</span></span><br><span class="line"><span class="comment">#AUTOTHROTTLE_START_DELAY = 5</span></span><br><span class="line"><span class="comment"># The maximum download delay to be set in case of high latencies</span></span><br><span class="line"><span class="comment">#AUTOTHROTTLE_MAX_DELAY = 60</span></span><br><span class="line"><span class="comment"># The average number of requests Scrapy should be sending in parallel to</span></span><br><span class="line"><span class="comment"># each remote server</span></span><br><span class="line"><span class="comment">#AUTOTHROTTLE_TARGET_CONCURRENCY = 1.0</span></span><br><span class="line"><span class="comment"># Enable showing throttling stats for every response received:</span></span><br><span class="line"><span class="comment">#AUTOTHROTTLE_DEBUG = False</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Enable and configure HTTP caching (disabled by default)</span></span><br><span class="line"><span class="comment"># See https://doc.scrapy.org/en/latest/topics/downloader-middleware.html#httpcache-middleware-settings</span></span><br><span class="line">HTTPCACHE_ENABLED = <span class="literal">True</span></span><br><span class="line">HTTPCACHE_EXPIRATION_SECS = <span class="number">0</span></span><br><span class="line">HTTPCACHE_DIR = <span class="string">'httpcache'</span></span><br><span class="line">HTTPCACHE_IGNORE_HTTP_CODES = []</span><br><span class="line">HTTPCACHE_STORAGE = <span class="string">'scrapy.extensions.httpcache.FilesystemCacheStorage'</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h3><h4 id="XPath语法"><a href="#XPath语法" class="headerlink" title="XPath语法"></a>XPath语法</h4><ol>
+<li><p>XPath路径表达式：XPath使用路径表达式来选取XML文档中的节点或者节点集。</p>
+</li>
+<li><p>XPath节点：元素、属性、文本、命名空间、处理指令、注释、根节点。</p>
+</li>
+<li><p>XPath语法。（注：下面的例子来自于<a href="http://www.runoob.com/" target="_blank" rel="noopener">菜鸟教程</a>网站的<a href="http://www.runoob.com/xpath/xpath-syntax.html" target="_blank" rel="noopener">XPath教程</a>。)</p>
+<p>XML文件。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">bookstore</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">book</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">title</span> <span class="attr">lang</span>=<span class="string">"eng"</span>&gt;</span>Harry Potter<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">price</span>&gt;</span>29.99<span class="tag">&lt;/<span class="name">price</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">book</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">book</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">title</span> <span class="attr">lang</span>=<span class="string">"eng"</span>&gt;</span>Learning XML<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">price</span>&gt;</span>39.95<span class="tag">&lt;/<span class="name">price</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">book</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">bookstore</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>XPath语法。</p>
+<p>| 路径表达式      | 结果                                                         |<br>| ————— | ———————————————————— |<br>| bookstore       | 选取 bookstore 元素的所有子节点。                            |<br>| /bookstore      | 选取根元素 bookstore。注释：假如路径起始于正斜杠( / )，则此路径始终代表到某元素的绝对路径！ |<br>| bookstore/book  | 选取属于 bookstore 的子元素的所有 book 元素。                |<br>| //book          | 选取所有 book 子元素，而不管它们在文档中的位置。             |<br>| bookstore//book | 选择属于 bookstore 元素的后代的所有 book 元素，而不管它们位于 bookstore 之下的什么位置。 |<br>| //@lang         | 选取名为 lang 的所有属性。                                   |</p>
+<p>XPath谓词。</p>
+<p>| 路径表达式                         | 结果                                                         |<br>| ———————————- | ———————————————————— |<br>| /bookstore/book[1]                 | 选取属于 bookstore 子元素的第一个 book 元素。                |<br>| /bookstore/book[last()]            | 选取属于 bookstore 子元素的最后一个 book 元素。              |<br>| /bookstore/book[last()-1]          | 选取属于 bookstore 子元素的倒数第二个 book 元素。            |<br>| /bookstore/book[position()&lt;3]      | 选取最前面的两个属于 bookstore 元素的子元素的 book 元素。    |<br>| //title[@lang]                     | 选取所有拥有名为 lang 的属性的 title 元素。                  |<br>| //title[@lang=’eng’]               | 选取所有 title 元素，且这些元素拥有值为 eng 的 lang 属性。   |<br>| /bookstore/book[price&gt;35.00]       | 选取 bookstore 元素的所有 book 元素，且其中的 price 元素的值须大于 35.00。 |<br>| /bookstore/book[price&gt;35.00]/title | 选取 bookstore 元素中的 book 元素的所有 title 元素，且其中的 price 元素的值须大于 35.00。 |</p>
+<p>通配符用法。</p>
+<p>| 路径表达式   | 结果                              |<br>| ———— | ——————————— |<br>| /bookstore/<em> | 选取 bookstore 元素的所有子元素。 |<br>| //</em>          | 选取文档中的所有元素。            |<br>| //title[@*]  | 选取所有带有属性的 title 元素。   |</p>
+<p>选取多个路径。</p>
+<p>| 路径表达式                       | 结果                                                         |<br>| ——————————– | ———————————————————— |<br>| //book/title | //book/price     | 选取 book 元素的所有 title 和 price 元素。                   |<br>| //title | //price               | 选取文档中的所有 title 和 price 元素。                       |<br>| /bookstore/book/title | //price | 选取属于 bookstore 元素的 book 元素的所有 title 元素，以及文档中所有的 price 元素。 |</p>
+</li>
+</ol>
+<h4 id="在Chrome浏览器中查看元素XPath语法"><a href="#在Chrome浏览器中查看元素XPath语法" class="headerlink" title="在Chrome浏览器中查看元素XPath语法"></a>在Chrome浏览器中查看元素XPath语法</h4><p><img src="./res/douban-xpath.png" alt></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.youngboy.vip/youngboy/2019/05/05/python/22/228/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="youngboy">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/youngboy/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="youngboy">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/youngboy/2019/05/05/python/22/228/" itemprop="url">08.Scrapy高级应用</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-05T11:18:43+08:00">
+                2019-05-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/youngboy/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/youngboy/categories/python/Day66-75/" itemprop="url" rel="index">
+                    <span itemprop="name">Day66-75</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Scrapy爬虫框架高级应用"><a href="#Scrapy爬虫框架高级应用" class="headerlink" title="Scrapy爬虫框架高级应用"></a>Scrapy爬虫框架高级应用</h2><h3 id="Spider的用法"><a href="#Spider的用法" class="headerlink" title="Spider的用法"></a>Spider的用法</h3><p>在Scrapy框架中，我们自定义的蜘蛛都继承自scrapy.spiders.Spider，这个类有一系列的属性和方法，具体如下所示：</p>
+<ol>
+<li>name：爬虫的名字。</li>
+<li>allowed_domains：允许爬取的域名，不在此范围的链接不会被跟进爬取。</li>
+<li>start_urls：起始URL列表，当我们没有重写start_requests()方法时，就会从这个列表开始爬取。</li>
+<li>custom_settings：用来存放蜘蛛专属配置的字典，这里的设置会覆盖全局的设置。</li>
+<li>crawler：由from_crawler()方法设置的和蜘蛛对应的Crawler对象，Crawler对象包含了很多项目组件，利用它我们可以获取项目的配置信息，如调用crawler.settings.get()方法。</li>
+<li>settings：用来获取爬虫全局设置的变量。</li>
+<li>start_requests()：此方法用于生成初始请求，它返回一个可迭代对象。该方法默认是使用GET请求访问起始URL，如果起始URL需要使用POST请求来访问就必须重写这个方法。</li>
+<li>parse()：当Response没有指定回调函数时，该方法就会被调用，它负责处理Response对象并返回结果，从中提取出需要的数据和后续的请求，该方法需要返回类型为Request或Item的可迭代对象（生成器当前也包含在其中，因此根据实际需要可以用return或yield来产生返回值）。</li>
+<li>closed()：当蜘蛛关闭时，该方法会被调用，通常用来做一些释放资源的善后操作。</li>
+</ol>
+<h3 id="中间件的应用"><a href="#中间件的应用" class="headerlink" title="中间件的应用"></a>中间件的应用</h3><h4 id="下载中间件"><a href="#下载中间件" class="headerlink" title="下载中间件"></a>下载中间件</h4><h4 id="蜘蛛中间件"><a href="#蜘蛛中间件" class="headerlink" title="蜘蛛中间件"></a>蜘蛛中间件</h4><h3 id="Scrapy对接Selenium"><a href="#Scrapy对接Selenium" class="headerlink" title="Scrapy对接Selenium"></a>Scrapy对接Selenium</h3><h3 id="Scrapy部署到Docker"><a href="#Scrapy部署到Docker" class="headerlink" title="Scrapy部署到Docker"></a>Scrapy部署到Docker</h3>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.youngboy.vip/youngboy/2019/05/05/python/22/229/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="youngboy">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/youngboy/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="youngboy">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/youngboy/2019/05/05/python/22/229/" itemprop="url">09.Scrapy分布式实现</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-05T11:18:43+08:00">
+                2019-05-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/youngboy/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/youngboy/categories/python/Day66-75/" itemprop="url" rel="index">
+                    <span itemprop="name">Day66-75</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Scrapy爬虫框架分布式实现"><a href="#Scrapy爬虫框架分布式实现" class="headerlink" title="Scrapy爬虫框架分布式实现"></a>Scrapy爬虫框架分布式实现</h2><h3 id="分布式爬虫原理"><a href="#分布式爬虫原理" class="headerlink" title="分布式爬虫原理"></a>分布式爬虫原理</h3><h3 id="Scrapy分布式实现"><a href="#Scrapy分布式实现" class="headerlink" title="Scrapy分布式实现"></a>Scrapy分布式实现</h3><ol>
+<li>安装Scrapy-Redis。</li>
+<li>配置Redis服务器。</li>
+<li>修改配置文件。<ul>
+<li>SCHEDULER = ‘scrapy_redis.scheduler.Scheduler’</li>
+<li>DUPEFILTER_CLASS = ‘scrapy_redis.dupefilter.RFPDupeFilter’</li>
+<li>REDIS_HOST = ‘1.2.3.4’</li>
+<li>REDIS_PORT = 6379</li>
+<li>REDIS_PASSWORD = ‘1qaz2wsx’</li>
+<li>SCHEDULER_QUEUE_CLASS = ‘scrapy_redis.queue.FifoQueue’</li>
+<li>SCHEDULER_PERSIST = True（通过持久化支持接续爬取）</li>
+<li>SCHEDULER_FLUSH_ON_START = True（每次启动时重新爬取）</li>
+</ul>
+</li>
+</ol>
+<h3 id="Scrapyd分布式部署"><a href="#Scrapyd分布式部署" class="headerlink" title="Scrapyd分布式部署"></a>Scrapyd分布式部署</h3><ol>
+<li>安装Scrapyd</li>
+<li>修改配置文件<ul>
+<li>mkdir /etc/scrapyd</li>
+<li>vim /etc/scrapyd/scrapyd.conf</li>
+</ul>
+</li>
+<li>安装Scrapyd-Client<ul>
+<li>将项目打包成Egg文件。</li>
+<li>将打包的Egg文件通过addversion.json接口部署到Scrapyd上。</li>
+</ul>
+</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.youngboy.vip/youngboy/2019/05/05/python/22/2411/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="youngboy">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/youngboy/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="youngboy">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/youngboy/2019/05/05/python/22/2411/" itemprop="url">常见反爬策略及应对方案</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-05T11:18:43+08:00">
+                2019-05-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/youngboy/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/youngboy/categories/python/Day66-75/" itemprop="url" rel="index">
+                    <span itemprop="name">Day66-75</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="常见反爬策略及应对方案"><a href="#常见反爬策略及应对方案" class="headerlink" title="常见反爬策略及应对方案"></a>常见反爬策略及应对方案</h2><ol>
+<li><p>构造合理的HTTP请求头。</p>
+<ul>
+<li><p>Accept</p>
+</li>
+<li><p>User-Agent - 三方库fake-useragent</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> fake_useragent <span class="keyword">import</span> UserAgent</span><br><span class="line">ua = UserAgent()</span><br><span class="line"></span><br><span class="line">ua.ie</span><br><span class="line"><span class="comment"># Mozilla/5.0 (Windows; U; MSIE 9.0; Windows NT 9.0; en-US);</span></span><br><span class="line">ua.msie</span><br><span class="line"><span class="comment"># Mozilla/5.0 (compatible; MSIE 10.0; Macintosh; Intel Mac OS X 10_7_3; Trident/6.0)'</span></span><br><span class="line">ua[<span class="string">'Internet Explorer'</span>]</span><br><span class="line"><span class="comment"># Mozilla/5.0 (compatible; MSIE 8.0; Windows NT 6.1; Trident/4.0; GTB7.4; InfoPath.2; SV1; .NET CLR 3.3.69573; WOW64; en-US)</span></span><br><span class="line">ua.opera</span><br><span class="line"><span class="comment"># Opera/9.80 (X11; Linux i686; U; ru) Presto/2.8.131 Version/11.11</span></span><br><span class="line">ua.chrome</span><br><span class="line"><span class="comment"># Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.2 (KHTML, like Gecko) Chrome/22.0.1216.0 Safari/537.2'</span></span><br><span class="line">ua.google</span><br><span class="line"><span class="comment"># Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_4) AppleWebKit/537.13 (KHTML, like Gecko) Chrome/24.0.1290.1 Safari/537.13</span></span><br><span class="line">ua[<span class="string">'google chrome'</span>]</span><br><span class="line"><span class="comment"># Mozilla/5.0 (X11; CrOS i686 2268.111.0) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.57 Safari/536.11</span></span><br><span class="line">ua.firefox</span><br><span class="line"><span class="comment"># Mozilla/5.0 (Windows NT 6.2; Win64; x64; rv:16.0.1) Gecko/20121011 Firefox/16.0.1</span></span><br><span class="line">ua.ff</span><br><span class="line"><span class="comment"># Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:15.0) Gecko/20100101 Firefox/15.0.1</span></span><br><span class="line">ua.safari</span><br><span class="line"><span class="comment"># Mozilla/5.0 (iPad; CPU OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Version/6.0 Mobile/10A5355d Safari/8536.25</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># and the best one, random via real world browser usage statistic</span></span><br><span class="line">ua.random</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Referer</p>
+</li>
+<li><p>Accept-Encoding</p>
+</li>
+<li><p>Accept-Language</p>
+</li>
+</ul>
+</li>
+<li>检查网站生成的Cookie。<ul>
+<li>有用的插件：<a href="http://www.editthiscookie.com/" target="_blank" rel="noopener">EditThisCookie</a></li>
+<li>如何处理脚本动态生成的Cookie</li>
+</ul>
+</li>
+<li>抓取动态内容。<ul>
+<li>Selenium + WebDriver</li>
+<li>Chrome / Firefox - Driver</li>
+</ul>
+</li>
+<li>限制爬取的速度。</li>
+<li>处理表单中的隐藏域。<ul>
+<li>在读取到隐藏域之前不要提交表单</li>
+<li>用RoboBrowser这样的工具辅助提交表单</li>
+</ul>
+</li>
+<li><p>处理表单中的验证码。</p>
+<ul>
+<li><p>OCR（Tesseract） - 商业项目一般不考虑 </p>
+</li>
+<li><p>专业识别平台 - 超级鹰 / 云打码</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> hashlib <span class="keyword">import</span> md5</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ChaoClient</span><span class="params">(object)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, username, password, soft_id)</span>:</span></span><br><span class="line">        self.username = username</span><br><span class="line">        password =  password.encode(<span class="string">'utf-8'</span>)</span><br><span class="line">        self.password = md5(password).hexdigest()</span><br><span class="line">        self.soft_id = soft_id</span><br><span class="line">        self.base_params = &#123;</span><br><span class="line">            <span class="string">'user'</span>: self.username,</span><br><span class="line">            <span class="string">'pass2'</span>: self.password,</span><br><span class="line">            <span class="string">'softid'</span>: self.soft_id,</span><br><span class="line">        &#125;</span><br><span class="line">        self.headers = &#123;</span><br><span class="line">            <span class="string">'Connection'</span>: <span class="string">'Keep-Alive'</span>,</span><br><span class="line">            <span class="string">'User-Agent'</span>: <span class="string">'Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.1; Trident/4.0)'</span>,</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">post_pic</span><span class="params">(self, im, codetype)</span>:</span></span><br><span class="line">        params = &#123;</span><br><span class="line">            <span class="string">'codetype'</span>: codetype,</span><br><span class="line">        &#125;</span><br><span class="line">        params.update(self.base_params)</span><br><span class="line">        files = &#123;<span class="string">'userfile'</span>: (<span class="string">'captcha.jpg'</span>, im)&#125;</span><br><span class="line">        r = requests.post(<span class="string">'http://upload.chaojiying.net/Upload/Processing.php'</span>, data=params, files=files, headers=self.headers)</span><br><span class="line">        <span class="keyword">return</span> r.json()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    client = ChaoClient(<span class="string">'用户名'</span>, <span class="string">'密码'</span>, <span class="string">'软件ID'</span>)</span><br><span class="line">    <span class="keyword">with</span> open(<span class="string">'captcha.jpg'</span>, <span class="string">'rb'</span>) <span class="keyword">as</span> file:                                                </span><br><span class="line">        print(client.post_pic(file, <span class="number">1902</span>))</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>绕开“陷阱”。</p>
+<ul>
+<li>网页上有诱使爬虫爬取的爬取的隐藏链接（陷阱或蜜罐）</li>
+<li>通过Selenium+WebDriver+Chrome判断链接是否可见或在可视区域</li>
+</ul>
+</li>
+<li><p>隐藏身份。</p>
+<ul>
+<li><p>代理服务 -  快代理 / 讯代理 / 芝麻代理 / 蘑菇代理 / 云代理</p>
+<p><a href="https://cuiqingcai.com/5094.html" target="_blank" rel="noopener">《爬虫代理哪家强？十大付费代理详细对比评测出炉！》</a></p>
+</li>
+<li><p>洋葱路由 - 国内需要翻墙才能使用</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">yum -y install tor</span><br><span class="line">useradd admin -d /home/admin</span><br><span class="line">passwd admin</span><br><span class="line">chown -R admin:admin /home/admin</span><br><span class="line">chown -R admin:admin /var/run/tor</span><br><span class="line">tor</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.youngboy.vip/youngboy/2019/05/05/3/417/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="youngboy">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/youngboy/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="youngboy">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/youngboy/2019/05/05/3/417/" itemprop="url">这几道Java集合框架面试题几乎必问</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-05T11:18:43+08:00">
+                2019-05-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/youngboy/categories/Java相关/" itemprop="url" rel="index">
+                    <span itemprop="name">Java相关</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <!-- MarkdownTOC -->
+<ul>
+<li><a href="#arraylist-与-linkedlist-异同">Arraylist 与 LinkedList 异同</a><ul>
+<li><a href="#补充：数据结构基础之双向链表">补充：数据结构基础之双向链表</a></li>
+</ul>
+</li>
+<li><a href="#arraylist-与-vector-区别">ArrayList 与 Vector 区别</a></li>
+<li><a href="#hashmap的底层实现">HashMap的底层实现</a><ul>
+<li><a href="#jdk18之前">JDK1.8之前</a></li>
+<li><a href="#jdk18之后">JDK1.8之后</a></li>
+</ul>
+</li>
+<li><a href="#hashmap-和-hashtable-的区别">HashMap 和 Hashtable 的区别</a></li>
+<li><a href="#hashmap-的长度为什么是2的幂次方">HashMap 的长度为什么是2的幂次方</a></li>
+<li><a href="#hashmap-多线程操作导致死循环问题">HashMap 多线程操作导致死循环问题</a></li>
+<li><a href="#hashset-和-hashmap-区别">HashSet 和 HashMap 区别</a></li>
+<li><a href="#concurrenthashmap-和-hashtable-的区别">ConcurrentHashMap 和 Hashtable 的区别</a></li>
+<li><a href="#concurrenthashmap线程安全的具体实现方式底层具体实现">ConcurrentHashMap线程安全的具体实现方式/底层具体实现</a><ul>
+<li><a href="#jdk17（上面有示意图）">JDK1.7（上面有示意图）</a></li>
+<li><a href="#jdk18-（上面有示意图）">JDK1.8 （上面有示意图）</a></li>
+</ul>
+</li>
+<li><a href="#集合框架底层数据结构总结">集合框架底层数据结构总结</a><ul>
+<li><a href="#collection">Collection</a><ul>
+<li><a href="#1-list">1. List</a></li>
+<li><a href="#2-set">2. Set</a></li>
+</ul>
+</li>
+<li><a href="#map">Map</a></li>
+<li><a href="#推荐阅读：">推荐阅读：</a></li>
+</ul>
+</li>
+</ul>
+<!-- /MarkdownTOC -->
+<h2 id="Arraylist-与-LinkedList-异同"><a href="#Arraylist-与-LinkedList-异同" class="headerlink" title="Arraylist 与 LinkedList 异同"></a>Arraylist 与 LinkedList 异同</h2><ul>
+<li><strong>1. 是否保证线程安全：</strong> ArrayList 和 LinkedList 都是不同步的，也就是不保证线程安全；</li>
+<li><strong>2. 底层数据结构：</strong> Arraylist 底层使用的是Object数组；LinkedList 底层使用的是双向链表数据结构（JDK1.6之前为循环链表，JDK1.7取消了循环。注意双向链表和双向循环链表的区别：）； 详细可阅读<a href="https://www.cnblogs.com/xingele0917/p/3696593.html" target="_blank" rel="noopener">JDK1.7-LinkedList循环链表优化</a></li>
+<li><strong>3. 插入和删除是否受元素位置的影响：</strong> ① <strong>ArrayList 采用数组存储，所以插入和删除元素的时间复杂度受元素位置的影响。</strong> 比如：执行<code>add(E e)</code>方法的时候， ArrayList 会默认在将指定的元素追加到此列表的末尾，这种情况时间复杂度就是O(1)。但是如果要在指定位置 i 插入和删除元素的话（<code>add(int index, E element)</code>）时间复杂度就为 O(n-i)。因为在进行上述操作的时候集合中第 i 和第 i 个元素之后的(n-i)个元素都要执行向后位/向前移一位的操作。 ② <strong>LinkedList 采用链表存储，所以插入，删除元素时间复杂度不受元素位置的影响，都是近似 O（1）而数组为近似 O（n）。</strong></li>
+<li><strong>4. 是否支持快速随机访问：</strong> LinkedList 不支持高效的随机元素访问，而 ArrayList 支持。快速随机访问就是通过元素的序号快速获取元素对象(对应于<code>get(int index)</code>方法)。</li>
+<li><strong>5. 内存空间占用：</strong> ArrayList的空 间浪费主要体现在在list列表的结尾会预留一定的容量空间，而LinkedList的空间花费则体现在它的每一个元素都需要消耗比ArrayList更多的空间（因为要存放直接后继和直接前驱以及数据）。 </li>
+</ul>
+<p><strong>补充内容:RandomAccess接口</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">RandomAccess</span> </span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>查看源码我们发现实际上 RandomAccess 接口中什么都没有定义。所以，在我看来 RandomAccess 接口不过是一个标识罢了。标识什么？ 标识实现这个接口的类具有随机访问功能。</p>
+<p>在binarySearch（）方法中，它要判断传入的list 是否RamdomAccess的实例，如果是，调用indexedBinarySearch（）方法，如果不是，那么调用iteratorBinarySearch（）方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">binarySearch</span><span class="params">(List&lt;? extends Comparable&lt;? <span class="keyword">super</span> T&gt;&gt; list, T key)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (list <span class="keyword">instanceof</span> RandomAccess || list.size()&lt;BINARYSEARCH_THRESHOLD)</span><br><span class="line">        <span class="keyword">return</span> Collections.indexedBinarySearch(list, key);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">return</span> Collections.iteratorBinarySearch(list, key);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>ArraysList 实现了 RandomAccess 接口， 而 LinkedList 没有实现。为什么呢？我觉得还是和底层数据结构有关！ArraysList 底层是数组，而 LinkedList 底层是链表。数组天然支持随机访问，时间复杂度为 O（1），所以称为快速随机访问。链表需要遍历到特定位置才能访问特定位置的元素，时间复杂度为 O（n），所以不支持快速随机访问。，ArraysList 实现了 RandomAccess 接口，就表明了他具有快速随机访问功能。 RandomAccess 接口只是标识，并不是说 ArraysList 实现 RandomAccess 接口才具有快速随机访问功能的！</p>
+<p><strong>下面再总结一下 list 的遍历方式选择：</strong></p>
+<ul>
+<li>实现了RadmoAcces接口的list，优先选择普通for循环 ，其次foreach,</li>
+<li>未实现RadmoAcces接口的ist， 优先选择iterator遍历（foreach遍历底层也是通过iterator实现的），大size的数据，千万不要使用普通for循环</li>
+</ul>
+<h3 id="补充：数据结构基础之双向链表"><a href="#补充：数据结构基础之双向链表" class="headerlink" title="补充：数据结构基础之双向链表"></a>补充：数据结构基础之双向链表</h3><p>双向链表也叫双链表，是链表的一种，它的每个数据结点中都有两个指针，分别指向直接后继和直接前驱。所以，从双向链表中的任意一个结点开始，都可以很方便地访问它的前驱结点和后继结点。一般我们都构造双向循环链表，如下图所示，同时下图也是LinkedList 底层使用的是双向循环链表数据结构。</p>
+<p><img src="http://my-blog-to-use.oss-cn-beijing.aliyuncs.com/18-8-21/88766727.jpg" alt></p>
+<h2 id="ArrayList-与-Vector-区别"><a href="#ArrayList-与-Vector-区别" class="headerlink" title="ArrayList 与 Vector 区别"></a>ArrayList 与 Vector 区别</h2><p> Vector类的所有方法都是同步的。可以由两个线程安全地访问一个Vector对象、但是一个线程访问Vector的话代码要在同步操作上耗费大量的时间。</p>
+<p>Arraylist不是同步的，所以在不需要保证线程安全时时建议使用Arraylist。</p>
+<h2 id="HashMap的底层实现"><a href="#HashMap的底层实现" class="headerlink" title="HashMap的底层实现"></a>HashMap的底层实现</h2><h3 id="JDK1-8之前"><a href="#JDK1-8之前" class="headerlink" title="JDK1.8之前"></a>JDK1.8之前</h3><p>JDK1.8 之前 HashMap 底层是 <strong>数组和链表</strong> 结合在一起使用也就是 <strong>链表散列</strong>。<strong>HashMap 通过 key 的 hashCode 经过扰动函数处理过后得到 hash  值，然后通过 <code>(n - 1) &amp; hash</code> 判断当前元素存放的位置（这里的 n 指的是数组的长度），如果当前位置存在元素的话，就判断该元素与要存入的元素的 hash 值以及 key 是否相同，如果相同的话，直接覆盖，不相同就通过拉链法解决冲突。</strong></p>
+<p><strong>所谓扰动函数指的就是 HashMap 的 hash 方法。使用 hash 方法也就是扰动函数是为了防止一些实现比较差的 hashCode() 方法 换句话说使用扰动函数之后可以减少碰撞。</strong></p>
+<p><strong>JDK 1.8 HashMap 的 hash 方法源码:</strong></p>
+<p>JDK 1.8 的 hash方法 相比于 JDK 1.7 hash 方法更加简化，但是原理不变。</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">  <span class="function"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> <span class="title">hash</span><span class="params">(Object key)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> h;</span><br><span class="line">    <span class="comment">// key.hashCode()：返回散列值也就是hashcode</span></span><br><span class="line">    <span class="comment">// ^ ：按位异或</span></span><br><span class="line">    <span class="comment">// &gt;&gt;&gt;:无符号右移，忽略符号位，空位都以0补齐</span></span><br><span class="line">    <span class="keyword">return</span> (key == <span class="keyword">null</span>) ? <span class="number">0</span> : (h = key.hashCode()) ^ (h &gt;&gt;&gt; <span class="number">16</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>对比一下 JDK1.7的 HashMap 的 hash 方法源码.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">int</span> <span class="title">hash</span><span class="params">(<span class="keyword">int</span> h)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// This function ensures that hashCodes that differ only by</span></span><br><span class="line">    <span class="comment">// constant multiples at each bit position have a bounded</span></span><br><span class="line">    <span class="comment">// number of collisions (approximately 8 at default load factor).</span></span><br><span class="line"></span><br><span class="line">    h ^= (h &gt;&gt;&gt; <span class="number">20</span>) ^ (h &gt;&gt;&gt; <span class="number">12</span>);</span><br><span class="line">    <span class="keyword">return</span> h ^ (h &gt;&gt;&gt; <span class="number">7</span>) ^ (h &gt;&gt;&gt; <span class="number">4</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>相比于 JDK1.8 的 hash 方法 ，JDK 1.7 的 hash 方法的性能会稍差一点点，因为毕竟扰动了 4 次。</p>
+<p>所谓 <strong>“拉链法”</strong> 就是：将链表和数组相结合。也就是说创建一个链表数组，数组中每一格就是一个链表。若遇到哈希冲突，则将冲突的值加到链表中即可。</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/3/20/16240dbcc303d872?w=348&amp;h=427&amp;f=png&amp;s=10991" alt="jdk1.8之前的内部结构"></p>
+<h3 id="JDK1-8之后"><a href="#JDK1-8之后" class="headerlink" title="JDK1.8之后"></a>JDK1.8之后</h3><p>相比于之前的版本， JDK1.8之后在解决哈希冲突时有了较大的变化，当链表长度大于阈值（默认为8）时，将链表转化为红黑树，以减少搜索时间。</p>
+<p><img src="http://my-blog-to-use.oss-cn-beijing.aliyuncs.com/18-8-22/67233764.jpg" alt="JDK1.8之后的HashMap底层数据结构"></p>
+<blockquote>
+<p>TreeMap、TreeSet以及JDK1.8之后的HashMap底层都用到了红黑树。红黑树就是为了解决二叉查找树的缺陷，因为二叉查找树在某些情况下会退化成一个线性结构。</p>
+</blockquote>
+<p><strong>推荐阅读：</strong></p>
+<ul>
+<li>《Java 8系列之重新认识HashMap》 ：<a href="https://zhuanlan.zhihu.com/p/21673805" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/21673805</a></li>
+</ul>
+<h2 id="HashMap-和-Hashtable-的区别"><a href="#HashMap-和-Hashtable-的区别" class="headerlink" title="HashMap 和 Hashtable 的区别"></a>HashMap 和 Hashtable 的区别</h2><ol>
+<li><strong>线程是否安全：</strong> HashMap 是非线程安全的，HashTable 是线程安全的；HashTable 内部的方法基本都经过  <code>synchronized</code>  修饰。（如果你要保证线程安全的话就使用 ConcurrentHashMap 吧！）；</li>
+<li><strong>效率：</strong> 因为线程安全的问题，HashMap 要比 HashTable 效率高一点。另外，HashTable 基本被淘汰，不要在代码中使用它；</li>
+<li><strong>对Null key 和Null value的支持：</strong> HashMap 中，null 可以作为键，这样的键只有一个，可以有一个或多个键所对应的值为 null。。但是在 HashTable 中 put 进的键值只要有一个 null，直接抛出 NullPointerException。</li>
+<li><strong>初始容量大小和每次扩充容量大小的不同 ：</strong>   ①创建时如果不指定容量初始值，Hashtable 默认的初始大小为11，之后每次扩充，容量变为原来的2n+1。HashMap 默认的初始化大小为16。之后每次扩充，容量变为原来的2倍。②创建时如果给定了容量初始值，那么 Hashtable 会直接使用你给定的大小，而 HashMap 会将其扩充为2的幂次方大小（HashMap 中的<code>tableSizeFor()</code>方法保证，下面给出了源代码）。也就是说 HashMap 总是使用2的幂作为哈希表的大小,后面会介绍到为什么是2的幂次方。</li>
+<li><strong>底层数据结构：</strong> JDK1.8 以后的 HashMap 在解决哈希冲突时有了较大的变化，当链表长度大于阈值（默认为8）时，将链表转化为红黑树，以减少搜索时间。Hashtable 没有这样的机制。</li>
+</ol>
+<p><strong>HasMap 中带有初始容量的构造函数：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">HashMap</span><span class="params">(<span class="keyword">int</span> initialCapacity, <span class="keyword">float</span> loadFactor)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (initialCapacity &lt; <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"Illegal initial capacity: "</span> +</span><br><span class="line">                                           initialCapacity);</span><br><span class="line">    <span class="keyword">if</span> (initialCapacity &gt; MAXIMUM_CAPACITY)</span><br><span class="line">        initialCapacity = MAXIMUM_CAPACITY;</span><br><span class="line">    <span class="keyword">if</span> (loadFactor &lt;= <span class="number">0</span> || Float.isNaN(loadFactor))</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"Illegal load factor: "</span> +</span><br><span class="line">                                           loadFactor);</span><br><span class="line">    <span class="keyword">this</span>.loadFactor = loadFactor;</span><br><span class="line">    <span class="keyword">this</span>.threshold = tableSizeFor(initialCapacity);</span><br><span class="line">&#125;</span><br><span class="line"> <span class="function"><span class="keyword">public</span> <span class="title">HashMap</span><span class="params">(<span class="keyword">int</span> initialCapacity)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>(initialCapacity, DEFAULT_LOAD_FACTOR);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>下面这个方法保证了 HashMap 总是使用2的幂作为哈希表的大小。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Returns a power of two size for the given target capacity.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> <span class="title">tableSizeFor</span><span class="params">(<span class="keyword">int</span> cap)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n = cap - <span class="number">1</span>;</span><br><span class="line">    n |= n &gt;&gt;&gt; <span class="number">1</span>;</span><br><span class="line">    n |= n &gt;&gt;&gt; <span class="number">2</span>;</span><br><span class="line">    n |= n &gt;&gt;&gt; <span class="number">4</span>;</span><br><span class="line">    n |= n &gt;&gt;&gt; <span class="number">8</span>;</span><br><span class="line">    n |= n &gt;&gt;&gt; <span class="number">16</span>;</span><br><span class="line">    <span class="keyword">return</span> (n &lt; <span class="number">0</span>) ? <span class="number">1</span> : (n &gt;= MAXIMUM_CAPACITY) ? MAXIMUM_CAPACITY : n + <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="HashMap-的长度为什么是2的幂次方"><a href="#HashMap-的长度为什么是2的幂次方" class="headerlink" title="HashMap 的长度为什么是2的幂次方"></a>HashMap 的长度为什么是2的幂次方</h2><p>为了能让 HashMap 存取高效，尽量较少碰撞，也就是要尽量把数据分配均匀。我们上面也讲到了过了，Hash 值的范围值-2147483648到2147483648，前后加起来大概40亿的映射空间，只要哈希函数映射得比较均匀松散，一般应用是很难出现碰撞的。但问题是一个40亿长度的数组，内存是放不下的。所以这个散列值是不能直接拿来用的。用之前还要先做对数组的长度取模运算，得到的余数才能用来要存放的位置也就是对应的数组下标。这个数组下标的计算方法是“ <code>(n - 1) &amp; hash</code> ”。（n代表数组长度）。这也就解释了 HashMap 的长度为什么是2的幂次方。</p>
+<p><strong>这个算法应该如何设计呢？</strong></p>
+<p>我们首先可能会想到采用%取余的操作来实现。但是，重点来了：<strong>“取余(%)操作中如果除数是2的幂次则等价于与其除数减一的与(&amp;)操作（也就是说 hash%length==hash&amp;(length-1)的前提是 length 是2的 n 次方；）。”</strong> 并且 <strong>采用二进制位操作 &amp;，相对于%能够提高运算效率，这就解释了 HashMap 的长度为什么是2的幂次方。</strong></p>
+<h2 id="HashMap-多线程操作导致死循环问题"><a href="#HashMap-多线程操作导致死循环问题" class="headerlink" title="HashMap 多线程操作导致死循环问题"></a>HashMap 多线程操作导致死循环问题</h2><p>在多线程下，进行 put 操作会导致 HashMap 死循环，原因在于 HashMap 的扩容 resize()方法。由于扩容是新建一个数组，复制原数据到数组。由于数组下标挂有链表，所以需要复制链表，但是多线程操作有可能导致环形链表。复制链表过程如下:<br>以下模拟2个线程同时扩容。假设，当前 HashMap 的空间为2（临界值为1），hashcode 分别为 0 和 1，在散列地址 0 处有元素 A 和 B，这时候要添加元素 C，C 经过 hash 运算，得到散列地址为 1，这时候由于超过了临界值，空间不够，需要调用 resize 方法进行扩容，那么在多线程条件下，会出现条件竞争，模拟过程如下：</p>
+<p> 线程一：读取到当前的 HashMap 情况，在准备扩容时，线程二介入</p>
+<p><img src="https://note.youdao.com/yws/public/resource/e4cec65883d9fdc24effba57dcfa5241/xmlnote/41aed567e3419e1314bfbf689e3255a2/192" alt></p>
+<p>线程二：读取 HashMap，进行扩容</p>
+<p><img src="https://note.youdao.com/yws/public/resource/e4cec65883d9fdc24effba57dcfa5241/xmlnote/f44624419c0a49686fb12aa37527ee65/191" alt></p>
+<p>线程一：继续执行</p>
+<p><img src="https://note.youdao.com/yws/public/resource/e4cec65883d9fdc24effba57dcfa5241/xmlnote/79424b2bf4a89902a9e85c64600268e4/193" alt></p>
+<p>这个过程为，先将 A 复制到新的 hash 表中，然后接着复制 B 到链头（A 的前边：B.next=A），本来 B.next=null，到此也就结束了（跟线程二一样的过程），但是，由于线程二扩容的原因，将 B.next=A，所以，这里继续复制A，让 A.next=B，由此，环形链表出现：B.next=A; A.next=B </p>
+<p><strong>注意：jdk1.8已经解决了死循环的问题。</strong></p>
+<h2 id="HashSet-和-HashMap-区别"><a href="#HashSet-和-HashMap-区别" class="headerlink" title="HashSet 和 HashMap 区别"></a>HashSet 和 HashMap 区别</h2><p>如果你看过 HashSet 源码的话就应该知道：HashSet 底层就是基于 HashMap 实现的。（HashSet 的源码非常非常少，因为除了 clone() 方法、writeObject()方法、readObject()方法是 HashSet 自己不得不实现之外，其他方法都是直接调用 HashMap 中的方法。）</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/3/2/161e717d734f3b23?w=896&amp;h=363&amp;f=jpeg&amp;s=205536" alt="HashSet 和 HashMap 区别"></p>
+<h2 id="ConcurrentHashMap-和-Hashtable-的区别"><a href="#ConcurrentHashMap-和-Hashtable-的区别" class="headerlink" title="ConcurrentHashMap 和 Hashtable 的区别"></a>ConcurrentHashMap 和 Hashtable 的区别</h2><p>ConcurrentHashMap 和 Hashtable 的区别主要体现在实现线程安全的方式上不同。</p>
+<ul>
+<li><strong>底层数据结构：</strong> JDK1.7的 ConcurrentHashMap 底层采用 <strong>分段的数组+链表</strong> 实现，JDK1.8 采用的数据结构跟HashMap1.8的结构一样，数组+链表/红黑二叉树。Hashtable 和 JDK1.8 之前的 HashMap 的底层数据结构类似都是采用 <strong>数组+链表</strong> 的形式，数组是 HashMap 的主体，链表则是主要为了解决哈希冲突而存在的；</li>
+<li><strong>实现线程安全的方式（重要）：</strong> ① <strong>在JDK1.7的时候，ConcurrentHashMap（分段锁）</strong> 对整个桶数组进行了分割分段(Segment)，每一把锁只锁容器其中一部分数据，多线程访问容器里不同数据段的数据，就不会存在锁竞争，提高并发访问率。（默认分配16个Segment，比Hashtable效率提高16倍。） <strong>到了 JDK1.8 的时候已经摒弃了Segment的概念，而是直接用 Node 数组+链表+红黑树的数据结构来实现，并发控制使用 synchronized 和 CAS 来操作。（JDK1.6以后 对 synchronized锁做了很多优化）</strong>  整个看起来就像是优化过且线程安全的 HashMap，虽然在JDK1.8中还能看到 Segment 的数据结构，但是已经简化了属性，只是为了兼容旧版本；② <strong>Hashtable(同一把锁)</strong> :使用 synchronized 来保证线程安全，效率非常低下。当一个线程访问同步方法时，其他线程也访问同步方法，可能会进入阻塞或轮询状态，如使用 put 添加元素，另一个线程不能使用 put 添加元素，也不能使用 get，竞争会越来越激烈效率越低。</li>
+</ul>
+<p><strong>两者的对比图：</strong> </p>
+<p>图片来源：<a href="http://www.cnblogs.com/chengxiao/p/6842045.html" target="_blank" rel="noopener">http://www.cnblogs.com/chengxiao/p/6842045.html</a></p>
+<p>HashTable:<br><img src="http://my-blog-to-use.oss-cn-beijing.aliyuncs.com/18-8-22/50656681.jpg" alt></p>
+<p>JDK1.7的ConcurrentHashMap：<br><img src="http://my-blog-to-use.oss-cn-beijing.aliyuncs.com/18-8-22/33120488.jpg" alt><br>JDK1.8的ConcurrentHashMap（TreeBin: 红黑二叉树节点<br>Node: 链表节点）：<br><img src="http://my-blog-to-use.oss-cn-beijing.aliyuncs.com/18-8-22/97739220.jpg" alt></p>
+<h2 id="ConcurrentHashMap线程安全的具体实现方式-底层具体实现"><a href="#ConcurrentHashMap线程安全的具体实现方式-底层具体实现" class="headerlink" title="ConcurrentHashMap线程安全的具体实现方式/底层具体实现"></a>ConcurrentHashMap线程安全的具体实现方式/底层具体实现</h2><h3 id="JDK1-7（上面有示意图）"><a href="#JDK1-7（上面有示意图）" class="headerlink" title="JDK1.7（上面有示意图）"></a>JDK1.7（上面有示意图）</h3><p>首先将数据分为一段一段的存储，然后给每一段数据配一把锁，当一个线程占用锁访问其中一个段数据时，其他段的数据也能被其他线程访问。</p>
+<p><strong>ConcurrentHashMap 是由 Segment 数组结构和 HashEntry 数组结构组成</strong>。</p>
+<p>Segment 实现了 ReentrantLock,所以 Segment 是一种可重入锁，扮演锁的角色。HashEntry 用于存储键值对数据。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Segment</span>&lt;<span class="title">K</span>,<span class="title">V</span>&gt; <span class="keyword">extends</span> <span class="title">ReentrantLock</span> <span class="keyword">implements</span> <span class="title">Serializable</span> </span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>一个 ConcurrentHashMap 里包含一个 Segment 数组。Segment 的结构和HashMap类似，是一种数组和链表结构，一个 Segment 包含一个 HashEntry  数组，每个 HashEntry 是一个链表结构的元素，每个 Segment 守护着一个HashEntry数组里的元素，当对 HashEntry 数组的数据进行修改时，必须首先获得对应的 Segment的锁。</p>
+<h3 id="JDK1-8-（上面有示意图）"><a href="#JDK1-8-（上面有示意图）" class="headerlink" title="JDK1.8 （上面有示意图）"></a>JDK1.8 （上面有示意图）</h3><p>ConcurrentHashMap取消了Segment分段锁，采用CAS和synchronized来保证并发安全。数据结构跟HashMap1.8的结构类似，数组+链表/红黑二叉树。</p>
+<p>synchronized只锁定当前链表或红黑二叉树的首节点，这样只要hash不冲突，就不会产生并发，效率又提升N倍。</p>
+<h2 id="集合框架底层数据结构总结"><a href="#集合框架底层数据结构总结" class="headerlink" title="集合框架底层数据结构总结"></a>集合框架底层数据结构总结</h2><h3 id="Collection"><a href="#Collection" class="headerlink" title="Collection"></a>Collection</h3><h4 id="1-List"><a href="#1-List" class="headerlink" title="1. List"></a>1. List</h4><ul>
+<li><strong>Arraylist：</strong> Object数组</li>
+<li><strong>Vector：</strong> Object数组</li>
+<li><strong>LinkedList：</strong> 双向链表(JDK1.6之前为循环链表，JDK1.7取消了循环)<br>详细可阅读<a href="https://www.cnblogs.com/xingele0917/p/3696593.html" target="_blank" rel="noopener">JDK1.7-LinkedList循环链表优化</a></li>
+</ul>
+<h4 id="2-Set"><a href="#2-Set" class="headerlink" title="2. Set"></a>2. Set</h4><ul>
+<li><strong>HashSet（无序，唯一）:</strong>  基于 HashMap 实现的，底层采用 HashMap 来保存元素</li>
+<li><strong>LinkedHashSet：</strong> LinkedHashSet 继承与 HashSet，并且其内部是通过 LinkedHashMap 来实现的。有点类似于我们之前说的LinkedHashMap 其内部是基于 Hashmap 实现一样，不过还是有一点点区别的。</li>
+<li><strong>TreeSet（有序，唯一）：</strong> 红黑树(自平衡的排序二叉树。)</li>
+</ul>
+<h3 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h3><ul>
+<li><strong>HashMap：</strong> JDK1.8之前HashMap由数组+链表组成的，数组是HashMap的主体，链表则是主要为了解决哈希冲突而存在的（“拉链法”解决冲突）.JDK1.8以后在解决哈希冲突时有了较大的变化，当链表长度大于阈值（默认为8）时，将链表转化为红黑树，以减少搜索时间</li>
+<li><strong>LinkedHashMap:</strong> LinkedHashMap 继承自 HashMap，所以它的底层仍然是基于拉链式散列结构即由数组和链表或红黑树组成。另外，LinkedHashMap 在上面结构的基础上，增加了一条双向链表，使得上面的结构可以保持键值对的插入顺序。同时通过对链表进行相应的操作，实现了访问顺序相关逻辑。详细可以查看：<a href="https://www.imooc.com/article/22931" target="_blank" rel="noopener">《LinkedHashMap 源码详细分析（JDK1.8）》</a></li>
+<li><strong>HashTable:</strong> 数组+链表组成的，数组是 HashMap 的主体，链表则是主要为了解决哈希冲突而存在的</li>
+<li><strong>TreeMap:</strong> 红黑树（自平衡的排序二叉树）</li>
+</ul>
+<h3 id="推荐阅读："><a href="#推荐阅读：" class="headerlink" title="推荐阅读："></a>推荐阅读：</h3><ul>
+<li><a href="https://blog.csdn.net/fjse51/article/details/55260493" target="_blank" rel="noopener">jdk1.8中ConcurrentHashMap的实现原理</a></li>
+<li><a href="https://crossoverjie.top/2018/07/23/java-senior/ConcurrentHashMap/" target="_blank" rel="noopener">HashMap? ConcurrentHashMap? 相信看完这篇没人能难住你！</a> </li>
+<li><a href="http://www.yuanrengu.com/index.php/2017-01-17.html" target="_blank" rel="noopener">HASHMAP、HASHTABLE、CONCURRENTHASHMAP的原理与区别</a></li>
+<li><a href="https://www.cnblogs.com/chengxiao/p/6842045.html" target="_blank" rel="noopener">ConcurrentHashMap实现原理及源码分析</a></li>
+<li><a href="https://blog.csdn.net/jianghuxiaojin/article/details/52006118#commentBox" target="_blank" rel="noopener">java-并发-ConcurrentHashMap高并发机制-jdk1.8</a></li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/youngboy/page/8/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/youngboy/">1</a><span class="space">&hellip;</span><a class="page-number" href="/youngboy/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/youngboy/page/10/">10</a><span class="space">&hellip;</span><a class="page-number" href="/youngboy/page/13/">13</a><a class="extend next" rel="next" href="/youngboy/page/10/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">youngboy</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/youngboy/archives/">
+              
+                  <span class="site-state-item-count">126</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/youngboy/categories/index.html">
+                  <span class="site-state-item-count">40</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">youngboy</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/youngboy/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/youngboy/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/youngboy/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/youngboy/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/youngboy/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/youngboy/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/youngboy/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/youngboy/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/youngboy/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/youngboy/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/youngboy/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

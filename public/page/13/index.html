@@ -1,0 +1,1870 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/youngboy/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/youngboy/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/youngboy/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/youngboy/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/youngboy/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/youngboy/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/youngboy/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="youngboy">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Java相关文章和Activiti相关文章">
+<meta name="keywords" content="youngboy的个人blog">
+<meta property="og:type" content="website">
+<meta property="og:title" content="youngboy">
+<meta property="og:url" content="http://www.youngboy.vip/page/13/index.html">
+<meta property="og:site_name" content="youngboy">
+<meta property="og:description" content="Java相关文章和Activiti相关文章">
+<meta property="og:locale" content="zh-Hans">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="youngboy">
+<meta name="twitter:description" content="Java相关文章和Activiti相关文章">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/youngboy/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.youngboy.vip/page/13/">
+
+
+
+
+
+  <title>youngboy</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/youngboy/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">youngboy</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">Java大杂烩</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/youngboy/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/youngboy/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/youngboy/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/youngboy/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/youngboy/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br>
+            
+            日程表
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.youngboy.vip/youngboy/2019/05/05/8/93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="youngboy">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/youngboy/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="youngboy">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/youngboy/2019/05/05/8/93/" itemprop="url">搞定BAT面试——几道常见的子符串算法题</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-05T11:18:43+08:00">
+                2019-05-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/youngboy/categories/数据结构与算法/" itemprop="url" rel="index">
+                    <span itemprop="name">数据结构与算法</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <!-- MarkdownTOC -->
+<ul>
+<li><a href="#说明">说明</a></li>
+<li><a href="#1-kmp-算法">1. KMP 算法</a></li>
+<li><a href="#2-替换空格">2. 替换空格</a></li>
+<li><a href="#3-最长公共前缀">3. 最长公共前缀</a></li>
+<li><a href="#4-回文串">4. 回文串</a><ul>
+<li><a href="#41-最长回文串">4.1. 最长回文串</a></li>
+<li><a href="#42-验证回文串">4.2. 验证回文串</a></li>
+<li><a href="#43-最长回文子串">4.3. 最长回文子串</a></li>
+<li><a href="#44-最长回文子序列">4.4. 最长回文子序列</a></li>
+</ul>
+</li>
+<li><a href="#5-括号匹配深度">5. 括号匹配深度</a></li>
+<li><a href="#6-把字符串转换成整数">6. 把字符串转换成整数</a></li>
+</ul>
+<!-- /MarkdownTOC -->
+<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><ul>
+<li>本文作者：wwwxmu</li>
+<li>原文地址:<a href="https://www.weiweiblog.cn/13string/" target="_blank" rel="noopener">https://www.weiweiblog.cn/13string/</a></li>
+<li>作者的博客站点：<a href="https://www.weiweiblog.cn/" target="_blank" rel="noopener">https://www.weiweiblog.cn/</a> （推荐哦！）</li>
+</ul>
+<p>考虑到篇幅问题，我会分两次更新这个内容。本篇文章只是原文的一部分，我在原文的基础上增加了部分内容以及修改了部分代码和注释。另外，我增加了爱奇艺 2018 秋招 Java：<code>求给定合法括号序列的深度</code> 这道题。所有代码均编译成功，并带有注释，欢迎各位享用！</p>
+<h2 id="1-KMP-算法"><a href="#1-KMP-算法" class="headerlink" title="1. KMP 算法"></a>1. KMP 算法</h2><p>谈到字符串问题，不得不提的就是 KMP 算法，它是用来解决字符串查找的问题，可以在一个字符串（S）中查找一个子串（W）出现的位置。KMP 算法把字符匹配的时间复杂度缩小到 O(m+n) ,而空间复杂度也只有O(m)。因为“暴力搜索”的方法会反复回溯主串，导致效率低下，而KMP算法可以利用已经部分匹配这个有效信息，保持主串上的指针不回溯，通过修改子串的指针，让模式串尽量地移动到有效的位置。</p>
+<p>具体算法细节请参考：</p>
+<ul>
+<li><strong>字符串匹配的KMP算法:</strong> <a href="http://www.ruanyifeng.com/blog/2013/05/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm.html" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/2013/05/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm.html</a></li>
+<li><strong>从头到尾彻底理解KMP:</strong> <a href="https://blog.csdn.net/v_july_v/article/details/7041827" target="_blank" rel="noopener">https://blog.csdn.net/v_july_v/article/details/7041827</a></li>
+<li><strong>如何更好的理解和掌握 KMP 算法?:</strong> <a href="https://www.zhihu.com/question/21923021" target="_blank" rel="noopener">https://www.zhihu.com/question/21923021</a></li>
+<li><strong>KMP 算法详细解析:</strong>  <a href="https://blog.sengxian.com/algorithms/kmp" target="_blank" rel="noopener">https://blog.sengxian.com/algorithms/kmp</a></li>
+<li><strong>图解 KMP 算法:</strong> <a href="http://blog.jobbole.com/76611/" target="_blank" rel="noopener">http://blog.jobbole.com/76611/</a></li>
+<li><strong>汪都能听懂的KMP字符串匹配算法【双语字幕】:</strong> <a href="https://www.bilibili.com/video/av3246487/?from=search&amp;seid=17173603269940723925" target="_blank" rel="noopener">https://www.bilibili.com/video/av3246487/?from=search&amp;seid=17173603269940723925</a></li>
+<li><strong>KMP字符串匹配算法1:</strong> <a href="https://www.bilibili.com/video/av11866460?from=search&amp;seid=12730654434238709250" target="_blank" rel="noopener">https://www.bilibili.com/video/av11866460?from=search&amp;seid=12730654434238709250</a></li>
+</ul>
+<p><strong>除此之外，再来了解一下BM算法！</strong></p>
+<blockquote>
+<p>BM算法也是一种精确字符串匹配算法，它采用从右向左比较的方法，同时应用到了两种启发式规则，即坏字符规则 和好后缀规则 ，来决定向右跳跃的距离。基本思路就是从右往左进行字符匹配，遇到不匹配的字符后从坏字符表和好后缀表找一个最大的右移值，将模式串右移继续匹配。<br>《字符串匹配的KMP算法》:<a href="http://www.ruanyifeng.com/blog/2013/05/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm.html" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/2013/05/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm.html</a></p>
+</blockquote>
+<h2 id="2-替换空格"><a href="#2-替换空格" class="headerlink" title="2. 替换空格"></a>2. 替换空格</h2><blockquote>
+<p>剑指offer：请实现一个函数，将一个字符串中的每个空格替换成“%20”。例如，当字符串为We Are Happy.则经过替换之后的字符串为We%20Are%20Happy。</p>
+</blockquote>
+<p>这里我提供了两种方法：①常规方法；②利用 API 解决。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//https://www.weiweiblog.cn/replacespace/</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * 第一种方法：常规方法。利用String.charAt(i)以及String.valueOf(char).equals(" "</span></span><br><span class="line"><span class="comment">   * )遍历字符串并判断元素是否为空格。是则替换为"%20",否则不替换</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">replaceSpace</span><span class="params">(StringBuffer str)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> length = str.length();</span><br><span class="line">    <span class="comment">// System.out.println("length=" + length);</span></span><br><span class="line">    StringBuffer result = <span class="keyword">new</span> StringBuffer();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; length; i++) &#123;</span><br><span class="line">      <span class="keyword">char</span> b = str.charAt(i);</span><br><span class="line">      <span class="keyword">if</span> (String.valueOf(b).equals(<span class="string">" "</span>)) &#123;</span><br><span class="line">        result.append(<span class="string">"%20"</span>);</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        result.append(b);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result.toString();</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * 第二种方法：利用API替换掉所用空格，一行代码解决问题</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">replaceSpace2</span><span class="params">(StringBuffer str)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> str.toString().replaceAll(<span class="string">"\\s"</span>, <span class="string">"%20"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="3-最长公共前缀"><a href="#3-最长公共前缀" class="headerlink" title="3. 最长公共前缀"></a>3. 最长公共前缀</h2><blockquote>
+<p>Leetcode:  编写一个函数来查找字符串数组中的最长公共前缀。如果不存在公共前缀，返回空字符串 “”。</p>
+</blockquote>
+<p>示例 1:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: [&quot;flower&quot;,&quot;flow&quot;,&quot;flight&quot;]</span><br><span class="line">输出: &quot;fl&quot;</span><br></pre></td></tr></table></figure>
+<p>示例 2:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入: [&quot;dog&quot;,&quot;racecar&quot;,&quot;car&quot;]</span><br><span class="line">输出: &quot;&quot;</span><br><span class="line">解释: 输入不存在公共前缀。</span><br></pre></td></tr></table></figure>
+<p>思路很简单！先利用Arrays.sort(strs)为数组排序，再将数组第一个元素和最后一个元素的字符从前往后对比即可！</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//https://leetcode-cn.com/problems/longest-common-prefix/description/</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">replaceSpace</span><span class="params">(String[] strs)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 数组长度</span></span><br><span class="line">    <span class="keyword">int</span> len = strs.length;</span><br><span class="line">    <span class="comment">// 用于保存结果</span></span><br><span class="line">    StringBuffer res = <span class="keyword">new</span> StringBuffer();</span><br><span class="line">    <span class="comment">// 注意：=是赋值，==是判断</span></span><br><span class="line">    <span class="keyword">if</span> (strs == <span class="keyword">null</span> || strs.length == <span class="number">0</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="string">""</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 给字符串数组的元素按照升序排序(包含数字的话，数字会排在前面)</span></span><br><span class="line">    Arrays.sort(strs);</span><br><span class="line">    <span class="keyword">int</span> m = strs[<span class="number">0</span>].length();</span><br><span class="line">    <span class="keyword">int</span> n = strs[len - <span class="number">1</span>].length();</span><br><span class="line">    <span class="keyword">int</span> num = Math.min(m, n);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; num; i++) &#123;</span><br><span class="line">      <span class="keyword">if</span> (strs[<span class="number">0</span>].charAt(i) == strs[len - <span class="number">1</span>].charAt(i)) &#123;</span><br><span class="line">        res.append(strs[<span class="number">0</span>].charAt(i));</span><br><span class="line">      &#125; <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res.toString();</span><br><span class="line"></span><br><span class="line">  &#125; </span><br><span class="line">     <span class="comment">//测试</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    String[] strs = &#123; <span class="string">"customer"</span>, <span class="string">"car"</span>, <span class="string">"cat"</span> &#125;;</span><br><span class="line">    System.out.println(Main.replaceSpace(strs));<span class="comment">//c</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="4-回文串"><a href="#4-回文串" class="headerlink" title="4. 回文串"></a>4. 回文串</h2><h3 id="4-1-最长回文串"><a href="#4-1-最长回文串" class="headerlink" title="4.1. 最长回文串"></a>4.1. 最长回文串</h3><blockquote>
+<p>LeetCode:  给定一个包含大写字母和小写字母的字符串，找到通过这些字母构造成的最长的回文串。在构造过程中，请注意区分大小写。比如<code>&quot;Aa&quot;</code>不能当做一个回文字符串。注<br>意:假设字符串的长度不会超过 1010。</p>
+</blockquote>
+<blockquote>
+<p>回文串：“回文串”是一个正读和反读都一样的字符串，比如“level”或者“noon”等等就是回文串。——百度百科  地址：<a href="https://baike.baidu.com/item/%E5%9B%9E%E6%96%87%E4%B8%B2/1274921?fr=aladdin" target="_blank" rel="noopener">https://baike.baidu.com/item/%E5%9B%9E%E6%96%87%E4%B8%B2/1274921?fr=aladdin</a></p>
+</blockquote>
+<p>示例 1:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">输入:</span><br><span class="line">&quot;abccccdd&quot;</span><br><span class="line"></span><br><span class="line">输出:</span><br><span class="line">7</span><br><span class="line"></span><br><span class="line">解释:</span><br><span class="line">我们可以构造的最长的回文串是&quot;dccaccd&quot;, 它的长度是 7。</span><br></pre></td></tr></table></figure>
+<p>我们上面已经知道了什么是回文串？现在我们考虑一下可以构成回文串的两种情况：</p>
+<ul>
+<li>字符出现次数为双数的组合</li>
+<li>字符出现次数为双数的组合+一个只出现一次的字符</li>
+</ul>
+<p>统计字符出现的次数即可，双数才能构成回文。因为允许中间一个数单独出现，比如“abcba”，所以如果最后有字母落单，总长度可以加 1。首先将字符串转变为字符数组。然后遍历该数组，判断对应字符是否在hashset中，如果不在就加进去，如果在就让count++，然后移除该字符！这样就能找到出现次数为双数的字符个数。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//https://leetcode-cn.com/problems/longest-palindrome/description/</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span>  <span class="keyword">int</span> <span class="title">longestPalindrome</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (s.length() == <span class="number">0</span>)</span><br><span class="line">      <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="comment">// 用于存放字符</span></span><br><span class="line">    HashSet&lt;Character&gt; hashset = <span class="keyword">new</span> HashSet&lt;Character&gt;();</span><br><span class="line">    <span class="keyword">char</span>[] chars = s.toCharArray();</span><br><span class="line">    <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; chars.length; i++) &#123;</span><br><span class="line">      <span class="keyword">if</span> (!hashset.contains(chars[i])) &#123;<span class="comment">// 如果hashset没有该字符就保存进去</span></span><br><span class="line">        hashset.add(chars[i]);</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;<span class="comment">// 如果有,就让count++（说明找到了一个成对的字符），然后把该字符移除</span></span><br><span class="line">        hashset.remove(chars[i]);</span><br><span class="line">        count++;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> hashset.isEmpty() ? count * <span class="number">2</span> : count * <span class="number">2</span> + <span class="number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="4-2-验证回文串"><a href="#4-2-验证回文串" class="headerlink" title="4.2. 验证回文串"></a>4.2. 验证回文串</h3><blockquote>
+<p>LeetCode: 给定一个字符串，验证它是否是回文串，只考虑字母和数字字符，可以忽略字母的大小写。 说明：本题中，我们将空字符串定义为有效的回文串。</p>
+</blockquote>
+<p>示例 1:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: &quot;A man, a plan, a canal: Panama&quot;</span><br><span class="line">输出: true</span><br></pre></td></tr></table></figure>
+<p>示例 2:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: &quot;race a car&quot;</span><br><span class="line">输出: false</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//https://leetcode-cn.com/problems/valid-palindrome/description/</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span>  <span class="keyword">boolean</span> <span class="title">isPalindrome</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (s.length() == <span class="number">0</span>)</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    <span class="keyword">int</span> l = <span class="number">0</span>, r = s.length() - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (l &lt; r) &#123;</span><br><span class="line">      <span class="comment">// 从头和尾开始向中间遍历</span></span><br><span class="line">      <span class="keyword">if</span> (!Character.isLetterOrDigit(s.charAt(l))) &#123;<span class="comment">// 字符不是字母和数字的情况</span></span><br><span class="line">        l++;</span><br><span class="line">      &#125; <span class="keyword">else</span> <span class="keyword">if</span> (!Character.isLetterOrDigit(s.charAt(r))) &#123;<span class="comment">// 字符不是字母和数字的情况</span></span><br><span class="line">        r--;</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">// 判断二者是否相等</span></span><br><span class="line">        <span class="keyword">if</span> (Character.toLowerCase(s.charAt(l)) != Character.toLowerCase(s.charAt(r)))</span><br><span class="line">          <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        l++;</span><br><span class="line">        r--;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="4-3-最长回文子串"><a href="#4-3-最长回文子串" class="headerlink" title="4.3. 最长回文子串"></a>4.3. 最长回文子串</h3><blockquote>
+<p>Leetcode: LeetCode: 最长回文子串 给定一个字符串 s，找到 s 中最长的回文子串。你可以假设 s 的最大长度为1000。</p>
+</blockquote>
+<p>示例 1：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入: &quot;babad&quot;</span><br><span class="line">输出: &quot;bab&quot;</span><br><span class="line">注意: &quot;aba&quot;也是一个有效答案。</span><br></pre></td></tr></table></figure>
+<p>示例 2：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: &quot;cbbd&quot;</span><br><span class="line">输出: &quot;bb&quot;</span><br></pre></td></tr></table></figure>
+<p>以某个元素为中心，分别计算偶数长度的回文最大长度和奇数长度的回文最大长度。给大家大致花了个草图，不要嫌弃！</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/9/9/165bc32f6f1833ff?w=723&amp;h=371&amp;f=png&amp;s=9305" alt></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//https://leetcode-cn.com/problems/longest-palindromic-substring/description/</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">int</span> index, len;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> String <span class="title">longestPalindrome</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (s.length() &lt; <span class="number">2</span>)</span><br><span class="line">      <span class="keyword">return</span> s;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.length() - <span class="number">1</span>; i++) &#123;</span><br><span class="line">      PalindromeHelper(s, i, i);</span><br><span class="line">      PalindromeHelper(s, i, i + <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> s.substring(index, index + len);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">PalindromeHelper</span><span class="params">(String s, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">while</span> (l &gt;= <span class="number">0</span> &amp;&amp; r &lt; s.length() &amp;&amp; s.charAt(l) == s.charAt(r)) &#123;</span><br><span class="line">      l--;</span><br><span class="line">      r++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (len &lt; r - l - <span class="number">1</span>) &#123;</span><br><span class="line">      index = l + <span class="number">1</span>;</span><br><span class="line">      len = r - l - <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="4-4-最长回文子序列"><a href="#4-4-最长回文子序列" class="headerlink" title="4.4. 最长回文子序列"></a>4.4. 最长回文子序列</h3><blockquote>
+<p>LeetCode: 最长回文子序列<br>给定一个字符串s，找到其中最长的回文子序列。可以假设s的最大长度为1000。<br><strong>最长回文子序列和上一题最长回文子串的区别是，子串是字符串中连续的一个序列，而子序列是字符串中保持相对位置的字符序列，例如，”bbbb”可以是字符串”bbbab”的子序列但不是子串。</strong></p>
+</blockquote>
+<p>给定一个字符串s，找到其中最长的回文子序列。可以假设s的最大长度为1000。</p>
+<p>示例 1:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">输入:</span><br><span class="line">&quot;bbbab&quot;</span><br><span class="line">输出:</span><br><span class="line">4</span><br></pre></td></tr></table></figure>
+<p>一个可能的最长回文子序列为 “bbbb”。</p>
+<p>示例 2:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">输入:</span><br><span class="line">&quot;cbbd&quot;</span><br><span class="line">输出:</span><br><span class="line">2</span><br></pre></td></tr></table></figure>
+<p>一个可能的最长回文子序列为 “bb”。</p>
+<p><strong>动态规划：</strong>  dp[i][j] = dp[i+1][j-1] + 2 if s.charAt(i) == s.charAt(j) otherwise, dp[i][j] = Math.max(dp[i+1][j], dp[i][j-1])</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">longestPalindromeSubseq</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len = s.length();</span><br><span class="line">        <span class="keyword">int</span> [][] dp = <span class="keyword">new</span> <span class="keyword">int</span>[len][len];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = len - <span class="number">1</span>; i&gt;=<span class="number">0</span>; i--)&#123;</span><br><span class="line">            dp[i][i] = <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = i+<span class="number">1</span>; j &lt; len; j++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(s.charAt(i) == s.charAt(j))</span><br><span class="line">                    dp[i][j] = dp[i+<span class="number">1</span>][j-<span class="number">1</span>] + <span class="number">2</span>;</span><br><span class="line">                <span class="keyword">else</span></span><br><span class="line">                    dp[i][j] = Math.max(dp[i+<span class="number">1</span>][j], dp[i][j-<span class="number">1</span>]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[<span class="number">0</span>][len-<span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="5-括号匹配深度"><a href="#5-括号匹配深度" class="headerlink" title="5. 括号匹配深度"></a>5. 括号匹配深度</h2><blockquote>
+<p>爱奇艺 2018 秋招 Java：<br>一个合法的括号匹配序列有以下定义:</p>
+<ol>
+<li>空串””是一个合法的括号匹配序列</li>
+<li>如果”X”和”Y”都是合法的括号匹配序列,”XY”也是一个合法的括号匹配序列</li>
+<li>如果”X”是一个合法的括号匹配序列,那么”(X)”也是一个合法的括号匹配序列</li>
+<li>每个合法的括号序列都可以由以上规则生成。</li>
+</ol>
+</blockquote>
+<blockquote>
+<p>例如: “”,”()”,”()()”,”((()))”都是合法的括号序列<br>对于一个合法的括号序列我们又有以下定义它的深度:</p>
+<ol>
+<li>空串””的深度是0</li>
+<li>如果字符串”X”的深度是x,字符串”Y”的深度是y,那么字符串”XY”的深度为max(x,y)   </li>
+<li>如果”X”的深度是x,那么字符串”(X)”的深度是x+1</li>
+</ol>
+</blockquote>
+<blockquote>
+<p>例如: “()()()”的深度是1,”((()))”的深度是3。牛牛现在给你一个合法的括号序列,需要你计算出其深度。 </p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">输入描述:</span><br><span class="line">输入包括一个合法的括号序列s,s长度length(2 ≤ length ≤ 50),序列中只包含&apos;(&apos;和&apos;)&apos;。</span><br><span class="line"></span><br><span class="line">输出描述:</span><br><span class="line">输出一个正整数,即这个序列的深度。</span><br></pre></td></tr></table></figure>
+<p>示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">输入:</span><br><span class="line">(())</span><br><span class="line">输出:</span><br><span class="line">2</span><br></pre></td></tr></table></figure>
+<p>思路草图：</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/9/9/165bc6fca94ef278?w=792&amp;h=324&amp;f=png&amp;s=15868" alt></p>
+<p>代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * https://www.nowcoder.com/test/8246651/summary</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> Snailclimb</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span> 2018年9月6日</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Description</span>: TODO 求给定合法括号序列的深度</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    Scanner sc = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">    String s = sc.nextLine();</span><br><span class="line">    <span class="keyword">int</span> cnt = <span class="number">0</span>, max = <span class="number">0</span>, i;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; s.length(); ++i) &#123;</span><br><span class="line">      <span class="keyword">if</span> (s.charAt(i) == <span class="string">'('</span>)</span><br><span class="line">        cnt++;</span><br><span class="line">      <span class="keyword">else</span></span><br><span class="line">        cnt--;</span><br><span class="line">      max = Math.max(max, cnt);</span><br><span class="line">    &#125;</span><br><span class="line">    sc.close();</span><br><span class="line">    System.out.println(max);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="6-把字符串转换成整数"><a href="#6-把字符串转换成整数" class="headerlink" title="6. 把字符串转换成整数"></a>6. 把字符串转换成整数</h2><blockquote>
+<p>剑指offer:  将一个字符串转换成一个整数(实现Integer.valueOf(string)的功能，但是string不符合数字要求时返回0)，要求不能使用字符串转换整数的库函数。 数值为0或者字符串不是一个合法的数值则返回0。</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//https://www.weiweiblog.cn/strtoint/</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">StrToInt</span><span class="params">(String str)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (str.length() == <span class="number">0</span>)</span><br><span class="line">      <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">char</span>[] chars = str.toCharArray();</span><br><span class="line">    <span class="comment">// 判断是否存在符号位</span></span><br><span class="line">    <span class="keyword">int</span> flag = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span> (chars[<span class="number">0</span>] == <span class="string">'+'</span>)</span><br><span class="line">      flag = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (chars[<span class="number">0</span>] == <span class="string">'-'</span>)</span><br><span class="line">      flag = <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">int</span> start = flag &gt; <span class="number">0</span> ? <span class="number">1</span> : <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> res = <span class="number">0</span>;<span class="comment">// 保存结果</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = start; i &lt; chars.length; i++) &#123;</span><br><span class="line">      <span class="keyword">if</span> (Character.isDigit(chars[i])) &#123;<span class="comment">// 调用Character.isDigit(char)方法判断是否是数字，是返回True，否则False</span></span><br><span class="line">        <span class="keyword">int</span> temp = chars[i] - <span class="string">'0'</span>;</span><br><span class="line">        res = res * <span class="number">10</span> + temp;</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> flag == <span class="number">1</span> ? res : -res;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">    String s = <span class="string">"-12312312"</span>;</span><br><span class="line">    System.out.println(<span class="string">"使用库函数转换："</span> + Integer.valueOf(s));</span><br><span class="line">    <span class="keyword">int</span> res = Main.StrToInt(s);</span><br><span class="line">    System.out.println(<span class="string">"使用自己写的方法转换："</span> + res);</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.youngboy.vip/youngboy/2019/05/05/7/71/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="youngboy">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/youngboy/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="youngboy">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/youngboy/2019/05/05/7/71/" itemprop="url">MySQL Index</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-05T11:18:43+08:00">
+                2019-05-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/youngboy/categories/数据存储/" itemprop="url" rel="index">
+                    <span itemprop="name">数据存储</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="思维导图-索引篇"><a href="#思维导图-索引篇" class="headerlink" title="思维导图-索引篇"></a>思维导图-索引篇</h1><blockquote>
+<p>系列思维导图源文件（数据库+架构）以及思维导图制作软件—XMind8 破解安装，公众号后台回复：<strong>“思维导图”</strong> 免费领取！（下面的图片不是很清楚，原图非常清晰，另外提供给大家源文件也是为了大家根据自己需要进行修改）</p>
+</blockquote>
+<p><img src="http://my-blog-to-use.oss-cn-beijing.aliyuncs.com/18-10-2/70973487.jpg" alt="【思维导图-索引篇】"></p>
+<blockquote>
+<p><strong>下面是我补充的一些内容</strong></p>
+</blockquote>
+<h1 id="为什么索引能提高查询速度"><a href="#为什么索引能提高查询速度" class="headerlink" title="为什么索引能提高查询速度"></a>为什么索引能提高查询速度</h1><blockquote>
+<p>以下内容整理自：<br> 地址： <a href="https://juejin.im/post/5b55b842f265da0f9e589e79" target="_blank" rel="noopener">https://juejin.im/post/5b55b842f265da0f9e589e79</a><br> 作者 ：Java3y</p>
+</blockquote>
+<h3 id="先从-MySQL-的基本存储结构说起"><a href="#先从-MySQL-的基本存储结构说起" class="headerlink" title="先从 MySQL 的基本存储结构说起"></a>先从 MySQL 的基本存储结构说起</h3><p>MySQL的基本存储结构是页(记录都存在页里边)：</p>
+<p><img src="http://my-blog-to-use.oss-cn-beijing.aliyuncs.com/18-10-2/28559421.jpg" alt="MySQL的基本存储结构是页"></p>
+<p><img src="http://my-blog-to-use.oss-cn-beijing.aliyuncs.com/18-10-2/82053134.jpg" alt></p>
+<ul>
+<li><strong>各个数据页可以组成一个双向链表</strong></li>
+<li><strong>每个数据页中的记录又可以组成一个单向链表</strong><ul>
+<li>每个数据页都会为存储在它里边儿的记录生成一个页目录，在通过主键查找某条记录的时候可以在页目录中使用二分法快速定位到对应的槽，然后再遍历该槽对应分组中的记录即可快速找到指定的记录</li>
+<li>以其他列(非主键)作为搜索条件：只能从最小记录开始依次遍历单链表中的每条记录。</li>
+</ul>
+</li>
+</ul>
+<p>所以说，如果我们写select * from user where indexname = ‘xxx’这样没有进行任何优化的sql语句，默认会这样做：</p>
+<ol>
+<li><strong>定位到记录所在的页:需要遍历双向链表，找到所在的页</strong></li>
+<li><strong>从所在的页内中查找相应的记录:由于不是根据主键查询，只能遍历所在页的单链表了</strong></li>
+</ol>
+<p>很明显，在数据量很大的情况下这样查找会很慢！这样的时间复杂度为O（n）。</p>
+<h3 id="使用索引之后"><a href="#使用索引之后" class="headerlink" title="使用索引之后"></a>使用索引之后</h3><p>索引做了些什么可以让我们查询加快速度呢？其实就是将无序的数据变成有序(相对)：</p>
+<p><img src="http://my-blog-to-use.oss-cn-beijing.aliyuncs.com/18-10-2/5373082.jpg" alt></p>
+<p>要找到id为8的记录简要步骤：</p>
+<p><img src="http://my-blog-to-use.oss-cn-beijing.aliyuncs.com/18-10-2/89338047.jpg" alt></p>
+<p>很明显的是：没有用索引我们是需要遍历双向链表来定位对应的页，现在通过 <strong>“目录”</strong> 就可以很快地定位到对应的页上了！（二分查找，时间复杂度近似为O(logn)）</p>
+<p>其实底层结构就是B+树，B+树作为树的一种实现，能够让我们很快地查找出对应的记录。</p>
+<h1 id="关于索引其他重要的内容补充"><a href="#关于索引其他重要的内容补充" class="headerlink" title="关于索引其他重要的内容补充"></a>关于索引其他重要的内容补充</h1><blockquote>
+<p>以下内容整理自：《Java工程师修炼之道》</p>
+</blockquote>
+<h3 id="最左前缀原则"><a href="#最左前缀原则" class="headerlink" title="最左前缀原则"></a>最左前缀原则</h3><p>MySQL中的索引可以以一定顺序引用多列，这种索引叫作联合索引。如User表的name和city加联合索引就是(name,city)o而最左前缀原则指的是，如果查询的时候查询条件精确匹配索引的左边连续一列或几列，则此列就可以被用到。如下：        </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">select * from user where name=xx and city=xx ; ／／可以命中索引</span><br><span class="line">select * from user where name=xx ; // 可以命中索引</span><br><span class="line">select * from user where city=xx; // 无法命中索引            </span><br><span class="line">```                                                          </span><br><span class="line">这里需要注意的是，查询的时候如果两个条件都用上了，但是顺序不同，如 `city= xx and name ＝xx`，那么现在的查询引擎会自动优化为匹配联合索引的顺序，这样是能够命中索引的.</span><br><span class="line"></span><br><span class="line">由于最左前缀原则，在创建联合索引时，索引字段的顺序需要考虑字段值去重之后的个数，较多的放前面。ORDERBY子句也遵循此规则。</span><br><span class="line"></span><br><span class="line">### 注意避免冗余索引</span><br><span class="line"></span><br><span class="line">冗余索引指的是索引的功能相同，能够命中 就肯定能命中 ，那么 就是冗余索引如（name,city ）和（name ）这两个索引就是冗余索引，能够命中后者的查询肯定是能够命中前者的 在大多数情况下，都应该尽量扩展已有的索引而不是创建新索引。</span><br><span class="line"></span><br><span class="line">MySQLS.7 版本后，可以通过查询 sys 库的 `schemal_r dundant_indexes` 表来查看冗余索引             </span><br><span class="line"></span><br><span class="line">### Mysql如何为表字段添加索引？？？</span><br><span class="line"></span><br><span class="line">1.添加PRIMARY KEY（主键索引）</span><br></pre></td></tr></table></figure>
+<p>ALTER TABLE <code>table_name</code> ADD PRIMARY KEY ( <code>column</code> )<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2.添加UNIQUE(唯一索引)</span><br></pre></td></tr></table></figure></p>
+<p>ALTER TABLE <code>table_name</code> ADD UNIQUE ( <code>column</code> )<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"> </span><br><span class="line">3.添加INDEX(普通索引)</span><br></pre></td></tr></table></figure></p>
+<p>ALTER TABLE <code>table_name</code> ADD INDEX index_name ( <code>column</code> )<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"> </span><br><span class="line">4.添加FULLTEXT(全文索引)</span><br></pre></td></tr></table></figure></p>
+<p>ALTER TABLE <code>table_name</code> ADD FULLTEXT ( <code>column</code>)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"> </span><br><span class="line">5.添加多列索引</span><br></pre></td></tr></table></figure></p>
+<p>ALTER TABLE <code>table_name</code> ADD INDEX index_name ( <code>column1</code>, <code>column2</code>, <code>column3</code> )<br><code>`</code></p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ul>
+<li>《Java工程师修炼之道》</li>
+<li>《MySQL高性能书籍_第3版》</li>
+<li><a href="https://juejin.im/post/5b55b842f265da0f9e589e79" target="_blank" rel="noopener">https://juejin.im/post/5b55b842f265da0f9e589e79</a></li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.youngboy.vip/youngboy/2019/05/05/5/53/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="youngboy">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/youngboy/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="youngboy">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/youngboy/2019/05/05/5/53/" itemprop="url">选择技术方向都要考虑哪些因素</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-05T11:18:43+08:00">
+                2019-05-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/youngboy/categories/其他/" itemprop="url" rel="index">
+                    <span itemprop="name">其他</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>本文主要是作者读安晓辉老师的《程序员程序员职场进阶 32 讲 》中关于“选择技术方向都要考虑哪些因素”这部分做的一些笔记和自己的思考。在这里分享给各位！</p>
+<h3 id="选择一种技术可能会考虑到的决定因素"><a href="#选择一种技术可能会考虑到的决定因素" class="headerlink" title="选择一种技术可能会考虑到的决定因素"></a>选择一种技术可能会考虑到的决定因素</h3><ol>
+<li><p>就业机会</p>
+<p>选择一门就业面广的技术还是比较重要的。我的很多学PHP的同学现在都在培训班学Java，真的！！！</p>
+</li>
+<li><p>难易程度</p>
+<p> 我当时是在C/C++语言与Java中选择了Java，因为我感觉Java学起来确实要比C++简单一些。</p>
+</li>
+<li><p>个人兴趣</p>
+<p>兴趣是你能坚持下来的一个很重要的条件。</p>
+</li>
+<li><p>薪资水平</p>
+<p>薪资虽然不是人的唯一追求，但是一定是必备的追求。</p>
+</li>
+<li><p>发展前景</p>
+<p>你肯定不愿意看到这种情况发生：选择了一门技术，结果一年后它就没人用、没市场了。所以我们在选择时就要考虑这一点，做一些预判。</p>
+<p>选择技术时存在两种考虑：一种是选择稳定的、经典的技术；一种是卡位将来的市场缺口，选择将来可能需要用到的技术。</p>
+</li>
+<li><p>他人推荐</p>
+<p>我们在懵懵懂懂的时候，往往最容易听从别人的推荐，然后选择某种技术。</p>
+</li>
+<li><p>相近原则</p>
+<p>当我们已经掌握了一些技术，要学习新技术时，就可以根据一种新技术是否和自己已经掌握的技术比较接近来判断选择。相近的技术，学起来会更容易上手。</p>
+</li>
+<li><p>互补原则</p>
+<p>和相近性类似，互补性也常用在拓展我们技术能力的情景下。它指的是，有一些技术可以和你已经掌握的技术互相补充，组合在一起，形成更完整、更系统的技术图谱，给你带来更大的竞争力。关于相近原则与互补原则，我们也会在后面的文章里具体解读。</p>
+</li>
+<li><p>团队技术图谱</p>
+<p>我觉得这个可能就是团队开发过程中的需要。比如在做一个项目的时候，这个项目需要你去学习一下某个你没有接触过的新技术。</p>
+</li>
+</ol>
+<h3 id="入行时如何选择技术方向"><a href="#入行时如何选择技术方向" class="headerlink" title="入行时如何选择技术方向"></a>入行时如何选择技术方向</h3><p> 为了明确自己的求职目标，可以问问自己下面的问题：</p>
+<ul>
+<li>我想在哪个城市工作？</li>
+<li>我想在哪些行业、领域发展？</li>
+<li>我想去什么样的公司？</li>
+<li>我想做什么样的产品？   </li>
+</ul>
+<p>另外你要知道的是热门技术会有更多机会，相应竞争压力也会更大，并不能保证你找到合适的工作。<br>冷门技术，机会相对较少，而且机会相对确定 。</p>
+<h3 id="构建技能树时如何选择技术方向"><a href="#构建技能树时如何选择技术方向" class="headerlink" title="构建技能树时如何选择技术方向"></a>构建技能树时如何选择技术方向</h3><p>当我们过了专项能力提升的初级阶段之后，就应该开始构建自己的技能体系了。在为搭建技能树而选择技术时，通常考虑下面两个原则：</p>
+<ul>
+<li>相近原则</li>
+<li>互补原则</li>
+</ul>
+<p>“学习技术时一定要学对自己以后发展有用的技术”是我经常对自己强调的，另外我觉得很误导人同时也很错误的一个思想是：“只要是技术学了就会有用的”，这句话在我刚学编程时经常听到有人对我说。希望大家不要被误导，很多技术过时了就是过时了，没有必要再去花时间学。</p>
+<p>我觉得相近原则和互补原则互补原则就是你主精和自己技术方向相同的的东西或者对自己技术领域有提升的东西。比如我目前暂时选择了Java为我的主要发展语言，所以我就要求自己大部分时间还是搞和Java相关的东西比如：Spring、SpingBoot、Dubbo、Mybatis等等。但是千万不要被语言所束缚，在业余时间我学的比较多的就是Python以及JS、C/C++/C#也会偶尔接触。因为我经常会接触前端另外我自己偶尔有爬虫需求或者需要用Python的一些第三库解决一些问题，所以我业余学Pyton以及JS就比较多一点，我觉得这两门技术也是对我现有技术的一个补充了。</p>
+<h3 id="技术转型时的方向选择"><a href="#技术转型时的方向选择" class="headerlink" title="技术转型时的方向选择"></a>技术转型时的方向选择</h3><p>我觉得对于技术转型主要有一下几点建议</p>
+<ul>
+<li>与自己当前技术栈跨度不太大的领域，比如你做安卓的话转型可以选择做Java后端。</li>
+<li>真正适合自己去做的，并不是一味看着这个领域火了（比如人工智能），然后自己就不考虑实际的去转型到这个领域里去。</li>
+<li>技术转型方向尽量对自己以后的发展需要有帮助。</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.youngboy.vip/youngboy/2019/05/05/5/52/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="youngboy">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/youngboy/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="youngboy">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/youngboy/2019/05/05/5/52/" itemprop="url">个人阅读书籍清单</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-05T11:18:43+08:00">
+                2019-05-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/youngboy/categories/其他/" itemprop="url" rel="index">
+                    <span itemprop="name">其他</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>下面是个人阅读书籍的部分清单，我比较建议阅读的书籍前都加上了:thumbsup: 表情。</p>
+<blockquote>
+<h3 id="核心基础知识"><a href="#核心基础知识" class="headerlink" title="核心基础知识"></a>核心基础知识</h3></blockquote>
+<ul>
+<li><p>:thumbsup: <a href="https://book.douban.com/subject/25863515/" target="_blank" rel="noopener">《图解HTTP》</a></p>
+<p>讲漫画一样的讲HTTP，很有意思，不会觉得枯燥，大概也涵盖也HTTP常见的知识点。因为篇幅问题，内容可能不太全面。不过，如果不是专门做网络方向研究的小伙伴想研究HTTP相关知识的话，读这本书的话应该来说就差不多了。</p>
+</li>
+</ul>
+<blockquote>
+<h3 id="Java相关"><a href="#Java相关" class="headerlink" title="Java相关"></a>Java相关</h3></blockquote>
+<ul>
+<li><p>:thumbsup: <a href="https://book.douban.com/subject/2000732/" target="_blank" rel="noopener">《Head First Java.第二版》</a></p>
+<p>可以说是我的Java启蒙书籍了，特别适合新手读当然也适合我们用来温故Java知识点。</p>
+</li>
+<li><p><a href="https://book.douban.com/subject/26555197/" target="_blank" rel="noopener">《Java多线程编程核心技术》</a></p>
+<p>Java多线程入门级书籍还不错，但是说实话，质量不是很高，很快就可以阅读完。</p>
+</li>
+<li><p><a href="https://book.douban.com/subject/26259017/" target="_blank" rel="noopener">《JAVA网络编程 第4版》</a></p>
+<p>可以系统的学习一下网络的一些概念以及网络编程在Java中的使用。</p>
+</li>
+<li><p>:thumbsup: <a href="https://book.douban.com/subject/25762168/" target="_blank" rel="noopener">《Java核心技术卷1+卷2》</a></p>
+<p>很棒的两本书，建议有点Java基础之后再读，介绍的还是比较深入的，非常推荐。这两本书我一般也会用来巩固知识点，是两本适合放在自己身边的好书。</p>
+</li>
+<li><p>:thumbsup: <a href="https://book.douban.com/subject/2130190/" target="_blank" rel="noopener">《Java编程思想(第4版)》</a></p>
+<p>这本书要常读，初学者可以快速概览，中等程序员可以深入看看java，老鸟还可以用之回顾java的体系。这本书之所以厉害，因为它在无形中整合了设计模式，这本书之所以难读，也恰恰在于他对设计模式的整合是无形的。</p>
+</li>
+<li><p>:thumbsup: <a href="https://book.douban.com/subject/26591326/" target="_blank" rel="noopener">《Java并发编程的艺术》</a></p>
+<p>这本书不是很适合作为Java并发入门书籍，需要具备一定的JVM基础。我感觉有些东西讲的还是挺深入的，推荐阅读。</p>
+</li>
+<li><p>:thumbsup: <a href="https://book.douban.com/subject/26663605/" target="_blank" rel="noopener">《实战Java高并发程序设计》</a></p>
+<p>  豆瓣评分 8.3 ，书的质量没的说，推荐大家好好看一下。</p>
+</li>
+<li><p><a href="https://book.douban.com/subject/24841235/" target="_blank" rel="noopener">《Java程序员修炼之道》</a></p>
+<p>很杂，我只看了前面几章，不太推荐阅读。</p>
+</li>
+<li><p>:thumbsup: <a href="https://book.douban.com/subject/24722612/" target="_blank" rel="noopener">《深入理解Java虚拟机（第2版）周志明》</a></p>
+<p>神书！神书！神书！建议多刷几遍，书中的所有知识点可以通过JAVA运行时区域和JAVA的内存模型与线程两个大模块罗列完全。 </p>
+</li>
+</ul>
+<blockquote>
+<h3 id="JavaWeb相关"><a href="#JavaWeb相关" class="headerlink" title="JavaWeb相关"></a>JavaWeb相关</h3></blockquote>
+<ul>
+<li><p>:thumbsup: <a href="https://book.douban.com/subject/25953851/" target="_blank" rel="noopener">《深入分析Java Web技术内幕》</a></p>
+<p>感觉还行，涉及的东西也蛮多，推荐阅读。</p>
+</li>
+<li><p>:thumbsup: <a href="https://book.douban.com/subject/26767354/" target="_blank" rel="noopener">《Spring实战（第4版）》</a></p>
+<p>不建议当做入门书籍读，入门的话可以找点国人的书或者视频看。这本定位就相当于是关于Spring的新华字典，只有一些基本概念的介绍和示例，涵盖了Spring的各个方面，但都不够深入。就像作者在最后一页写的那样：“学习Spring，这才刚刚开始”。</p>
+</li>
+<li><p><a href="https://book.douban.com/subject/4189495/" target="_blank" rel="noopener">《Java Web整合开发王者归来》</a></p>
+<p>当时刚开始学的时候就是开的这本书，基本上是完完整整的看完了。不过，我不是很推荐大家看。这本书比较老了，里面很多东西都已经算是过时了。不过，这本书的一个很大优点是：基础知识点概括全面。</p>
+</li>
+<li><p>:thumbsup: <a href="https://book.douban.com/subject/26612779/" target="_blank" rel="noopener">《Redis实战》</a></p>
+<p> 如果你想了解Redis的一些概念性知识的话，这本书真的非常不错。</p>
+</li>
+</ul>
+<blockquote>
+<h3 id="架构相关"><a href="#架构相关" class="headerlink" title="架构相关"></a>架构相关</h3></blockquote>
+<ul>
+<li><p>:thumbsup: <a href="https://book.douban.com/subject/25723064/" target="_blank" rel="noopener">《大型网站技术架构：核心原理与案例分析+李智慧》</a></p>
+<p>这本书我读过，基本不需要你有什么基础啊~读起来特别轻松，但是却可以学到很多东西，非常推荐了。另外我写过这本书的思维导图，关注我的微信公众号：“Java面试通关手册”回复“大型网站技术架构”即可领取思维导图。</p>
+</li>
+<li><p><a href="https://book.douban.com/subject/27081188/" target="_blank" rel="noopener">《架构解密从分布式到微服务（Leaderus著）》</a></p>
+<p>很一般的书籍，我就是当做课后图书来阅读的。</p>
+</li>
+</ul>
+<blockquote>
+<h3 id="代码优化"><a href="#代码优化" class="headerlink" title="代码优化"></a>代码优化</h3></blockquote>
+<ul>
+<li><p>:thumbsup: <a href="https://book.douban.com/subject/4262627/" target="_blank" rel="noopener">《重构_改善既有代码的设计》</a></p>
+<p> 豆瓣 9.1 分，重构书籍的开山鼻祖。</p>
+</li>
+</ul>
+<blockquote>
+<h3 id="课外书籍"><a href="#课外书籍" class="headerlink" title="课外书籍"></a>课外书籍</h3></blockquote>
+<p>《技术奇点》 :thumbsup:《追风筝的人》 :thumbsup:《穆斯林的葬礼》  :thumbsup:《三体》 《人工智能——李开复》<br>:thumbsup:《活着——余华》  </p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.youngboy.vip/youngboy/2019/05/05/5/51/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="youngboy">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/youngboy/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="youngboy">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/youngboy/2019/05/05/5/51/" itemprop="url">2018 秋招</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-05T11:18:43+08:00">
+                2019-05-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/youngboy/categories/其他/" itemprop="url" rel="index">
+                    <span itemprop="name">其他</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="秋招历程流水账总结"><a href="#秋招历程流水账总结" class="headerlink" title="秋招历程流水账总结"></a>秋招历程流水账总结</h1><p>笔主大四准毕业生，在秋招末流比较幸运地进入了一家自己非常喜欢一家公司——ThoughtWorks.</p>
+<p><img src="https://images.gitbook.cn/1433af10-d5f7-11e8-841a-4f0b0cc7be7b" alt="今天去签约在门外拍的照片"></p>
+<p>从9-6号投递出去第一份简历，到10-18号左右拿到第一份 offer ，中间差不多有 1 个半月的时间了。可能自己比较随缘，而且自己所在的大学所处的位置并不是互联网比较发达的城市的原因。所以，很少会有公司愿意跑到我们学校那边来宣讲，来的公司也大多是一些自己没听过或者不太喜欢的公司。所以，在前期，我仅仅能够通过网上投递简历的方式来找工作。</p>
+<p>零零总总算了一下，自己在网上投了大概有 10 份左右的简历，都是些自己还算喜欢的公司。简单说一下自己投递的一些公司：网上投递的公司有：ThoughtWorks、网易、小米、携程、爱奇艺、知乎、小红书、搜狐、欢聚时代、京东；直接邮箱投递的有：烽火、中电数据、蚂蚁金服花呗部门、今日头条；线下宣讲会投递的有：玄武科技。</p>
+<p>网上投递的大部分简历都是在做完笔试之后就没有了下文了，即使有几场笔试自我感觉做的很不错的情况下，还是没有收到后续的面试邀请。还有些邮箱投递的简历，后面也都没了回应。所以，我总共也只参加了3个公司的面试，ThoughtWorks、玄武科技和中电数据，都算是拿到了 offer。拿到 ThoughtWorks 的 offer之后，后面的一些笔试和少部分面试都拒了。决定去 ThoughtWorks 了，春招的大部队会没有我的存在。</p>
+<p>我个人对 ThoughtWorks 最有好感，ThoughtWorks 也是我自己之前很想去的一家公司。不光是因为我投递简历的时候可以不用重新填一遍表格可以直接发送我已经编辑好的PDF格式简历的友好，这个公司的文化也让我很喜欢。每次投递一家公司几乎都要重新填写一遍简历真的很让人头疼，即使是用牛客网的简历助手也还是有很多东西需要自己重新填写。</p>
+<p>说句实话，自己在拿到第一份 offer 之前心里还是比较空的，虽然说对自己还是比较自信。包括自己当时来到武汉的原因，也是因为自己没有 offer ，就感觉心里空空的，我相信很多人在这个时候与我也有一样的感觉。然后，我就想到武汉参加一下别的学校宣讲会。现在看来，这个决定也是不必要的，因为我最后去的公司 ThoughtWorks，虽然就在我租的房子的附近，但之前投递的时候，选择的还是远程面试。来到武汉，简单的修整了一下之后，我就去参加了玄武科技在武理工的宣讲会，顺便做了笔试，然后接着就是技术面、HR面、高管面。总体来说，玄武科技的 HR 真的很热情，为他们点个赞，虽然自己最后没能去玄武科技，然后就是技术面非常简单，HR面和高管面也都还好，不会有压抑的感觉，总体聊得很愉快。需要注意的是 玄武科技和很多公司一样都有笔试中有逻辑题，我之前没有做过类似的题，所以当时第一次做有点懵逼。高管面的时候，高管还专门在我做的逻辑题上聊了一会，让我重新做了一些做错的题，并且给他讲一些题的思路，可以看出高层对于应聘者的这项能力还是比较看重的。</p>
+<p>中电数据的技术面试是电话进行的，花了1个多小时一点，个人感觉问的还是比较深的，感觉自己总体回答的还是比较不错的。</p>
+<p>这里我着重说一下 ThoughtWorks，也算是给想去 ThoughtWorks 的同学一点小小的提示。我是 9.11 号在官网：<a href="https://join.thoughtworks.cn/" target="_blank" rel="noopener">https://join.thoughtworks.cn/</a> 投递的简历，9.20 日邮件通知官网下载作业，作业总体来说不难，9.21 号花了半天多的时间做完，然后就直接在9.21 号下午提交了。然后等了挺长时间的，可能是因为 ThoughtWorks 在管理方面比较扁平化的原因，所以总体来说效率可能不算高。因为我选的是远程面试，所以直接下载好 zoom 之后，等HR打电话过来告诉你一个房间号，你就可以直接进去面试就好，一般技术面试有几个人看着你。技术面试的内容，首先就是在面试官让你在你之前做的作业的基础上新增加一个或者两个功能（20分钟）。所以，你在技术面试之前一定要保证你的程序的扩展性是不错的，另外就是你在技术面试之前最好能重构一下自己写的程序。重构本身就是你自己对你写的程序的理解加强很好的一种方式，另外重构也能让你发现你的程序的一些小问题。然后，这一步完成之后，面试官可能会问你一些基础问题，比较简单，所以我觉得 ThoughtWorks 可能更看重你的代码质量。ThoughtWorks 的 HR 面和其他公司的唯一不同可能在于，他会让你用英语介绍一下自己或者说自己的技术栈啊这些。</p>
+<p><img src="https://images.gitbook.cn/83f765e0-d5f6-11e8-9c1a-919e09988420" alt="思特沃克可爱的招聘官网"></p>
+<h1 id="关于面试一些重要的问题总结"><a href="#关于面试一些重要的问题总结" class="headerlink" title="关于面试一些重要的问题总结"></a>关于面试一些重要的问题总结</h1><p>另外，再给大家总结一些我个人想到一些关于面试非常重要的一些问题。</p>
+<h3 id="面试前"><a href="#面试前" class="headerlink" title="面试前"></a>面试前</h3><p><strong>如何准备</strong></p>
+<p>运筹帷幄之后，决胜千里之外！不打毫无准备的仗，我觉得大家可以先从下面几个方面来准备面试：</p>
+<ol>
+<li>自我介绍。（你可千万这样介绍：“我叫某某，性别，来自哪里，学校是那个，自己爱干什么”，记住：多说点简历上没有的，多说点自己哪里比别人强！）</li>
+<li>自己面试中可能涉及哪些知识点、那些知识点是重点。</li>
+<li>面试中哪些问题会被经常问到、面试中自己改如何回答。(强烈不推荐背题，第一：通过背这种方式你能记住多少？能记住多久？第二：背题的方式的学习很难坚持下去！)</li>
+<li>自己的简历该如何写。</li>
+</ol>
+<p>另外，如果你想去类似阿里巴巴、腾讯这种比较大的互联网公司的话，一定要尽早做打算。像阿里巴巴在7月份左右就开始了提前批招聘，到了9月份差不多就已经招聘完毕了。所以，秋招没有参加到阿里的面试还是很遗憾的，毕竟面试即使失败了，也能从阿里难度Max的面试中学到很多东西。</p>
+<p><strong>关于着装</strong></p>
+<p>穿西装、打领带、小皮鞋？NO！NO！NO！这是互联网公司面试又不是去走红毯，所以你只需要穿的简单大方就好，不需要太正式。</p>
+<p><strong>关于自我介绍</strong></p>
+<p>如果你简历上写的基本信息就不要说了，比如性别、年龄、学校。另外，你也不要一上来就说自己爱好什么这方面内容。因为，面试官根本不关心这些东西。你直接挑和你岗位相关的重要经历和自己最突出的特点讲就好了。</p>
+<p><strong>提前准备</strong></p>
+<p>面试之前可以在网上找找有没有你要面试的公司的面经。在我面试 ThoughtWorks 的前几天我就在网上找了一些关于 ThoughtWorks 的技术面的一些文章。然后知道了 ThoughtWorks 的技术面会让我们在之前做的作业的基础上增加一个或两个功能，所以我提前一天就把我之前做的程序重新重构了一下。然后在技术面的时候，简单的改了几行代码之后写个测试就完事了。如果没有提前准备，我觉得 20 分钟我很大几率会完不成这项任务。</p>
+<h3 id="面试中"><a href="#面试中" class="headerlink" title="面试中"></a>面试中</h3><p>面试的时候一定要自信，千万不要怕自己哪里会答不出来，或者说某个问题自己忘记怎么回答了。面试过程中，很多问题可能是你之前没有碰到过的，这个时候你就要通过自己构建的知识体系来思考这些问题。如果某些问题你回答不上来，你也可以让面试官给你简单的提示一下。总之，你要自信，你自信的前提是自己要做好充分的准备。下面给大家总结一些面试非常常见的问题：</p>
+<ul>
+<li>SpringMVC 工作原理</li>
+<li>说一下自己对 IOC 、AOP 的理解</li>
+<li>Spring 中用到了那些设计模式，讲一下自己对于这些设计模式的理解</li>
+<li>Spring Bean 的作用域和生命周期了解吗</li>
+<li>Spring 事务中的隔离级别</li>
+<li>Spring 事务中的事务传播行为</li>
+<li>手写一个 LRU 算法</li>
+<li>知道那些排序算法，简单介绍一下快排的原理，能不能手写一下快排</li>
+<li>String 为什么是不可变的？String为啥要设计为不可变的？</li>
+<li>Arraylist 与 LinkedList 异同</li>
+<li>HashMap的底层实现</li>
+<li>HashMap 的长度为什么是2的幂次方</li>
+<li>ConcurrentHashMap 和 Hashtable 的区别</li>
+<li>ConcurrentHashMap线程安全的具体实现方式/底层具体实现</li>
+<li>如果你的简历写了redis 、dubbo、zookeeper、docker的话，面试官还会问一下这些东西。比如redis可能会问你：为什么要用 redis、为什么要用 redis 而不用 map/guava 做缓存、redis 常见数据结构以及使用场景分析、 redis 设置过期时间、redis 内存淘汰机制、 redis 持久化机制、 缓存雪崩和缓存穿透问题、如何解决 Redis 的并发竞争 Key 问题、如何保证缓存与数据库双写时的数据一致性。</li>
+<li>一些简单的 Linux 命令。</li>
+<li>为什么要用 消息队列</li>
+<li>关于 Java多线程，在面试的时候，问的比较多的就是①悲观锁和乐观锁②synchronized 和 ReenTrantLock 区别以及 volatile 和 synchronized 的区别，③可重入锁与非可重入锁的区别、④多线程是解决什么问题的、⑤线程池解决什么问题，为什么要用线程池 ⑥Synchronized 关键字使用、底层原理、JDK1.6 之后的底层优化以及 ReenTrantLock 对比；⑦线程池使用时的注意事项、⑧AQS 原理以及 AQS 同步组件：Semaphore、CountDownLatCh、 CyclicBarrier、ReadWriteLock、⑨ReentranLock源码，设计原理，整体过程 等等问题。</li>
+<li>关于 Java 虚拟机问的比较多的是：①Java内存区域、②虚拟机垃圾算法、③虚拟机垃圾收集器、④JVM内存管理、⑤JVM调优这些问题。 </li>
+</ul>
+<h3 id="面试后"><a href="#面试后" class="headerlink" title="面试后"></a>面试后</h3><p>如果失败，不要灰心；如果通过，切勿狂喜。面试和工作实际上是两回事，可能很多面试未通过的人，工作能力比你强的多，反之亦然。我个人觉得面试也像是一场全新的征程，失败和胜利都是平常之事。所以，劝各位不要因为面试失败而灰心、丧失斗志。也不要因为面试通过而沾沾自喜，等待你的将是更美好的未来，继续加油！</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.youngboy.vip/youngboy/2019/05/05/8/94/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="youngboy">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/youngboy/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="youngboy">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/youngboy/2019/05/05/8/94/" itemprop="url">数据结构</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-05T11:18:43+08:00">
+                2019-05-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/youngboy/categories/数据结构与算法/" itemprop="url" rel="index">
+                    <span itemprop="name">数据结构与算法</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <!-- MarkdownTOC -->
+<ul>
+<li><a href="#queue">Queue</a><ul>
+<li><a href="#什么是队列">什么是队列</a></li>
+<li><a href="#队列的种类">队列的种类</a></li>
+<li><a href="#java-集合框架中的队列-queue">Java 集合框架中的队列 Queue</a></li>
+<li><a href="#推荐文章">推荐文章</a></li>
+</ul>
+</li>
+<li><a href="#set">Set</a><ul>
+<li><a href="#什么是-set">什么是 Set</a></li>
+<li><a href="#补充：有序集合与无序集合说明">补充：有序集合与无序集合说明</a></li>
+<li><a href="#hashset-和-treeset-底层数据结构">HashSet 和 TreeSet 底层数据结构</a></li>
+<li><a href="#推荐文章-1">推荐文章</a></li>
+</ul>
+</li>
+<li><a href="#list">List</a><ul>
+<li><a href="#什么是list">什么是List</a></li>
+<li><a href="#list的常见实现类">List的常见实现类</a></li>
+<li><a href="#arraylist-和-linkedlist-源码学习">ArrayList 和 LinkedList 源码学习</a></li>
+<li><a href="#推荐阅读">推荐阅读</a></li>
+</ul>
+</li>
+<li><a href="#map">Map</a></li>
+<li><a href="#树">树</a></li>
+</ul>
+<!-- /MarkdownTOC -->
+<h2 id="Queue"><a href="#Queue" class="headerlink" title="Queue"></a>Queue</h2><h3 id="什么是队列"><a href="#什么是队列" class="headerlink" title="什么是队列"></a>什么是队列</h3><p>队列是数据结构中比较重要的一种类型，它支持 FIFO，尾部添加、头部删除（先进队列的元素先出队列），跟我们生活中的排队类似。</p>
+<h3 id="队列的种类"><a href="#队列的种类" class="headerlink" title="队列的种类"></a>队列的种类</h3><ul>
+<li><strong>单队列</strong>（单队列就是常见的队列, 每次添加元素时，都是添加到队尾，存在“假溢出”的问题也就是明明有位置却不能添加的情况）</li>
+<li><strong>循环队列</strong>（避免了“假溢出”的问题）</li>
+</ul>
+<h3 id="Java-集合框架中的队列-Queue"><a href="#Java-集合框架中的队列-Queue" class="headerlink" title="Java 集合框架中的队列 Queue"></a>Java 集合框架中的队列 Queue</h3><p>Java 集合中的 Queue 继承自 Collection 接口 ，Deque, LinkedList, PriorityQueue, BlockingQueue 等类都实现了它。<br>Queue 用来存放 等待处理元素 的集合，这种场景一般用于缓冲、并发访问。<br>除了继承 Collection 接口的一些方法，Queue 还添加了额外的 添加、删除、查询操作。</p>
+<h3 id="推荐文章"><a href="#推荐文章" class="headerlink" title="推荐文章"></a>推荐文章</h3><ul>
+<li><a href="https://blog.csdn.net/u011240877/article/details/52860924" target="_blank" rel="noopener">Java 集合深入理解（9）：Queue 队列</a></li>
+</ul>
+<h2 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h2><h3 id="什么是-Set"><a href="#什么是-Set" class="headerlink" title="什么是 Set"></a>什么是 Set</h3><p>Set 继承于 Collection 接口，是一个不允许出现重复元素，并且无序的集合，主要 HashSet 和 TreeSet 两大实现类。</p>
+<p>在判断重复元素的时候，Set 集合会调用 hashCode()和 equal()方法来实现。</p>
+<h3 id="补充：有序集合与无序集合说明"><a href="#补充：有序集合与无序集合说明" class="headerlink" title="补充：有序集合与无序集合说明"></a>补充：有序集合与无序集合说明</h3><ul>
+<li>有序集合：集合里的元素可以根据 key 或 index 访问 (List、Map)</li>
+<li>无序集合：集合里的元素只能遍历。（Set）</li>
+</ul>
+<h3 id="HashSet-和-TreeSet-底层数据结构"><a href="#HashSet-和-TreeSet-底层数据结构" class="headerlink" title="HashSet 和 TreeSet 底层数据结构"></a>HashSet 和 TreeSet 底层数据结构</h3><p><strong>HashSet</strong> 是哈希表结构，主要利用 HashMap 的 key 来存储元素，计算插入元素的 hashCode 来获取元素在集合中的位置；</p>
+<p><strong>TreeSet</strong> 是红黑树结构，每一个元素都是树中的一个节点，插入的元素都会进行排序；</p>
+<h3 id="推荐文章-1"><a href="#推荐文章-1" class="headerlink" title="推荐文章"></a>推荐文章</h3><ul>
+<li><a href="https://www.jianshu.com/p/b48c47a42916" target="_blank" rel="noopener">Java集合–Set(基础)</a></li>
+</ul>
+<h2 id="List"><a href="#List" class="headerlink" title="List"></a>List</h2><h3 id="什么是List"><a href="#什么是List" class="headerlink" title="什么是List"></a>什么是List</h3><p>在 List 中，用户可以精确控制列表中每个元素的插入位置，另外用户可以通过整数索引（列表中的位置）访问元素，并搜索列表中的元素。 与 Set 不同，List 通常允许重复的元素。 另外 List 是有序集合而 Set 是无序集合。</p>
+<h3 id="List的常见实现类"><a href="#List的常见实现类" class="headerlink" title="List的常见实现类"></a>List的常见实现类</h3><p><strong>ArrayList</strong> 是一个数组队列，相当于动态数组。它由数组实现，随机访问效率高，随机插入、随机删除效率低。</p>
+<p><strong>LinkedList</strong> 是一个双向链表。它也可以被当作堆栈、队列或双端队列进行操作。LinkedList随机访问效率低，但随机插入、随机删除效率高。</p>
+<p><strong>Vector</strong> 是矢量队列，和ArrayList一样，它也是一个动态数组，由数组实现。但是ArrayList是非线程安全的，而Vector是线程安全的。</p>
+<p><strong>Stack</strong> 是栈，它继承于Vector。它的特性是：先进后出(FILO, First In Last Out)。相关阅读：<a href="https://blog.csdn.net/javazejian/article/details/53362993" target="_blank" rel="noopener">java数据结构与算法之栈（Stack）设计与实现</a></p>
+<h3 id="ArrayList-和-LinkedList-源码学习"><a href="#ArrayList-和-LinkedList-源码学习" class="headerlink" title="ArrayList 和 LinkedList 源码学习"></a>ArrayList 和 LinkedList 源码学习</h3><ul>
+<li><a href="https://github.com/Snailclimb/Java-Guide/blob/master/Java相关/ArrayList.md" target="_blank" rel="noopener">ArrayList 源码学习</a>    </li>
+<li><a href="https://github.com/Snailclimb/Java-Guide/blob/master/Java相关/LinkedList.md" target="_blank" rel="noopener">LinkedList 源码学习</a>   </li>
+</ul>
+<h3 id="推荐阅读"><a href="#推荐阅读" class="headerlink" title="推荐阅读"></a>推荐阅读</h3><ul>
+<li><a href="https://blog.csdn.net/javazejian/article/details/52953190" target="_blank" rel="noopener">java 数据结构与算法之顺序表与链表深入分析</a></li>
+</ul>
+<h2 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h2><ul>
+<li><a href="https://juejin.im/post/5ab0568b5188255580020e56" target="_blank" rel="noopener">集合框架源码学习之 HashMap(JDK1.8)</a></li>
+<li><a href="https://link.juejin.im/?target=http%3A%2F%2Fwww.cnblogs.com%2Fchengxiao%2Fp%2F6842045.html" target="_blank" rel="noopener">ConcurrentHashMap 实现原理及源码分析</a></li>
+</ul>
+<h2 id="树"><a href="#树" class="headerlink" title="树"></a>树</h2><ul>
+<li><h3 id="1-二叉树"><a href="#1-二叉树" class="headerlink" title="1 二叉树"></a>1 二叉树</h3><p> <a href="https://baike.baidu.com/item/%E4%BA%8C%E5%8F%89%E6%A0%91" target="_blank" rel="noopener">二叉树</a>（百度百科）</p>
+<p>(1)<a href="https://baike.baidu.com/item/%E5%AE%8C%E5%85%A8%E4%BA%8C%E5%8F%89%E6%A0%91" target="_blank" rel="noopener">完全二叉树</a>——若设二叉树的高度为h，除第 h 层外，其它各层 (1～h-1) 的结点数都达到最大个数，第h层有叶子结点，并且叶子结点都是从左到右依次排布，这就是完全二叉树。</p>
+<p>(2)<a href="https://baike.baidu.com/item/%E5%AE%8C%E5%85%A8%E4%BA%8C%E5%8F%89%E6%A0%91" target="_blank" rel="noopener">满二叉树</a>——除了叶结点外每一个结点都有左右子叶且叶子结点都处在最底层的二叉树。</p>
+<p>(3)<a href="https://baike.baidu.com/item/%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91/10421057" target="_blank" rel="noopener">平衡二叉树</a>——平衡二叉树又被称为AVL树（区别于AVL算法），它是一棵二叉排序树，且具有以下性质：它是一棵空树或它的左右两个子树的高度差的绝对值不超过1，并且左右两个子树都是一棵平衡二叉树。 </p>
+</li>
+<li><h3 id="2-完全二叉树"><a href="#2-完全二叉树" class="headerlink" title="2 完全二叉树"></a>2 完全二叉树</h3><p><a href="https://baike.baidu.com/item/%E5%AE%8C%E5%85%A8%E4%BA%8C%E5%8F%89%E6%A0%91" target="_blank" rel="noopener">完全二叉树</a>（百度百科）</p>
+<p>完全二叉树：叶节点只能出现在最下层和次下层，并且最下面一层的结点都集中在该层最左边的若干位置的二叉树</p>
+</li>
+<li><h3 id="3-满二叉树"><a href="#3-满二叉树" class="headerlink" title="3 满二叉树"></a>3 满二叉树</h3><p> <a href="https://baike.baidu.com/item/%E6%BB%A1%E4%BA%8C%E5%8F%89%E6%A0%91" target="_blank" rel="noopener">满二叉树</a>（百度百科，国内外的定义不同）</p>
+<p> 国内教程定义：一个二叉树，如果每一个层的结点数都达到最大值，则这个二叉树就是满二叉树。也就是说，如果一个二叉树的层数为K，且结点总数是(2^k) -1 ，则它就是满二叉树。</p>
+</li>
+<li><h3 id="堆"><a href="#堆" class="headerlink" title="堆"></a>堆</h3><p> <a href="https://blog.csdn.net/qq_33186366/article/details/51876191" target="_blank" rel="noopener">数据结构之堆的定义</a></p>
+<p>堆是具有以下性质的完全二叉树：每个结点的值都大于或等于其左右孩子结点的值，称为大顶堆；或者每个结点的值都小于或等于其左右孩子结点的值，称为小顶堆</p>
+</li>
+<li><h3 id="4-二叉查找树（BST）"><a href="#4-二叉查找树（BST）" class="headerlink" title="4 二叉查找树（BST）"></a>4 二叉查找树（BST）</h3><p><a href="http://www.cnblogs.com/yangecnu/p/Introduce-Binary-Search-Tree.html" target="_blank" rel="noopener">浅谈算法和数据结构: 七 二叉查找树</a></p>
+<p> 二叉查找树的特点：</p>
+<ol>
+<li>若任意节点的左子树不空，则左子树上所有结点的     值均小于它的根结点的值；</li>
+<li>若任意节点的右子树不空，则右子树上所有结点的值均大于它的根结点的值；</li>
+<li>任意节点的左、右子树也分别为二叉查找树。</li>
+<li>没有键值相等的节点（no duplicate nodes）。</li>
+</ol>
+</li>
+<li><h3 id="5-平衡二叉树（Self-balancing-binary-search-tree）"><a href="#5-平衡二叉树（Self-balancing-binary-search-tree）" class="headerlink" title="5 平衡二叉树（Self-balancing binary search tree）"></a>5 平衡二叉树（Self-balancing binary search tree）</h3><p><a href="https://baike.baidu.com/item/%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91" target="_blank" rel="noopener"> 平衡二叉树</a>（百度百科，平衡二叉树的常用实现方法有红黑树、AVL、替罪羊树、Treap、伸展树等）</p>
+</li>
+<li><h3 id="6-红黑树"><a href="#6-红黑树" class="headerlink" title="6 红黑树"></a>6 红黑树</h3><ul>
+<li><p>红黑树特点:</p>
+<ol>
+<li>每个节点非红即黑；</li>
+<li>根节点总是黑色的；</li>
+<li>每个叶子节点都是黑色的空节点（NIL节点）；</li>
+<li>如果节点是红色的，则它的子节点必须是黑色的（反之不一定）；</li>
+<li>从根节点到叶节点或空子节点的每条路径，必须包含相同数目的黑色节点（即相同的黑色高度）</li>
+</ol>
+</li>
+<li><p>红黑树的应用：</p>
+<p>  TreeMap、TreeSet以及JDK1.8之后的HashMap底层都用到了红黑树。</p>
+</li>
+<li><p>为什么要用红黑树</p>
+<p>简单来说红黑树就是为了解决二叉查找树的缺陷，因为二叉查找树在某些情况下会退化成一个线性结构。详细了解可以查看 <a href="https://juejin.im/post/5a27c6946fb9a04509096248#comment" target="_blank" rel="noopener">漫画：什么是红黑树？</a>（也介绍到了二叉查找树，非常推荐）</p>
+</li>
+<li><p>推荐文章： </p>
+<ul>
+<li><a href="https://juejin.im/post/5a27c6946fb9a04509096248#comment" target="_blank" rel="noopener">漫画：什么是红黑树？</a>（也介绍到了二叉查找树，非常推荐）</li>
+<li><a href="http://dandanlove.com/2018/03/18/red-black-tree/" target="_blank" rel="noopener">寻找红黑树的操作手册</a>（文章排版以及思路真的不错）</li>
+<li><a href="https://zhuanlan.zhihu.com/p/24367771" target="_blank" rel="noopener">红黑树深入剖析及Java实现</a>（美团点评技术团队）    </li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h3 id="7-B-，B-，B-树"><a href="#7-B-，B-，B-树" class="headerlink" title="7 B-，B+，B*树"></a>7 B-，B+，B*树</h3><p> <a href="https://yq.aliyun.com/articles/38345" target="_blank" rel="noopener">二叉树学习笔记之B树、B+树、B*树 </a></p>
+<p> <a href="https://blog.csdn.net/aqzwss/article/details/53074186" target="_blank" rel="noopener">《B-树，B+树，B*树详解》</a></p>
+<p> <a href="https://blog.csdn.net/bigtree_3721/article/details/73632405" target="_blank" rel="noopener">《B-树，B+树与B*树的优缺点比较》</a></p>
+<p>B-树（或B树）是一种平衡的多路查找(又称排序)树，在文件系统中有所应用。主要用作文件的索引。其中的B就表示平衡(Balance) </p>
+<ol>
+<li>B+ 树的叶子节点链表结构相比于 B- 树便于扫库，和范围检索。</li>
+<li>B+树支持range-query(区间查询)非常方便，而B树不支持。这是数据库选用B+树的最主要原因。</li>
+<li>B<em>树 是B+树的变体，B</em>树分配新结点的概率比B+树要低，空间使用率更高；</li>
+</ol>
+</li>
+<li><h3 id="8-LSM-树"><a href="#8-LSM-树" class="headerlink" title="8 LSM 树"></a>8 LSM 树</h3><p><a href="https://blog.csdn.net/dbanote/article/details/8897599" target="_blank" rel="noopener">[HBase] LSM树 VS B+树</a></p>
+<p>B+树最大的性能问题是会产生大量的随机IO</p>
+<p>为了克服B+树的弱点，HBase引入了LSM树的概念，即Log-Structured Merge-Trees。</p>
+<p><a href="http://www.cnblogs.com/yanghuahui/p/3483754.html" target="_blank" rel="noopener">LSM树由来、设计思想以及应用到HBase的索引</a></p>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/youngboy/page/12/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/youngboy/">1</a><span class="space">&hellip;</span><a class="page-number" href="/youngboy/page/12/">12</a><span class="page-number current">13</span>
+  </nav>
+
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">youngboy</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/youngboy/archives/">
+              
+                  <span class="site-state-item-count">126</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/youngboy/categories/index.html">
+                  <span class="site-state-item-count">40</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">youngboy</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/youngboy/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/youngboy/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/youngboy/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/youngboy/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/youngboy/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/youngboy/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/youngboy/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/youngboy/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/youngboy/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/youngboy/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/youngboy/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

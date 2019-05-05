@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/youngboy/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/youngboy/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/youngboy/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/youngboy/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/youngboy/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/youngboy/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/youngboy/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="youngboy">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="一 消息队列MQ的套路 1.1  介绍一下消息队列MQ的应用场景/使用消息队列的好处 ①.通过异步处理提高系统性能 ②.降低系统耦合性   1.2 那么使用消息队列会带来什么问题？考虑过这个问题吗？ 1.3 介绍一下你知道哪几种消息队列，该如何选择呢？ 1.4 关于消息队列其他一些常见的问题展望   二 谈谈 InnoDB 和 MyIsam 两者的区别 2.1 两者的对比 2.2 关于两者的总">
+<meta name="keywords" content="youngboy的个人blog">
+<meta property="og:type" content="article">
+<meta property="og:title" content="美团-进阶篇">
+<meta property="og:url" content="http://www.youngboy.vip/2019/05/05/11/128/index.html">
+<meta property="og:site_name" content="youngboy">
+<meta property="og:description" content="一 消息队列MQ的套路 1.1  介绍一下消息队列MQ的应用场景/使用消息队列的好处 ①.通过异步处理提高系统性能 ②.降低系统耦合性   1.2 那么使用消息队列会带来什么问题？考虑过这个问题吗？ 1.3 介绍一下你知道哪几种消息队列，该如何选择呢？ 1.4 关于消息队列其他一些常见的问题展望   二 谈谈 InnoDB 和 MyIsam 两者的区别 2.1 两者的对比 2.2 关于两者的总">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/11/14/16711ac29c2ae52c?w=928&h=531&f=png&s=798562">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/4/21/162e63a8e34ba534?w=910&h=350&f=jpeg&s=29123">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/4/21/162e64583dd3ed01?w=780&h=384&f=jpeg&s=13550">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/4/21/162e6665fa394b3b?w=790&h=290&f=jpeg&s=14946">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/3/20/16240dbcc303d872?w=348&h=427&f=png&s=10991">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/11/14/16711ac29c351da9?w=720&h=545&f=jpeg&s=23933">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/11/14/16711ac29c138cba?w=851&h=614&f=jpeg&s=34458">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/3/2/161e717d734f3b23?w=896&h=363&f=jpeg&s=205536">
+<meta property="og:updated_time" content="2019-05-05T03:18:43.320Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="美团-进阶篇">
+<meta name="twitter:description" content="一 消息队列MQ的套路 1.1  介绍一下消息队列MQ的应用场景/使用消息队列的好处 ①.通过异步处理提高系统性能 ②.降低系统耦合性   1.2 那么使用消息队列会带来什么问题？考虑过这个问题吗？ 1.3 介绍一下你知道哪几种消息队列，该如何选择呢？ 1.4 关于消息队列其他一些常见的问题展望   二 谈谈 InnoDB 和 MyIsam 两者的区别 2.1 两者的对比 2.2 关于两者的总">
+<meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2018/11/14/16711ac29c2ae52c?w=928&h=531&f=png&s=798562">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/youngboy/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.youngboy.vip/2019/05/05/11/128/">
+
+
+
+
+
+  <title>美团-进阶篇 | youngboy</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/youngboy/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">youngboy</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">Java大杂烩</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/youngboy/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/youngboy/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/youngboy/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/youngboy/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/youngboy/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br>
+            
+            日程表
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.youngboy.vip/youngboy/2019/05/05/11/128/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="youngboy">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/youngboy/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="youngboy">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">美团-进阶篇</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-05T11:18:43+08:00">
+                2019-05-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/youngboy/categories/面试必备/" itemprop="url" rel="index">
+                    <span itemprop="name">面试必备</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="https://user-gold-cdn.xitu.io/2018/11/14/16711ac29c2ae52c?w=928&amp;h=531&amp;f=png&amp;s=798562" alt=" 【备战春招/秋招系列】美团面经总结进阶篇 （附详解答案）"><br><!-- MarkdownTOC --></p>
+<ul>
+<li><a href="#一-消息队列mq的套路">一 消息队列MQ的套路</a><ul>
+<li><a href="#11-介绍一下消息队列mq的应用场景使用消息队列的好处">1.1  介绍一下消息队列MQ的应用场景/使用消息队列的好处</a><ul>
+<li><a href="#①通过异步处理提高系统性能">①.通过异步处理提高系统性能</a></li>
+<li><a href="#②降低系统耦合性">②.降低系统耦合性</a></li>
+</ul>
+</li>
+<li><a href="#12-那么使用消息队列会带来什么问题考虑过这个问题吗">1.2 那么使用消息队列会带来什么问题？考虑过这个问题吗？</a></li>
+<li><a href="#13-介绍一下你知道哪几种消息队列该如何选择呢">1.3 介绍一下你知道哪几种消息队列，该如何选择呢？</a></li>
+<li><a href="#14-关于消息队列其他一些常见的问题展望">1.4 关于消息队列其他一些常见的问题展望</a></li>
+</ul>
+</li>
+<li><a href="#二-谈谈-innodb-和-myisam-两者的区别">二 谈谈 InnoDB 和 MyIsam 两者的区别</a><ul>
+<li><a href="#21-两者的对比">2.1 两者的对比</a></li>
+<li><a href="#22-关于两者的总结">2.2 关于两者的总结</a></li>
+</ul>
+</li>
+<li><a href="#三-聊聊-java-中的集合吧！">三 聊聊 Java 中的集合吧！</a><ul>
+<li><a href="#31-arraylist-与-linkedlist-有什么不同？（注意加上从数据结构分析的内容）">3.1 Arraylist 与 LinkedList 有什么不同？（注意加上从数据结构分析的内容）</a></li>
+<li><a href="#32-hashmap的底层实现">3.2 HashMap的底层实现</a><ul>
+<li><a href="#①-jdk18之前">① JDK1.8之前</a></li>
+</ul>
+</li>
+<li><a href="#②-jdk18之后">② JDK1.8之后</a></li>
+<li><a href="#33-既然谈到了红黑树，你给我手绘一个出来吧，然后简单讲一下自己对于红黑树的理解">3.3 既然谈到了红黑树，你给我手绘一个出来吧，然后简单讲一下自己对于红黑树的理解</a></li>
+<li><a href="#34-红黑树这么优秀为何不直接使用红黑树得了">3.4 红黑树这么优秀，为何不直接使用红黑树得了？</a></li>
+<li><a href="#35-hashmap-和-hashtable-的区别hashset-和-hashmap-区别">3.5  HashMap 和 Hashtable 的区别/HashSet 和 HashMap 区别</a></li>
+</ul>
+</li>
+</ul>
+<!-- /MarkdownTOC -->
+<blockquote>
+<p>该文已加入开源文档：JavaGuide（一份涵盖大部分Java程序员所需要掌握的核心知识）。地址:<a href="https://github.com/Snailclimb/JavaGuide" target="_blank" rel="noopener">https://github.com/Snailclimb/JavaGuide</a>.</p>
+</blockquote>
+<p><strong>系列文章：</strong></p>
+<ul>
+<li><a href="https://mp.weixin.qq.com/s?__biz=MzU4NDQ4MzU5OA==&amp;mid=2247484573&amp;idx=1&amp;sn=8c5965d4a3710d405d8e8cc10c7b0ce5&amp;chksm=fd9852fccaefdbea8dfe0bc40188b7579f1cddb1e8905dc981669a3f21d2a04cadceafa9023f&amp;token=1990180468&amp;lang=zh_CN#rd" target="_blank" rel="noopener">【备战春招/秋招系列1】程序员的简历就该这样写</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=MzU4NDQ4MzU5OA==&amp;mid=2247484578&amp;idx=1&amp;sn=eea72d80a2325257f00aaed21d5b226f&amp;chksm=fd9852c3caefdbd52dd8a537cc723ed1509314401b3a669a253ef5bc0360b6fddef48b9c2e94&amp;token=1990180468&amp;lang=zh_CN#rd" target="_blank" rel="noopener">【备战春招/秋招系列2】初出茅庐的程序员该如何准备面试？</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=MzU4NDQ4MzU5OA==&amp;mid=2247484592&amp;idx=1&amp;sn=6d9731ce7401be49e97c1af6ed384ecc&amp;chksm=fd9852d1caefdbc720a361ae65a8ad9d53cfb4800b15a7c68cbdc630b313215c6c52e0934ec2&amp;token=1990180468&amp;lang=zh_CN#rd" target="_blank" rel="noopener">【备战春招/秋招系列3】Java程序员必备书单</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=MzU4NDQ4MzU5OA==&amp;mid=2247484601&amp;idx=1&amp;sn=4907b7fef0856791c565d49d788ba8cc&amp;chksm=fd9852d8caefdbce88e51c0a10a4ec77c97f382fd2af4a840ea47cffc828bfd0f993f50d5f0d&amp;token=2045370425&amp;lang=zh_CN#rd" target="_blank" rel="noopener">【备战春招/秋招系列4】美团面经总结基础篇 （附详解答案）</a></li>
+</ul>
+<p>这是我总结的美团面经的进阶篇，后面还有终结篇哦！下面只是我从很多份美团面经中总结的在美团面试中一些常见的问题。不同于个人面经，这份面经具有普适性。每次面试必备的自我介绍、项目介绍这些东西，大家可以自己私下好好思考。我在前面的文章中也提到了应该怎么做自我介绍与项目介绍，详情可以查看这篇文章：<a href="https://mp.weixin.qq.com/s?__biz=MzU4NDQ4MzU5OA==&amp;mid=2247484578&amp;idx=1&amp;sn=eea72d80a2325257f00aaed21d5b226f&amp;chksm=fd9852c3caefdbd52dd8a537cc723ed1509314401b3a669a253ef5bc0360b6fddef48b9c2e94&amp;token=1990180468&amp;lang=zh_CN#rd" target="_blank" rel="noopener">【备战春招/秋招系列2】初出茅庐的程序员该如何准备面试？</a>。</p>
+<p>有人私信我让我对美团面试难度做一个评级，我觉得如果有10级的话，美团面试的难度大概在6级左右吧！部分情况可能因人而异了。</p>
+<blockquote>
+<p>消息队列/消息中间件应该是Java程序员必备的一个技能了，如果你之前没接触过消息队列的话，建议先去百度一下某某消息队列入门，然后花2个小时就差不多可以学会任何一种消息队列的使用了。如果说仅仅学会使用是万万不够的，在实际生产环境还要考虑消息丢失等等情况。关于消息队列面试相关的问题，推荐大家也可以看一下视频《Java工程师面试突击第1季-中华石杉老师》，如果大家没有资源的话，可以在我的公众号“Java面试通关手册”后台回复关键字“1”即可！</p>
+</blockquote>
+<h1 id="一-消息队列MQ的套路"><a href="#一-消息队列MQ的套路" class="headerlink" title="一 消息队列MQ的套路"></a>一 消息队列MQ的套路</h1><blockquote>
+<p>面试官一般会先问你这个问题，预热一下，看你知道消息队列不，一般在第一面的时候面试官可能只会问消息队列MQ的应用场景/使用消息队列的好处、使用消息队列会带来什么问题、消息队列的技术选型这几个问题，不会太深究下去，在后面的第二轮/第三轮技术面试中可能会深入问一下。</p>
+</blockquote>
+<h3 id="1-1-介绍一下消息队列MQ的应用场景-使用消息队列的好处"><a href="#1-1-介绍一下消息队列MQ的应用场景-使用消息队列的好处" class="headerlink" title="1.1  介绍一下消息队列MQ的应用场景/使用消息队列的好处"></a>1.1  介绍一下消息队列MQ的应用场景/使用消息队列的好处</h3><p><strong>《大型网站技术架构》第四章和第七章均有提到消息队列对应用性能及扩展性的提升。</strong></p>
+<h4 id="①-通过异步处理提高系统性能"><a href="#①-通过异步处理提高系统性能" class="headerlink" title="①.通过异步处理提高系统性能"></a>①.通过异步处理提高系统性能</h4><p><img src="https://user-gold-cdn.xitu.io/2018/4/21/162e63a8e34ba534?w=910&amp;h=350&amp;f=jpeg&amp;s=29123" alt="通过异步处理提高系统性能"><br>如上图，<strong>在不使用消息队列服务器的时候，用户的请求数据直接写入数据库，在高并发的情况下数据库压力剧增，使得响应速度变慢。但是在使用消息队列之后，用户的请求数据发送给消息队列之后立即 返回，再由消息队列的消费者进程从消息队列中获取数据，异步写入数据库。由于消息队列服务器处理速度快于数据库（消息队列也比数据库有更好的伸缩性），因此响应速度得到大幅改善。</strong></p>
+<p>通过以上分析我们可以得出<strong>消息队列具有很好的削峰作用的功能</strong>——即<strong>通过异步处理，将短时间高并发产生的事务消息存储在消息队列中，从而削平高峰期的并发事务。</strong> 举例：在电子商务一些秒杀、促销活动中，合理使用消息队列可以有效抵御促销活动刚开始大量订单涌入对系统的冲击。如下图所示：<br><img src="https://user-gold-cdn.xitu.io/2018/4/21/162e64583dd3ed01?w=780&amp;h=384&amp;f=jpeg&amp;s=13550" alt="合理使用消息队列可以有效抵御促销活动刚开始大量订单涌入对系统的冲击"><br>因为<strong>用户请求数据写入消息队列之后就立即返回给用户了，但是请求数据在后续的业务校验、写数据库等操作中可能失败</strong>。因此使用消息队列进行异步处理之后，需要<strong>适当修改业务流程进行配合</strong>，比如<strong>用户在提交订单之后，订单数据写入消息队列，不能立即返回用户订单提交成功，需要在消息队列的订单消费者进程真正处理完该订单之后，甚至出库后，再通过电子邮件或短信通知用户订单成功</strong>，以免交易纠纷。这就类似我们平时手机订火车票和电影票。</p>
+<h3 id="②-降低系统耦合性"><a href="#②-降低系统耦合性" class="headerlink" title="②.降低系统耦合性"></a>②.降低系统耦合性</h3><p>我们知道模块分布式部署以后聚合方式通常有两种：1.<strong>分布式消息队列</strong>和2.<strong>分布式服务</strong>。</p>
+<blockquote>
+<p><strong>先来简单说一下分布式服务：</strong></p>
+</blockquote>
+<p>目前使用比较多的用来构建<strong>SOA（Service Oriented Architecture面向服务体系结构）</strong>的<strong>分布式服务框架</strong>是阿里巴巴开源的<strong>Dubbo</strong>.如果想深入了解Dubbo的可以看我写的关于Dubbo的这一篇文章：<strong>《高性能优秀的服务框架-dubbo介绍》</strong>：<a href="https://juejin.im/post/5acadeb1f265da2375072f9c" target="_blank" rel="noopener">https://juejin.im/post/5acadeb1f265da2375072f9c</a></p>
+<blockquote>
+<p><strong>再来谈我们的分布式消息队列：</strong></p>
+</blockquote>
+<p>我们知道如果模块之间不存在直接调用，那么新增模块或者修改模块就对其他模块影响较小，这样系统的可扩展性无疑更好一些。</p>
+<p>我们最常见的<strong>事件驱动架构</strong>类似生产者消费者模式，在大型网站中通常用利用消息队列实现事件驱动结构。如下图所示：<br><img src="https://user-gold-cdn.xitu.io/2018/4/21/162e6665fa394b3b?w=790&amp;h=290&amp;f=jpeg&amp;s=14946" alt="利用消息队列实现事件驱动结构"><br><strong>消息队列使利用发布-订阅模式工作，消息发送者（生产者）发布消息，一个或多个消息接受者（消费者）订阅消息。</strong> 从上图可以看到<strong>消息发送者（生产者）和消息接受者（消费者）之间没有直接耦合</strong>，消息发送者将消息发送至分布式消息队列即结束对消息的处理，消息接受者从分布式消息队列获取该消息后进行后续处理，并不需要知道该消息从何而来。<strong>对新增业务，只要对该类消息感兴趣，即可订阅该消息，对原有系统和业务没有任何影响，从而实现网站业务的可扩展性设计</strong>。</p>
+<p>消息接受者对消息进行过滤、处理、包装后，构造成一个新的消息类型，将消息继续发送出去，等待其他消息接受者订阅该消息。因此基于事件（消息对象）驱动的业务架构可以是一系列流程。</p>
+<p><strong>另外为了避免消息队列服务器宕机造成消息丢失，会将成功发送到消息队列的消息存储在消息生产者服务器上，等消息真正被消费者服务器处理后才删除消息。在消息队列服务器宕机后，生产者服务器会选择分布式消息队列服务器集群中的其他服务器发布消息。</strong>   </p>
+<p><strong>备注：</strong> 不要认为消息队列只能利用发布-订阅模式工作，只不过在解耦这个特定业务环境下是使用发布-订阅模式的，<strong>比如在我们的ActiveMQ消息队列中还有点对点工作模式</strong>，具体的会在后面的文章给大家详细介绍，这一篇文章主要还是让大家对消息队列有一个更透彻的了解。</p>
+<blockquote>
+<p>这个问题一般会在上一个问题问完之后，紧接着被问到。“使用消息队列会带来什么问题？”这个问题要引起重视，一般我们都会考虑使用消息队列会带来的好处而忽略它带来的问题！</p>
+</blockquote>
+<h3 id="1-2-那么使用消息队列会带来什么问题？考虑过这个问题吗？"><a href="#1-2-那么使用消息队列会带来什么问题？考虑过这个问题吗？" class="headerlink" title="1.2 那么使用消息队列会带来什么问题？考虑过这个问题吗？"></a>1.2 那么使用消息队列会带来什么问题？考虑过这个问题吗？</h3><ul>
+<li><strong>系统可用性降低：</strong>系统可用性在某种程度上降低，为什么这样说呢？在加入MQ之前，你不用考虑消息丢失或者说MQ挂掉等等的情况，但是，引入MQ之后你就需要去考虑了！</li>
+<li><strong>系统复杂性提高：</strong> 加入MQ之后，你需要保证消息没有被重复消费、处理消息丢失的情况、保证消息传递的顺序性等等问题！</li>
+<li><strong>一致性问题：</strong> 我上面讲了消息队列可以实现异步，消息队列带来的异步确实可以提高系统响应速度。但是，万一消息的真正消费者并没有正确消费消息怎么办？这样就会导致数据不一致的情况了!</li>
+</ul>
+<blockquote>
+<p>了解下面这个问题是为了我们更好的进行技术选型！该部分摘自：《Java工程师面试突击第1季-中华石杉老师》，如果大家没有资源的话，可以在我的公众号“Java面试通关手册”后台回复关键字“1”即可！</p>
+</blockquote>
+<h3 id="1-3-介绍一下你知道哪几种消息队列，该如何选择呢？"><a href="#1-3-介绍一下你知道哪几种消息队列，该如何选择呢？" class="headerlink" title="1.3 介绍一下你知道哪几种消息队列，该如何选择呢？"></a>1.3 介绍一下你知道哪几种消息队列，该如何选择呢？</h3><table>
+<thead>
+<tr>
+<th style="text-align:left">特性</th>
+<th style="text-align:right">ActiveMQ</th>
+<th style="text-align:right">RabbitMQ</th>
+<th style="text-align:right">RocketMQ</th>
+<th style="text-align:right">Kafaka</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">单机吞吐量</td>
+<td style="text-align:right">万级，吞吐量比RocketMQ和Kafka要低了一个数量级</td>
+<td style="text-align:right">万级，吞吐量比RocketMQ和Kafka要低了一个数量级</td>
+<td style="text-align:right">10万级，RocketMQ也是可以支撑高吞吐的一种MQ</td>
+<td style="text-align:right">10万级别，这是kafka最大的优点，就是吞吐量高。一般配合大数据类的系统来进行实时数据计算、日志采集等场景</td>
+</tr>
+<tr>
+<td style="text-align:left">topic数量对吞吐量的影响</td>
+<td style="text-align:right"></td>
+<td style="text-align:right"></td>
+<td style="text-align:right">topic可以达到几百，几千个的级别，吞吐量会有较小幅度的下降这是RocketMQ的一大优势，在同等机器下，可以支撑大量的topic</td>
+<td style="text-align:right">topic从几十个到几百个的时候，吞吐量会大幅度下降。所以在同等机器下，kafka尽量保证topic数量不要过多。如果要支撑大规模topic，需要增加更多的机器资源</td>
+</tr>
+<tr>
+<td style="text-align:left">可用性</td>
+<td style="text-align:right">高，基于主从架构实现高可用性</td>
+<td style="text-align:right">高，基于主从架构实现高可用性</td>
+<td style="text-align:right">非常高，分布式架构</td>
+<td style="text-align:right">非常高，kafka是分布式的，一个数据多个副本，少数机器宕机，不会丢失数据，不会导致不可用</td>
+</tr>
+<tr>
+<td style="text-align:left">消息可靠性</td>
+<td style="text-align:right">有较低的概率丢失数据</td>
+<td style="text-align:right"></td>
+<td style="text-align:right">经过参数优化配置，可以做到0丢失</td>
+<td style="text-align:right">经过参数优化配置，消息可以做到0丢失</td>
+</tr>
+<tr>
+<td style="text-align:left">时效性</td>
+<td style="text-align:right">ms级</td>
+<td style="text-align:right">微秒级，这是rabbitmq的一大特点，延迟是最低的</td>
+<td style="text-align:right">ms级</td>
+<td style="text-align:right">延迟在ms级以内</td>
+</tr>
+<tr>
+<td style="text-align:left">功能支持</td>
+<td style="text-align:right">MQ领域的功能极其完备</td>
+<td style="text-align:right">基于erlang开发，所以并发能力很强，性能极其好，延时很低</td>
+<td style="text-align:right">MQ功能较为完善，还是分布式的，扩展性好</td>
+<td style="text-align:right">功能较为简单，主要支持简单的MQ功能，在大数据领域的实时计算以及日志采集被大规模使用，是事实上的标准</td>
+</tr>
+<tr>
+<td style="text-align:left">优劣势总结</td>
+<td style="text-align:right">非常成熟，功能强大，在业内大量的公司以及项目中都有应用。偶尔会有较低概率丢失消息，而且现在社区以及国内应用都越来越少，官方社区现在对ActiveMQ 5.x维护越来越少，几个月才发布一个版本而且确实主要是基于解耦和异步来用的，较少在大规模吞吐的场景中使用</td>
+<td style="text-align:right">erlang语言开发，性能极其好，延时很低；吞吐量到万级，MQ功能比较完备而且开源提供的管理界面非常棒，用起来很好用。社区相对比较活跃，几乎每个月都发布几个版本分在国内一些互联网公司近几年用rabbitmq也比较多一些但是问题也是显而易见的，RabbitMQ确实吞吐量会低一些，这是因为他做的实现机制比较重。而且erlang开发，国内有几个公司有实力做erlang源码级别的研究和定制？如果说你没这个实力的话，确实偶尔会有一些问题，你很难去看懂源码，你公司对这个东西的掌控很弱，基本职能依赖于开源社区的快速维护和修复bug。而且rabbitmq集群动态扩展会很麻烦，不过这个我觉得还好。其实主要是erlang语言本身带来的问题。很难读源码，很难定制和掌控。</td>
+<td style="text-align:right">接口简单易用，而且毕竟在阿里大规模应用过，有阿里品牌保障。日处理消息上百亿之多，可以做到大规模吞吐，性能也非常好，分布式扩展也很方便，社区维护还可以，可靠性和可用性都是ok的，还可以支撑大规模的topic数量，支持复杂MQ业务场景。而且一个很大的优势在于，阿里出品都是java系的，我们可以自己阅读源码，定制自己公司的MQ，可以掌控。社区活跃度相对较为一般，不过也还可以，文档相对来说简单一些，然后接口这块不是按照标准JMS规范走的有些系统要迁移需要修改大量代码。还有就是阿里出台的技术，你得做好这个技术万一被抛弃，社区黄掉的风险，那如果你们公司有技术实力我觉得用RocketMQ挺好的</td>
+<td style="text-align:right">kafka的特点其实很明显，就是仅仅提供较少的核心功能，但是提供超高的吞吐量，ms级的延迟，极高的可用性以及可靠性，而且分布式可以任意扩展。同时kafka最好是支撑较少的topic数量即可，保证其超高吞吐量。而且kafka唯一的一点劣势是有可能消息重复消费，那么对数据准确性会造成极其轻微的影响，在大数据领域中以及日志采集中，这点轻微影响可以忽略这个特性天然适合大数据实时计算以及日志收集。</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>这部分内容，我这里不给出答案，大家可以自行根据自己学习的消息队列查阅相关内容，我可能会在后面的文章中介绍到这部分内容。另外，下面这些问题在视频《Java工程师面试突击第1季-中华石杉老师》中都有提到，如果大家没有资源的话，可以在我的公众号“Java面试通关手册”后台回复关键字“1”即可！</p>
+</blockquote>
+<h3 id="1-4-关于消息队列其他一些常见的问题展望"><a href="#1-4-关于消息队列其他一些常见的问题展望" class="headerlink" title="1.4 关于消息队列其他一些常见的问题展望"></a>1.4 关于消息队列其他一些常见的问题展望</h3><ol>
+<li>引入消息队列之后如何保证高可用性</li>
+<li>如何保证消息不被重复消费呢？</li>
+<li>如何保证消息的可靠性传输（如何处理消息丢失的问题）？</li>
+<li>我该怎么保证从消息队列里拿到的数据按顺序执行？</li>
+<li>如何解决消息队列的延时以及过期失效问题？消息队列满了以后该怎么处理？有几百万消息持续积压几小时，说说怎么解决？</li>
+<li>如果让你来开发一个消息队列中间件，你会怎么设计架构？</li>
+</ol>
+<h1 id="二-谈谈-InnoDB-和-MyIsam-两者的区别"><a href="#二-谈谈-InnoDB-和-MyIsam-两者的区别" class="headerlink" title="二 谈谈 InnoDB 和 MyIsam 两者的区别"></a>二 谈谈 InnoDB 和 MyIsam 两者的区别</h1><h3 id="2-1-两者的对比"><a href="#2-1-两者的对比" class="headerlink" title="2.1 两者的对比"></a>2.1 两者的对比</h3><p>1) <strong>count运算上的区别：</strong> 因为MyISAM缓存有表meta-data（行数等），因此在做COUNT(*)时对于一个结构很好的查询是不需要消耗多少资源的。而对于InnoDB来说，则没有这种缓存。</p>
+<p>2) <strong>是否支持事务和崩溃后的安全恢复：</strong> MyISAM 强调的是性能，每次查询具有原子性,其执行数度比InnoDB类型更快，但是不提供事务支持。但是InnoDB 提供事务支持事务，外部键等高级数据库功能。 具有事务(commit)、回滚(rollback)和崩溃修复能力(crash recovery capabilities)的事务安全(transaction-safe (ACID compliant))型表。</p>
+<p>3)<strong>是否支持外键：</strong> MyISAM不支持，而InnoDB支持。</p>
+<h3 id="2-2-关于两者的总结"><a href="#2-2-关于两者的总结" class="headerlink" title="2.2 关于两者的总结"></a>2.2 关于两者的总结</h3><p>MyISAM更适合读密集的表，而InnoDB更适合写密集的的表。 在数据库做主从分离的情况下，经常选择MyISAM作为主库的存储引擎。</p>
+<p>一般来说，如果需要事务支持，并且有较高的并发读取频率(MyISAM的表锁的粒度太大，所以当该表写并发量较高时，要等待的查询就会很多了)，InnoDB是不错的选择。如果你的数据量很大（MyISAM支持压缩特性可以减少磁盘的空间占用），而且不需要支持事务时，MyISAM是最好的选择。</p>
+<h1 id="三-聊聊-Java-中的集合吧！"><a href="#三-聊聊-Java-中的集合吧！" class="headerlink" title="三 聊聊 Java 中的集合吧！"></a>三 聊聊 Java 中的集合吧！</h1><h3 id="3-1-Arraylist-与-LinkedList-有什么不同？（注意加上从数据结构分析的内容）"><a href="#3-1-Arraylist-与-LinkedList-有什么不同？（注意加上从数据结构分析的内容）" class="headerlink" title="3.1 Arraylist 与 LinkedList 有什么不同？（注意加上从数据结构分析的内容）"></a>3.1 Arraylist 与 LinkedList 有什么不同？（注意加上从数据结构分析的内容）</h3><ul>
+<li><strong>1. 是否保证线程安全：</strong> ArrayList 和 LinkedList 都是不同步的，也就是不保证线程安全；</li>
+<li><strong>2. 底层数据结构：</strong> Arraylist 底层使用的是Object数组；LinkedList 底层使用的是双向链表数据结构（注意双向链表和双向循环链表的区别：）；</li>
+<li><strong>3. 插入和删除是否受元素位置的影响：</strong> ① <strong>ArrayList 采用数组存储，所以插入和删除元素的时间复杂度受元素位置的影响。</strong> 比如：执行<code>add(E e)</code>方法的时候， ArrayList 会默认在将指定的元素追加到此列表的末尾，这种情况时间复杂度就是O(1)。但是如果要在指定位置 i 插入和删除元素的话（<code>add(int index, E element)</code>）时间复杂度就为 O(n-i)。因为在进行上述操作的时候集合中第 i 和第 i 个元素之后的(n-i)个元素都要执行向后位/向前移一位的操作。 ② <strong>LinkedList 采用链表存储，所以插入，删除元素时间复杂度不受元素位置的影响，都是近似 O（1）而数组为近似 O（n）。</strong></li>
+<li><strong>4. 是否支持快速随机访问：</strong> LinkedList 不支持高效的随机元素访问，而 ArrayList 支持。快速随机访问就是通过元素的序号快速获取元素对象(对应于<code>get(int index)</code>方法)。</li>
+<li><strong>5. 内存空间占用：</strong> ArrayList的空 间浪费主要体现在在list列表的结尾会预留一定的容量空间，而LinkedList的空间花费则体现在它的每一个元素都需要消耗比ArrayList更多的空间（因为要存放直接后继和直接前驱以及数据）。 </li>
+</ul>
+<p><strong>补充内容:RandomAccess接口</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">RandomAccess</span> </span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>查看源码我们发现实际上 RandomAccess 接口中什么都没有定义。所以，在我看来 RandomAccess 接口不过是一个标识罢了。标识什么？ 标识实现这个接口的类具有随机访问功能。</p>
+<p>在binarySearch（）方法中，它要判断传入的list 是否RamdomAccess的实例，如果是，调用indexedBinarySearch（）方法，如果不是，那么调用iteratorBinarySearch（）方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">binarySearch</span><span class="params">(List&lt;? extends Comparable&lt;? <span class="keyword">super</span> T&gt;&gt; list, T key)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (list <span class="keyword">instanceof</span> RandomAccess || list.size()&lt;BINARYSEARCH_THRESHOLD)</span><br><span class="line">        <span class="keyword">return</span> Collections.indexedBinarySearch(list, key);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">return</span> Collections.iteratorBinarySearch(list, key);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>ArraysList 实现了 RandomAccess 接口， 而 LinkedList 没有实现。为什么呢？我觉得还是和底层数据结构有关！ArraysList 底层是数组，而 LinkedList 底层是链表。数组天然支持随机访问，时间复杂度为 O（1），所以称为快速随机访问。链表需要遍历到特定位置才能访问特定位置的元素，时间复杂度为 O（n），所以不支持快速随机访问。，ArraysList 实现了 RandomAccess 接口，就表明了他具有快速随机访问功能。 RandomAccess 接口只是标识，并不是说 ArraysList 实现 RandomAccess 接口才具有快速随机访问功能的！</p>
+<p><strong>下面再总结一下 list 的遍历方式选择：</strong></p>
+<ul>
+<li>实现了RadmoAcces接口的list，优先选择普通for循环 ，其次foreach,</li>
+<li>未实现RadmoAcces接口的ist， 优先选择iterator遍历（foreach遍历底层也是通过iterator实现的），大size的数据，千万不要使用普通for循环</li>
+</ul>
+<blockquote>
+<p>Java 中的集合这类问题几乎是面试必问的，问到这类问题的时候，HashMap 又是几乎必问的问题，所以大家一定要引起重视！</p>
+</blockquote>
+<h3 id="3-2-HashMap的底层实现"><a href="#3-2-HashMap的底层实现" class="headerlink" title="3.2 HashMap的底层实现"></a>3.2 HashMap的底层实现</h3><p>####① JDK1.8之前</p>
+<p>JDK1.8 之前 HashMap 底层是 <strong>数组和链表</strong> 结合在一起使用也就是 <strong>链表散列</strong>。<strong>HashMap 通过 key 的 hashCode 经过扰动函数处理过后得到 hash  值，然后通过 <code>(n - 1) &amp; hash</code> 判断当前元素存放的位置（这里的 n 指的时数组的长度），如果当前位置存在元素的话，就判断该元素与要存入的元素的 hash 值以及 key 是否相同，如果相同的话，直接覆盖，不相同就通过拉链法解决冲突。</strong></p>
+<p><strong>所谓扰动函数指的就是 HashMap 的 hash 方法。使用 hash 方法也就是扰动函数是为了防止一些实现比较差的 hashCode() 方法 换句话说使用扰动函数之后可以减少碰撞。</strong></p>
+<p><strong>JDK 1.8 HashMap 的 hash 方法源码:</strong></p>
+<p>JDK 1.8 的 hash方法 相比于 JDK 1.7 hash 方法更加简化，但是原理不变。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">  <span class="function"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> <span class="title">hash</span><span class="params">(Object key)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> h;</span><br><span class="line">    <span class="comment">// key.hashCode()：返回散列值也就是hashcode</span></span><br><span class="line">    <span class="comment">// ^ ：按位异或</span></span><br><span class="line">    <span class="comment">// &gt;&gt;&gt;:无符号右移，忽略符号位，空位都以0补齐</span></span><br><span class="line">    <span class="keyword">return</span> (key == <span class="keyword">null</span>) ? <span class="number">0</span> : (h = key.hashCode()) ^ (h &gt;&gt;&gt; <span class="number">16</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>对比一下 JDK1.7的 HashMap 的 hash 方法源码.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">int</span> <span class="title">hash</span><span class="params">(<span class="keyword">int</span> h)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// This function ensures that hashCodes that differ only by</span></span><br><span class="line">    <span class="comment">// constant multiples at each bit position have a bounded</span></span><br><span class="line">    <span class="comment">// number of collisions (approximately 8 at default load factor).</span></span><br><span class="line"></span><br><span class="line">    h ^= (h &gt;&gt;&gt; <span class="number">20</span>) ^ (h &gt;&gt;&gt; <span class="number">12</span>);</span><br><span class="line">    <span class="keyword">return</span> h ^ (h &gt;&gt;&gt; <span class="number">7</span>) ^ (h &gt;&gt;&gt; <span class="number">4</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>相比于 JDK1.8 的 hash 方法 ，JDK 1.7 的 hash 方法的性能会稍差一点点，因为毕竟扰动了 4 次。</p>
+<p>所谓 <strong>“拉链法”</strong> 就是：将链表和数组相结合。也就是说创建一个链表数组，数组中每一格就是一个链表。若遇到哈希冲突，则将冲突的值加到链表中即可。</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/3/20/16240dbcc303d872?w=348&amp;h=427&amp;f=png&amp;s=10991" alt="jdk1.8之前的内部结构"></p>
+<p>###② JDK1.8之后</p>
+<p>相比于之前的版本， JDK1.8之后在解决哈希冲突时有了较大的变化，当链表长度大于阈值（默认为8）时，将链表转化为红黑树，以减少搜索时间。</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/11/14/16711ac29c351da9?w=720&amp;h=545&amp;f=jpeg&amp;s=23933" alt="JDK1.8之后的HashMap底层数据结构"></p>
+<p>TreeMap、TreeSet以及JDK1.8之后的HashMap底层都用到了红黑树。红黑树就是为了解决二叉查找树的缺陷，因为二叉查找树在某些情况下会退化成一个线性结构。</p>
+<blockquote>
+<p>问完 HashMap 的底层原理之后，面试官可能就会紧接着问你 HashMap 底层数据结构相关的问题！</p>
+</blockquote>
+<h3 id="3-3-既然谈到了红黑树，你给我手绘一个出来吧，然后简单讲一下自己对于红黑树的理解"><a href="#3-3-既然谈到了红黑树，你给我手绘一个出来吧，然后简单讲一下自己对于红黑树的理解" class="headerlink" title="3.3 既然谈到了红黑树，你给我手绘一个出来吧，然后简单讲一下自己对于红黑树的理解"></a>3.3 既然谈到了红黑树，你给我手绘一个出来吧，然后简单讲一下自己对于红黑树的理解</h3><p><img src="https://user-gold-cdn.xitu.io/2018/11/14/16711ac29c138cba?w=851&amp;h=614&amp;f=jpeg&amp;s=34458" alt="红黑树"></p>
+<p><strong>红黑树特点:</strong></p>
+<ol>
+<li>每个节点非红即黑；</li>
+<li>根节点总是黑色的；</li>
+<li>每个叶子节点都是黑色的空节点（NIL节点）；</li>
+<li>如果节点是红色的，则它的子节点必须是黑色的（反之不一定）；</li>
+<li>从根节点到叶节点或空子节点的每条路径，必须包含相同数目的黑色节点（即相同的黑色高度）</li>
+</ol>
+<p><strong>红黑树的应用：</strong></p>
+<p>TreeMap、TreeSet以及JDK1.8之后的HashMap底层都用到了红黑树。</p>
+<p><strong>为什么要用红黑树</strong></p>
+<p>简单来说红黑树就是为了解决二叉查找树的缺陷，因为二叉查找树在某些情况下会退化成一个线性结构。</p>
+<h3 id="3-4-红黑树这么优秀，为何不直接使用红黑树得了？"><a href="#3-4-红黑树这么优秀，为何不直接使用红黑树得了？" class="headerlink" title="3.4 红黑树这么优秀，为何不直接使用红黑树得了？"></a>3.4 红黑树这么优秀，为何不直接使用红黑树得了？</h3><p>说一下自己对于这个问题的看法：我们知道红黑树属于（自）平衡二叉树，但是为了保持“平衡”是需要付出代价的，红黑树在插入新数据后可能需要通过左旋，右旋、变色这些操作来保持平衡，这费事啊。你说说我们引入红黑树就是为了查找数据快，如果链表长度很短的话，根本不需要引入红黑树的，你引入之后还要付出代价维持它的平衡。但是链表过长就不一样了。至于为什么选 8 这个值呢？通过概率统计所得，这个值是综合查询成本和新增元素成本得出的最好的一个值。</p>
+<h3 id="3-5-HashMap-和-Hashtable-的区别-HashSet-和-HashMap-区别"><a href="#3-5-HashMap-和-Hashtable-的区别-HashSet-和-HashMap-区别" class="headerlink" title="3.5  HashMap 和 Hashtable 的区别/HashSet 和 HashMap 区别"></a>3.5  HashMap 和 Hashtable 的区别/HashSet 和 HashMap 区别</h3><p><strong>HashMap 和 Hashtable 的区别</strong></p>
+<ol>
+<li><strong>线程是否安全：</strong> HashMap 是非线程安全的，HashTable 是线程安全的；HashTable 内部的方法基本都经过  <code>synchronized</code>  修饰。（如果你要保证线程安全的话就使用 ConcurrentHashMap 吧！）；</li>
+<li><strong>效率：</strong> 因为线程安全的问题，HashMap 要比 HashTable 效率高一点。另外，HashTable 基本被淘汰，不要在代码中使用它；</li>
+<li><strong>对Null key 和Null value的支持：</strong> HashMap 中，null 可以作为键，这样的键只有一个，可以有一个或多个键所对应的值为 null。。但是在 HashTable 中 put 进的键值只要有一个 null，直接抛出 NullPointerException。</li>
+<li><strong>初始容量大小和每次扩充容量大小的不同 ：</strong>   ①创建时如果不指定容量初始值，Hashtable 默认的初始大小为11，之后每次扩充，容量变为原来的2n+1。HashMap 默认的初始化大小为16。之后每次扩充，容量变为原来的2倍。②创建时如果给定了容量初始值，那么 Hashtable 会直接使用你给定的大小，而 HashMap 会将其扩充为2的幂次方大小（HashMap 中的<code>tableSizeFor()</code>方法保证，下面给出了源代码）。也就是说 HashMap 总是使用2的幂作为哈希表的大小,后面会介绍到为什么是2的幂次方。</li>
+<li><strong>底层数据结构：</strong> JDK1.8 以后的 HashMap 在解决哈希冲突时有了较大的变化，当链表长度大于阈值（默认为8）时，将链表转化为红黑树，以减少搜索时间。Hashtable 没有这样的机制。</li>
+</ol>
+<p><strong>HashSet 和 HashMap 区别</strong></p>
+<p>如果你看过 HashSet 源码的话就应该知道：HashSet 底层就是基于 HashMap 实现的。（HashSet 的源码非常非常少，因为除了 clone() 方法、writeObject()方法、readObject()方法是 HashSet 自己不得不实现之外，其他方法都是直接调用 HashMap 中的方法。）</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/3/2/161e717d734f3b23?w=896&amp;h=363&amp;f=jpeg&amp;s=205536" alt="HashSet 和 HashMap 区别"></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/youngboy/2019/05/05/3/35/" rel="next" title="J2EE基础知识">
+                <i class="fa fa-chevron-left"></i> J2EE基础知识
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/youngboy/2019/05/05/python/258/" rel="prev" title="那些年我们踩过的那些坑">
+                那些年我们踩过的那些坑 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">youngboy</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/youngboy/archives/">
+              
+                  <span class="site-state-item-count">126</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/youngboy/categories/index.html">
+                  <span class="site-state-item-count">40</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一-消息队列MQ的套路"><span class="nav-number">1.</span> <span class="nav-text">一 消息队列MQ的套路</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-介绍一下消息队列MQ的应用场景-使用消息队列的好处"><span class="nav-number">1.0.1.</span> <span class="nav-text">1.1  介绍一下消息队列MQ的应用场景/使用消息队列的好处</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#①-通过异步处理提高系统性能"><span class="nav-number">1.0.1.1.</span> <span class="nav-text">①.通过异步处理提高系统性能</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#②-降低系统耦合性"><span class="nav-number">1.0.2.</span> <span class="nav-text">②.降低系统耦合性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-那么使用消息队列会带来什么问题？考虑过这个问题吗？"><span class="nav-number">1.0.3.</span> <span class="nav-text">1.2 那么使用消息队列会带来什么问题？考虑过这个问题吗？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-介绍一下你知道哪几种消息队列，该如何选择呢？"><span class="nav-number">1.0.4.</span> <span class="nav-text">1.3 介绍一下你知道哪几种消息队列，该如何选择呢？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-关于消息队列其他一些常见的问题展望"><span class="nav-number">1.0.5.</span> <span class="nav-text">1.4 关于消息队列其他一些常见的问题展望</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#二-谈谈-InnoDB-和-MyIsam-两者的区别"><span class="nav-number">2.</span> <span class="nav-text">二 谈谈 InnoDB 和 MyIsam 两者的区别</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-两者的对比"><span class="nav-number">2.0.1.</span> <span class="nav-text">2.1 两者的对比</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-关于两者的总结"><span class="nav-number">2.0.2.</span> <span class="nav-text">2.2 关于两者的总结</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三-聊聊-Java-中的集合吧！"><span class="nav-number">3.</span> <span class="nav-text">三 聊聊 Java 中的集合吧！</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-Arraylist-与-LinkedList-有什么不同？（注意加上从数据结构分析的内容）"><span class="nav-number">3.0.1.</span> <span class="nav-text">3.1 Arraylist 与 LinkedList 有什么不同？（注意加上从数据结构分析的内容）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-HashMap的底层实现"><span class="nav-number">3.0.2.</span> <span class="nav-text">3.2 HashMap的底层实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-既然谈到了红黑树，你给我手绘一个出来吧，然后简单讲一下自己对于红黑树的理解"><span class="nav-number">3.0.3.</span> <span class="nav-text">3.3 既然谈到了红黑树，你给我手绘一个出来吧，然后简单讲一下自己对于红黑树的理解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4-红黑树这么优秀，为何不直接使用红黑树得了？"><span class="nav-number">3.0.4.</span> <span class="nav-text">3.4 红黑树这么优秀，为何不直接使用红黑树得了？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-5-HashMap-和-Hashtable-的区别-HashSet-和-HashMap-区别"><span class="nav-number">3.0.5.</span> <span class="nav-text">3.5  HashMap 和 Hashtable 的区别/HashSet 和 HashMap 区别</span></a></li></ol></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">youngboy</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/youngboy/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/youngboy/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/youngboy/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/youngboy/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/youngboy/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/youngboy/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/youngboy/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/youngboy/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/youngboy/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/youngboy/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/youngboy/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/youngboy/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/youngboy/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

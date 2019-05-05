@@ -1,0 +1,1255 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/youngboy/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/youngboy/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/youngboy/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/youngboy/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/youngboy/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/youngboy/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/youngboy/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="youngboy">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Web前端概述 说明：本文使用的部分插图来自Jon Duckett先生的HTML and CSS: Design and Build Websites一书，这是一本非常棒的前端入门书，有兴趣的读者可以在亚马逊或者其他网站上找到该书的购买链接。  HTML简史 1991年10月：一个非正式CERN（欧洲核子研究中心）文件首次公开18个HTML标签，这个文件的作者是物理学家蒂姆·伯纳斯-李，因此他是万">
+<meta name="keywords" content="youngboy的个人blog">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Web前端概述">
+<meta property="og:url" content="http://www.youngboy.vip/2019/05/05/python/16/191/index.html">
+<meta property="og:site_name" content="youngboy">
+<meta property="og:description" content="Web前端概述 说明：本文使用的部分插图来自Jon Duckett先生的HTML and CSS: Design and Build Websites一书，这是一本非常棒的前端入门书，有兴趣的读者可以在亚马逊或者其他网站上找到该书的购买链接。  HTML简史 1991年10月：一个非正式CERN（欧洲核子研究中心）文件首次公开18个HTML标签，这个文件的作者是物理学家蒂姆·伯纳斯-李，因此他是万">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://www.youngboy.vip/2019/05/05/python/16/191/res/相对路径.png">
+<meta property="og:image" content="http://www.youngboy.vip/2019/05/05/python/16/191/res/字符实体.png">
+<meta property="og:image" content="http://www.youngboy.vip/2019/05/05/python/16/191/res/选择器语法.png">
+<meta property="og:image" content="http://www.youngboy.vip/2019/05/05/python/16/191/res/常用选择器.png">
+<meta property="og:image" content="http://www.youngboy.vip/2019/05/05/python/16/191/res/尺寸单位.png">
+<meta property="og:image" content="http://www.youngboy.vip/2019/05/05/python/16/191/res/衬线字体+非衬线字体+等宽字体.png">
+<meta property="og:image" content="http://www.youngboy.vip/2019/05/05/python/16/191/res/字体样式.png">
+<meta property="og:image" content="http://www.youngboy.vip/2019/05/05/python/16/191/res/尺寸单位.png">
+<meta property="og:image" content="http://www.youngboy.vip/2019/05/05/python/16/191/res/盒子模型.png">
+<meta property="og:image" content="http://www.youngboy.vip/2019/05/05/python/16/191/res/经典布局-2.png">
+<meta property="og:image" content="http://www.youngboy.vip/2019/05/05/python/16/191/res/baidu_echarts.png">
+<meta property="og:image" content="http://www.youngboy.vip/2019/05/05/python/16/191/res/bootstrap-layoutit.png">
+<meta property="og:updated_time" content="2019-05-05T03:18:43.328Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Web前端概述">
+<meta name="twitter:description" content="Web前端概述 说明：本文使用的部分插图来自Jon Duckett先生的HTML and CSS: Design and Build Websites一书，这是一本非常棒的前端入门书，有兴趣的读者可以在亚马逊或者其他网站上找到该书的购买链接。  HTML简史 1991年10月：一个非正式CERN（欧洲核子研究中心）文件首次公开18个HTML标签，这个文件的作者是物理学家蒂姆·伯纳斯-李，因此他是万">
+<meta name="twitter:image" content="http://www.youngboy.vip/2019/05/05/python/16/191/res/相对路径.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/youngboy/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.youngboy.vip/2019/05/05/python/16/191/">
+
+
+
+
+
+  <title>Web前端概述 | youngboy</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/youngboy/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">youngboy</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">Java大杂烩</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/youngboy/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/youngboy/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/youngboy/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/youngboy/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/youngboy/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br>
+            
+            日程表
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.youngboy.vip/youngboy/2019/05/05/python/16/191/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="youngboy">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/youngboy/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="youngboy">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Web前端概述</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-05T11:18:43+08:00">
+                2019-05-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/youngboy/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/youngboy/categories/python/Day21-30/" itemprop="url" rel="index">
+                    <span itemprop="name">Day21-30</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="Web前端概述"><a href="#Web前端概述" class="headerlink" title="Web前端概述"></a>Web前端概述</h2><blockquote>
+<p>说明：本文使用的部分插图来自<em>Jon Duckett</em>先生的<em><a href="https://www.amazon.cn/dp/1118008189/ref=sr_1_5?__mk_zh_CN=%E4%BA%9A%E9%A9%AC%E9%80%8A%E7%BD%91%E7%AB%99&amp;keywords=html+%26+css&amp;qid=1554609325&amp;s=gateway&amp;sr=8-5" target="_blank" rel="noopener">HTML and CSS: Design and Build Websites</a></em>一书，这是一本非常棒的前端入门书，有兴趣的读者可以在亚马逊或者其他网站上找到该书的购买链接。</p>
+</blockquote>
+<h3 id="HTML简史"><a href="#HTML简史" class="headerlink" title="HTML简史"></a>HTML简史</h3><ol>
+<li>1991年10月：一个非正式CERN（<a href="https://zh.wikipedia.org/wiki/%E6%AD%90%E6%B4%B2%E6%A0%B8%E5%AD%90%E7%A0%94%E7%A9%B6%E7%B5%84%E7%B9%94" target="_blank" rel="noopener">欧洲核子研究中心</a>）文件首次公开18个HTML标签，这个文件的作者是物理学家<a href="https://zh.wikipedia.org/wiki/%E8%92%82%E5%A7%86%C2%B7%E4%BC%AF%E7%BA%B3%E6%96%AF-%E6%9D%8E" target="_blank" rel="noopener">蒂姆·伯纳斯-李</a>，因此他是<a href="https://zh.wikipedia.org/wiki/%E4%B8%87%E7%BB%B4%E7%BD%91" target="_blank" rel="noopener">万维网</a>的发明者，也是<a href="https://zh.wikipedia.org/wiki/%E4%B8%87%E7%BB%B4%E7%BD%91%E8%81%94%E7%9B%9F" target="_blank" rel="noopener">万维网联盟</a>的主席。</li>
+<li>1995年11月：HTML 2.0标准发布（RFC 1866）。</li>
+<li>1997年1月：HTML 3.2作为<a href="https://zh.wikipedia.org/wiki/W3C" target="_blank" rel="noopener">W3C</a>推荐标准发布。</li>
+<li>1997年12月：HTML 4.0作为W3C推荐标准发布。</li>
+<li>1999年12月：HTML4.01作为W3C推荐标准发布。</li>
+<li>2008年1月：HTML5由W3C作为工作草案发布。</li>
+<li>2011年5月：W3C将HTML5推进至“最终征求”（Last Call）阶段。</li>
+<li>2012年12月：W3C指定HTML5作为“候选推荐”阶段。</li>
+<li>2014年10月：HTML5作为稳定W3C推荐标准发布，这意味着HTML5的标准化已经完成。</li>
+</ol>
+<h4 id="HTML5新特性"><a href="#HTML5新特性" class="headerlink" title="HTML5新特性"></a>HTML5新特性</h4><ol>
+<li>引入原生多媒体支持（audio和video标签）</li>
+<li>引入可编程内容（canvas标签）</li>
+<li>引入语义Web（article、aside、details、figure、footer、header、nav、section、summary等标签）</li>
+<li>引入新的表单控件（日历、邮箱、搜索、滑条等）</li>
+<li>引入对离线存储更好的支持（localStorage和sessionStorage）</li>
+<li>引入对定位、拖放、WebSocket、后台任务等的支持</li>
+</ol>
+<h3 id="使用标签承载内容"><a href="#使用标签承载内容" class="headerlink" title="使用标签承载内容"></a>使用标签承载内容</h3><h4 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h4><ul>
+<li>head<ul>
+<li>title</li>
+<li>meta</li>
+</ul>
+</li>
+<li>body</li>
+</ul>
+<h4 id="文本"><a href="#文本" class="headerlink" title="文本"></a>文本</h4><ul>
+<li>标题和段落<ul>
+<li>h1 ~ h6</li>
+<li>p</li>
+</ul>
+</li>
+<li>上标和下标<ul>
+<li>sup</li>
+<li>sub</li>
+</ul>
+</li>
+<li>空白（白色空间折叠）</li>
+<li>折行和水平标尺<ul>
+<li>br</li>
+<li>hr</li>
+</ul>
+</li>
+<li>语义化标签<ul>
+<li>加粗和强调 - strong</li>
+<li>引用 - blockquote</li>
+<li>缩写词和首字母缩写词 - abbr / acronym</li>
+<li>引文 - cite</li>
+<li>所有者联系信息 - address</li>
+<li>内容的修改 - ins / del</li>
+</ul>
+</li>
+</ul>
+<h4 id="列表（list）"><a href="#列表（list）" class="headerlink" title="列表（list）"></a>列表（list）</h4><ul>
+<li>有序列表（ordered list）- ol / li</li>
+<li>无序列表（unordered list）- ul / li</li>
+<li>定义列表（definition list）- dl / dt / dd</li>
+</ul>
+<h4 id="链接（anchor）"><a href="#链接（anchor）" class="headerlink" title="链接（anchor）"></a>链接（anchor）</h4><ul>
+<li>页面链接</li>
+<li>锚链接</li>
+<li>功能链接</li>
+</ul>
+<h4 id="图像（image）"><a href="#图像（image）" class="headerlink" title="图像（image）"></a>图像（image）</h4><ul>
+<li><p>图像存储位置</p>
+<p><img src="./res/相对路径.png" alt></p>
+</li>
+<li><p>图像及其宽高</p>
+</li>
+<li><p>选择正确的图像格式</p>
+<ul>
+<li>JPEG</li>
+<li>GIF</li>
+<li>PNG</li>
+</ul>
+</li>
+<li><p>矢量图</p>
+</li>
+<li><p>语义化标签 - figure / figcaption</p>
+</li>
+</ul>
+<h4 id="表格（table）"><a href="#表格（table）" class="headerlink" title="表格（table）"></a>表格（table）</h4><ul>
+<li>基本的表格结构 - table / tr / td</li>
+<li>表格的标题 - caption</li>
+<li>跨行和跨列 - rowspan属性 / colspan属性</li>
+<li>长表格 - thead / tbody / tfoot</li>
+</ul>
+<h4 id="表单（form）"><a href="#表单（form）" class="headerlink" title="表单（form）"></a>表单（form）</h4><ul>
+<li>重要属性 - action / method</li>
+<li>表单控件（input）- type属性<ul>
+<li>文本框 - text / 密码框 - password / 数字框 - number</li>
+<li>邮箱 - email / 电话 - tel / 日期 - date / 滑条 - range / URL - url / 搜索 - search</li>
+<li>单选按钮 - radio / 复选按钮 - checkbox</li>
+<li>文件上传 - file / 隐藏域（埋点）- hidden</li>
+<li>提交按钮 - submit / 图像按钮 - image  / 重置按钮 - reset</li>
+</ul>
+</li>
+<li>下拉列表 - select / option</li>
+<li>文本域（多行文本）- textarea</li>
+<li>组合表单元素 - fieldset / legend</li>
+</ul>
+<h4 id="音视频（audio-video）"><a href="#音视频（audio-video）" class="headerlink" title="音视频（audio / video）"></a>音视频（audio / video）</h4><ul>
+<li>视频格式和播放器</li>
+<li>视频托管服务</li>
+<li>添加视频的准备工作</li>
+<li>video标签和属性 - autoplay / controls / loop / muted / preload / src</li>
+<li>audio标签和属性 - autoplay / controls / loop / muted / preload / src / width / height / poster</li>
+</ul>
+<h4 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h4><ul>
+<li><p>文档类型</p>
+</li>
+<li><p>注释</p>
+</li>
+<li><p>属性</p>
+<ul>
+<li>id</li>
+<li>class</li>
+</ul>
+</li>
+<li><p>块级元素 / 行级元素</p>
+</li>
+<li><p>内联框架（internal frame）</p>
+</li>
+<li><p>字符实体（实体替换符）</p>
+<p><img src="./res/字符实体.png" alt></p>
+</li>
+</ul>
+<h3 id="使用CSS渲染页面"><a href="#使用CSS渲染页面" class="headerlink" title="使用CSS渲染页面"></a>使用CSS渲染页面</h3><h4 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h4><ul>
+<li><p>CSS的作用</p>
+</li>
+<li><p>CSS的工作原理</p>
+</li>
+<li><p>规则、属性和值</p>
+<p><img src="./res/选择器语法.png" alt></p>
+</li>
+<li><p>常用选择器</p>
+<p><img src="./res/常用选择器.png" alt></p>
+</li>
+</ul>
+<h4 id="颜色（color）"><a href="#颜色（color）" class="headerlink" title="颜色（color）"></a>颜色（color）</h4><ul>
+<li>如何指定颜色</li>
+<li>颜色术语和颜色对比</li>
+<li>背景色</li>
+</ul>
+<h4 id="文本（text-font）"><a href="#文本（text-font）" class="headerlink" title="文本（text / font）"></a>文本（text / font）</h4><ul>
+<li><p>文本的大小和字型(font-size / font-family)</p>
+<p><img src="./res/尺寸单位.png" alt></p>
+<p><img src="./res/衬线字体+非衬线字体+等宽字体.png" alt></p>
+</li>
+<li><p>粗细、样式、拉伸和装饰(font-weight / font-style / font-stretch / text-decoration)</p>
+<p><img src="./res/字体样式.png" alt></p>
+</li>
+<li><p>行间距(line-height)、字母间距(letter-spacing)和单词间距(word-spacing)</p>
+</li>
+<li><p>对齐(text-align)方式和缩进(text-ident)</p>
+</li>
+<li><p>链接样式（:link / :visited / :active / :hover）</p>
+</li>
+<li><p>CSS3新属性</p>
+<ul>
+<li>阴影效果 - text-shadow</li>
+<li>首字母和首行文本(:first-letter / :first-line)</li>
+<li>响应用户</li>
+</ul>
+</li>
+</ul>
+<h4 id="盒子（box-model）"><a href="#盒子（box-model）" class="headerlink" title="盒子（box model）"></a>盒子（box model）</h4><ul>
+<li><p>盒子大小的控制（width / height）</p>
+<p><img src="./res/尺寸单位.png" alt></p>
+</li>
+<li><p>盒子的边框、外边距和内边距（border /  margin / padding）</p>
+<p><img src="./res/盒子模型.png" alt></p>
+</li>
+<li><p>盒子的显示和隐藏（display / visibility）</p>
+</li>
+<li><p>CSS3新属性</p>
+<ul>
+<li>边框图像（border-image）</li>
+<li>投影（border-shadow）</li>
+<li>圆角（border-radius）</li>
+</ul>
+</li>
+</ul>
+<h4 id="列表、表格和表单"><a href="#列表、表格和表单" class="headerlink" title="列表、表格和表单"></a>列表、表格和表单</h4><ul>
+<li>列表的项目符号（list-style）</li>
+<li>表格的边框和背景（border-collapse）</li>
+<li>表单控件的外观</li>
+<li>表单控件的对齐</li>
+<li>浏览器的开发者工具</li>
+</ul>
+<h4 id="图像"><a href="#图像" class="headerlink" title="图像"></a>图像</h4><ul>
+<li>控制图像的大小（display: inline-block）</li>
+<li>对齐图像</li>
+<li>背景图像（background / background-image / background-repeat / background-position）</li>
+</ul>
+<h4 id="布局"><a href="#布局" class="headerlink" title="布局"></a>布局</h4><ul>
+<li>控制元素的位置（position / z-index）<ul>
+<li>普通流</li>
+<li>相对定位</li>
+<li>绝对定位</li>
+<li>固定定位</li>
+<li>浮动元素（float / clear）</li>
+</ul>
+</li>
+<li><p>网站布局</p>
+<ul>
+<li><p>HTML5布局</p>
+<p><img src="./res/经典布局-2.png" alt></p>
+</li>
+</ul>
+</li>
+<li>适配屏幕尺寸<ul>
+<li>固定宽度布局</li>
+<li>流体布局</li>
+<li>布局网格</li>
+</ul>
+</li>
+</ul>
+<h3 id="使用JavaScript控制行为"><a href="#使用JavaScript控制行为" class="headerlink" title="使用JavaScript控制行为"></a>使用JavaScript控制行为</h3><h4 id="JavaScript基本语法"><a href="#JavaScript基本语法" class="headerlink" title="JavaScript基本语法"></a>JavaScript基本语法</h4><ul>
+<li>语句和注释</li>
+<li>变量和数据类型<ul>
+<li>声明和赋值</li>
+<li>简单数据类型和复杂数据类型</li>
+<li>变量的命名规则</li>
+</ul>
+</li>
+<li>表达式和运算符<ul>
+<li>赋值运算符</li>
+<li>算术运算符</li>
+<li>比较运算符</li>
+<li>逻辑运算符</li>
+</ul>
+</li>
+<li>分支结构<ul>
+<li><code>if...else...</code></li>
+<li><code>switch...cas...default...</code></li>
+</ul>
+</li>
+<li>循环结构<ul>
+<li><code>for</code>循环</li>
+<li><code>while</code>循环</li>
+<li><code>do...while</code>循环</li>
+</ul>
+</li>
+<li>数组<ul>
+<li>创建数组</li>
+<li>操作数组中的元素</li>
+</ul>
+</li>
+<li>函数<ul>
+<li>声明函数</li>
+<li>调用函数</li>
+<li>参数和返回值</li>
+<li>匿名函数</li>
+<li>立即调用函数</li>
+</ul>
+</li>
+</ul>
+<h4 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h4><ul>
+<li>对象的概念</li>
+<li>创建对象的字面量语法</li>
+<li>访问成员运算符</li>
+<li>创建对象的构造函数语法<ul>
+<li><code>this</code>关键字</li>
+</ul>
+</li>
+<li>添加和删除属性<ul>
+<li><code>delete</code>关键字</li>
+</ul>
+</li>
+<li>标准对象<ul>
+<li><code>Number</code> / <code>String</code> / <code>Boolean</code> / <code>Symbol</code> / <code>Array</code> / <code>Function</code> </li>
+<li><code>Date</code> / <code>Error</code> / <code>Math</code> / <code>RegEx</code> / <code>Object</code> / <code>Map</code> / <code>Set</code></li>
+<li><code>JSON</code> / <code>Promise</code> / <code>Generator</code> / <code>Reflect</code> / <code>Proxy</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="BOM"><a href="#BOM" class="headerlink" title="BOM"></a>BOM</h4><ul>
+<li><code>window</code>对象的属性和方法</li>
+<li><code>history</code>对象<ul>
+<li><code>forward()</code> / <code>back()</code> / <code>go()</code></li>
+</ul>
+</li>
+<li><code>location</code>对象</li>
+<li><code>navigator</code>对象</li>
+<li><code>screen</code>对象</li>
+</ul>
+<h4 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h4><ul>
+<li>DOM树</li>
+<li>访问元素<ul>
+<li><code>getElementById()</code> / <code>querySelector()</code></li>
+<li><code>getElementsByClassName()</code> / <code>getElementsByTagName()</code> / <code>querySelectorAll()</code></li>
+<li><code>parentNode</code> / <code>previousSibling</code> / <code>nextSibling</code> / <code>children</code> / <code>firstChild</code> / <code>lastChild</code><ul>
+<li>操作元素</li>
+<li><code>nodeValue</code></li>
+<li><code>innerHTML</code> / <code>textContent</code> / <code>createElement()</code> / <code>createTextNode()</code> / <code>appendChild()</code> / <code>insertBefore()</code> / <code>removeChild()</code></li>
+<li><code>className</code> / <code>id</code> / <code>hasAttribute()</code> / <code>getAttribute()</code> / <code>setAttribute()</code> / <code>removeAttribute()</code></li>
+<li>事件处理</li>
+<li>事件类型</li>
+</ul>
+</li>
+<li>UI事件：<code>load</code> / <code>unload</code> / <code>error</code> / <code>resize</code> / <code>scroll</code></li>
+<li>键盘事件：<code>keydown</code> / <code>keyup</code> / <code>keypress</code></li>
+<li>鼠标事件：<code>click</code> / <code>dbclick</code> / <code>mousedown</code> / <code>mouseup</code> / <code>mousemove</code> / <code>mouseover</code> / <code>mouseout</code></li>
+<li>焦点事件：<code>focus</code> / <code>blur</code></li>
+<li>表单事件：<code>input</code> / <code>change</code> / <code>submit</code> / <code>reset</code> / <code>cut</code> / <code>copy</code> / <code>paste</code> / <code>select</code><ul>
+<li>事件绑定</li>
+</ul>
+</li>
+<li>HTML事件处理程序（不推荐使用，因为要做到标签与代码分离）</li>
+<li>传统的DOM事件处理程序（只能附加一个回调函数）</li>
+<li>事件监听器（旧的浏览器中不被支持）<ul>
+<li>事件流：事件捕获 / 事件冒泡</li>
+<li>事件对象（低版本IE中的window.event）</li>
+</ul>
+</li>
+<li><code>target</code>（有些浏览器使用srcElement）</li>
+<li><code>type</code></li>
+<li><code>cancelable</code></li>
+<li><code>preventDefault()</code></li>
+<li><code>stopPropagation()</code>（低版本IE中的cancelBubble）<ul>
+<li>鼠标事件 - 事件发生的位置</li>
+</ul>
+</li>
+<li>屏幕位置：<code>screenX</code>和<code>screenY</code></li>
+<li>页面位置：<code>pageX</code>和<code>pageY</code></li>
+<li>客户端位置：<code>clientX</code>和<code>clientY</code><ul>
+<li>键盘事件 - 哪个键被按下了</li>
+</ul>
+</li>
+<li><code>keyCode</code>属性（有些浏览器使用<code>which</code>）</li>
+<li><code>String.fromCharCode(event.keyCode)</code><ul>
+<li>HTML5事件</li>
+</ul>
+</li>
+<li><code>DOMContentLoaded</code></li>
+<li><code>hashchange</code></li>
+<li><code>beforeunload</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="JavaScript-API"><a href="#JavaScript-API" class="headerlink" title="JavaScript API"></a>JavaScript API</h4><ul>
+<li><p>客户端存储 - <code>localStorage</code>和<code>sessionStorage</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">localStorage.colorSetting = <span class="string">'#a4509b'</span>;</span><br><span class="line">localStorage[<span class="string">'colorSetting'</span>] = <span class="string">'#a4509b'</span>;</span><br><span class="line">localStorage.setItem(<span class="string">'colorSetting'</span>, <span class="string">'#a4509b'</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>获取位置信息 - <code>geolocation</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">navigator.geolocation.getCurrentPosition(<span class="function"><span class="keyword">function</span>(<span class="params">pos</span>) </span>&#123; 		  </span><br><span class="line">    <span class="built_in">console</span>.log(pos.coords.latitude)</span><br><span class="line">    <span class="built_in">console</span>.log(pos.coords.longitude)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>从服务器获取数据 - Fetch API</p>
+</li>
+<li>绘制图形 - <code>&lt;canvas&gt;</code>的API</li>
+<li>音视频 - <code>&lt;audio&gt;</code>和<code>&lt;video&gt;</code>的API</li>
+</ul>
+<h3 id="使用jQuery"><a href="#使用jQuery" class="headerlink" title="使用jQuery"></a>使用jQuery</h3><h4 id="jQuery概述"><a href="#jQuery概述" class="headerlink" title="jQuery概述"></a>jQuery概述</h4><ol>
+<li>Write Less Do More（用更少的代码来完成更多的工作）</li>
+<li>使用CSS选择器来查找元素（更简单更方便）</li>
+<li>使用jQuery方法来操作元素（解决浏览器兼容性问题、应用于所有元素并施加多个方法）</li>
+</ol>
+<h4 id="引入jQuery"><a href="#引入jQuery" class="headerlink" title="引入jQuery"></a>引入jQuery</h4><ul>
+<li>下载jQuery的开发版和压缩版</li>
+<li>从CDN加载jQuery</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="built_in">window</span>.jQuery || </span></span><br><span class="line"><span class="xml">        document.write('<span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"js/jquery-3.3.1.min.js"</span>&gt;</span><span class="undefined"></span></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>')</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="查找元素"><a href="#查找元素" class="headerlink" title="查找元素"></a>查找元素</h4><ul>
+<li>选择器<ul>
+<li>* / element / #id / .class / selector1, selector2</li>
+<li>ancestor descendant / parent&gt;child / previous+next / previous~siblings </li>
+</ul>
+</li>
+<li>筛选器<ul>
+<li>基本筛选器：:not(selector) / :first / :last / :even / :odd / :eq(index) / :gt(index) / :lt(index) / :animated / :focus</li>
+<li>内容筛选器：:contains(‘…’) / :empty / :parent / :has(selector)</li>
+<li>可见性筛选器：:hidden / :visible</li>
+<li>子节点筛选器：:nth-child(expr) / :first-child / :last-child / :only-child</li>
+<li>属性筛选器：[attribute] / [attribute=’value’] / [attribute!=’value’] / [attribute^=’value’] / [attribute$=’value’] / [attribute|=’value’] / [attribute~=’value’]</li>
+</ul>
+</li>
+<li>表单：:input / :text / :password / :radio / :checkbox / :submit / :image / :reset / :button / :file / :selected / :enabled / :disabled / :checked</li>
+</ul>
+<h4 id="执行操作"><a href="#执行操作" class="headerlink" title="执行操作"></a>执行操作</h4><ul>
+<li>内容操作<ul>
+<li>获取/修改内容：<code>html()</code> / <code>text()</code> / <code>replaceWith()</code> / <code>remove()</code></li>
+<li>获取/设置元素：<code>before()</code> / <code>after()</code> / <code>prepend()</code> / <code>append()</code> / <code>remove()</code> / <code>clone()</code> / <code>unwrap()</code> / <code>detach()</code> / <code>empty()</code> / <code>add()</code></li>
+<li>获取/修改属性：<code>attr()</code> / <code>removeAttr()</code> / <code>addClass()</code> / <code>removeClass()</code> / <code>css()</code></li>
+<li>获取/设置表单值：<code>val()</code></li>
+</ul>
+</li>
+<li>查找操作<ul>
+<li>查找方法：<code>find()</code> /  <code>parent()</code> / <code>children()</code> / <code>siblings()</code> / <code>next()</code> / <code>nextAll()</code> / <code>prev()</code> / <code>prevAll()</code></li>
+<li>筛选器：<code>filter()</code> / <code>not()</code> / <code>has()</code> / <code>is()</code> / <code>contains()</code></li>
+<li>索引编号：<code>eq()</code></li>
+</ul>
+</li>
+<li>尺寸和位置<ul>
+<li>尺寸相关：<code>height()</code> / <code>width()</code> / <code>innerHeight()</code> / <code>innerWidth()</code> / <code>outerWidth()</code> / <code>outerHeight()</code></li>
+<li>位置相关：<code>offset()</code> / <code>position()</code> / <code>scrollLeft()</code> / <code>scrollTop()</code></li>
+</ul>
+</li>
+<li>特效和动画<ul>
+<li>基本动画：<code>show()</code> / <code>hide()</code> / <code>toggle()</code></li>
+<li>消失出现：<code>fadeIn()</code> / <code>fadeOut()</code> / <code>fadeTo()</code> / <code>fadeToggle()</code></li>
+<li>滑动效果：<code>slideDown()</code> / <code>slideUp()</code> / <code>slideToggle()</code></li>
+<li>自定义：<code>delay()</code> / <code>stop()</code> / <code>animate()</code></li>
+</ul>
+</li>
+<li>事件<ul>
+<li>文档加载：<code>ready()</code> / <code>load()</code></li>
+<li>用户交互：<code>on()</code> / <code>off()</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="链式操作"><a href="#链式操作" class="headerlink" title="链式操作"></a>链式操作</h4><h4 id="检测页面是否可用"><a href="#检测页面是否可用" class="headerlink" title="检测页面是否可用"></a>检测页面是否可用</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">    $(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="undefined">        </span></span><br><span class="line"><span class="undefined">    &#125;);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">    $(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="undefined">        </span></span><br><span class="line"><span class="undefined">    &#125;);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="jQuery插件"><a href="#jQuery插件" class="headerlink" title="jQuery插件"></a>jQuery插件</h4><ul>
+<li>jQuery Validation</li>
+<li>jQuery Treeview</li>
+<li>jQuery Autocomplete</li>
+<li>jQuery UI</li>
+</ul>
+<h4 id="避免和其他库的冲突"><a href="#避免和其他库的冲突" class="headerlink" title="避免和其他库的冲突"></a>避免和其他库的冲突</h4><p>先引入其他库再引入jQuery的情况。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"other.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"jquery.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">	jQuery.noConflict();</span></span><br><span class="line"><span class="javascript">    jQuery(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">        jQuery(<span class="string">'div'</span>).hide();</span></span><br><span class="line"><span class="undefined">    &#125;);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>先引入jQuery再引入其他库的情况。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"jquery.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"other.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">    jQuery(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">        jQuery(<span class="string">'div'</span>).hide();</span></span><br><span class="line"><span class="undefined">    &#125;);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="使用Ajax"><a href="#使用Ajax" class="headerlink" title="使用Ajax"></a>使用Ajax</h4><p>Ajax是一种在无需重新加载整个网页的情况下，能够更新部分网页的技术。</p>
+<ul>
+<li>原生的Ajax</li>
+<li>基于jQuery的Ajax<ul>
+<li>加载内容</li>
+<li>提交表单</li>
+</ul>
+</li>
+</ul>
+<h3 id="前端框架"><a href="#前端框架" class="headerlink" title="前端框架"></a>前端框架</h3><h4 id="渐进式框架-Vue-js"><a href="#渐进式框架-Vue-js" class="headerlink" title="渐进式框架 - Vue.js"></a>渐进式框架 - <a href="https://cn.vuejs.org/" target="_blank" rel="noopener">Vue.js</a></h4><p>前后端分离开发（前端渲染）必选框架。</p>
+<h5 id="快速上手"><a href="#快速上手" class="headerlink" title="快速上手"></a>快速上手</h5><ol>
+<li><p>引入Vue的JavaScript文件，我们仍然推荐从CDN服务器加载它。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.jsdelivr.net/npm/vue"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>数据绑定（声明式渲染 ）。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">h1</span>&gt;</span>&#123;&#123; product &#125;&#125;库存信息<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.jsdelivr.net/npm/vue"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">	<span class="keyword">const</span> app = <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="javascript">		el: <span class="string">'#app'</span>,</span></span><br><span class="line"><span class="undefined">		data: &#123;</span></span><br><span class="line"><span class="javascript">			product: <span class="string">'iPhone X'</span></span></span><br><span class="line"><span class="undefined">		&#125;</span></span><br><span class="line"><span class="undefined">	&#125;);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>条件与循环。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">h1</span>&gt;</span>库存信息<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">hr</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">"product in products"</span>&gt;</span></span><br><span class="line">			&#123;&#123; product.name &#125;&#125; - &#123;&#123; product.quantity &#125;&#125;</span><br><span class="line">			<span class="tag">&lt;<span class="name">span</span> <span class="attr">v-if</span>=<span class="string">"product.quantity === 0"</span>&gt;</span></span><br><span class="line">				已经售罄</span><br><span class="line">			<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.jsdelivr.net/npm/vue"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">	<span class="keyword">const</span> app = <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="javascript">		el: <span class="string">'#app'</span>,</span></span><br><span class="line"><span class="undefined">		data: &#123;</span></span><br><span class="line"><span class="undefined">			products: [</span></span><br><span class="line"><span class="javascript">				&#123;<span class="string">"id"</span>: <span class="number">1</span>, <span class="string">"name"</span>: <span class="string">"iPhone X"</span>, <span class="string">"quantity"</span>: <span class="number">20</span>&#125;,</span></span><br><span class="line"><span class="javascript">				&#123;<span class="string">"id"</span>: <span class="number">2</span>, <span class="string">"name"</span>: <span class="string">"华为 Mate20"</span>, <span class="string">"quantity"</span>: <span class="number">0</span>&#125;,</span></span><br><span class="line"><span class="javascript">				&#123;<span class="string">"id"</span>: <span class="number">3</span>, <span class="string">"name"</span>: <span class="string">"小米 Mix3"</span>, <span class="string">"quantity"</span>: <span class="number">50</span>&#125;</span></span><br><span class="line"><span class="undefined">			]</span></span><br><span class="line"><span class="undefined">		&#125;</span></span><br><span class="line"><span class="undefined">	&#125;);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>计算属性。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">h1</span>&gt;</span>库存信息<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">hr</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">"product in products"</span>&gt;</span></span><br><span class="line">			&#123;&#123; product.name &#125;&#125; - &#123;&#123; product.quantity &#125;&#125;</span><br><span class="line">			<span class="tag">&lt;<span class="name">span</span> <span class="attr">v-if</span>=<span class="string">"product.quantity === 0"</span>&gt;</span></span><br><span class="line">				已经售罄</span><br><span class="line">			<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">h2</span>&gt;</span>库存总量：&#123;&#123; totalQuantity &#125;&#125;台<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.jsdelivr.net/npm/vue"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">	<span class="keyword">const</span> app = <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="javascript">		el: <span class="string">'#app'</span>,</span></span><br><span class="line"><span class="undefined">		data: &#123;</span></span><br><span class="line"><span class="undefined">			products: [</span></span><br><span class="line"><span class="javascript">				&#123;<span class="string">"id"</span>: <span class="number">1</span>, <span class="string">"name"</span>: <span class="string">"iPhone X"</span>, <span class="string">"quantity"</span>: <span class="number">20</span>&#125;,</span></span><br><span class="line"><span class="javascript">				&#123;<span class="string">"id"</span>: <span class="number">2</span>, <span class="string">"name"</span>: <span class="string">"华为 Mate20"</span>, <span class="string">"quantity"</span>: <span class="number">0</span>&#125;,</span></span><br><span class="line"><span class="javascript">				&#123;<span class="string">"id"</span>: <span class="number">3</span>, <span class="string">"name"</span>: <span class="string">"小米 Mix3"</span>, <span class="string">"quantity"</span>: <span class="number">50</span>&#125;</span></span><br><span class="line"><span class="undefined">			]</span></span><br><span class="line"><span class="undefined">		&#125;,</span></span><br><span class="line"><span class="undefined">		computed: &#123;</span></span><br><span class="line"><span class="undefined">			totalQuantity() &#123;</span></span><br><span class="line"><span class="javascript">				<span class="keyword">return</span> <span class="keyword">this</span>.products.reduce(<span class="function">(<span class="params">sum, product</span>) =&gt;</span> &#123;</span></span><br><span class="line"><span class="javascript">					<span class="keyword">return</span> sum + product.quantity</span></span><br><span class="line"><span class="undefined">				&#125;, 0);</span></span><br><span class="line"><span class="undefined">			&#125;</span></span><br><span class="line"><span class="undefined">		&#125;</span></span><br><span class="line"><span class="undefined">	&#125;);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>处理事件。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">h1</span>&gt;</span>库存信息<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">hr</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">"product in products"</span>&gt;</span></span><br><span class="line">			&#123;&#123; product.name &#125;&#125; - &#123;&#123; product.quantity &#125;&#125;</span><br><span class="line">			<span class="tag">&lt;<span class="name">span</span> <span class="attr">v-if</span>=<span class="string">"product.quantity === 0"</span>&gt;</span></span><br><span class="line">				已经售罄</span><br><span class="line">			<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">"product.quantity += 1"</span>&gt;</span></span><br><span class="line">				增加库存</span><br><span class="line">			<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">h2</span>&gt;</span>库存总量：&#123;&#123; totalQuantity &#125;&#125;台<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.jsdelivr.net/npm/vue"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">	<span class="keyword">const</span> app = <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="javascript">		el: <span class="string">'#app'</span>,</span></span><br><span class="line"><span class="undefined">		data: &#123;</span></span><br><span class="line"><span class="undefined">			products: [</span></span><br><span class="line"><span class="javascript">				&#123;<span class="string">"id"</span>: <span class="number">1</span>, <span class="string">"name"</span>: <span class="string">"iPhone X"</span>, <span class="string">"quantity"</span>: <span class="number">20</span>&#125;,</span></span><br><span class="line"><span class="javascript">				&#123;<span class="string">"id"</span>: <span class="number">2</span>, <span class="string">"name"</span>: <span class="string">"华为 Mate20"</span>, <span class="string">"quantity"</span>: <span class="number">0</span>&#125;,</span></span><br><span class="line"><span class="javascript">				&#123;<span class="string">"id"</span>: <span class="number">3</span>, <span class="string">"name"</span>: <span class="string">"小米 Mix3"</span>, <span class="string">"quantity"</span>: <span class="number">50</span>&#125;</span></span><br><span class="line"><span class="undefined">			]</span></span><br><span class="line"><span class="undefined">		&#125;,</span></span><br><span class="line"><span class="undefined">		computed: &#123;</span></span><br><span class="line"><span class="undefined">			totalQuantity() &#123;</span></span><br><span class="line"><span class="javascript">				<span class="keyword">return</span> <span class="keyword">this</span>.products.reduce(<span class="function">(<span class="params">sum, product</span>) =&gt;</span> &#123;</span></span><br><span class="line"><span class="javascript">					<span class="keyword">return</span> sum + product.quantity</span></span><br><span class="line"><span class="undefined">				&#125;, 0);</span></span><br><span class="line"><span class="undefined">			&#125;</span></span><br><span class="line"><span class="undefined">		&#125;</span></span><br><span class="line"><span class="undefined">	&#125;);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>用户输入。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">h1</span>&gt;</span>库存信息<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">hr</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">"product in products"</span>&gt;</span></span><br><span class="line">			&#123;&#123; product.name &#125;&#125; - </span><br><span class="line">			<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"number"</span> <span class="attr">v-model.number</span>=<span class="string">"product.quantity"</span> <span class="attr">min</span>=<span class="string">"0"</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">span</span> <span class="attr">v-if</span>=<span class="string">"product.quantity === 0"</span>&gt;</span></span><br><span class="line">				已经售罄</span><br><span class="line">			<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">"product.quantity += 1"</span>&gt;</span></span><br><span class="line">				增加库存</span><br><span class="line">			<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">h2</span>&gt;</span>库存总量：&#123;&#123; totalQuantity &#125;&#125;台<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.jsdelivr.net/npm/vue"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">	<span class="keyword">const</span> app = <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="javascript">		el: <span class="string">'#app'</span>,</span></span><br><span class="line"><span class="undefined">		data: &#123;</span></span><br><span class="line"><span class="undefined">			products: [</span></span><br><span class="line"><span class="javascript">				&#123;<span class="string">"id"</span>: <span class="number">1</span>, <span class="string">"name"</span>: <span class="string">"iPhone X"</span>, <span class="string">"quantity"</span>: <span class="number">20</span>&#125;,</span></span><br><span class="line"><span class="javascript">				&#123;<span class="string">"id"</span>: <span class="number">2</span>, <span class="string">"name"</span>: <span class="string">"华为 Mate20"</span>, <span class="string">"quantity"</span>: <span class="number">0</span>&#125;,</span></span><br><span class="line"><span class="javascript">				&#123;<span class="string">"id"</span>: <span class="number">3</span>, <span class="string">"name"</span>: <span class="string">"小米 Mix3"</span>, <span class="string">"quantity"</span>: <span class="number">50</span>&#125;</span></span><br><span class="line"><span class="undefined">			]</span></span><br><span class="line"><span class="undefined">		&#125;,</span></span><br><span class="line"><span class="undefined">		computed: &#123;</span></span><br><span class="line"><span class="undefined">			totalQuantity() &#123;</span></span><br><span class="line"><span class="javascript">				<span class="keyword">return</span> <span class="keyword">this</span>.products.reduce(<span class="function">(<span class="params">sum, product</span>) =&gt;</span> &#123;</span></span><br><span class="line"><span class="javascript">					<span class="keyword">return</span> sum + product.quantity</span></span><br><span class="line"><span class="undefined">				&#125;, 0);</span></span><br><span class="line"><span class="undefined">			&#125;</span></span><br><span class="line"><span class="undefined">		&#125;</span></span><br><span class="line"><span class="undefined">	&#125;);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>通过网络加载JSON数据。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">h2</span>&gt;</span>库存信息<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">"product in products"</span>&gt;</span></span><br><span class="line">			&#123;&#123; product.name &#125;&#125; - &#123;&#123; product.quantity &#125;&#125;</span><br><span class="line">			<span class="tag">&lt;<span class="name">span</span> <span class="attr">v-if</span>=<span class="string">"product.quantity === 0"</span>&gt;</span></span><br><span class="line">				已经售罄</span><br><span class="line">			<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.jsdelivr.net/npm/vue"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">	<span class="keyword">const</span> app = <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="javascript">		el: <span class="string">'#app'</span>,</span></span><br><span class="line"><span class="undefined">		data: &#123;</span></span><br><span class="line"><span class="undefined">			products: []</span></span><br><span class="line"><span class="undefined">		&#125;，</span></span><br><span class="line"><span class="undefined">		created() &#123;</span></span><br><span class="line"><span class="javascript">			fetch(<span class="string">'https://jackfrued.top/api/products'</span>)</span></span><br><span class="line"><span class="javascript">				.then(<span class="function"><span class="params">response</span> =&gt;</span> response.json())</span></span><br><span class="line"><span class="javascript">				.then(<span class="function"><span class="params">json</span> =&gt;</span> &#123;</span></span><br><span class="line"><span class="javascript">					<span class="keyword">this</span>.products = json</span></span><br><span class="line"><span class="undefined">				&#125;);</span></span><br><span class="line"><span class="undefined">		&#125;</span></span><br><span class="line"><span class="undefined">	&#125;);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h5 id="使用脚手架-vue-cli"><a href="#使用脚手架-vue-cli" class="headerlink" title="使用脚手架 - vue-cli"></a>使用脚手架 - vue-cli</h5><p>Vue为商业项目开发提供了非常便捷的脚手架工具vue-cli，通过工具可以省去手工配置开发环境、测试环境和运行环境的步骤，让开发者只需要关注要解决的问题。</p>
+<ol>
+<li>安装脚手架。</li>
+<li>创建项目。</li>
+<li>安装依赖包。</li>
+<li>运行项目。</li>
+</ol>
+<h4 id="UI框架-Element"><a href="#UI框架-Element" class="headerlink" title="UI框架 - Element"></a>UI框架 - <a href="http://element-cn.eleme.io/#/zh-CN" target="_blank" rel="noopener">Element</a></h4><p>基于Vue 2.0的桌面端组件库，用于构造用户界面，支持响应式布局。</p>
+<ol>
+<li><p>引入Element的CSS和JavaScript文件。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 引入样式 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"https://unpkg.com/element-ui/lib/theme-chalk/index.css"</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 引入组件库 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://unpkg.com/element-ui/lib/index.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>一个简单的例子。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"https://unpkg.com/element-ui/lib/theme-chalk/index.css"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">el-button</span> @<span class="attr">click</span>=<span class="string">"visible = true"</span>&gt;</span>点我<span class="tag">&lt;/<span class="name">el-button</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">el-dialog</span> <span class="attr">:visible.sync</span>=<span class="string">"visible"</span> <span class="attr">title</span>=<span class="string">"Hello world"</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">p</span>&gt;</span>开始使用Element吧<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;/<span class="name">el-dialog</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://unpkg.com/vue/dist/vue.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://unpkg.com/element-ui/lib/index.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">		<span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="javascript">			el: <span class="string">'#app'</span>,</span></span><br><span class="line"><span class="undefined">			data: &#123;</span></span><br><span class="line"><span class="javascript">				visible: <span class="literal">false</span>,</span></span><br><span class="line"><span class="undefined">			&#125;</span></span><br><span class="line"><span class="undefined">		&#125;)</span></span><br><span class="line"><span class="undefined">	</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用组件。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"https://unpkg.com/element-ui/lib/theme-chalk/index.css"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">el-table</span> <span class="attr">:data</span>=<span class="string">"tableData"</span> <span class="attr">stripe</span> <span class="attr">style</span>=<span class="string">"width: 100%"</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">el-table-column</span> <span class="attr">prop</span>=<span class="string">"date"</span> <span class="attr">label</span>=<span class="string">"日期"</span> <span class="attr">width</span>=<span class="string">"180"</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;/<span class="name">el-table-column</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">el-table-column</span> <span class="attr">prop</span>=<span class="string">"name"</span> <span class="attr">label</span>=<span class="string">"姓名"</span> <span class="attr">width</span>=<span class="string">"180"</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;/<span class="name">el-table-column</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">el-table-column</span> <span class="attr">prop</span>=<span class="string">"address"</span> <span class="attr">label</span>=<span class="string">"地址"</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;/<span class="name">el-table-column</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;/<span class="name">el-table</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://unpkg.com/vue/dist/vue.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://unpkg.com/element-ui/lib/index.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">		<span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="javascript">			el: <span class="string">'#app'</span>,</span></span><br><span class="line"><span class="undefined">			data: &#123;</span></span><br><span class="line"><span class="undefined">				tableData:  [</span></span><br><span class="line"><span class="undefined">					&#123;</span></span><br><span class="line"><span class="javascript">						date: <span class="string">'2016-05-02'</span>,</span></span><br><span class="line"><span class="javascript">						name: <span class="string">'王一霸'</span>,</span></span><br><span class="line"><span class="javascript">						address: <span class="string">'上海市普陀区金沙江路 1518 弄'</span></span></span><br><span class="line"><span class="undefined">					&#125;, </span></span><br><span class="line"><span class="undefined">					&#123;</span></span><br><span class="line"><span class="javascript">						date: <span class="string">'2016-05-04'</span>,</span></span><br><span class="line"><span class="javascript">						name: <span class="string">'刘二狗'</span>,</span></span><br><span class="line"><span class="javascript">						address: <span class="string">'上海市普陀区金沙江路 1517 弄'</span></span></span><br><span class="line"><span class="undefined">					&#125;, </span></span><br><span class="line"><span class="undefined">					&#123;</span></span><br><span class="line"><span class="javascript">						date: <span class="string">'2016-05-01'</span>,</span></span><br><span class="line"><span class="javascript">						name: <span class="string">'杨三萌'</span>,</span></span><br><span class="line"><span class="javascript">						address: <span class="string">'上海市普陀区金沙江路 1519 弄'</span></span></span><br><span class="line"><span class="undefined">					&#125;, </span></span><br><span class="line"><span class="undefined">					&#123;</span></span><br><span class="line"><span class="javascript">						date: <span class="string">'2016-05-03'</span>,</span></span><br><span class="line"><span class="javascript">						name: <span class="string">'陈四吹'</span>,</span></span><br><span class="line"><span class="javascript">						address: <span class="string">'上海市普陀区金沙江路 1516 弄'</span></span></span><br><span class="line"><span class="undefined">					&#125;</span></span><br><span class="line"><span class="undefined">				]</span></span><br><span class="line"><span class="undefined">			&#125;</span></span><br><span class="line"><span class="undefined">		&#125;)</span></span><br><span class="line"><span class="undefined">	</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="报表框架-ECharts"><a href="#报表框架-ECharts" class="headerlink" title="报表框架 - ECharts"></a>报表框架 - <a href="https://echarts.baidu.com" target="_blank" rel="noopener">ECharts</a></h4><p>百度出品的开源可视化库，常用于生成各种类型的报表。</p>
+<p><img src="./res/baidu_echarts.png" alt></p>
+<h4 id="基于弹性盒子的CSS框架-Bulma"><a href="#基于弹性盒子的CSS框架-Bulma" class="headerlink" title="基于弹性盒子的CSS框架 - Bulma"></a>基于弹性盒子的CSS框架 - <a href="https://bulma.io/" target="_blank" rel="noopener">Bulma</a></h4><p>Bulma是一个基于Flexbox的现代化的CSS框架，其初衷就是移动优先（Mobile First），模块化设计，可以轻松用来实现各种简单或者复杂的内容布局，即使不懂CSS的开发者也能够使用它定制出漂亮的页面。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">title</span>&gt;</span>Bulma<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">"https://cdn.bootcss.com/bulma/0.7.4/css/bulma.min.css"</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">		div &#123; margin-top: 10px; &#125;</span></span><br><span class="line"><span class="undefined">		.column &#123; color: #fff; background-color: #063; margin: 10px 10px; text-align: center; &#125;</span></span><br><span class="line"><span class="undefined">	</span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"columns"</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"column"</span>&gt;</span>1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"column"</span>&gt;</span>2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"column"</span>&gt;</span>3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"column"</span>&gt;</span>4<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"button is-primary"</span>&gt;</span>Primary<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"button is-link"</span>&gt;</span>Link<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"button is-info"</span>&gt;</span>Info<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"button is-success"</span>&gt;</span>Success<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"button is-warning"</span>&gt;</span>Warning<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"button is-danger"</span>&gt;</span>Danger<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">progress</span> <span class="attr">class</span>=<span class="string">"progress is-danger is-medium"</span> <span class="attr">max</span>=<span class="string">"100"</span>&gt;</span>60%<span class="tag">&lt;/<span class="name">progress</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">table</span> <span class="attr">class</span>=<span class="string">"table is-hoverable"</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">th</span>&gt;</span>One<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">th</span>&gt;</span>Two<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">td</span>&gt;</span>Three<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">td</span>&gt;</span>Four<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">td</span>&gt;</span>Five<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">td</span>&gt;</span>Six<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">td</span>&gt;</span>Seven<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">td</span>&gt;</span>Eight<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">td</span>&gt;</span>Nine<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">td</span>&gt;</span>Ten<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">td</span>&gt;</span>Eleven<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">td</span>&gt;</span>Twelve<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="响应式布局框架-Bootstrap"><a href="#响应式布局框架-Bootstrap" class="headerlink" title="响应式布局框架 - Bootstrap"></a>响应式布局框架 - <a href="http://www.bootcss.com/" target="_blank" rel="noopener">Bootstrap</a></h4><p>用于快速开发Web应用程序的前端框架，支持响应式布局。</p>
+<ol>
+<li><p>特点</p>
+<ul>
+<li>支持主流的浏览器和移动设备</li>
+<li>容易上手</li>
+<li>响应式设计</li>
+</ul>
+</li>
+<li><p>内容</p>
+<ul>
+<li>网格系统</li>
+<li>封装的CSS</li>
+<li>现成的组件</li>
+<li>JavaScript插件</li>
+</ul>
+</li>
+<li><p>可视化</p>
+<p><img src="./res/bootstrap-layoutit.png" alt></p>
+</li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/youngboy/2019/05/05/3/38/" rel="next" title="Java虚拟机（jvm）">
+                <i class="fa fa-chevron-left"></i> Java虚拟机（jvm）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/youngboy/2019/05/05/3/32/" rel="prev" title="ArrayList">
+                ArrayList <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">youngboy</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/youngboy/archives/">
+              
+                  <span class="site-state-item-count">126</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/youngboy/categories/index.html">
+                  <span class="site-state-item-count">40</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Web前端概述"><span class="nav-number">1.</span> <span class="nav-text">Web前端概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML简史"><span class="nav-number">1.1.</span> <span class="nav-text">HTML简史</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#HTML5新特性"><span class="nav-number">1.1.1.</span> <span class="nav-text">HTML5新特性</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用标签承载内容"><span class="nav-number">1.2.</span> <span class="nav-text">使用标签承载内容</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#结构"><span class="nav-number">1.2.1.</span> <span class="nav-text">结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#文本"><span class="nav-number">1.2.2.</span> <span class="nav-text">文本</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#列表（list）"><span class="nav-number">1.2.3.</span> <span class="nav-text">列表（list）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#链接（anchor）"><span class="nav-number">1.2.4.</span> <span class="nav-text">链接（anchor）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#图像（image）"><span class="nav-number">1.2.5.</span> <span class="nav-text">图像（image）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#表格（table）"><span class="nav-number">1.2.6.</span> <span class="nav-text">表格（table）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#表单（form）"><span class="nav-number">1.2.7.</span> <span class="nav-text">表单（form）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#音视频（audio-video）"><span class="nav-number">1.2.8.</span> <span class="nav-text">音视频（audio / video）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#其他"><span class="nav-number">1.2.9.</span> <span class="nav-text">其他</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用CSS渲染页面"><span class="nav-number">1.3.</span> <span class="nav-text">使用CSS渲染页面</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#简介"><span class="nav-number">1.3.1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#颜色（color）"><span class="nav-number">1.3.2.</span> <span class="nav-text">颜色（color）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#文本（text-font）"><span class="nav-number">1.3.3.</span> <span class="nav-text">文本（text / font）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#盒子（box-model）"><span class="nav-number">1.3.4.</span> <span class="nav-text">盒子（box model）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#列表、表格和表单"><span class="nav-number">1.3.5.</span> <span class="nav-text">列表、表格和表单</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#图像"><span class="nav-number">1.3.6.</span> <span class="nav-text">图像</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#布局"><span class="nav-number">1.3.7.</span> <span class="nav-text">布局</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用JavaScript控制行为"><span class="nav-number">1.4.</span> <span class="nav-text">使用JavaScript控制行为</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#JavaScript基本语法"><span class="nav-number">1.4.1.</span> <span class="nav-text">JavaScript基本语法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#面向对象"><span class="nav-number">1.4.2.</span> <span class="nav-text">面向对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#BOM"><span class="nav-number">1.4.3.</span> <span class="nav-text">BOM</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DOM"><span class="nav-number">1.4.4.</span> <span class="nav-text">DOM</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JavaScript-API"><span class="nav-number">1.4.5.</span> <span class="nav-text">JavaScript API</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用jQuery"><span class="nav-number">1.5.</span> <span class="nav-text">使用jQuery</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#jQuery概述"><span class="nav-number">1.5.1.</span> <span class="nav-text">jQuery概述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#引入jQuery"><span class="nav-number">1.5.2.</span> <span class="nav-text">引入jQuery</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查找元素"><span class="nav-number">1.5.3.</span> <span class="nav-text">查找元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#执行操作"><span class="nav-number">1.5.4.</span> <span class="nav-text">执行操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#链式操作"><span class="nav-number">1.5.5.</span> <span class="nav-text">链式操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#检测页面是否可用"><span class="nav-number">1.5.6.</span> <span class="nav-text">检测页面是否可用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#jQuery插件"><span class="nav-number">1.5.7.</span> <span class="nav-text">jQuery插件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#避免和其他库的冲突"><span class="nav-number">1.5.8.</span> <span class="nav-text">避免和其他库的冲突</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用Ajax"><span class="nav-number">1.5.9.</span> <span class="nav-text">使用Ajax</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#前端框架"><span class="nav-number">1.6.</span> <span class="nav-text">前端框架</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#渐进式框架-Vue-js"><span class="nav-number">1.6.1.</span> <span class="nav-text">渐进式框架 - Vue.js</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#快速上手"><span class="nav-number">1.6.1.1.</span> <span class="nav-text">快速上手</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#使用脚手架-vue-cli"><span class="nav-number">1.6.1.2.</span> <span class="nav-text">使用脚手架 - vue-cli</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#UI框架-Element"><span class="nav-number">1.6.2.</span> <span class="nav-text">UI框架 - Element</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#报表框架-ECharts"><span class="nav-number">1.6.3.</span> <span class="nav-text">报表框架 - ECharts</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基于弹性盒子的CSS框架-Bulma"><span class="nav-number">1.6.4.</span> <span class="nav-text">基于弹性盒子的CSS框架 - Bulma</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#响应式布局框架-Bootstrap"><span class="nav-number">1.6.5.</span> <span class="nav-text">响应式布局框架 - Bootstrap</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">youngboy</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/youngboy/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/youngboy/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/youngboy/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/youngboy/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/youngboy/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/youngboy/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/youngboy/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/youngboy/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/youngboy/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/youngboy/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/youngboy/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/youngboy/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/youngboy/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
