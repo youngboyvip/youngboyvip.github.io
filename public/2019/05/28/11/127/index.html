@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/youngboy/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/youngboy/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/youngboy/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/youngboy/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/youngboy/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/youngboy/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/youngboy/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="youngboy">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="一. Object类有哪些方法? 1.1 Object类的常见方法总结 1.2 hashCode与equals 1.2.1 hashCode（）介绍 1.2.2 为什么要有hashCode 1.2.3 hashCode（）与equals（）的相关规定 1.2.4 为什么两个对象有相同的hashcode值，它们也不一定是相等的？   1.3  ==与equals   二 ConcurrentHa">
+<meta name="keywords" content="youngboy的个人blog">
+<meta property="og:type" content="article">
+<meta property="og:title" content="美团-终结篇">
+<meta property="og:url" content="http://www.youngboy.vip/2019/05/28/11/127/index.html">
+<meta property="og:site_name" content="youngboy">
+<meta property="og:description" content="一. Object类有哪些方法? 1.1 Object类的常见方法总结 1.2 hashCode与equals 1.2.1 hashCode（）介绍 1.2.2 为什么要有hashCode 1.2.3 hashCode（）与equals（）的相关规定 1.2.4 为什么两个对象有相同的hashcode值，它们也不一定是相等的？   1.3  ==与equals   二 ConcurrentHa">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://my-blog-to-use.oss-cn-beijing.aliyuncs.com/18-8-22/50656681.jpg">
+<meta property="og:image" content="http://my-blog-to-use.oss-cn-beijing.aliyuncs.com/18-8-22/33120488.jpg">
+<meta property="og:image" content="http://my-blog-to-use.oss-cn-beijing.aliyuncs.com/18-8-22/97739220.jpg">
+<meta property="og:image" content="http://my-blog-to-use.oss-cn-beijing.aliyuncs.com/18-11-15/60925795.jpg">
+<meta property="og:image" content="http://my-blog-to-use.oss-cn-beijing.aliyuncs.com/18-11-15/62563930.jpg">
+<meta property="og:updated_time" content="2019-05-28T09:18:22.956Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="美团-终结篇">
+<meta name="twitter:description" content="一. Object类有哪些方法? 1.1 Object类的常见方法总结 1.2 hashCode与equals 1.2.1 hashCode（）介绍 1.2.2 为什么要有hashCode 1.2.3 hashCode（）与equals（）的相关规定 1.2.4 为什么两个对象有相同的hashcode值，它们也不一定是相等的？   1.3  ==与equals   二 ConcurrentHa">
+<meta name="twitter:image" content="http://my-blog-to-use.oss-cn-beijing.aliyuncs.com/18-8-22/50656681.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/youngboy/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.youngboy.vip/2019/05/28/11/127/">
+
+
+
+
+
+  <title>美团-终结篇 | youngboy</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/youngboy/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">youngboy</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">Java大杂烩</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/youngboy/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/youngboy/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/youngboy/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/youngboy/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/youngboy/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br>
+            
+            日程表
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.youngboy.vip/youngboy/2019/05/28/11/127/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="youngboy">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/youngboy/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="youngboy">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">美团-终结篇</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-28T17:18:24+08:00">
+                2019-05-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/youngboy/categories/面试必备/" itemprop="url" rel="index">
+                    <span itemprop="name">面试必备</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <!-- MarkdownTOC -->
+<ul>
+<li><a href="#一-object类有哪些方法">一. Object类有哪些方法?</a><ul>
+<li><a href="#11-object类的常见方法总结">1.1 Object类的常见方法总结</a></li>
+<li><a href="#12-hashcode与equals">1.2 hashCode与equals</a><ul>
+<li><a href="#121-hashcode（）介绍">1.2.1 hashCode（）介绍</a></li>
+<li><a href="#122-为什么要有hashcode">1.2.2 为什么要有hashCode</a></li>
+<li><a href="#123-hashcode（）与equals（）的相关规定">1.2.3 hashCode（）与equals（）的相关规定</a></li>
+<li><a href="#124-为什么两个对象有相同的hashcode值，它们也不一定是相等的？">1.2.4 为什么两个对象有相同的hashcode值，它们也不一定是相等的？</a></li>
+</ul>
+</li>
+<li><a href="#13-与equals">1.3  ==与equals</a></li>
+</ul>
+</li>
+<li><a href="#二-concurrenthashmap-相关问题">二 ConcurrentHashMap 相关问题</a><ul>
+<li><a href="#21-concurrenthashmap-和-hashtable-的区别">2.1  ConcurrentHashMap 和 Hashtable 的区别</a></li>
+<li><a href="#22-concurrenthashmap线程安全的具体实现方式底层具体实现">2.2 ConcurrentHashMap线程安全的具体实现方式/底层具体实现</a><ul>
+<li><a href="#jdk17（上面有示意图）">JDK1.7（上面有示意图）</a></li>
+<li><a href="#jdk18-（上面有示意图）">JDK1.8 （上面有示意图）</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#三-谈谈-synchronized-和-reentrantlock-的区别">三 谈谈 synchronized 和 ReenTrantLock 的区别</a></li>
+<li><a href="#四-线程池了解吗？">四 线程池了解吗？</a><ul>
+<li><a href="#41-为什么要用线程池？">4.1 为什么要用线程池？</a></li>
+<li><a href="#42-java-提供了哪几种线程池？他们各自的使用场景是什么？">4.2 Java 提供了哪几种线程池？他们各自的使用场景是什么？</a><ul>
+<li><a href="#java-主要提供了下面4种线程池">Java 主要提供了下面4种线程池</a></li>
+<li><a href="#各种线程池的适用场景介绍">各种线程池的适用场景介绍</a></li>
+</ul>
+</li>
+<li><a href="#43-创建的线程池的方式">4.3 创建的线程池的方式</a></li>
+</ul>
+</li>
+<li><a href="#五-nginx">五 Nginx</a><ul>
+<li><a href="#51-简单介绍一下nginx">5.1 简单介绍一下Nginx</a><ul>
+<li><a href="#反向代理">反向代理</a></li>
+<li><a href="#负载均衡">负载均衡</a></li>
+<li><a href="#动静分离">动静分离</a></li>
+</ul>
+</li>
+<li><a href="#52-为什么要用-nginx-？">5.2 为什么要用 Nginx ？</a></li>
+<li><a href="#53-nginx-的四个主要组成部分了解吗？">5.3  Nginx 的四个主要组成部分了解吗？</a></li>
+</ul>
+</li>
+</ul>
+<!-- /MarkdownTOC -->
+<blockquote>
+<p>下面这个问题，面试中经常出现。我觉得不论是出于应付面试还是说更好地掌握Java这门编程语言，大家都要掌握！</p>
+</blockquote>
+<h1 id="一-Object类有哪些方法"><a href="#一-Object类有哪些方法" class="headerlink" title="一. Object类有哪些方法?"></a>一. Object类有哪些方法?</h1><h3 id="1-1-Object类的常见方法总结"><a href="#1-1-Object类的常见方法总结" class="headerlink" title="1.1 Object类的常见方法总结"></a>1.1 Object类的常见方法总结</h3><p>Object类是一个特殊的类，是所有类的父类。它主要提供了以下11个方法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">native</span> Class&lt;?&gt; getClass()<span class="comment">//native方法，用于返回当前运行时对象的Class对象，使用了final关键字修饰，故不允许子类重写。</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">native</span> <span class="keyword">int</span> <span class="title">hashCode</span><span class="params">()</span> <span class="comment">//native方法，用于返回对象的哈希码，主要使用在哈希表中，比如JDK中的HashMap。</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Object obj)</span><span class="comment">//用于比较2个对象的内存地址是否相等，String类对该方法进行了重写用户比较字符串的值是否相等。</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">native</span> Object <span class="title">clone</span><span class="params">()</span> <span class="keyword">throws</span> CloneNotSupportedException<span class="comment">//naitive方法，用于创建并返回当前对象的一份拷贝。一般情况下，对于任何对象 x，表达式 x.clone() != x 为true，x.clone().getClass() == x.getClass() 为true。Object本身没有实现Cloneable接口，所以不重写clone方法并且进行调用的话会发生CloneNotSupportedException异常。</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span><span class="comment">//返回类的名字@实例的哈希码的16进制的字符串。建议Object所有的子类都重写这个方法。</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">native</span> <span class="keyword">void</span> <span class="title">notify</span><span class="params">()</span><span class="comment">//native方法，并且不能重写。唤醒一个在此对象监视器上等待的线程(监视器相当于就是锁的概念)。如果有多个线程在等待只会任意唤醒一个。</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">native</span> <span class="keyword">void</span> <span class="title">notifyAll</span><span class="params">()</span><span class="comment">//native方法，并且不能重写。跟notify一样，唯一的区别就是会唤醒在此对象监视器上等待的所有线程，而不是一个线程。</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">native</span> <span class="keyword">void</span> <span class="title">wait</span><span class="params">(<span class="keyword">long</span> timeout)</span> <span class="keyword">throws</span> InterruptedException<span class="comment">//native方法，并且不能重写。暂停线程的执行。注意：sleep方法没有释放锁，而wait方法释放了锁 。timeout是等待时间。</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">void</span> <span class="title">wait</span><span class="params">(<span class="keyword">long</span> timeout, <span class="keyword">int</span> nanos)</span> <span class="keyword">throws</span> InterruptedException<span class="comment">//多了nanos参数，这个参数表示额外时间（以毫微秒为单位，范围是 0-999999）。 所以超时的时间还需要加上nanos毫秒。</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">void</span> <span class="title">wait</span><span class="params">()</span> <span class="keyword">throws</span> InterruptedException<span class="comment">//跟之前的2个wait方法一样，只不过该方法一直等待，没有超时时间这个概念</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">finalize</span><span class="params">()</span> <span class="keyword">throws</span> Throwable </span>&#123; &#125;<span class="comment">//实例被垃圾回收器回收的时候触发的操作</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>问完上面这个问题之后，面试官很可能紧接着就会问你“hashCode与equals”相关的问题。</p>
+</blockquote>
+<h3 id="1-2-hashCode与equals"><a href="#1-2-hashCode与equals" class="headerlink" title="1.2 hashCode与equals"></a>1.2 hashCode与equals</h3><p>面试官可能会问你：“你重写过 hashcode 和 equals 么，为什么重写equals时必须重写hashCode方法？”</p>
+<h4 id="1-2-1-hashCode（）介绍"><a href="#1-2-1-hashCode（）介绍" class="headerlink" title="1.2.1 hashCode（）介绍"></a>1.2.1 hashCode（）介绍</h4><p>hashCode() 的作用是获取哈希码，也称为散列码；它实际上是返回一个int整数。这个哈希码的作用是确定该对象在哈希表中的索引位置。hashCode() 定义在JDK的Object.java中，这就意味着Java中的任何类都包含有hashCode() 函数。另外需要注意的是： Object 的 hashcode 方法是本地方法，也就是用 c 语言或 c++ 实现的，该方法通常用来将对象的 内存地址 转换为整数之后返回。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">native</span> <span class="keyword">int</span> <span class="title">hashCode</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
+<p>散列表存储的是键值对(key-value)，它的特点是：能根据“键”快速的检索出对应的“值”。这其中就利用到了散列码！（可以快速找到所需要的对象）</p>
+<h4 id="1-2-2-为什么要有hashCode"><a href="#1-2-2-为什么要有hashCode" class="headerlink" title="1.2.2 为什么要有hashCode"></a>1.2.2 为什么要有hashCode</h4><p><strong>我们以“HashSet如何检查重复”为例子来说明为什么要有hashCode：</strong></p>
+<p>当你把对象加入HashSet时，HashSet会先计算对象的hashcode值来判断对象加入的位置，同时也会与其他已经加入的对象的hashcode值作比较，如果没有相符的hashcode，HashSet会假设对象没有重复出现。但是如果发现有相同hashcode值的对象，这时会调用equals（）方法来检查hashcode相等的对象是否真的相同。如果两者相同，HashSet就不会让其加入操作成功。如果不同的话，就会重新散列到其他位置。（摘自我的Java启蒙书《Head fist java》第二版）。这样我们就大大减少了equals的次数，相应就大大提高了执行速度。</p>
+<h4 id="1-2-3-hashCode（）与equals（）的相关规定"><a href="#1-2-3-hashCode（）与equals（）的相关规定" class="headerlink" title="1.2.3 hashCode（）与equals（）的相关规定"></a>1.2.3 hashCode（）与equals（）的相关规定</h4><ol>
+<li>如果两个对象相等，则hashcode一定也是相同的</li>
+<li>两个对象相等,对两个对象分别调用equals方法都返回true</li>
+<li>两个对象有相同的hashcode值，它们也不一定是相等的</li>
+<li><strong>因此，equals方法被覆盖过，则hashCode方法也必须被覆盖</strong></li>
+<li>hashCode()的默认行为是对堆上的对象产生独特值。如果没有重写hashCode()，则该class的两个对象无论如何都不会相等（即使这两个对象指向相同的数据）</li>
+</ol>
+<h4 id="1-2-4-为什么两个对象有相同的hashcode值，它们也不一定是相等的？"><a href="#1-2-4-为什么两个对象有相同的hashcode值，它们也不一定是相等的？" class="headerlink" title="1.2.4 为什么两个对象有相同的hashcode值，它们也不一定是相等的？"></a>1.2.4 为什么两个对象有相同的hashcode值，它们也不一定是相等的？</h4><p>在这里解释一位小伙伴的问题。以下内容摘自《Head Fisrt Java》。</p>
+<p>因为hashCode() 所使用的杂凑算法也许刚好会让多个对象传回相同的杂凑值。越糟糕的杂凑算法越容易碰撞，但这也与数据值域分布的特性有关（所谓碰撞也就是指的是不同的对象得到相同的 hashCode）。 </p>
+<p>我们刚刚也提到了 HashSet,如果 HashSet 在对比的时候，同样的 hashcode 有多个对象，它会使用 equals() 来判断是否真的相同。也就是说 hashcode 只是用来缩小查找成本。</p>
+<blockquote>
+<p> ==与equals 的对比也是比较常问的基础问题之一！</p>
+</blockquote>
+<h3 id="1-3-与equals"><a href="#1-3-与equals" class="headerlink" title="1.3  ==与equals"></a>1.3  ==与equals</h3><p><strong>==</strong> : 它的作用是判断两个对象的地址是不是相等。即，判断两个对象是不是同一个对象。(基本数据类型==比较的是值，引用数据类型==比较的是内存地址)</p>
+<p><strong>equals()</strong> : 它的作用也是判断两个对象是否相等。但它一般有两种使用情况：</p>
+<ul>
+<li>情况1：类没有覆盖equals()方法。则通过equals()比较该类的两个对象时，等价于通过“==”比较这两个对象。</li>
+<li>情况2：类覆盖了equals()方法。一般，我们都覆盖equals()方法来两个对象的内容相等；若它们的内容相等，则返回true(即，认为这两个对象相等)。</li>
+</ul>
+<p><strong>举个例子：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">test1</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        String a = <span class="keyword">new</span> String(<span class="string">"ab"</span>); <span class="comment">// a 为一个引用</span></span><br><span class="line">        String b = <span class="keyword">new</span> String(<span class="string">"ab"</span>); <span class="comment">// b为另一个引用,对象的内容一样</span></span><br><span class="line">        String aa = <span class="string">"ab"</span>; <span class="comment">// 放在常量池中</span></span><br><span class="line">        String bb = <span class="string">"ab"</span>; <span class="comment">// 从常量池中查找</span></span><br><span class="line">        <span class="keyword">if</span> (aa == bb) <span class="comment">// true</span></span><br><span class="line">            System.out.println(<span class="string">"aa==bb"</span>);</span><br><span class="line">        <span class="keyword">if</span> (a == b) <span class="comment">// false，非同一对象</span></span><br><span class="line">            System.out.println(<span class="string">"a==b"</span>);</span><br><span class="line">        <span class="keyword">if</span> (a.equals(b)) <span class="comment">// true</span></span><br><span class="line">            System.out.println(<span class="string">"aEQb"</span>);</span><br><span class="line">        <span class="keyword">if</span> (<span class="number">42</span> == <span class="number">42.0</span>) &#123; <span class="comment">// true</span></span><br><span class="line">            System.out.println(<span class="string">"true"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>说明：</strong></p>
+<ul>
+<li>String中的equals方法是被重写过的，因为object的equals方法是比较的对象的内存地址，而String的equals方法比较的是对象的值。</li>
+<li>当创建String类型的对象时，虚拟机会在常量池中查找有没有已经存在的值和要创建的值相同的对象，如果有就把它赋给当前引用。如果没有就在常量池中重新创建一个String对象。</li>
+</ul>
+<blockquote>
+<p>在<a href="https://mp.weixin.qq.com/s?__biz=MzU4NDQ4MzU5OA==&amp;mid=2247484625&amp;idx=1&amp;sn=9c4fa1f7d4291a5fbd7daa44bac2b012&amp;chksm=fd9852b0caefdba6edcf9a827aa4a17ddc97bf6ad2e5ee6f7e1aa1b443b54444d05d2b76732b&amp;token=723699735&amp;lang=zh_CN#rd" target="_blank" rel="noopener">【备战春招/秋招系列5】美团面经总结进阶篇 （附详解答案）</a> 这篇文章中，我们已经提到了一下关于 HashMap 在面试中常见的问题：HashMap 的底层实现、简单讲一下自己对于红黑树的理解、红黑树这么优秀，为何不直接使用红黑树得了、HashMap 和 Hashtable 的区别/HashSet 和 HashMap 区别。HashMap 和 ConcurrentHashMap 这俩兄弟在一般只要面试中问到集合相关的问题就一定会被问到，所以各位务必引起重视！</p>
+</blockquote>
+<h1 id="二-ConcurrentHashMap-相关问题"><a href="#二-ConcurrentHashMap-相关问题" class="headerlink" title="二 ConcurrentHashMap 相关问题"></a>二 ConcurrentHashMap 相关问题</h1><h3 id="2-1-ConcurrentHashMap-和-Hashtable-的区别"><a href="#2-1-ConcurrentHashMap-和-Hashtable-的区别" class="headerlink" title="2.1  ConcurrentHashMap 和 Hashtable 的区别"></a>2.1  ConcurrentHashMap 和 Hashtable 的区别</h3><p>ConcurrentHashMap 和 Hashtable 的区别主要体现在实现线程安全的方式上不同。</p>
+<ul>
+<li><strong>底层数据结构：</strong> JDK1.7的 ConcurrentHashMap 底层采用 <strong>分段的数组+链表</strong> 实现，JDK1.8 采用的数据结构跟HashMap1.8的结构一样，数组+链表/红黑二叉树。Hashtable 和 JDK1.8 之前的 HashMap 的底层数据结构类似都是采用 <strong>数组+链表</strong> 的形式，数组是 HashMap 的主体，链表则是主要为了解决哈希冲突而存在的；</li>
+<li><strong>实现线程安全的方式（重要）：</strong> ① <strong>在JDK1.7的时候，ConcurrentHashMap（分段锁）</strong> 对整个桶数组进行了分割分段(Segment)，每一把锁只锁容器其中一部分数据，多线程访问容器里不同数据段的数据，就不会存在锁竞争，提高并发访问率。（默认分配16个Segment，比Hashtable效率提高16倍。） <strong>到了 JDK1.8 的时候已经摒弃了Segment的概念，而是直接用 Node 数组+链表+红黑树的数据结构来实现，并发控制使用 synchronized 和 CAS 来操作。（JDK1.6以后 对 synchronized锁做了很多优化）</strong>  整个看起来就像是优化过且线程安全的 HashMap，虽然在JDK1.8中还能看到 Segment 的数据结构，但是已经简化了属性，只是为了兼容旧版本；② <strong>Hashtable(同一把锁)</strong> :使用 synchronized 来保证线程安全，效率非常低下。当一个线程访问同步方法时，其他线程也访问同步方法，可能会进入阻塞或轮询状态，如使用 put 添加元素，另一个线程不能使用 put 添加元素，也不能使用 get，竞争会越来越激烈效率越低。</li>
+</ul>
+<p><strong>两者的对比图：</strong> </p>
+<p>图片来源：<a href="http://www.cnblogs.com/chengxiao/p/6842045.html" target="_blank" rel="noopener">http://www.cnblogs.com/chengxiao/p/6842045.html</a></p>
+<p>HashTable:<br><img src="http://my-blog-to-use.oss-cn-beijing.aliyuncs.com/18-8-22/50656681.jpg" alt></p>
+<p>JDK1.7的ConcurrentHashMap：<br><img src="http://my-blog-to-use.oss-cn-beijing.aliyuncs.com/18-8-22/33120488.jpg" alt><br>JDK1.8的ConcurrentHashMap（TreeBin: 红黑二叉树节点<br>Node: 链表节点）：<br><img src="http://my-blog-to-use.oss-cn-beijing.aliyuncs.com/18-8-22/97739220.jpg" alt></p>
+<h3 id="2-2-ConcurrentHashMap线程安全的具体实现方式-底层具体实现"><a href="#2-2-ConcurrentHashMap线程安全的具体实现方式-底层具体实现" class="headerlink" title="2.2 ConcurrentHashMap线程安全的具体实现方式/底层具体实现"></a>2.2 ConcurrentHashMap线程安全的具体实现方式/底层具体实现</h3><h4 id="JDK1-7（上面有示意图）"><a href="#JDK1-7（上面有示意图）" class="headerlink" title="JDK1.7（上面有示意图）"></a>JDK1.7（上面有示意图）</h4><p>首先将数据分为一段一段的存储，然后给每一段数据配一把锁，当一个线程占用锁访问其中一个段数据时，其他段的数据也能被其他线程访问。</p>
+<p><strong>ConcurrentHashMap 是由 Segment 数组结构和 HashEntry 数组结构组成</strong>。</p>
+<p>Segment 实现了 ReentrantLock,所以 Segment 是一种可重入锁，扮演锁的角色。HashEntry 用于存储键值对数据。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Segment</span>&lt;<span class="title">K</span>,<span class="title">V</span>&gt; <span class="keyword">extends</span> <span class="title">ReentrantLock</span> <span class="keyword">implements</span> <span class="title">Serializable</span> </span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>一个 ConcurrentHashMap 里包含一个 Segment 数组。Segment 的结构和HashMap类似，是一种数组和链表结构，一个 Segment 包含一个 HashEntry  数组，每个 HashEntry 是一个链表结构的元素，每个 Segment 守护着一个HashEntry数组里的元素，当对 HashEntry 数组的数据进行修改时，必须首先获得对应的 Segment的锁。</p>
+<h4 id="JDK1-8-（上面有示意图）"><a href="#JDK1-8-（上面有示意图）" class="headerlink" title="JDK1.8 （上面有示意图）"></a>JDK1.8 （上面有示意图）</h4><p>ConcurrentHashMap取消了Segment分段锁，采用CAS和synchronized来保证并发安全。数据结构跟HashMap1.8的结构类似，数组+链表/红黑二叉树。</p>
+<p>synchronized只锁定当前链表或红黑二叉树的首节点，这样只要hash不冲突，就不会产生并发，效率又提升N倍。</p>
+<h1 id="三-谈谈-synchronized-和-ReenTrantLock-的区别"><a href="#三-谈谈-synchronized-和-ReenTrantLock-的区别" class="headerlink" title="三 谈谈 synchronized 和 ReenTrantLock 的区别"></a>三 谈谈 synchronized 和 ReenTrantLock 的区别</h1><p><strong>① 两者都是可重入锁</strong></p>
+<p>两者都是可重入锁。“可重入锁”概念是：自己可以再次获取自己的内部锁。比如一个线程获得了某个对象的锁，此时这个对象锁还没有释放，当其再次想要获取这个对象的锁的时候还是可以获取的，如果不可锁重入的话，就会造成死锁。同一个线程每次获取锁，锁的计数器都自增1，所以要等到锁的计数器下降为0时才能释放锁。</p>
+<p><strong>② synchronized 依赖于 JVM 而 ReenTrantLock 依赖于 API</strong></p>
+<p>synchronized 是依赖于 JVM 实现的，前面我们也讲到了 虚拟机团队在 JDK1.6 为 synchronized 关键字进行了很多优化，但是这些优化都是在虚拟机层面实现的，并没有直接暴露给我们。ReenTrantLock 是 JDK 层面实现的（也就是 API 层面，需要 lock() 和 unlock 方法配合 try/finally 语句块来完成），所以我们可以通过查看它的源代码，来看它是如何实现的。</p>
+<p><strong>③ ReenTrantLock 比 synchronized 增加了一些高级功能</strong></p>
+<p>相比synchronized，ReenTrantLock增加了一些高级功能。主要来说主要有三点：<strong>①等待可中断；②可实现公平锁；③可实现选择性通知（锁可以绑定多个条件）</strong></p>
+<ul>
+<li><strong>ReenTrantLock提供了一种能够中断等待锁的线程的机制</strong>，通过lock.lockInterruptibly()来实现这个机制。也就是说正在等待的线程可以选择放弃等待，改为处理其他事情。</li>
+<li><strong>ReenTrantLock可以指定是公平锁还是非公平锁。而synchronized只能是非公平锁。所谓的公平锁就是先等待的线程先获得锁。</strong> ReenTrantLock默认情况是非公平的，可以通过 ReenTrantLock类的<code>ReentrantLock(boolean fair)</code>构造方法来制定是否是公平的。</li>
+<li>synchronized关键字与wait()和notify/notifyAll()方法相结合可以实现等待/通知机制，ReentrantLock类当然也可以实现，但是需要借助于Condition接口与newCondition() 方法。Condition是JDK1.5之后才有的，它具有很好的灵活性，比如可以实现多路通知功能也就是在一个Lock对象中可以创建多个Condition实例（即对象监视器），<strong>线程对象可以注册在指定的Condition中，从而可以有选择性的进行线程通知，在调度线程上更加灵活。 在使用notify/notifyAll()方法进行通知时，被通知的线程是由 JVM 选择的，用ReentrantLock类结合Condition实例可以实现“选择性通知”</strong> ，这个功能非常重要，而且是Condition接口默认提供的。而synchronized关键字就相当于整个Lock对象中只有一个Condition实例，所有的线程都注册在它一个身上。如果执行notifyAll()方法的话就会通知所有处于等待状态的线程这样会造成很大的效率问题，而Condition实例的signalAll()方法 只会唤醒注册在该Condition实例中的所有等待线程。</li>
+</ul>
+<p>如果你想使用上述功能，那么选择ReenTrantLock是一个不错的选择。</p>
+<p><strong>④ 两者的性能已经相差无几</strong></p>
+<p>在JDK1.6之前，synchronized 的性能是比 ReenTrantLock 差很多。具体表示为：synchronized 关键字吞吐量岁线程数的增加，下降得非常严重。而ReenTrantLock 基本保持一个比较稳定的水平。我觉得这也侧面反映了， synchronized 关键字还有非常大的优化余地。后续的技术发展也证明了这一点，我们上面也讲了在 JDK1.6 之后 JVM 团队对 synchronized 关键字做了很多优化。JDK1.6 之后，synchronized 和 ReenTrantLock 的性能基本是持平了。所以网上那些说因为性能才选择 ReenTrantLock 的文章都是错的！JDK1.6之后，性能已经不是选择synchronized和ReenTrantLock的影响因素了！而且虚拟机在未来的性能改进中会更偏向于原生的synchronized，所以还是提倡在synchronized能满足你的需求的情况下，优先考虑使用synchronized关键字来进行同步！优化后的synchronized和ReenTrantLock一样，在很多地方都是用到了CAS操作。</p>
+<h1 id="四-线程池了解吗？"><a href="#四-线程池了解吗？" class="headerlink" title="四 线程池了解吗？"></a>四 线程池了解吗？</h1><h3 id="4-1-为什么要用线程池？"><a href="#4-1-为什么要用线程池？" class="headerlink" title="4.1 为什么要用线程池？"></a>4.1 为什么要用线程池？</h3><p>线程池提供了一种限制和管理资源（包括执行一个任务）。 每个线程池还维护一些基本统计信息，例如已完成任务的数量。 </p>
+<p>这里借用《Java并发编程的艺术》提到的来说一下使用线程池的好处：</p>
+<ul>
+<li><strong>降低资源消耗。</strong> 通过重复利用已创建的线程降低线程创建和销毁造成的消耗。</li>
+<li><strong>提高响应速度。</strong> 当任务到达时，任务可以不需要的等到线程创建就能立即执行。</li>
+<li><strong>提高线程的可管理性。</strong> 线程是稀缺资源，如果无限制的创建，不仅会消耗系统资源，还会降低系统的稳定性，使用线程池可以进行统一的分配，调优和监控。</li>
+</ul>
+<h3 id="4-2-Java-提供了哪几种线程池？他们各自的使用场景是什么？"><a href="#4-2-Java-提供了哪几种线程池？他们各自的使用场景是什么？" class="headerlink" title="4.2 Java 提供了哪几种线程池？他们各自的使用场景是什么？"></a>4.2 Java 提供了哪几种线程池？他们各自的使用场景是什么？</h3><h4 id="Java-主要提供了下面4种线程池"><a href="#Java-主要提供了下面4种线程池" class="headerlink" title="Java 主要提供了下面4种线程池"></a>Java 主要提供了下面4种线程池</h4><ul>
+<li><strong>FixedThreadPool</strong> ： 该方法返回一个固定线程数量的线程池。该线程池中的线程数量始终不变。当有一个新的任务提交时，线程池中若有空闲线程，则立即执行。若没有，则新的任务会被暂存在一个任务队列中，待有线程空闲时，便处理在任务队列中的任务。</li>
+<li><strong>SingleThreadExecutor：</strong> 方法返回一个只有一个线程的线程池。若多余一个任务被提交到该线程池，任务会被保存在一个任务队列中，待线程空闲，按先入先出的顺序执行队列中的任务。</li>
+<li><strong>CachedThreadPool：</strong> 该方法返回一个可根据实际情况调整线程数量的线程池。线程池的线程数量不确定，但若有空闲线程可以复用，则会优先使用可复用的线程。若所有线程均在工作，又有新的任务提交，则会创建新的线程处理任务。所有线程在当前任务执行完毕后，将返回线程池进行复用。</li>
+<li><strong>ScheduledThreadPoolExecutor：</strong>主要用来在给定的延迟后运行任务，或者定期执行任务。ScheduledThreadPoolExecutor又分为：ScheduledThreadPoolExecutor（包含多个线程）和SingleThreadScheduledExecutor （只包含一个线程）两种。</li>
+</ul>
+<h4 id="各种线程池的适用场景介绍"><a href="#各种线程池的适用场景介绍" class="headerlink" title="各种线程池的适用场景介绍"></a>各种线程池的适用场景介绍</h4><ul>
+<li><strong>FixedThreadPool：</strong> 适用于为了满足资源管理需求，而需要限制当前线程数量的应用场景。它适用于负载比较重的服务器；</li>
+<li><strong>SingleThreadExecutor：</strong> 适用于需要保证顺序地执行各个任务并且在任意时间点，不会有多个线程是活动的应用场景。</li>
+<li><strong>CachedThreadPool：</strong> 适用于执行很多的短期异步任务的小程序，或者是负载较轻的服务器；</li>
+<li><strong>ScheduledThreadPoolExecutor：</strong> 适用于需要多个后台执行周期任务，同时为了满足资源管理需求而需要限制后台线程的数量的应用场景，</li>
+<li><strong>SingleThreadScheduledExecutor：</strong> 适用于需要单个后台线程执行周期任务，同时保证顺序地执行各个任务的应用场景。</li>
+</ul>
+<h3 id="4-3-创建的线程池的方式"><a href="#4-3-创建的线程池的方式" class="headerlink" title="4.3 创建的线程池的方式"></a>4.3 创建的线程池的方式</h3><p><strong>（1） 使用 Executors 创建</strong></p>
+<p>我们上面刚刚提到了 Java 提供的几种线程池，通过 Executors 工具类我们可以很轻松的创建我们上面说的几种线程池。但是实际上我们一般都不是直接使用Java提供好的线程池，另外在《阿里巴巴Java开发手册》中强制线程池不允许使用 Executors 去创建，而是通过 ThreadPoolExecutor 构造函数 的方式，这样的处理方式让写的同学更加明确线程池的运行规则，规避资源耗尽的风险。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Executors 返回线程池对象的弊端如下：</span><br><span class="line"></span><br><span class="line">FixedThreadPool 和 SingleThreadExecutor ： 允许请求的队列长度为 Integer.MAX_VALUE,可能堆积大量的请求，从而导致OOM。</span><br><span class="line">CachedThreadPool 和 ScheduledThreadPool ： 允许创建的线程数量为 Integer.MAX_VALUE ，可能会创建大量线程，从而导致OOM。</span><br></pre></td></tr></table></figure>
+<p><strong>（2） ThreadPoolExecutor的构造函数创建</strong></p>
+<p>我们可以自己直接调用 ThreadPoolExecutor 的构造函数来自己创建线程池。在创建的同时，给 BlockQueue 指定容量就可以了。示例如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> ExecutorService executor = <span class="keyword">new</span> ThreadPoolExecutor(<span class="number">13</span>, <span class="number">13</span>,</span><br><span class="line">        <span class="number">60L</span>, TimeUnit.SECONDS,</span><br><span class="line">        <span class="keyword">new</span> ArrayBlockingQueue(<span class="number">13</span>));</span><br></pre></td></tr></table></figure>
+<p>这种情况下，一旦提交的线程数超过当前可用线程数时，就会抛出java.util.concurrent.RejectedExecutionException，这是因为当前线程池使用的队列是有边界队列，队列已经满了便无法继续处理新的请求。但是异常（Exception）总比发生错误（Error）要好。</p>
+<p><strong>（3） 使用开源类库</strong></p>
+<p>Hollis 大佬之前在他的文章中也提到了：“除了自己定义ThreadPoolExecutor外。还有其他方法。这个时候第一时间就应该想到开源类库，如apache和guava等。”他推荐使用guava提供的ThreadFactoryBuilder来创建线程池。下面是参考他的代码示例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ExecutorsDemo</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> ThreadFactory namedThreadFactory = <span class="keyword">new</span> ThreadFactoryBuilder()</span><br><span class="line">        .setNameFormat(<span class="string">"demo-pool-%d"</span>).build();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> ExecutorService pool = <span class="keyword">new</span> ThreadPoolExecutor(<span class="number">5</span>, <span class="number">200</span>,</span><br><span class="line">        <span class="number">0L</span>, TimeUnit.MILLISECONDS,</span><br><span class="line">        <span class="keyword">new</span> LinkedBlockingQueue&lt;Runnable&gt;(<span class="number">1024</span>), namedThreadFactory, <span class="keyword">new</span> ThreadPoolExecutor.AbortPolicy());</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; Integer.MAX_VALUE; i++) &#123;</span><br><span class="line">            pool.execute(<span class="keyword">new</span> SubThread());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>通过上述方式创建线程时，不仅可以避免OOM的问题，还可以自定义线程名称，更加方便的出错的时候溯源。</p>
+<h1 id="五-Nginx"><a href="#五-Nginx" class="headerlink" title="五 Nginx"></a>五 Nginx</h1><h3 id="5-1-简单介绍一下Nginx"><a href="#5-1-简单介绍一下Nginx" class="headerlink" title="5.1 简单介绍一下Nginx"></a>5.1 简单介绍一下Nginx</h3><p>Nginx是一款轻量级的Web 服务器/反向代理服务器及电子邮件（IMAP/POP3）代理服务器。 Nginx  主要提供反向代理、负载均衡、动静分离(静态资源服务)等服务。下面我简单地介绍一下这些名词。</p>
+<h4 id="反向代理"><a href="#反向代理" class="headerlink" title="反向代理"></a>反向代理</h4><p>谈到反向代理，就不得不提一下正向代理。无论是正向代理，还是反向代理，说到底，就是代理模式的衍生版本罢了</p>
+<ul>
+<li><strong>正向代理：</strong>某些情况下，代理我们用户去访问服务器，需要用户手动的设置代理服务器的ip和端口号。正向代理比较常见的一个例子就是 VPN了。</li>
+<li><strong>反向代理：</strong> 是用来代理服务器的，代理我们要访问的目标服务器。代理服务器接受请求，然后将请求转发给内部网络的服务器，并将从服务器上得到的结果返回给客户端，此时代理服务器对外就表现为一个服务器。</li>
+</ul>
+<p>通过下面两幅图，大家应该更好理解（图源：<a href="http://blog.720ui.com/2016/nginx_action_05_proxy/）：" target="_blank" rel="noopener">http://blog.720ui.com/2016/nginx_action_05_proxy/）：</a></p>
+<p><img src="http://my-blog-to-use.oss-cn-beijing.aliyuncs.com/18-11-15/60925795.jpg" alt="正向代理"></p>
+<p><img src="http://my-blog-to-use.oss-cn-beijing.aliyuncs.com/18-11-15/62563930.jpg" alt="反向代理"></p>
+<p>所以，简单的理解，就是正向代理是为客户端做代理，代替客户端去访问服务器，而反向代理是为服务器做代理，代替服务器接受客户端请求。</p>
+<h4 id="负载均衡"><a href="#负载均衡" class="headerlink" title="负载均衡"></a>负载均衡</h4><p>在高并发情况下需要使用，其原理就是将并发请求分摊到多个服务器执行，减轻每台服务器的压力，多台服务器(集群)共同完成工作任务，从而提高了数据的吞吐量。</p>
+<p>Nginx支持的weight轮询（默认）、ip_hash、fair、url_hash这四种负载均衡调度算法，感兴趣的可以自行查阅。</p>
+<p>负载均衡相比于反向代理更侧重的时将请求分担到多台服务器上去，所以谈论负载均衡只有在提供某服务的服务器大于两台时才有意义。</p>
+<h4 id="动静分离"><a href="#动静分离" class="headerlink" title="动静分离"></a>动静分离</h4><p>动静分离是让动态网站里的动态网页根据一定规则把不变的资源和经常变的资源区分开来，动静资源做好了拆分以后，我们就可以根据静态资源的特点将其做缓存操作，这就是网站静态化处理的核心思路。</p>
+<h3 id="5-2-为什么要用-Nginx-？"><a href="#5-2-为什么要用-Nginx-？" class="headerlink" title="5.2 为什么要用 Nginx ？"></a>5.2 为什么要用 Nginx ？</h3><blockquote>
+<p>这部分内容参考极客时间—<a href="https://time.geekbang.org/course/intro/138?code=AycjiiQk6uQRxnVJzBupFkrGkvZlmYELPRsZbWzaAHE=" target="_blank" rel="noopener">Nginx核心知识100讲的内容</a>。</p>
+</blockquote>
+<p>如果面试官问你这个问题，就一定想看你知道 Nginx 服务器的一些优点吗。</p>
+<p>Nginx 有以下5个优点：</p>
+<ol>
+<li>高并发、高性能（这是其他web服务器不具有的）</li>
+<li>可扩展性好（模块化设计，第三方插件生态圈丰富）</li>
+<li>高可靠性（可以在服务器行持续不间断的运行数年）</li>
+<li>热部署（这个功能对于 Nginx 来说特别重要，热部署指可以在不停止 Nginx服务的情况下升级 Nginx）</li>
+<li>BSD许可证（意味着我们可以将源代码下载下来进行修改然后使用自己的版本）</li>
+</ol>
+<h3 id="5-3-Nginx-的四个主要组成部分了解吗？"><a href="#5-3-Nginx-的四个主要组成部分了解吗？" class="headerlink" title="5.3  Nginx 的四个主要组成部分了解吗？"></a>5.3  Nginx 的四个主要组成部分了解吗？</h3><blockquote>
+<p>这部分内容参考极客时间—<a href="https://time.geekbang.org/course/intro/138?code=AycjiiQk6uQRxnVJzBupFkrGkvZlmYELPRsZbWzaAHE=" target="_blank" rel="noopener">Nginx核心知识100讲的内容</a>。</p>
+</blockquote>
+<ul>
+<li>Nginx 二进制可执行文件：由各模块源码编译出一个文件</li>
+<li>Nginx.conf 配置文件：控制Nginx 行为</li>
+<li>acess.log 访问日志： 记录每一条HTTP请求信息</li>
+<li>error.log 错误日志:定位问题</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/youngboy/2019/05/28/11/126/" rel="next" title="美团-基础篇">
+                <i class="fa fa-chevron-left"></i> 美团-基础篇
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/youngboy/2019/05/28/11/128/" rel="prev" title="美团-进阶篇">
+                美团-进阶篇 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">youngboy</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/youngboy/archives/">
+              
+                  <span class="site-state-item-count">127</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/youngboy/categories/index.html">
+                  <span class="site-state-item-count">41</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一-Object类有哪些方法"><span class="nav-number">1.</span> <span class="nav-text">一. Object类有哪些方法?</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-Object类的常见方法总结"><span class="nav-number">1.0.1.</span> <span class="nav-text">1.1 Object类的常见方法总结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-hashCode与equals"><span class="nav-number">1.0.2.</span> <span class="nav-text">1.2 hashCode与equals</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-1-hashCode（）介绍"><span class="nav-number">1.0.2.1.</span> <span class="nav-text">1.2.1 hashCode（）介绍</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-2-为什么要有hashCode"><span class="nav-number">1.0.2.2.</span> <span class="nav-text">1.2.2 为什么要有hashCode</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-3-hashCode（）与equals（）的相关规定"><span class="nav-number">1.0.2.3.</span> <span class="nav-text">1.2.3 hashCode（）与equals（）的相关规定</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-4-为什么两个对象有相同的hashcode值，它们也不一定是相等的？"><span class="nav-number">1.0.2.4.</span> <span class="nav-text">1.2.4 为什么两个对象有相同的hashcode值，它们也不一定是相等的？</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-与equals"><span class="nav-number">1.0.3.</span> <span class="nav-text">1.3  ==与equals</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#二-ConcurrentHashMap-相关问题"><span class="nav-number">2.</span> <span class="nav-text">二 ConcurrentHashMap 相关问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-ConcurrentHashMap-和-Hashtable-的区别"><span class="nav-number">2.0.1.</span> <span class="nav-text">2.1  ConcurrentHashMap 和 Hashtable 的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-ConcurrentHashMap线程安全的具体实现方式-底层具体实现"><span class="nav-number">2.0.2.</span> <span class="nav-text">2.2 ConcurrentHashMap线程安全的具体实现方式/底层具体实现</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#JDK1-7（上面有示意图）"><span class="nav-number">2.0.2.1.</span> <span class="nav-text">JDK1.7（上面有示意图）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JDK1-8-（上面有示意图）"><span class="nav-number">2.0.2.2.</span> <span class="nav-text">JDK1.8 （上面有示意图）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三-谈谈-synchronized-和-ReenTrantLock-的区别"><span class="nav-number">3.</span> <span class="nav-text">三 谈谈 synchronized 和 ReenTrantLock 的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四-线程池了解吗？"><span class="nav-number">4.</span> <span class="nav-text">四 线程池了解吗？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-为什么要用线程池？"><span class="nav-number">4.0.1.</span> <span class="nav-text">4.1 为什么要用线程池？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-Java-提供了哪几种线程池？他们各自的使用场景是什么？"><span class="nav-number">4.0.2.</span> <span class="nav-text">4.2 Java 提供了哪几种线程池？他们各自的使用场景是什么？</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Java-主要提供了下面4种线程池"><span class="nav-number">4.0.2.1.</span> <span class="nav-text">Java 主要提供了下面4种线程池</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#各种线程池的适用场景介绍"><span class="nav-number">4.0.2.2.</span> <span class="nav-text">各种线程池的适用场景介绍</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-创建的线程池的方式"><span class="nav-number">4.0.3.</span> <span class="nav-text">4.3 创建的线程池的方式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#五-Nginx"><span class="nav-number">5.</span> <span class="nav-text">五 Nginx</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1-简单介绍一下Nginx"><span class="nav-number">5.0.1.</span> <span class="nav-text">5.1 简单介绍一下Nginx</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#反向代理"><span class="nav-number">5.0.1.1.</span> <span class="nav-text">反向代理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#负载均衡"><span class="nav-number">5.0.1.2.</span> <span class="nav-text">负载均衡</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#动静分离"><span class="nav-number">5.0.1.3.</span> <span class="nav-text">动静分离</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-2-为什么要用-Nginx-？"><span class="nav-number">5.0.2.</span> <span class="nav-text">5.2 为什么要用 Nginx ？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-3-Nginx-的四个主要组成部分了解吗？"><span class="nav-number">5.0.3.</span> <span class="nav-text">5.3  Nginx 的四个主要组成部分了解吗？</span></a></li></ol></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">youngboy</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/youngboy/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/youngboy/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/youngboy/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/youngboy/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/youngboy/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/youngboy/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/youngboy/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/youngboy/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/youngboy/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/youngboy/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/youngboy/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/youngboy/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/youngboy/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

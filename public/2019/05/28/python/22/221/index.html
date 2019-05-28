@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/youngboy/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/youngboy/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/youngboy/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/youngboy/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/youngboy/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/youngboy/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/youngboy/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="youngboy">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="网络爬虫和相关工具网络爬虫网络爬虫（web crawler），以前经常称之为网络蜘蛛（spider），是按照一定的规则自动浏览万维网并获取信息的机器人程序（或脚本），曾经被广泛的应用于互联网搜索引擎。使用过互联网和浏览器的人都知道，网页中除了供用户阅读的文字信息之外，还包含一些超链接。网络爬虫系统正是通过网页中的超链接信息不断获得网络上的其它页面。正因如此，网络数据采集的过程就像一个爬虫或者蜘蛛在">
+<meta name="keywords" content="youngboy的个人blog">
+<meta property="og:type" content="article">
+<meta property="og:title" content="01.网络爬虫和相关工具">
+<meta property="og:url" content="http://www.youngboy.vip/2019/05/28/python/22/221/index.html">
+<meta property="og:site_name" content="youngboy">
+<meta property="og:description" content="网络爬虫和相关工具网络爬虫网络爬虫（web crawler），以前经常称之为网络蜘蛛（spider），是按照一定的规则自动浏览万维网并获取信息的机器人程序（或脚本），曾经被广泛的应用于互联网搜索引擎。使用过互联网和浏览器的人都知道，网页中除了供用户阅读的文字信息之外，还包含一些超链接。网络爬虫系统正是通过网页中的超链接信息不断获得网络上的其它页面。正因如此，网络数据采集的过程就像一个爬虫或者蜘蛛在">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://www.youngboy.vip/2019/05/28/python/22/221/res/baidu-search-taobao.png">
+<meta property="og:image" content="http://www.youngboy.vip/2019/05/28/python/22/221/res/http-request.png">
+<meta property="og:image" content="http://www.youngboy.vip/2019/05/28/python/22/221/res/http-response.png">
+<meta property="og:image" content="http://www.youngboy.vip/2019/05/28/python/22/221/res/chrome-developer-tools.png">
+<meta property="og:image" content="http://www.youngboy.vip/2019/05/28/python/22/221/res/postman.png">
+<meta property="og:image" content="http://www.youngboy.vip/2019/05/28/python/22/221/res/crawler-workflow.png">
+<meta property="og:updated_time" content="2019-05-28T09:18:22.968Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="01.网络爬虫和相关工具">
+<meta name="twitter:description" content="网络爬虫和相关工具网络爬虫网络爬虫（web crawler），以前经常称之为网络蜘蛛（spider），是按照一定的规则自动浏览万维网并获取信息的机器人程序（或脚本），曾经被广泛的应用于互联网搜索引擎。使用过互联网和浏览器的人都知道，网页中除了供用户阅读的文字信息之外，还包含一些超链接。网络爬虫系统正是通过网页中的超链接信息不断获得网络上的其它页面。正因如此，网络数据采集的过程就像一个爬虫或者蜘蛛在">
+<meta name="twitter:image" content="http://www.youngboy.vip/2019/05/28/python/22/221/res/baidu-search-taobao.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/youngboy/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.youngboy.vip/2019/05/28/python/22/221/">
+
+
+
+
+
+  <title>01.网络爬虫和相关工具 | youngboy</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/youngboy/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">youngboy</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">Java大杂烩</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/youngboy/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/youngboy/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/youngboy/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/youngboy/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/youngboy/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br>
+            
+            日程表
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.youngboy.vip/youngboy/2019/05/28/python/22/221/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="youngboy">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/youngboy/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="youngboy">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">01.网络爬虫和相关工具</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-28T17:18:24+08:00">
+                2019-05-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/youngboy/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/youngboy/categories/python/Day66-75/" itemprop="url" rel="index">
+                    <span itemprop="name">Day66-75</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="网络爬虫和相关工具"><a href="#网络爬虫和相关工具" class="headerlink" title="网络爬虫和相关工具"></a>网络爬虫和相关工具</h2><h3 id="网络爬虫"><a href="#网络爬虫" class="headerlink" title="网络爬虫"></a>网络爬虫</h3><p>网络爬虫（web crawler），以前经常称之为网络蜘蛛（spider），是按照一定的规则自动浏览万维网并获取信息的机器人程序（或脚本），曾经被广泛的应用于互联网搜索引擎。使用过互联网和浏览器的人都知道，网页中除了供用户阅读的文字信息之外，还包含一些超链接。网络爬虫系统正是通过网页中的超链接信息不断获得网络上的其它页面。正因如此，网络数据采集的过程就像一个爬虫或者蜘蛛在网络上漫游，所以才被形象的称为网络爬虫或者网络蜘蛛。</p>
+<h4 id="爬虫的应用领域"><a href="#爬虫的应用领域" class="headerlink" title="爬虫的应用领域"></a>爬虫的应用领域</h4><p>在理想的状态下，所有ICP（Internet Content Provider）都应该为自己的网站提供API接口来共享它们允许其他程序获取的数据，在这种情况下爬虫就不是必需品，国内比较有名的电商平台（如淘宝、京东等）、社交平台（如腾讯微博等）等网站都提供了自己的Open API，但是这类Open API通常会对可以抓取的数据以及抓取数据的频率进行限制。对于大多数的公司而言，及时的获取行业相关数据是企业生存的重要环节之一，然而大部分企业在行业数据方面的匮乏是其与生俱来的短板，合理的利用爬虫来获取数据并从中提取出有商业价值的信息是至关重要的。当然爬虫还有很多重要的应用领域，下面列举了其中的一部分：</p>
+<ol>
+<li>搜索引擎</li>
+<li>新闻聚合</li>
+<li>社交应用</li>
+<li>舆情监控</li>
+<li>行业数据</li>
+</ol>
+<h3 id="合法性和背景调研"><a href="#合法性和背景调研" class="headerlink" title="合法性和背景调研"></a>合法性和背景调研</h3><h4 id="爬虫合法性探讨"><a href="#爬虫合法性探讨" class="headerlink" title="爬虫合法性探讨"></a>爬虫合法性探讨</h4><ol>
+<li>网络爬虫领域目前还属于拓荒阶段，虽然互联网世界已经通过自己的游戏规则建立起一定的道德规范(Robots协议，全称是“网络爬虫排除标准”)，但法律部分还在建立和完善中，也就是说，现在这个领域暂时还是灰色地带。</li>
+<li>“法不禁止即为许可”，如果爬虫就像浏览器一样获取的是前端显示的数据（网页上的公开信息）而不是网站后台的私密敏感信息，就不太担心法律法规的约束，因为目前大数据产业链的发展速度远远超过了法律的完善程度。</li>
+<li>在爬取网站的时候，需要限制自己的爬虫遵守Robots协议，同时控制网络爬虫程序的抓取数据的速度；在使用数据的时候，必须要尊重网站的知识产权（从Web 2.0时代开始，虽然Web上的数据很多都是由用户提供的，但是网站平台是投入了运营成本的，当用户在注册和发布内容时，平台通常就已经获得了对数据的所有权、使用权和分发权）。如果违反了这些规定，在打官司的时候败诉几率相当高。</li>
+</ol>
+<h4 id="Robots-txt文件"><a href="#Robots-txt文件" class="headerlink" title="Robots.txt文件"></a>Robots.txt文件</h4><p>大多数网站都会定义robots.txt文件，下面以淘宝的<a href="http://www.taobao.com/robots.txt" target="_blank" rel="noopener">robots.txt</a>文件为例，看看该网站对爬虫有哪些限制。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">User-agent:  Baiduspider</span><br><span class="line">Allow:  /article</span><br><span class="line">Allow:  /oshtml</span><br><span class="line">Disallow:  /product/</span><br><span class="line">Disallow:  /</span><br><span class="line"></span><br><span class="line">User-Agent:  Googlebot</span><br><span class="line">Allow:  /article</span><br><span class="line">Allow:  /oshtml</span><br><span class="line">Allow:  /product</span><br><span class="line">Allow:  /spu</span><br><span class="line">Allow:  /dianpu</span><br><span class="line">Allow:  /oversea</span><br><span class="line">Allow:  /list</span><br><span class="line">Disallow:  /</span><br><span class="line"></span><br><span class="line">User-agent:  Bingbot</span><br><span class="line">Allow:  /article</span><br><span class="line">Allow:  /oshtml</span><br><span class="line">Allow:  /product</span><br><span class="line">Allow:  /spu</span><br><span class="line">Allow:  /dianpu</span><br><span class="line">Allow:  /oversea</span><br><span class="line">Allow:  /list</span><br><span class="line">Disallow:  /</span><br><span class="line"></span><br><span class="line">User-Agent:  360Spider</span><br><span class="line">Allow:  /article</span><br><span class="line">Allow:  /oshtml</span><br><span class="line">Disallow:  /</span><br><span class="line"></span><br><span class="line">User-Agent:  Yisouspider</span><br><span class="line">Allow:  /article</span><br><span class="line">Allow:  /oshtml</span><br><span class="line">Disallow:  /</span><br><span class="line"></span><br><span class="line">User-Agent:  Sogouspider</span><br><span class="line">Allow:  /article</span><br><span class="line">Allow:  /oshtml</span><br><span class="line">Allow:  /product</span><br><span class="line">Disallow:  /</span><br><span class="line"></span><br><span class="line">User-Agent:  Yahoo!  Slurp</span><br><span class="line">Allow:  /product</span><br><span class="line">Allow:  /spu</span><br><span class="line">Allow:  /dianpu</span><br><span class="line">Allow:  /oversea</span><br><span class="line">Allow:  /list</span><br><span class="line">Disallow:  /</span><br><span class="line"></span><br><span class="line">User-Agent:  *</span><br><span class="line">Disallow:  /</span><br></pre></td></tr></table></figure>
+<p>注意上面robots.txt第一段的最后一行，通过设置“Disallow: /”禁止百度爬虫访问除了“Allow”规定页面外的其他所有页面。因此当你在百度搜索“淘宝”的时候，搜索结果下方会出现：“由于该网站的robots.txt文件存在限制指令（限制搜索引擎抓取），系统无法提供该页面的内容描述”。百度作为一个搜索引擎，至少在表面上遵守了淘宝网的robots.txt协议，所以用户不能从百度上搜索到淘宝内部的产品信息。</p>
+<p><img src="./res/baidu-search-taobao.png" alt> </p>
+<h3 id="相关工具介绍"><a href="#相关工具介绍" class="headerlink" title="相关工具介绍"></a>相关工具介绍</h3><h4 id="HTTP协议"><a href="#HTTP协议" class="headerlink" title="HTTP协议"></a>HTTP协议</h4><p>在开始讲解爬虫之前，我们稍微对HTTP（超文本传输协议）做一些回顾，因为我们在网页上看到的内容通常是浏览器执行HTML语言得到的结果，而HTTP就是传输HTML数据的协议。HTTP和其他很多应用级协议一样是构建在TCP（传输控制协议）之上的，它利用了TCP提供的可靠的传输服务实现了Web应用中的数据交换。按照维基百科上的介绍，设计HTTP最初的目的是为了提供一种发布和接收<a href="https://zh.wikipedia.org/wiki/HTML" target="_blank" rel="noopener">HTML</a>页面的方法，也就是说这个协议是浏览器和Web服务器之间传输的数据的载体。关于这个协议的详细信息以及目前的发展状况，大家可以阅读阮一峰老师的<a href="http://www.ruanyifeng.com/blog/2016/08/http.html" target="_blank" rel="noopener">《HTTP 协议入门》</a>、<a href="http://www.ruanyifeng.com/blog/2012/05/internet_protocol_suite_part_i.html" target="_blank" rel="noopener">《互联网协议入门》</a>系列以及<a href="http://www.ruanyifeng.com/blog/2014/09/illustration-ssl.html" target="_blank" rel="noopener">《图解HTTPS协议》</a>进行了解，下图是我在四川省网络通信技术重点实验室工作期间用开源协议分析工具Ethereal（抓包工具WireShark的前身）截取的访问百度首页时的HTTP请求和响应的报文（协议数据），由于Ethereal截取的是经过网络适配器的数据，因此可以清晰的看到从物理链路层到应用层的协议数据。</p>
+<p>HTTP请求（请求行+请求头+空行+[消息体]）：</p>
+<p><img src="./res/http-request.png" alt></p>
+<p>HTTP响应（响应行+响应头+空行+消息体）：</p>
+<p><img src="./res/http-response.png" alt></p>
+<blockquote>
+<p>说明：但愿这两张如同泛黄的照片般的截图帮助你大概的了解到HTTP是一个怎样的协议。 </p>
+</blockquote>
+<h4 id="相关工具"><a href="#相关工具" class="headerlink" title="相关工具"></a>相关工具</h4><ol>
+<li><p>Chrome Developer Tools：谷歌浏览器内置的开发者工具。</p>
+<p><img src="./res/chrome-developer-tools.png" alt></p>
+</li>
+<li><p>POSTMAN：功能强大的网页调试与RESTful请求工具。</p>
+<p><img src="./res/postman.png" alt></p>
+</li>
+<li><p>HTTPie：命令行HTTP客户端。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> http --header http://www.scu.edu.cn</span><br><span class="line">HTTP/1.1 200 OK</span><br><span class="line">Accept-Ranges: bytes</span><br><span class="line">Cache-Control: private, max-age=600</span><br><span class="line">Connection: Keep-Alive</span><br><span class="line">Content-Encoding: gzip</span><br><span class="line">Content-Language: zh-CN</span><br><span class="line">Content-Length: 14403</span><br><span class="line">Content-Type: text/html</span><br><span class="line">Date: Sun, 27 May 2018 15:38:25 GMT</span><br><span class="line">ETag: "e6ec-56d3032d70a32-gzip"</span><br><span class="line">Expires: Sun, 27 May 2018 15:48:25 GMT</span><br><span class="line">Keep-Alive: timeout=5, max=100</span><br><span class="line">Last-Modified: Sun, 27 May 2018 13:44:22 GMT</span><br><span class="line">Server: VWebServer</span><br><span class="line">Vary: User-Agent,Accept-Encoding</span><br><span class="line">X-Frame-Options: SAMEORIGIN</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>BuiltWith：识别网站所用技术的工具。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> builtwith</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>builtwith.parse(<span class="string">'http://www.bootcss.com/'</span>)</span><br><span class="line">&#123;<span class="string">'web-servers'</span>: [<span class="string">'Nginx'</span>], <span class="string">'font-scripts'</span>: [<span class="string">'Font Awesome'</span>], <span class="string">'javascript-frameworks'</span>: [<span class="string">'Lo-dash'</span>, <span class="string">'Underscore.js'</span>, <span class="string">'Vue.js'</span>, <span class="string">'Zepto'</span>, <span class="string">'jQuery'</span>], <span class="string">'web-frameworks'</span>: [<span class="string">'Twitter Bootstrap'</span>]&#125;</span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> ssl</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>ssl._create_default_https_context = ssl._create_unverified_context</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>builtwith.parse(<span class="string">'https://www.jianshu.com/'</span>)</span><br><span class="line">&#123;<span class="string">'web-servers'</span>: [<span class="string">'Tengine'</span>], <span class="string">'web-frameworks'</span>: [<span class="string">'Twitter Bootstrap'</span>, <span class="string">'Ruby on Rails'</span>], <span class="string">'programming-languages'</span>: [<span class="string">'Ruby'</span>]&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>python-whois：查询网站所有者的工具。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> whois</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>whois.whois(<span class="string">'baidu.com'</span>)</span><br><span class="line">&#123;<span class="string">'domain_name'</span>: [<span class="string">'BAIDU.COM'</span>, <span class="string">'baidu.com'</span>], <span class="string">'registrar'</span>: <span class="string">'MarkMonitor, Inc.'</span>, <span class="string">'whois_server'</span>: <span class="string">'whois.markmonitor.com'</span>, <span class="string">'referral_url'</span>: <span class="literal">None</span>, <span class="string">'updated_date'</span>: [datetime.datetime(<span class="number">2017</span>, <span class="number">7</span>, <span class="number">28</span>, <span class="number">2</span>, <span class="number">36</span>, <span class="number">28</span>), datetime.datetime(<span class="number">2017</span>, <span class="number">7</span>, <span class="number">27</span>, <span class="number">19</span>, <span class="number">36</span>, <span class="number">28</span>)], <span class="string">'creation_date'</span>: [datetime.datetime(<span class="number">1999</span>, <span class="number">10</span>, <span class="number">11</span>, <span class="number">11</span>, <span class="number">5</span>, <span class="number">17</span>), datetime.datetime(<span class="number">1999</span>, <span class="number">10</span>, <span class="number">11</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">17</span>)], <span class="string">'expiration_date'</span>: [datetime.datetime(<span class="number">2026</span>, <span class="number">10</span>, <span class="number">11</span>, <span class="number">11</span>, <span class="number">5</span>, <span class="number">17</span>), datetime.datetime(<span class="number">2026</span>, <span class="number">10</span>, <span class="number">11</span>, <span class="number">0</span>, <span class="number">0</span>)], <span class="string">'name_servers'</span>: [<span class="string">'DNS.BAIDU.COM'</span>, <span class="string">'NS2.BAIDU.COM'</span>, <span class="string">'NS3.BAIDU.COM'</span>, <span class="string">'NS4.BAIDU.COM'</span>, <span class="string">'NS7.BAIDU.COM'</span>, <span class="string">'dns.baidu.com'</span>, <span class="string">'ns4.baidu.com'</span>, <span class="string">'ns3.baidu.com'</span>, <span class="string">'ns7.baidu.com'</span>, <span class="string">'ns2.baidu.com'</span>], <span class="string">'status'</span>: [<span class="string">'clientDeleteProhibited https://icann.org/epp#clientDeleteProhibited'</span>, <span class="string">'clientTransferProhibited https://icann.org/epp#clientTransferProhibited'</span>, <span class="string">'clientUpdateProhibited https://icann.org/epp#clientUpdateProhibited'</span>, <span class="string">'serverDeleteProhibited https://icann.org/epp#serverDeleteProhibited'</span>, <span class="string">'serverTransferProhibited https://icann.org/epp#serverTransferProhibited'</span>, <span class="string">'serverUpdateProhibited https://icann.org/epp#serverUpdateProhibited'</span>, <span class="string">'clientUpdateProhibited (https://www.icann.org/epp#clientUpdateProhibited)'</span>, <span class="string">'clientTransferProhibited (https://www.icann.org/epp#clientTransferProhibited)'</span>, <span class="string">'clientDeleteProhibited (https://www.icann.org/epp#clientDeleteProhibited)'</span>, <span class="string">'serverUpdateProhibited (https://www.icann.org/epp#serverUpdateProhibited)'</span>, <span class="string">'serverTransferProhibited (https://www.icann.org/epp#serverTransferProhibited)'</span>, <span class="string">'serverDeleteProhibited (https://www.icann.org/epp#serverDeleteProhibited)'</span>], <span class="string">'emails'</span>: [<span class="string">'abusecomplaints@markmonitor.com'</span>, <span class="string">'whoisrelay@markmonitor.com'</span>], <span class="string">'dnssec'</span>: <span class="string">'unsigned'</span>, <span class="string">'name'</span>: <span class="literal">None</span>, <span class="string">'org'</span>: <span class="string">'Beijing Baidu Netcom Science Technology Co., Ltd.'</span>, <span class="string">'address'</span>: <span class="literal">None</span>, <span class="string">'city'</span>: <span class="literal">None</span>, <span class="string">'state'</span>: <span class="string">'Beijing'</span>, <span class="string">'zipcode'</span>: <span class="literal">None</span>, <span class="string">'country'</span>: <span class="string">'CN'</span>&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>robotparser：解析robots.txt的工具。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">from</span> urllib <span class="keyword">import</span> robotparser</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>parser = robotparser.RobotFileParser()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>parser.set_url(<span class="string">'https://www.taobao.com/robots.txt'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>parser.read()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>parser.can_fetch(<span class="string">'Hellokitty'</span>, <span class="string">'http://www.taobao.com/article'</span>)</span><br><span class="line"><span class="literal">False</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>parser.can_fetch(<span class="string">'Baiduspider'</span>, <span class="string">'http://www.taobao.com/article'</span>)</span><br><span class="line"><span class="literal">True</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>parser.can_fetch(<span class="string">'Baiduspider'</span>, <span class="string">'http://www.taobao.com/product'</span>)</span><br><span class="line"><span class="literal">False</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="一个简单的爬虫"><a href="#一个简单的爬虫" class="headerlink" title="一个简单的爬虫"></a>一个简单的爬虫</h3><p>一个基本的爬虫通常分为数据采集（网页下载）、数据处理（网页解析）和数据存储（将有用的信息持久化）三个部分的内容，当然更为高级的爬虫在数据采集和处理时会使用并发编程或分布式技术，这就需要有调度器（安排线程或进程执行对应的任务）、后台管理程序（监控爬虫的工作状态以及检查数据抓取的结果）等的参与。</p>
+<p><img src="./res/crawler-workflow.png" alt></p>
+<p>一般来说，爬虫的工作流程包括以下几个步骤：</p>
+<ol>
+<li>设定抓取目标（种子页面/起始页面）并获取网页。</li>
+<li>当服务器无法访问时，按照指定的重试次数尝试重新下载页面。</li>
+<li>在需要的时候设置用户代理或隐藏真实IP，否则可能无法访问页面。</li>
+<li>对获取的页面进行必要的解码操作然后抓取出需要的信息。</li>
+<li>在获取的页面中通过某种方式（如正则表达式）抽取出页面中的链接信息。</li>
+<li>对链接进行进一步的处理（获取页面并重复上面的动作）。</li>
+<li>将有用的信息进行持久化以备后续的处理。</li>
+</ol>
+<p>下面的例子给出了一个从“搜狐体育”上获取NBA新闻标题和链接的爬虫。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.error <span class="keyword">import</span> URLError</span><br><span class="line"><span class="keyword">from</span> urllib.request <span class="keyword">import</span> urlopen</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> pymysql</span><br><span class="line"><span class="keyword">import</span> ssl</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> pymysql <span class="keyword">import</span> Error</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 通过指定的字符集对页面进行解码(不是每个网站都将字符集设置为utf-8)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">decode_page</span><span class="params">(page_bytes, charsets=<span class="params">(<span class="string">'utf-8'</span>,)</span>)</span>:</span></span><br><span class="line">    page_html = <span class="literal">None</span></span><br><span class="line">    <span class="keyword">for</span> charset <span class="keyword">in</span> charsets:</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            page_html = page_bytes.decode(charset)</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">except</span> UnicodeDecodeError:</span><br><span class="line">            <span class="keyword">pass</span></span><br><span class="line">            <span class="comment"># logging.error('Decode:', error)</span></span><br><span class="line">    <span class="keyword">return</span> page_html</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取页面的HTML代码(通过递归实现指定次数的重试操作)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_page_html</span><span class="params">(seed_url, *, retry_times=<span class="number">3</span>, charsets=<span class="params">(<span class="string">'utf-8'</span>,)</span>)</span>:</span></span><br><span class="line">    page_html = <span class="literal">None</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        page_html = decode_page(urlopen(seed_url).read(), charsets)</span><br><span class="line">    <span class="keyword">except</span> URLError:</span><br><span class="line">        <span class="comment"># logging.error('URL:', error)</span></span><br><span class="line">        <span class="keyword">if</span> retry_times &gt; <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> get_page_html(seed_url, retry_times=retry_times - <span class="number">1</span>,</span><br><span class="line">                                 charsets=charsets)</span><br><span class="line">    <span class="keyword">return</span> page_html</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 从页面中提取需要的部分(通常是链接也可以通过正则表达式进行指定)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_matched_parts</span><span class="params">(page_html, pattern_str, pattern_ignore_case=re.I)</span>:</span></span><br><span class="line">    pattern_regex = re.compile(pattern_str, pattern_ignore_case)</span><br><span class="line">    <span class="keyword">return</span> pattern_regex.findall(page_html) <span class="keyword">if</span> page_html <span class="keyword">else</span> []</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 开始执行爬虫程序并对指定的数据进行持久化操作</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">start_crawl</span><span class="params">(seed_url, match_pattern, *, max_depth=<span class="number">-1</span>)</span>:</span></span><br><span class="line">    conn = pymysql.connect(host=<span class="string">'localhost'</span>, port=<span class="number">3306</span>,</span><br><span class="line">                           database=<span class="string">'crawler'</span>, user=<span class="string">'root'</span>,</span><br><span class="line">                           password=<span class="string">'123456'</span>, charset=<span class="string">'utf8'</span>)</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="keyword">with</span> conn.cursor() <span class="keyword">as</span> cursor:</span><br><span class="line">            url_list = [seed_url]</span><br><span class="line">            <span class="comment"># 通过下面的字典避免重复抓取并控制抓取深度</span></span><br><span class="line">            visited_url_list = &#123;seed_url: <span class="number">0</span>&#125;</span><br><span class="line">            <span class="keyword">while</span> url_list:</span><br><span class="line">                current_url = url_list.pop(<span class="number">0</span>)</span><br><span class="line">                depth = visited_url_list[current_url]</span><br><span class="line">                <span class="keyword">if</span> depth != max_depth:</span><br><span class="line">                    <span class="comment"># 尝试用utf-8/gbk/gb2312三种字符集进行页面解码</span></span><br><span class="line">                    page_html = get_page_html(current_url, charsets=(<span class="string">'utf-8'</span>, <span class="string">'gbk'</span>, <span class="string">'gb2312'</span>))</span><br><span class="line">                    links_list = get_matched_parts(page_html, match_pattern)</span><br><span class="line">                    param_list = []</span><br><span class="line">                    <span class="keyword">for</span> link <span class="keyword">in</span> links_list:</span><br><span class="line">                        <span class="keyword">if</span> link <span class="keyword">not</span> <span class="keyword">in</span> visited_url_list:</span><br><span class="line">                            visited_url_list[link] = depth + <span class="number">1</span></span><br><span class="line">                            page_html = get_page_html(link, charsets=(<span class="string">'utf-8'</span>, <span class="string">'gbk'</span>, <span class="string">'gb2312'</span>))</span><br><span class="line">                            headings = get_matched_parts(page_html, <span class="string">r'&lt;h1&gt;(.*)&lt;span'</span>)</span><br><span class="line">                            <span class="keyword">if</span> headings:</span><br><span class="line">                                param_list.append((headings[<span class="number">0</span>], link))</span><br><span class="line">                    cursor.executemany(<span class="string">'insert into tb_result values (default, %s, %s)'</span>,</span><br><span class="line">                                       param_list)</span><br><span class="line">                    conn.commit()</span><br><span class="line">    <span class="keyword">except</span> Error:</span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line">        <span class="comment"># logging.error('SQL:', error)</span></span><br><span class="line">    <span class="keyword">finally</span>:</span><br><span class="line">        conn.close()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    ssl._create_default_https_context = ssl._create_unverified_context</span><br><span class="line">    start_crawl(<span class="string">'http://sports.sohu.com/nba_a.shtml'</span>,</span><br><span class="line">                <span class="string">r'&lt;a[^&gt;]+test=a\s[^&gt;]*href=["\'](.*?)["\']'</span>,</span><br><span class="line">                max_depth=<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+<p>由于使用了MySQL实现持久化操作，所以要先启动MySQL服务器再运行该程序。</p>
+<h3 id="爬虫注意事项"><a href="#爬虫注意事项" class="headerlink" title="爬虫注意事项"></a>爬虫注意事项</h3><p>通过上面的例子，我们对爬虫已经有了一个感性的认识，在编写爬虫时有以下一些注意事项：</p>
+<ol>
+<li><p>处理相对链接。有的时候我们从页面中获取的链接不是一个完整的绝对链接而是一个相对链接，这种情况下需要将其与URL前缀进行拼接（<code>urllib.parse</code>中的<code>urljoin()</code>函数可以完成此项操作）。</p>
+</li>
+<li><p>设置代理服务。有些网站会限制访问的区域（例如美国的Netflix屏蔽了很多国家的访问），有些爬虫需要隐藏自己的身份，在这种情况下可以设置使用代理服务器，代理服务器有免费（如<a href="http://www.xicidaili.com/" target="_blank" rel="noopener">西刺代理</a>、<a href="https://www.kuaidaili.com/free/" target="_blank" rel="noopener">快代理</a>）和付费两种（如<a href="http://www.xdaili.cn/" target="_blank" rel="noopener">讯代理</a>、<a href="https://www.abuyun.com/" target="_blank" rel="noopener">阿布云代理</a>)，付费的一般稳定性和可用性都更好，可以通过<code>urllib.request</code>中的<code>ProxyHandler</code>来为请求设置代理。</p>
+</li>
+<li><p>限制下载速度。如果我们的爬虫获取网页的速度过快，可能就会面临被封禁或者产生“损害动产”的风险（这个可能会导致吃官司且败诉），可以在两次下载之间添加延时从而对爬虫进行限速。</p>
+</li>
+<li><p>避免爬虫陷阱。有些网站会动态生成页面内容，这会导致产生无限多的页面（例如在线万年历通常会有无穷无尽的链接）。可以通过记录到达当前页面经过了多少个链接（链接深度）来解决该问题，当达到事先设定的最大深度时爬虫就不再像队列中添加该网页中的链接了。</p>
+</li>
+<li><p>SSL相关问题。在使用<code>urlopen</code>打开一个HTTPS链接时会验证一次SSL证书，如果不做出处理会产生错误提示“SSL: CERTIFICATE_VERIFY_FAILED”，可以通过以下两种方式加以解决：</p>
+<ul>
+<li><p>使用未经验证的上下文</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> ssl</span><br><span class="line"></span><br><span class="line">request = urllib.request.Request(url=<span class="string">'...'</span>, headers=&#123;...&#125;) </span><br><span class="line">context = ssl._create_unverified_context()</span><br><span class="line">web_page = urllib.request.urlopen(request, context=context)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>设置全局的取消证书验证</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> ssl</span><br><span class="line"></span><br><span class="line">ssl._create_default_https_context = ssl._create_unverified_context</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/youngboy/2019/05/28/python/14/28/301/" rel="next" title="网络编程入门">
+                <i class="fa fa-chevron-left"></i> 网络编程入门
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/youngboy/2019/05/28/python/22/222/" rel="prev" title="02.数据采集和解析">
+                02.数据采集和解析 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">youngboy</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/youngboy/archives/">
+              
+                  <span class="site-state-item-count">127</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/youngboy/categories/index.html">
+                  <span class="site-state-item-count">41</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#网络爬虫和相关工具"><span class="nav-number">1.</span> <span class="nav-text">网络爬虫和相关工具</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#网络爬虫"><span class="nav-number">1.1.</span> <span class="nav-text">网络爬虫</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#爬虫的应用领域"><span class="nav-number">1.1.1.</span> <span class="nav-text">爬虫的应用领域</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#合法性和背景调研"><span class="nav-number">1.2.</span> <span class="nav-text">合法性和背景调研</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#爬虫合法性探讨"><span class="nav-number">1.2.1.</span> <span class="nav-text">爬虫合法性探讨</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Robots-txt文件"><span class="nav-number">1.2.2.</span> <span class="nav-text">Robots.txt文件</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相关工具介绍"><span class="nav-number">1.3.</span> <span class="nav-text">相关工具介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#HTTP协议"><span class="nav-number">1.3.1.</span> <span class="nav-text">HTTP协议</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#相关工具"><span class="nav-number">1.3.2.</span> <span class="nav-text">相关工具</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一个简单的爬虫"><span class="nav-number">1.4.</span> <span class="nav-text">一个简单的爬虫</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#爬虫注意事项"><span class="nav-number">1.5.</span> <span class="nav-text">爬虫注意事项</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">youngboy</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/youngboy/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/youngboy/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/youngboy/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/youngboy/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/youngboy/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/youngboy/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/youngboy/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/youngboy/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/youngboy/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/youngboy/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/youngboy/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/youngboy/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/youngboy/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -263,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.youngboy.vip/youngboy/2019/05/05/8/93/">
+    <link itemprop="mainEntityOfPage" href="http://www.youngboy.vip/youngboy/2019/05/28/11/126/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="youngboy">
@@ -282,7 +282,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/youngboy/2019/05/05/8/93/" itemprop="url">搞定BAT面试——几道常见的子符串算法题</a></h2>
+                <a class="post-title-link" href="/youngboy/2019/05/28/11/126/" itemprop="url">美团-基础篇</a></h2>
         
 
         <div class="post-meta">
@@ -294,8 +294,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-05T11:18:43+08:00">
-                2019-05-05
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-28T17:18:24+08:00">
+                2019-05-28
               </time>
             
 
@@ -317,8 +317,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/youngboy/categories/数据结构与算法/" itemprop="url" rel="index">
-                    <span itemprop="name">数据结构与算法</span>
+                  <a href="/youngboy/categories/面试必备/" itemprop="url" rel="index">
+                    <span itemprop="name">面试必备</span>
                   </a>
                 </span>
 
@@ -358,132 +358,209 @@
           
             <!-- MarkdownTOC -->
 <ul>
-<li><a href="#说明">说明</a></li>
-<li><a href="#1-kmp-算法">1. KMP 算法</a></li>
-<li><a href="#2-替换空格">2. 替换空格</a></li>
-<li><a href="#3-最长公共前缀">3. 最长公共前缀</a></li>
-<li><a href="#4-回文串">4. 回文串</a><ul>
-<li><a href="#41-最长回文串">4.1. 最长回文串</a></li>
-<li><a href="#42-验证回文串">4.2. 验证回文串</a></li>
-<li><a href="#43-最长回文子串">4.3. 最长回文子串</a></li>
-<li><a href="#44-最长回文子序列">4.4. 最长回文子序列</a></li>
+<li><a href="#1-systemoutprintln3-|-9输出什么">1.  <code>System.out.println(3 | 9);</code>输出什么？</a></li>
+<li><a href="#2-说一下转发forward和重定向redirect的区别">2. 说一下转发(Forward)和重定向(Redirect)的区别</a></li>
+<li><a href="#3-在浏览器中输入url地址到显示主页的过程整个过程会使用哪些协议">3.  在浏览器中输入url地址到显示主页的过程,整个过程会使用哪些协议</a></li>
+<li><a href="#4-tcp-三次握手和四次挥手">4.  TCP 三次握手和四次挥手</a><ul>
+<li><a href="#为什么要三次握手">为什么要三次握手</a></li>
+<li><a href="#为什么要传回-syn">为什么要传回 SYN</a></li>
+<li><a href="#传了-syn为啥还要传-ack">传了 SYN,为啥还要传 ACK</a></li>
+<li><a href="#为什么要四次挥手">为什么要四次挥手</a></li>
 </ul>
 </li>
-<li><a href="#5-括号匹配深度">5. 括号匹配深度</a></li>
-<li><a href="#6-把字符串转换成整数">6. 把字符串转换成整数</a></li>
+<li><a href="#5-ip地址与mac地址的区别">5. IP地址与MAC地址的区别</a></li>
+<li><a href="#6-http请求响应报文格式">6. HTTP请求、响应报文格式</a></li>
+<li><a href="#7-为什么要使用索引索引这么多优点为什么不对表中的每一个列创建一个索引呢索引是如何提高查询速度的说一下使用索引的注意事项mysql索引主要使用的两种数据结构什么是覆盖索引">7. 为什么要使用索引？索引这么多优点，为什么不对表中的每一个列创建一个索引呢？索引是如何提高查询速度的？说一下使用索引的注意事项？Mysql索引主要使用的两种数据结构？什么是覆盖索引?</a></li>
+<li><a href="#8-进程与线程的区别是什么进程间的几种通信方式说一下线程间的几种通信方式知道不">8.  进程与线程的区别是什么？进程间的几种通信方式说一下？线程间的几种通信方式知道不？</a></li>
+<li><a href="#9-为什么要用单例模式手写几种线程安全的单例模式">9. 为什么要用单例模式？手写几种线程安全的单例模式？</a></li>
+<li><a href="#10-简单介绍一下bean知道spring的bean的作用域与生命周期吗">10. 简单介绍一下bean。知道Spring的bean的作用域与生命周期吗？</a></li>
+<li><a href="#11-spring-中的事务传播行为了解吗transactiondefinition-接口中哪五个表示隔离级别的常量">11. Spring 中的事务传播行为了解吗？TransactionDefinition 接口中哪五个表示隔离级别的常量？</a><ul>
+<li><a href="#事务传播行为">事务传播行为</a></li>
+<li><a href="#隔离级别">隔离级别</a></li>
+</ul>
+</li>
+<li><a href="#12-springmvc-原理了解吗">12. SpringMVC 原理了解吗？</a></li>
+<li><a href="#13-spring-aop-ioc-实现原理">13. Spring AOP IOC 实现原理</a></li>
 </ul>
 <!-- /MarkdownTOC -->
-<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><ul>
-<li>本文作者：wwwxmu</li>
-<li>原文地址:<a href="https://www.weiweiblog.cn/13string/" target="_blank" rel="noopener">https://www.weiweiblog.cn/13string/</a></li>
-<li>作者的博客站点：<a href="https://www.weiweiblog.cn/" target="_blank" rel="noopener">https://www.weiweiblog.cn/</a> （推荐哦！）</li>
-</ul>
-<p>考虑到篇幅问题，我会分两次更新这个内容。本篇文章只是原文的一部分，我在原文的基础上增加了部分内容以及修改了部分代码和注释。另外，我增加了爱奇艺 2018 秋招 Java：<code>求给定合法括号序列的深度</code> 这道题。所有代码均编译成功，并带有注释，欢迎各位享用！</p>
-<h2 id="1-KMP-算法"><a href="#1-KMP-算法" class="headerlink" title="1. KMP 算法"></a>1. KMP 算法</h2><p>谈到字符串问题，不得不提的就是 KMP 算法，它是用来解决字符串查找的问题，可以在一个字符串（S）中查找一个子串（W）出现的位置。KMP 算法把字符匹配的时间复杂度缩小到 O(m+n) ,而空间复杂度也只有O(m)。因为“暴力搜索”的方法会反复回溯主串，导致效率低下，而KMP算法可以利用已经部分匹配这个有效信息，保持主串上的指针不回溯，通过修改子串的指针，让模式串尽量地移动到有效的位置。</p>
-<p>具体算法细节请参考：</p>
+<p><img src="http://my-blog-to-use.oss-cn-beijing.aliyuncs.com/18-11-10/3586727.jpg" alt="备战春招/秋招系列】美团面经总结基础篇 （附详解答案）"></p>
+<p><strong>系列文章：</strong></p>
 <ul>
-<li><strong>字符串匹配的KMP算法:</strong> <a href="http://www.ruanyifeng.com/blog/2013/05/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm.html" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/2013/05/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm.html</a></li>
-<li><strong>从头到尾彻底理解KMP:</strong> <a href="https://blog.csdn.net/v_july_v/article/details/7041827" target="_blank" rel="noopener">https://blog.csdn.net/v_july_v/article/details/7041827</a></li>
-<li><strong>如何更好的理解和掌握 KMP 算法?:</strong> <a href="https://www.zhihu.com/question/21923021" target="_blank" rel="noopener">https://www.zhihu.com/question/21923021</a></li>
-<li><strong>KMP 算法详细解析:</strong>  <a href="https://blog.sengxian.com/algorithms/kmp" target="_blank" rel="noopener">https://blog.sengxian.com/algorithms/kmp</a></li>
-<li><strong>图解 KMP 算法:</strong> <a href="http://blog.jobbole.com/76611/" target="_blank" rel="noopener">http://blog.jobbole.com/76611/</a></li>
-<li><strong>汪都能听懂的KMP字符串匹配算法【双语字幕】:</strong> <a href="https://www.bilibili.com/video/av3246487/?from=search&amp;seid=17173603269940723925" target="_blank" rel="noopener">https://www.bilibili.com/video/av3246487/?from=search&amp;seid=17173603269940723925</a></li>
-<li><strong>KMP字符串匹配算法1:</strong> <a href="https://www.bilibili.com/video/av11866460?from=search&amp;seid=12730654434238709250" target="_blank" rel="noopener">https://www.bilibili.com/video/av11866460?from=search&amp;seid=12730654434238709250</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=MzU4NDQ4MzU5OA==&amp;mid=2247484573&amp;idx=1&amp;sn=8c5965d4a3710d405d8e8cc10c7b0ce5&amp;chksm=fd9852fccaefdbea8dfe0bc40188b7579f1cddb1e8905dc981669a3f21d2a04cadceafa9023f&amp;token=1990180468&amp;lang=zh_CN#rd" target="_blank" rel="noopener">【备战春招/秋招系列1】程序员的简历就该这样写</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=MzU4NDQ4MzU5OA==&amp;mid=2247484578&amp;idx=1&amp;sn=eea72d80a2325257f00aaed21d5b226f&amp;chksm=fd9852c3caefdbd52dd8a537cc723ed1509314401b3a669a253ef5bc0360b6fddef48b9c2e94&amp;token=1990180468&amp;lang=zh_CN#rd" target="_blank" rel="noopener">【备战春招/秋招系列2】初出茅庐的程序员该如何准备面试？</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=MzU4NDQ4MzU5OA==&amp;mid=2247484592&amp;idx=1&amp;sn=6d9731ce7401be49e97c1af6ed384ecc&amp;chksm=fd9852d1caefdbc720a361ae65a8ad9d53cfb4800b15a7c68cbdc630b313215c6c52e0934ec2&amp;token=1990180468&amp;lang=zh_CN#rd" target="_blank" rel="noopener">【备战春招/秋招系列3】Java程序员必备书单</a></li>
 </ul>
-<p><strong>除此之外，再来了解一下BM算法！</strong></p>
-<blockquote>
-<p>BM算法也是一种精确字符串匹配算法，它采用从右向左比较的方法，同时应用到了两种启发式规则，即坏字符规则 和好后缀规则 ，来决定向右跳跃的距离。基本思路就是从右往左进行字符匹配，遇到不匹配的字符后从坏字符表和好后缀表找一个最大的右移值，将模式串右移继续匹配。<br>《字符串匹配的KMP算法》:<a href="http://www.ruanyifeng.com/blog/2013/05/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm.html" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/2013/05/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm.html</a></p>
-</blockquote>
-<h2 id="2-替换空格"><a href="#2-替换空格" class="headerlink" title="2. 替换空格"></a>2. 替换空格</h2><blockquote>
-<p>剑指offer：请实现一个函数，将一个字符串中的每个空格替换成“%20”。例如，当字符串为We Are Happy.则经过替换之后的字符串为We%20Are%20Happy。</p>
-</blockquote>
-<p>这里我提供了两种方法：①常规方法；②利用 API 解决。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//https://www.weiweiblog.cn/replacespace/</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * 第一种方法：常规方法。利用String.charAt(i)以及String.valueOf(char).equals(" "</span></span><br><span class="line"><span class="comment">   * )遍历字符串并判断元素是否为空格。是则替换为"%20",否则不替换</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">replaceSpace</span><span class="params">(StringBuffer str)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> length = str.length();</span><br><span class="line">    <span class="comment">// System.out.println("length=" + length);</span></span><br><span class="line">    StringBuffer result = <span class="keyword">new</span> StringBuffer();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; length; i++) &#123;</span><br><span class="line">      <span class="keyword">char</span> b = str.charAt(i);</span><br><span class="line">      <span class="keyword">if</span> (String.valueOf(b).equals(<span class="string">" "</span>)) &#123;</span><br><span class="line">        result.append(<span class="string">"%20"</span>);</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        result.append(b);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result.toString();</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * 第二种方法：利用API替换掉所用空格，一行代码解决问题</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">replaceSpace2</span><span class="params">(StringBuffer str)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> str.toString().replaceAll(<span class="string">"\\s"</span>, <span class="string">"%20"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="3-最长公共前缀"><a href="#3-最长公共前缀" class="headerlink" title="3. 最长公共前缀"></a>3. 最长公共前缀</h2><blockquote>
-<p>Leetcode:  编写一个函数来查找字符串数组中的最长公共前缀。如果不存在公共前缀，返回空字符串 “”。</p>
-</blockquote>
-<p>示例 1:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: [&quot;flower&quot;,&quot;flow&quot;,&quot;flight&quot;]</span><br><span class="line">输出: &quot;fl&quot;</span><br></pre></td></tr></table></figure>
-<p>示例 2:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入: [&quot;dog&quot;,&quot;racecar&quot;,&quot;car&quot;]</span><br><span class="line">输出: &quot;&quot;</span><br><span class="line">解释: 输入不存在公共前缀。</span><br></pre></td></tr></table></figure>
-<p>思路很简单！先利用Arrays.sort(strs)为数组排序，再将数组第一个元素和最后一个元素的字符从前往后对比即可！</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//https://leetcode-cn.com/problems/longest-common-prefix/description/</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">replaceSpace</span><span class="params">(String[] strs)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 数组长度</span></span><br><span class="line">    <span class="keyword">int</span> len = strs.length;</span><br><span class="line">    <span class="comment">// 用于保存结果</span></span><br><span class="line">    StringBuffer res = <span class="keyword">new</span> StringBuffer();</span><br><span class="line">    <span class="comment">// 注意：=是赋值，==是判断</span></span><br><span class="line">    <span class="keyword">if</span> (strs == <span class="keyword">null</span> || strs.length == <span class="number">0</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="string">""</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 给字符串数组的元素按照升序排序(包含数字的话，数字会排在前面)</span></span><br><span class="line">    Arrays.sort(strs);</span><br><span class="line">    <span class="keyword">int</span> m = strs[<span class="number">0</span>].length();</span><br><span class="line">    <span class="keyword">int</span> n = strs[len - <span class="number">1</span>].length();</span><br><span class="line">    <span class="keyword">int</span> num = Math.min(m, n);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; num; i++) &#123;</span><br><span class="line">      <span class="keyword">if</span> (strs[<span class="number">0</span>].charAt(i) == strs[len - <span class="number">1</span>].charAt(i)) &#123;</span><br><span class="line">        res.append(strs[<span class="number">0</span>].charAt(i));</span><br><span class="line">      &#125; <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res.toString();</span><br><span class="line"></span><br><span class="line">  &#125; </span><br><span class="line">     <span class="comment">//测试</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    String[] strs = &#123; <span class="string">"customer"</span>, <span class="string">"car"</span>, <span class="string">"cat"</span> &#125;;</span><br><span class="line">    System.out.println(Main.replaceSpace(strs));<span class="comment">//c</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="4-回文串"><a href="#4-回文串" class="headerlink" title="4. 回文串"></a>4. 回文串</h2><h3 id="4-1-最长回文串"><a href="#4-1-最长回文串" class="headerlink" title="4.1. 最长回文串"></a>4.1. 最长回文串</h3><blockquote>
-<p>LeetCode:  给定一个包含大写字母和小写字母的字符串，找到通过这些字母构造成的最长的回文串。在构造过程中，请注意区分大小写。比如<code>&quot;Aa&quot;</code>不能当做一个回文字符串。注<br>意:假设字符串的长度不会超过 1010。</p>
-</blockquote>
-<blockquote>
-<p>回文串：“回文串”是一个正读和反读都一样的字符串，比如“level”或者“noon”等等就是回文串。——百度百科  地址：<a href="https://baike.baidu.com/item/%E5%9B%9E%E6%96%87%E4%B8%B2/1274921?fr=aladdin" target="_blank" rel="noopener">https://baike.baidu.com/item/%E5%9B%9E%E6%96%87%E4%B8%B2/1274921?fr=aladdin</a></p>
-</blockquote>
-<p>示例 1:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">输入:</span><br><span class="line">&quot;abccccdd&quot;</span><br><span class="line"></span><br><span class="line">输出:</span><br><span class="line">7</span><br><span class="line"></span><br><span class="line">解释:</span><br><span class="line">我们可以构造的最长的回文串是&quot;dccaccd&quot;, 它的长度是 7。</span><br></pre></td></tr></table></figure>
-<p>我们上面已经知道了什么是回文串？现在我们考虑一下可以构成回文串的两种情况：</p>
+<p>这是我总结的美团面经的基础篇，后面还有进阶和终结篇哦！下面只是我从很多份美团面经中总结的在面试中一些常见的问题。不同于个人面经，这份面经具有普适性。每次面试必备的自我介绍、项目介绍这些东西，大家可以自己私下好好思考。我在前面的文章中也提到了应该怎么做自我介绍与项目介绍，详情可以查看这篇文章：<a href="https://mp.weixin.qq.com/s?__biz=MzU4NDQ4MzU5OA==&amp;mid=2247484578&amp;idx=1&amp;sn=eea72d80a2325257f00aaed21d5b226f&amp;chksm=fd9852c3caefdbd52dd8a537cc723ed1509314401b3a669a253ef5bc0360b6fddef48b9c2e94&amp;token=1990180468&amp;lang=zh_CN#rd" target="_blank" rel="noopener">【备战春招/秋招系列2】初出茅庐的程序员该如何准备面试？</a>。</p>
+<h3 id="1-System-out-println-3-9-输出什么？"><a href="#1-System-out-println-3-9-输出什么？" class="headerlink" title="1.  System.out.println(3 | 9);输出什么？"></a>1.  <code>System.out.println(3 | 9);</code>输出什么？</h3><p>正确答案：11.</p>
+<p><strong>考察知识点：&amp;和&amp;&amp;；|和||</strong></p>
+<p><strong>&amp;和&amp;&amp;：</strong></p>
+<p>共同点：两者都可做逻辑运算符。它们都表示运算符的两边都是true时，结果为true；</p>
+<p>不同点: &amp;也是位运算符。&amp; 表示在运算时两边都会计算，然后再判断；&amp;&amp;表示先运算符号左边的东西，然后判断是否为true，是true就继续运算右边的然后判断并输出，是false就停下来直接输出不会再运行后面的东西。</p>
+<p><strong>|和||：</strong></p>
+<p>共同点：两者都可做逻辑运算符。它们都表示运算符的两边任意一边为true，结果为true，两边都不是true，结果就为false；</p>
+<p>不同点：|也是位运算符。| 表示两边都会运算，然后再判断结果；|| 表示先运算符号左边的东西，然后判断是否为true，是true就停下来直接输出不会再运行后面的东西，是false就继续运算右边的然后判断并输出。</p>
+<p><strong>回到本题：</strong></p>
+<p>3 | 9=0011（二进制） | 1001（二进制）=1011（二进制）=11（十进制）</p>
+<h3 id="2-说一下转发-Forward-和重定向-Redirect-的区别"><a href="#2-说一下转发-Forward-和重定向-Redirect-的区别" class="headerlink" title="2. 说一下转发(Forward)和重定向(Redirect)的区别"></a>2. 说一下转发(Forward)和重定向(Redirect)的区别</h3><p><strong>转发是服务器行为，重定向是客户端行为。</strong></p>
+<p><strong>转发（Forword）</strong> 通过RequestDispatcher对象的<code>forward（HttpServletRequest request,HttpServletResponse response）</code>方法实现的。<code>RequestDispatcher</code> 可以通过<code>HttpServletRequest</code> 的 <code>getRequestDispatcher()</code>方法获得。例如下面的代码就是跳转到 login_success.jsp 页面。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">request.getRequestDispatcher(<span class="string">"login_success.jsp"</span>).forward(request, response);</span><br></pre></td></tr></table></figure>
+<p><strong>重定向（Redirect）</strong> 是利用服务器返回的状态吗来实现的。客户端浏览器请求服务器的时候，服务器会返回一个状态码。服务器通过HttpServletRequestResponse的setStatus(int status)方法设置状态码。如果服务器返回301或者302，则浏览器会到新的网址重新请求该资源。</p>
+<ol>
+<li><strong>从地址栏显示来说:</strong> forward是服务器请求资源,服务器直接访问目标地址的URL,把那个URL的响应内容读取过来,然后把这些内容再发给浏览器.浏览器根本不知道服务器发送的内容从哪里来的,所以它的地址栏还是原来的地址. redirect是服务端根据逻辑,发送一个状态码,告诉浏览器重新去请求那个地址.所以地址栏显示的是新的URL.</li>
+<li><strong>从数据共享来说:</strong> forward:转发页面和转发到的页面可以共享request里面的数据. redirect:不能共享数据.</li>
+<li><strong>从运用地方来说:</strong> forward:一般用于用户登陆的时候,根据角色转发到相应的模块. redirect:一般用于用户注销登陆时返回主页面和跳转到其它的网站等</li>
+<li><strong>从效率来说:</strong> forward:高. redirect:低.</li>
+</ol>
+<h3 id="3-在浏览器中输入url地址到显示主页的过程-整个过程会使用哪些协议"><a href="#3-在浏览器中输入url地址到显示主页的过程-整个过程会使用哪些协议" class="headerlink" title="3. 在浏览器中输入url地址到显示主页的过程,整个过程会使用哪些协议"></a>3. 在浏览器中输入url地址到显示主页的过程,整个过程会使用哪些协议</h3><p>图解（图片来源：《图解HTTP》）：</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/4/19/162db5e985aabdbe?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="状态码"></p>
+<p>总体来说分为以下几个过程:</p>
+<ol>
+<li>DNS解析</li>
+<li>TCP连接</li>
+<li>发送HTTP请求</li>
+<li>服务器处理请求并返回HTTP报文</li>
+<li>浏览器解析渲染页面</li>
+<li>连接结束</li>
+</ol>
+<p>具体可以参考下面这篇文章：</p>
 <ul>
-<li>字符出现次数为双数的组合</li>
-<li>字符出现次数为双数的组合+一个只出现一次的字符</li>
+<li><a href="https://segmentfault.com/a/1190000006879700" target="_blank" rel="noopener">https://segmentfault.com/a/1190000006879700</a></li>
 </ul>
-<p>统计字符出现的次数即可，双数才能构成回文。因为允许中间一个数单独出现，比如“abcba”，所以如果最后有字母落单，总长度可以加 1。首先将字符串转变为字符数组。然后遍历该数组，判断对应字符是否在hashset中，如果不在就加进去，如果在就让count++，然后移除该字符！这样就能找到出现次数为双数的字符个数。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//https://leetcode-cn.com/problems/longest-palindrome/description/</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span>  <span class="keyword">int</span> <span class="title">longestPalindrome</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (s.length() == <span class="number">0</span>)</span><br><span class="line">      <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="comment">// 用于存放字符</span></span><br><span class="line">    HashSet&lt;Character&gt; hashset = <span class="keyword">new</span> HashSet&lt;Character&gt;();</span><br><span class="line">    <span class="keyword">char</span>[] chars = s.toCharArray();</span><br><span class="line">    <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; chars.length; i++) &#123;</span><br><span class="line">      <span class="keyword">if</span> (!hashset.contains(chars[i])) &#123;<span class="comment">// 如果hashset没有该字符就保存进去</span></span><br><span class="line">        hashset.add(chars[i]);</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;<span class="comment">// 如果有,就让count++（说明找到了一个成对的字符），然后把该字符移除</span></span><br><span class="line">        hashset.remove(chars[i]);</span><br><span class="line">        count++;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> hashset.isEmpty() ? count * <span class="number">2</span> : count * <span class="number">2</span> + <span class="number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="4-2-验证回文串"><a href="#4-2-验证回文串" class="headerlink" title="4.2. 验证回文串"></a>4.2. 验证回文串</h3><blockquote>
-<p>LeetCode: 给定一个字符串，验证它是否是回文串，只考虑字母和数字字符，可以忽略字母的大小写。 说明：本题中，我们将空字符串定义为有效的回文串。</p>
-</blockquote>
-<p>示例 1:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: &quot;A man, a plan, a canal: Panama&quot;</span><br><span class="line">输出: true</span><br></pre></td></tr></table></figure>
-<p>示例 2:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: &quot;race a car&quot;</span><br><span class="line">输出: false</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//https://leetcode-cn.com/problems/valid-palindrome/description/</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span>  <span class="keyword">boolean</span> <span class="title">isPalindrome</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (s.length() == <span class="number">0</span>)</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    <span class="keyword">int</span> l = <span class="number">0</span>, r = s.length() - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (l &lt; r) &#123;</span><br><span class="line">      <span class="comment">// 从头和尾开始向中间遍历</span></span><br><span class="line">      <span class="keyword">if</span> (!Character.isLetterOrDigit(s.charAt(l))) &#123;<span class="comment">// 字符不是字母和数字的情况</span></span><br><span class="line">        l++;</span><br><span class="line">      &#125; <span class="keyword">else</span> <span class="keyword">if</span> (!Character.isLetterOrDigit(s.charAt(r))) &#123;<span class="comment">// 字符不是字母和数字的情况</span></span><br><span class="line">        r--;</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">// 判断二者是否相等</span></span><br><span class="line">        <span class="keyword">if</span> (Character.toLowerCase(s.charAt(l)) != Character.toLowerCase(s.charAt(r)))</span><br><span class="line">          <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        l++;</span><br><span class="line">        r--;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="4-3-最长回文子串"><a href="#4-3-最长回文子串" class="headerlink" title="4.3. 最长回文子串"></a>4.3. 最长回文子串</h3><blockquote>
-<p>Leetcode: LeetCode: 最长回文子串 给定一个字符串 s，找到 s 中最长的回文子串。你可以假设 s 的最大长度为1000。</p>
-</blockquote>
-<p>示例 1：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入: &quot;babad&quot;</span><br><span class="line">输出: &quot;bab&quot;</span><br><span class="line">注意: &quot;aba&quot;也是一个有效答案。</span><br></pre></td></tr></table></figure>
-<p>示例 2：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: &quot;cbbd&quot;</span><br><span class="line">输出: &quot;bb&quot;</span><br></pre></td></tr></table></figure>
-<p>以某个元素为中心，分别计算偶数长度的回文最大长度和奇数长度的回文最大长度。给大家大致花了个草图，不要嫌弃！</p>
-<p><img src="https://user-gold-cdn.xitu.io/2018/9/9/165bc32f6f1833ff?w=723&amp;h=371&amp;f=png&amp;s=9305" alt></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//https://leetcode-cn.com/problems/longest-palindromic-substring/description/</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">int</span> index, len;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> String <span class="title">longestPalindrome</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (s.length() &lt; <span class="number">2</span>)</span><br><span class="line">      <span class="keyword">return</span> s;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.length() - <span class="number">1</span>; i++) &#123;</span><br><span class="line">      PalindromeHelper(s, i, i);</span><br><span class="line">      PalindromeHelper(s, i, i + <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> s.substring(index, index + len);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">PalindromeHelper</span><span class="params">(String s, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">while</span> (l &gt;= <span class="number">0</span> &amp;&amp; r &lt; s.length() &amp;&amp; s.charAt(l) == s.charAt(r)) &#123;</span><br><span class="line">      l--;</span><br><span class="line">      r++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (len &lt; r - l - <span class="number">1</span>) &#123;</span><br><span class="line">      index = l + <span class="number">1</span>;</span><br><span class="line">      len = r - l - <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="4-4-最长回文子序列"><a href="#4-4-最长回文子序列" class="headerlink" title="4.4. 最长回文子序列"></a>4.4. 最长回文子序列</h3><blockquote>
-<p>LeetCode: 最长回文子序列<br>给定一个字符串s，找到其中最长的回文子序列。可以假设s的最大长度为1000。<br><strong>最长回文子序列和上一题最长回文子串的区别是，子串是字符串中连续的一个序列，而子序列是字符串中保持相对位置的字符序列，例如，”bbbb”可以是字符串”bbbab”的子序列但不是子串。</strong></p>
-</blockquote>
-<p>给定一个字符串s，找到其中最长的回文子序列。可以假设s的最大长度为1000。</p>
-<p>示例 1:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">输入:</span><br><span class="line">&quot;bbbab&quot;</span><br><span class="line">输出:</span><br><span class="line">4</span><br></pre></td></tr></table></figure>
-<p>一个可能的最长回文子序列为 “bbbb”。</p>
-<p>示例 2:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">输入:</span><br><span class="line">&quot;cbbd&quot;</span><br><span class="line">输出:</span><br><span class="line">2</span><br></pre></td></tr></table></figure>
-<p>一个可能的最长回文子序列为 “bb”。</p>
-<p><strong>动态规划：</strong>  dp[i][j] = dp[i+1][j-1] + 2 if s.charAt(i) == s.charAt(j) otherwise, dp[i][j] = Math.max(dp[i+1][j], dp[i][j-1])</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">longestPalindromeSubseq</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len = s.length();</span><br><span class="line">        <span class="keyword">int</span> [][] dp = <span class="keyword">new</span> <span class="keyword">int</span>[len][len];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = len - <span class="number">1</span>; i&gt;=<span class="number">0</span>; i--)&#123;</span><br><span class="line">            dp[i][i] = <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = i+<span class="number">1</span>; j &lt; len; j++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(s.charAt(i) == s.charAt(j))</span><br><span class="line">                    dp[i][j] = dp[i+<span class="number">1</span>][j-<span class="number">1</span>] + <span class="number">2</span>;</span><br><span class="line">                <span class="keyword">else</span></span><br><span class="line">                    dp[i][j] = Math.max(dp[i+<span class="number">1</span>][j], dp[i][j-<span class="number">1</span>]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[<span class="number">0</span>][len-<span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="5-括号匹配深度"><a href="#5-括号匹配深度" class="headerlink" title="5. 括号匹配深度"></a>5. 括号匹配深度</h2><blockquote>
-<p>爱奇艺 2018 秋招 Java：<br>一个合法的括号匹配序列有以下定义:</p>
-<ol>
-<li>空串””是一个合法的括号匹配序列</li>
-<li>如果”X”和”Y”都是合法的括号匹配序列,”XY”也是一个合法的括号匹配序列</li>
-<li>如果”X”是一个合法的括号匹配序列,那么”(X)”也是一个合法的括号匹配序列</li>
-<li>每个合法的括号序列都可以由以上规则生成。</li>
-</ol>
-</blockquote>
+<h3 id="4-TCP-三次握手和四次挥手"><a href="#4-TCP-三次握手和四次挥手" class="headerlink" title="4. TCP 三次握手和四次挥手"></a>4. TCP 三次握手和四次挥手</h3><p>为了准确无误地把数据送达目标处，TCP协议采用了三次握手策略。</p>
+<p><strong>漫画图解：</strong></p>
+<p>图片来源：《图解HTTP》<br><img src="https://user-gold-cdn.xitu.io/2018/5/8/1633e127396541f1?w=864&amp;h=439&amp;f=png&amp;s=226095" alt="TCP三次握手"></p>
+<p><strong>简单示意图：</strong><br><img src="https://user-gold-cdn.xitu.io/2018/5/8/1633e14233d95972?w=542&amp;h=427&amp;f=jpeg&amp;s=15088" alt="TCP三次握手"></p>
+<ul>
+<li>客户端–发送带有 SYN 标志的数据包–一次握手–服务端</li>
+<li>服务端–发送带有 SYN/ACK 标志的数据包–二次握手–客户端</li>
+<li>客户端–发送带有带有 ACK 标志的数据包–三次握手–服务端</li>
+</ul>
+<h4 id="为什么要三次握手"><a href="#为什么要三次握手" class="headerlink" title="为什么要三次握手"></a>为什么要三次握手</h4><p><strong>三次握手的目的是建立可靠的通信信道，说到通讯，简单来说就是数据的发送与接收，而三次握手最主要的目的就是双方确认自己与对方的发送与接收是正常的。</strong></p>
+<p>第一次握手：Client 什么都不能确认；Server 确认了对方发送正常，自己接收正常。</p>
+<p>第二次握手：Client 确认了：自己发送、接收正常，对方发送、接收正常；Server 确认了：自己接收正常，对方发送正常</p>
+<p>第三次握手：Client 确认了：自己发送、接收正常，对方发送、接收正常；Server 确认了：自己发送、接收正常，对方发送接收正常</p>
+<p>所以三次握手就能确认双发收发功能都正常，缺一不可。</p>
+<h4 id="为什么要传回-SYN"><a href="#为什么要传回-SYN" class="headerlink" title="为什么要传回 SYN"></a>为什么要传回 SYN</h4><p>接收端传回发送端所发送的 SYN 是为了告诉发送端，我接收到的信息确实就是你所发送的信号了。</p>
 <blockquote>
-<p>例如: “”,”()”,”()()”,”((()))”都是合法的括号序列<br>对于一个合法的括号序列我们又有以下定义它的深度:</p>
+<p>SYN 是 TCP/IP 建立连接时使用的握手信号。在客户机和服务器之间建立正常的 TCP 网络连接时，客户机首先发出一个 SYN 消息，服务器使用 SYN-ACK 应答表示接收到了这个消息，最后客户机再以 ACK(Acknowledgement[汉译：确认字符 ,在数据通信传输中，接收站发给发送站的一种传输控制字符。它表示确认发来的数据已经接受无误。 ]）消息响应。这样在客户机和服务器之间才能建立起可靠的TCP连接，数据才可以在客户机和服务器之间传递。</p>
+</blockquote>
+<h4 id="传了-SYN-为啥还要传-ACK"><a href="#传了-SYN-为啥还要传-ACK" class="headerlink" title="传了 SYN,为啥还要传 ACK"></a>传了 SYN,为啥还要传 ACK</h4><p>双方通信无误必须是两者互相发送信息都无误。传了 SYN，证明发送方（主动关闭方）到接收方（被动关闭方）的通道没有问题，但是接收方到发送方的通道还需要 ACK 信号来进行验证。</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/5/8/1633e1676e2ac0a3?w=500&amp;h=340&amp;f=jpeg&amp;s=13406" alt="TCP四次挥手"></p>
+<p>断开一个 TCP 连接则需要“四次挥手”：</p>
+<ul>
+<li>客户端-发送一个 FIN，用来关闭客户端到服务器的数据传送</li>
+<li>服务器-收到这个 FIN，它发回一 个 ACK，确认序号为收到的序号加1 。和 SYN 一样，一个 FIN 将占用一个序号</li>
+<li>服务器-关闭与客户端的连接，发送一个FIN给客户端</li>
+<li>客户端-发回 ACK 报文确认，并将确认序号设置为收到序号加1</li>
+</ul>
+<h4 id="为什么要四次挥手"><a href="#为什么要四次挥手" class="headerlink" title="为什么要四次挥手"></a>为什么要四次挥手</h4><p>任何一方都可以在数据传送结束后发出连接释放的通知，待对方确认后进入半关闭状态。当另一方也没有数据再发送的时候，则发出连接释放通知，对方确认后就完全关闭了TCP连接。</p>
+<p>举个例子：A 和 B 打电话，通话即将结束后，A 说“我没啥要说的了”，B回答“我知道了”，但是 B 可能还会有要说的话，A 不能要求 B 跟着自己的节奏结束通话，于是 B 可能又巴拉巴拉说了一通，最后 B 说“我说完了”，A 回答“知道了”，这样通话才算结束。</p>
+<p>上面讲的比较概括，推荐一篇讲的比较细致的文章：<a href="https://blog.csdn.net/qzcsu/article/details/72861891" target="_blank" rel="noopener">https://blog.csdn.net/qzcsu/article/details/72861891</a></p>
+<h3 id="5-IP地址与MAC地址的区别"><a href="#5-IP地址与MAC地址的区别" class="headerlink" title="5. IP地址与MAC地址的区别"></a>5. IP地址与MAC地址的区别</h3><p>参考：<a href="https://blog.csdn.net/guoweimelon/article/details/50858597" target="_blank" rel="noopener">https://blog.csdn.net/guoweimelon/article/details/50858597</a></p>
+<p>IP地址是指互联网协议地址（Internet Protocol Address）IP Address的缩写。IP地址是IP协议提供的一种统一的地址格式，它为互联网上的每一个网络和每一台主机分配一个逻辑地址，以此来屏蔽物理地址的差异。</p>
+<p>MAC 地址又称为物理地址、硬件地址，用来定义网络设备的位置。网卡的物理地址通常是由网卡生产厂家写入网卡的，具有全球唯一性。MAC地址用于在网络中唯一标示一个网卡，一台电脑会有一或多个网卡，每个网卡都需要有一个唯一的MAC地址。</p>
+<h3 id="6-HTTP请求-响应报文格式"><a href="#6-HTTP请求-响应报文格式" class="headerlink" title="6. HTTP请求,响应报文格式"></a>6. HTTP请求,响应报文格式</h3><p>HTTP请求报文主要由请求行、请求头部、请求正文3部分组成</p>
+<p>HTTP响应报文主要由状态行、响应头部、响应正文3部分组成</p>
+<p>详细内容可以参考：<a href="https://blog.csdn.net/a19881029/article/details/14002273" target="_blank" rel="noopener">https://blog.csdn.net/a19881029/article/details/14002273</a></p>
+<h3 id="7-为什么要使用索引？索引这么多优点，为什么不对表中的每一个列创建一个索引呢？索引是如何提高查询速度的？说一下使用索引的注意事项？Mysql索引主要使用的两种数据结构？什么是覆盖索引"><a href="#7-为什么要使用索引？索引这么多优点，为什么不对表中的每一个列创建一个索引呢？索引是如何提高查询速度的？说一下使用索引的注意事项？Mysql索引主要使用的两种数据结构？什么是覆盖索引" class="headerlink" title="7. 为什么要使用索引？索引这么多优点，为什么不对表中的每一个列创建一个索引呢？索引是如何提高查询速度的？说一下使用索引的注意事项？Mysql索引主要使用的两种数据结构？什么是覆盖索引?"></a>7. 为什么要使用索引？索引这么多优点，为什么不对表中的每一个列创建一个索引呢？索引是如何提高查询速度的？说一下使用索引的注意事项？Mysql索引主要使用的两种数据结构？什么是覆盖索引?</h3><p><strong>为什么要使用索引？</strong></p>
 <ol>
-<li>空串””的深度是0</li>
-<li>如果字符串”X”的深度是x,字符串”Y”的深度是y,那么字符串”XY”的深度为max(x,y)   </li>
-<li>如果”X”的深度是x,那么字符串”(X)”的深度是x+1</li>
+<li>通过创建唯一性索引，可以保证数据库表中每一行数据的唯一性。</li>
+<li>可以大大加快 数据的检索速度（大大减少的检索的数据量）,  这也是创建索引的最主要的原因。 </li>
+<li>帮助服务器避免排序和临时表</li>
+<li>将随机IO变为顺序IO</li>
+<li>可以加速表和表之间的连接，特别是在实现数据的参考完整性方面特别有意义。</li>
 </ol>
-</blockquote>
-<blockquote>
-<p>例如: “()()()”的深度是1,”((()))”的深度是3。牛牛现在给你一个合法的括号序列,需要你计算出其深度。 </p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">输入描述:</span><br><span class="line">输入包括一个合法的括号序列s,s长度length(2 ≤ length ≤ 50),序列中只包含&apos;(&apos;和&apos;)&apos;。</span><br><span class="line"></span><br><span class="line">输出描述:</span><br><span class="line">输出一个正整数,即这个序列的深度。</span><br></pre></td></tr></table></figure>
-<p>示例：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">输入:</span><br><span class="line">(())</span><br><span class="line">输出:</span><br><span class="line">2</span><br></pre></td></tr></table></figure>
-<p>思路草图：</p>
-<p><img src="https://user-gold-cdn.xitu.io/2018/9/9/165bc6fca94ef278?w=792&amp;h=324&amp;f=png&amp;s=15868" alt></p>
-<p>代码如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * https://www.nowcoder.com/test/8246651/summary</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> Snailclimb</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span> 2018年9月6日</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Description</span>: TODO 求给定合法括号序列的深度</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    Scanner sc = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">    String s = sc.nextLine();</span><br><span class="line">    <span class="keyword">int</span> cnt = <span class="number">0</span>, max = <span class="number">0</span>, i;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; s.length(); ++i) &#123;</span><br><span class="line">      <span class="keyword">if</span> (s.charAt(i) == <span class="string">'('</span>)</span><br><span class="line">        cnt++;</span><br><span class="line">      <span class="keyword">else</span></span><br><span class="line">        cnt--;</span><br><span class="line">      max = Math.max(max, cnt);</span><br><span class="line">    &#125;</span><br><span class="line">    sc.close();</span><br><span class="line">    System.out.println(max);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="6-把字符串转换成整数"><a href="#6-把字符串转换成整数" class="headerlink" title="6. 把字符串转换成整数"></a>6. 把字符串转换成整数</h2><blockquote>
-<p>剑指offer:  将一个字符串转换成一个整数(实现Integer.valueOf(string)的功能，但是string不符合数字要求时返回0)，要求不能使用字符串转换整数的库函数。 数值为0或者字符串不是一个合法的数值则返回0。</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//https://www.weiweiblog.cn/strtoint/</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">StrToInt</span><span class="params">(String str)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (str.length() == <span class="number">0</span>)</span><br><span class="line">      <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">char</span>[] chars = str.toCharArray();</span><br><span class="line">    <span class="comment">// 判断是否存在符号位</span></span><br><span class="line">    <span class="keyword">int</span> flag = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span> (chars[<span class="number">0</span>] == <span class="string">'+'</span>)</span><br><span class="line">      flag = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (chars[<span class="number">0</span>] == <span class="string">'-'</span>)</span><br><span class="line">      flag = <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">int</span> start = flag &gt; <span class="number">0</span> ? <span class="number">1</span> : <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> res = <span class="number">0</span>;<span class="comment">// 保存结果</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = start; i &lt; chars.length; i++) &#123;</span><br><span class="line">      <span class="keyword">if</span> (Character.isDigit(chars[i])) &#123;<span class="comment">// 调用Character.isDigit(char)方法判断是否是数字，是返回True，否则False</span></span><br><span class="line">        <span class="keyword">int</span> temp = chars[i] - <span class="string">'0'</span>;</span><br><span class="line">        res = res * <span class="number">10</span> + temp;</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> flag == <span class="number">1</span> ? res : -res;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">    String s = <span class="string">"-12312312"</span>;</span><br><span class="line">    System.out.println(<span class="string">"使用库函数转换："</span> + Integer.valueOf(s));</span><br><span class="line">    <span class="keyword">int</span> res = Main.StrToInt(s);</span><br><span class="line">    System.out.println(<span class="string">"使用自己写的方法转换："</span> + res);</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>索引这么多优点，为什么不对表中的每一个列创建一个索引呢？</strong></p>
+<ol>
+<li>当对表中的数据进行增加、删除和修改的时候，索引也要动态的维护，这样就降低了数据的维护速度。 </li>
+<li>索引需要占物理空间，除了数据表占数据空间之外，每一个索引还要占一定的物理空间，如果要建立聚簇索引，那么需要的空间就会更大。 </li>
+<li>创建索引和维护索引要耗费时间，这种时间随着数据量的增加而增加。 </li>
+</ol>
+<p><strong>索引是如何提高查询速度的？</strong></p>
+<p>将无序的数据变成相对有序的数据（就像查目录一样）</p>
+<p><strong>说一下使用索引的注意事项</strong></p>
+<ol>
+<li>避免 where 子句中对宇段施加函数，这会造成无法命中索引。</li>
+<li>在使用InnoDB时使用与业务无关的自增主键作为主键，即使用逻辑主键，而不要使用业务主键。</li>
+<li>将打算加索引的列设置为 NOT NULL ，否则将导致引擎放弃使用索引而进行全表扫描</li>
+<li>删除长期未使用的索引，不用的索引的存在会造成不必要的性能损耗 MySQL 5.7 可以通过查询 sys 库的 chema_unused_indexes 视图来查询哪些索引从未被使用</li>
+<li>在使用 limit offset 查询缓慢时，可以借助索引来提高性能</li>
+</ol>
+<p><strong>Mysql索引主要使用的哪两种数据结构？</strong></p>
+<ul>
+<li>哈希索引：对于哈希索引来说，底层的数据结构就是哈希表，因此在绝大多数需求为单条记录查询的时候，可以选择哈希索引，查询性能最快；其余大部分场景，建议选择BTree索引。</li>
+<li>BTree索引：Mysql的BTree索引使用的是B树中的B+Tree。但对于主要的两种存储引擎（MyISAM和InnoDB）的实现方式是不同的。</li>
+</ul>
+<p>更多关于索引的内容可以查看我的这篇文章：<a href="https://mp.weixin.qq.com/s?__biz=MzU4NDQ4MzU5OA==&amp;mid=2247484486&amp;idx=1&amp;sn=215450f11e042bca8a58eac9f4a97686&amp;chksm=fd985227caefdb3117b8375f150676f5824aa20d1ebfdbcfb93ff06e23e26efbafae6cf6b48e&amp;token=1990180468&amp;lang=zh_CN#rd" target="_blank" rel="noopener">【思维导图-索引篇】搞定数据库索引就是这么简单</a></p>
+<p><strong>什么是覆盖索引?</strong></p>
+<p>如果一个索引包含（或者说覆盖）所有需要查询的字段的值，我们就称<br>之为“覆盖索引”。我们知道在InnoDB存储引擎中，如果不是主键索引，叶子节点存储的是主键+列值。最终还是要“回表”，也就是要通过主键再查找一次,这样就会比较慢。覆盖索引就是把要查询出的列和索引是对应的，不做回表操作！</p>
+<h3 id="8-进程与线程的区别是什么？进程间的几种通信方式说一下？线程间的几种通信方式知道不？"><a href="#8-进程与线程的区别是什么？进程间的几种通信方式说一下？线程间的几种通信方式知道不？" class="headerlink" title="8.  进程与线程的区别是什么？进程间的几种通信方式说一下？线程间的几种通信方式知道不？"></a>8.  进程与线程的区别是什么？进程间的几种通信方式说一下？线程间的几种通信方式知道不？</h3><p> <strong>进程与线程的区别是什么？</strong></p>
+<p>线程与进程相似，但线程是一个比进程更小的执行单位。一个进程在其执行的过程中可以产生多个线程。与进程不同的是同类的多个线程共享同一块内存空间和一组系统资源，所以系统在产生一个线程，或是在各个线程之间作切换工作时，负担要比进程小得多，也正因为如此，线程也被称为轻量级进程。另外，也正是因为共享资源，所以线程中执行时一般都要进行同步和互斥。总的来说，进程和线程的主要差别在于它们是不同的操作系统资源管理方式。</p>
+<p><strong>进程间的几种通信方式说一下？</strong></p>
+<ol>
+<li><strong>管道（pipe）</strong>：管道是一种半双工的通信方式，数据只能单向流动，而且只能在具有血缘关系的进程间使用。进程的血缘关系通常指父子进程关系。管道分为pipe（无名管道）和fifo（命名管道）两种，有名管道也是半双工的通信方式，但是它允许无亲缘关系进程间通信。</li>
+<li><strong>信号量（semophore）</strong>：信号量是一个计数器，可以用来控制多个进程对共享资源的访问。它通常作为一种锁机制，防止某进程正在访问共享资源时，其他进程也访问该资源。因此，主要作为进程间以及同一进程内不同线程之间的同步手段。</li>
+<li><strong>消息队列（message queue）</strong>：消息队列是由消息组成的链表，存放在内核中 并由消息队列标识符标识。消息队列克服了信号传递信息少，管道只能承载无格式字节流以及缓冲区大小受限等缺点。消息队列与管道通信相比，其优势是对每个消息指定特定的消息类型，接收的时候不需要按照队列次序，而是可以根据自定义条件接收特定类型的消息。</li>
+<li><strong>信号（signal）</strong>：信号是一种比较复杂的通信方式，用于通知接收进程某一事件已经发生。</li>
+<li><strong>共享内存（shared memory）</strong>：共享内存就是映射一段能被其他进程所访问的内存，这段共享内存由一个进程创建，但多个进程都可以访问，共享内存是最快的IPC方式，它是针对其他进程间的通信方式运行效率低而专门设计的。它往往与其他通信机制，如信号量配合使用，来实现进程间的同步和通信。</li>
+<li><strong>套接字（socket）</strong>：套接口也是一种进程间的通信机制，与其他通信机制不同的是它可以用于不同及其间的进程通信。</li>
+</ol>
+<p><strong>线程间的几种通信方式知道不？</strong></p>
+<p>1、锁机制</p>
+<ul>
+<li>互斥锁：提供了以排它方式阻止数据结构被并发修改的方法。</li>
+<li>读写锁：允许多个线程同时读共享数据，而对写操作互斥。</li>
+<li>条件变量：可以以原子的方式阻塞进程，直到某个特定条件为真为止。对条件测试是在互斥锁的保护下进行的。条件变量始终与互斥锁一起使用。</li>
+</ul>
+<p>2、信号量机制：包括无名线程信号量与有名线程信号量</p>
+<p>3、信号机制：类似于进程间的信号处理。</p>
+<p>线程间通信的主要目的是用于线程同步，所以线程没有象进程通信中用于数据交换的通信机制。</p>
+<h3 id="9-为什么要用单例模式？手写几种线程安全的单例模式？"><a href="#9-为什么要用单例模式？手写几种线程安全的单例模式？" class="headerlink" title="9. 为什么要用单例模式？手写几种线程安全的单例模式？"></a>9. 为什么要用单例模式？手写几种线程安全的单例模式？</h3><p><strong>简单来说使用单例模式可以带来下面几个好处:</strong></p>
+<ul>
+<li>对于频繁使用的对象，可以省略创建对象所花费的时间，这对于那些重量级对象而言，是非常可观的一笔系统开销；</li>
+<li>由于 new 操作的次数减少，因而对系统内存的使用频率也会降低，这将减轻 GC 压力，缩短 GC 停顿时间。</li>
+</ul>
+<p><strong>懒汉式(双重检查加锁版本)</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//volatile保证，当uniqueInstance变量被初始化成Singleton实例时，多个线程可以正确处理uniqueInstance变量</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">volatile</span> <span class="keyword">static</span> Singleton uniqueInstance;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getInstance</span><span class="params">()</span> </span>&#123;</span><br><span class="line">       <span class="comment">//检查实例，如果不存在，就进入同步代码块</span></span><br><span class="line">        <span class="keyword">if</span> (uniqueInstance == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="comment">//只有第一次才彻底执行这里的代码</span></span><br><span class="line">            <span class="keyword">synchronized</span>(Singleton.class) &#123;</span><br><span class="line">               <span class="comment">//进入同步代码块后，再检查一次，如果仍是null，才创建实例</span></span><br><span class="line">                <span class="keyword">if</span> (uniqueInstance == <span class="keyword">null</span>) &#123;</span><br><span class="line">                    uniqueInstance = <span class="keyword">new</span> Singleton();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> uniqueInstance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>静态内部类方式</strong></p>
+<p>静态内部实现的单例是懒加载的且线程安全。</p>
+<p>只有通过显式调用 getInstance 方法时，才会显式装载 SingletonHolder 类，从而实例化 instance（只有第一次使用这个单例的实例的时候才加载，同时不会有线程安全问题）。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span> </span>&#123;  </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">SingletonHolder</span> </span>&#123;  </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Singleton INSTANCE = <span class="keyword">new</span> Singleton();  </span><br><span class="line">    &#125;  </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span> <span class="params">()</span></span>&#123;&#125;  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Singleton <span class="title">getInstance</span><span class="params">()</span> </span>&#123;  </span><br><span class="line">    <span class="keyword">return</span> SingletonHolder.INSTANCE;  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="10-简单介绍一下bean。知道Spring的bean的作用域与生命周期吗？"><a href="#10-简单介绍一下bean。知道Spring的bean的作用域与生命周期吗？" class="headerlink" title="10. 简单介绍一下bean。知道Spring的bean的作用域与生命周期吗？"></a>10. 简单介绍一下bean。知道Spring的bean的作用域与生命周期吗？</h3><p>在 Spring 中，那些组成应用程序的主体及由 Spring IOC 容器所管理的对象，被称之为 bean。简单地讲，bean 就是由 IOC 容器初始化、装配及管理的对象，除此之外，bean 就与应用程序中的其他对象没有什么区别了。而 bean 的定义以及 bean 相互间的依赖关系将通过配置元数据来描述。</p>
+<p>Spring中的bean默认都是单例的，这些单例Bean在多线程程序下如何保证线程安全呢？ 例如对于Web应用来说，Web容器对于每个用户请求都创建一个单独的Sevlet线程来处理请求，引入Spring框架之后，每个Action都是单例的，那么对于Spring托管的单例Service Bean，如何保证其安全呢？ Spring的单例是基于BeanFactory也就是Spring容器的，单例Bean在此容器内只有一个，Java的单例是基于 JVM，每个 JVM 内只有一个实例。</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/11/10/166fd45773d5dd2e?w=563&amp;h=299&amp;f=webp&amp;s=27930" alt="pring的bean的作用域"></p>
+<p>Spring的bean的生命周期以及更多内容可以查看：<a href="https://mp.weixin.qq.com/s?__biz=MzU4NDQ4MzU5OA==&amp;mid=2247484400&amp;idx=2&amp;sn=7201eb365102fce017f89cb3527fb0bc&amp;chksm=fd985591caefdc872a2fac897288119f94c345e4e12150774f960bf5f816b79e4b9b46be3d7f&amp;token=1990180468&amp;lang=zh_CN#rd" target="_blank" rel="noopener">一文轻松搞懂Spring中bean的作用域与生命周期</a></p>
+<h3 id="11-Spring-中的事务传播行为了解吗？TransactionDefinition-接口中哪五个表示隔离级别的常量？"><a href="#11-Spring-中的事务传播行为了解吗？TransactionDefinition-接口中哪五个表示隔离级别的常量？" class="headerlink" title="11. Spring 中的事务传播行为了解吗？TransactionDefinition 接口中哪五个表示隔离级别的常量？"></a>11. Spring 中的事务传播行为了解吗？TransactionDefinition 接口中哪五个表示隔离级别的常量？</h3><h4 id="事务传播行为"><a href="#事务传播行为" class="headerlink" title="事务传播行为"></a>事务传播行为</h4><p>事务传播行为（为了解决业务层方法之间互相调用的事务问题）：<br>当事务方法被另一个事务方法调用时，必须指定事务应该如何传播。例如：方法可能继续在现有事务中运行，也可能开启一个新事务，并在自己的事务中运行。在TransactionDefinition定义中包括了如下几个表示传播行为的常量：</p>
+<p><strong>支持当前事务的情况：</strong></p>
+<ul>
+<li>TransactionDefinition.PROPAGATION_REQUIRED： 如果当前存在事务，则加入该事务；如果当前没有事务，则创建一个新的事务。</li>
+<li>TransactionDefinition.PROPAGATION_SUPPORTS： 如果当前存在事务，则加入该事务；如果当前没有事务，则以非事务的方式继续运行。</li>
+<li>TransactionDefinition.PROPAGATION_MANDATORY： 如果当前存在事务，则加入该事务；如果当前没有事务，则抛出异常。（mandatory：强制性）</li>
+</ul>
+<p><strong>不支持当前事务的情况：</strong></p>
+<ul>
+<li>TransactionDefinition.PROPAGATION_REQUIRES_NEW： 创建一个新的事务，如果当前存在事务，则把当前事务挂起。</li>
+<li>TransactionDefinition.PROPAGATION_NOT_SUPPORTED： 以非事务方式运行，如果当前存在事务，则把当前事务挂起。</li>
+<li>TransactionDefinition.PROPAGATION_NEVER： 以非事务方式运行，如果当前存在事务，则抛出异常。</li>
+</ul>
+<p><strong>其他情况：</strong></p>
+<ul>
+<li>TransactionDefinition.PROPAGATION_NESTED： 如果当前存在事务，则创建一个事务作为当前事务的嵌套事务来运行；如果当前没有事务，则该取值等价于TransactionDefinition.PROPAGATION_REQUIRED。</li>
+</ul>
+<h4 id="隔离级别"><a href="#隔离级别" class="headerlink" title="隔离级别"></a>隔离级别</h4><p>TransactionDefinition 接口中定义了五个表示隔离级别的常量：</p>
+<ul>
+<li><strong>TransactionDefinition.ISOLATION_DEFAULT:</strong>  使用后端数据库默认的隔离级别，Mysql 默认采用的 REPEATABLE_READ隔离级别 Oracle 默认采用的 READ_COMMITTED隔离级别.</li>
+<li><strong>TransactionDefinition.ISOLATION_READ_UNCOMMITTED:</strong> 最低的隔离级别，允许读取尚未提交的数据变更，可能会导致脏读、幻读或不可重复读</li>
+<li><strong>TransactionDefinition.ISOLATION_READ_COMMITTED:</strong>   允许读取并发事务已经提交的数据，可以阻止脏读，但是幻读或不可重复读仍有可能发生</li>
+<li><strong>TransactionDefinition.ISOLATION_REPEATABLE_READ:</strong>  对同一字段的多次读取结果都是一致的，除非数据是被本身事务自己所修改，可以阻止脏读和不可重复读，但幻读仍有可能发生。</li>
+<li><strong>TransactionDefinition.ISOLATION_SERIALIZABLE:</strong>   最高的隔离级别，完全服从ACID的隔离级别。所有的事务依次逐个执行，这样事务之间就完全不可能产生干扰，也就是说，该级别可以防止脏读、不可重复读以及幻读。但是这将严重影响程序的性能。通常情况下也不会用到该级别。</li>
+</ul>
+<h3 id="12-SpringMVC-原理了解吗？"><a href="#12-SpringMVC-原理了解吗？" class="headerlink" title="12. SpringMVC 原理了解吗？"></a>12. SpringMVC 原理了解吗？</h3><p><img src="https://user-gold-cdn.xitu.io/2018/11/10/166fd45787394192?w=1015&amp;h=466&amp;f=webp&amp;s=35352" alt="SpringMVC 原理"></p>
+<p>客户端发送请求-&gt; 前端控制器 DispatcherServlet 接受客户端请求 -&gt; 找到处理器映射 HandlerMapping 解析请求对应的 Handler-&gt; HandlerAdapter 会根据 Handler 来调用真正的处理器开处理请求，并处理相应的业务逻辑 -&gt; 处理器返回一个模型视图 ModelAndView -&gt; 视图解析器进行解析 -&gt; 返回一个视图对象-&gt;前端控制器 DispatcherServlet 渲染数据（Moder）-&gt;将得到视图对象返回给用户</p>
+<p>关于 SpringMVC 原理更多内容可以查看我的这篇文章：<a href="https://mp.weixin.qq.com/s?__biz=MzU4NDQ4MzU5OA==&amp;mid=2247484496&amp;idx=1&amp;sn=5472ffa687fe4a05f8900d8ee6726de4&amp;chksm=fd985231caefdb27fc75b44ecf76b6f43e4617e0b01b3c040f8b8fab32e51dfa5118eed1d6ad&amp;token=1990180468&amp;lang=zh_CN#rd" target="_blank" rel="noopener">SpringMVC 工作原理详解</a></p>
+<h3 id="13-Spring-AOP-IOC-实现原理"><a href="#13-Spring-AOP-IOC-实现原理" class="headerlink" title="13. Spring AOP IOC 实现原理"></a>13. Spring AOP IOC 实现原理</h3><p>过了秋招挺长一段时间了，说实话我自己也忘了如何简要概括 Spring AOP IOC 实现原理，就在网上找了一个较为简洁的答案，下面分享给各位。</p>
+<p><strong>IOC:</strong> 控制反转也叫依赖注入。IOC利用java反射机制，AOP利用代理模式。IOC 概念看似很抽象，但是很容易理解。说简单点就是将对象交给容器管理，你只需要在spring配置文件中配置对应的bean以及设置相关的属性，让spring容器来生成类的实例对象以及管理对象。在spring容器启动的时候，spring会把你在配置文件中配置的bean都初始化好，然后在你需要调用的时候，就把它已经初始化好的那些bean分配给你需要调用这些bean的类。</p>
+<p><strong>AOP：</strong> 面向切面编程。（Aspect-Oriented Programming） 。AOP可以说是对OOP的补充和完善。OOP引入封装、继承和多态性等概念来建立一种对象层次结构，用以模拟公共行为的一个集合。实现AOP的技术，主要分为两大类：一是采用动态代理技术，利用截取消息的方式，对该消息进行装饰，以取代原有对象行为的执行；二是采用静态织入的方式，引入特定的语法创建“方面”，从而使得编译器可以在编译期间织入有关“方面”的代码，属于静态代理。</p>
 
           
         
@@ -532,7 +609,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.youngboy.vip/youngboy/2019/05/05/7/71/">
+    <link itemprop="mainEntityOfPage" href="http://www.youngboy.vip/youngboy/2019/05/28/11/125/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="youngboy">
@@ -551,7 +628,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/youngboy/2019/05/05/7/71/" itemprop="url">MySQL Index</a></h2>
+                <a class="post-title-link" href="/youngboy/2019/05/28/11/125/" itemprop="url">简历模板</a></h2>
         
 
         <div class="post-meta">
@@ -563,8 +640,782 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-05T11:18:43+08:00">
-                2019-05-05
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-28T17:18:24+08:00">
+                2019-05-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/youngboy/categories/面试必备/" itemprop="url" rel="index">
+                    <span itemprop="name">面试必备</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h1><ul>
+<li>手机：</li>
+<li>Email：</li>
+<li>微信：</li>
+</ul>
+<h1 id="个人信息"><a href="#个人信息" class="headerlink" title="个人信息"></a>个人信息</h1><ul>
+<li>姓名/性别/出生日期 </li>
+<li>本科/xxx计算机系xxx专业/英语六级</li>
+<li>技术博客：<a href="http://snailclimb.top/" target="_blank" rel="noopener">http://snailclimb.top/</a> </li>
+<li>荣誉奖励：获得了什么奖（获奖时间）</li>
+<li>Github：<a href="https://github.com/Snailclimb" target="_blank" rel="noopener">https://github.com/Snailclimb </a></li>
+<li>Github Resume: <a href="http://resume.github.io/?Snailclimb" target="_blank" rel="noopener">http://resume.github.io/?Snailclimb</a></li>
+<li>期望职位：Java 研发程序员/大数据工程师(Java后台开发为首选)</li>
+<li>期望城市：xxx城市</li>
+</ul>
+<h1 id="项目经历"><a href="#项目经历" class="headerlink" title="项目经历"></a>项目经历</h1><h2 id="xxx项目"><a href="#xxx项目" class="headerlink" title="xxx项目"></a>xxx项目</h2><h3 id="项目描述"><a href="#项目描述" class="headerlink" title="项目描述"></a>项目描述</h3><p>介绍该项目是做什么的、使用到了什么技术以及你对项目整体设计的一个感受</p>
+<h3 id="责任描述"><a href="#责任描述" class="headerlink" title="责任描述"></a>责任描述</h3><p>主要可以从下面三点来写：</p>
+<ol>
+<li>在这个项目中你负责了什么、做了什么、担任了什么角色</li>
+<li>从这个项目中你学会了那些东西，使用到了那些技术，学会了那些新技术的使用</li>
+<li>另外项目描述中，最好可以体现自己的综合素质，比如你是如何协调项目组成员协同开发的或者在遇到某一个棘手的问题的时候你是如何解决的。</li>
+</ol>
+<h1 id="开源项目和技术文章"><a href="#开源项目和技术文章" class="headerlink" title="开源项目和技术文章"></a>开源项目和技术文章</h1><h2 id="开源项目"><a href="#开源项目" class="headerlink" title="开源项目"></a>开源项目</h2><ul>
+<li><a href="https://github.com/Snailclimb/Java-Guide" target="_blank" rel="noopener">Java-Guide</a> ：一份涵盖大部分Java程序员所需要掌握的核心知识。Star:3.9K; Fork:0.9k。</li>
+</ul>
+<h2 id="技术文章推荐"><a href="#技术文章推荐" class="headerlink" title="技术文章推荐"></a>技术文章推荐</h2><ul>
+<li><a href="https://juejin.im/post/5b7d69e4e51d4538ca5730cb" target="_blank" rel="noopener">可能是把Java内存区域讲的最清楚的一篇文章</a></li>
+<li><a href="https://juejin.im/post/5b85ea54e51d4538dd08f601" target="_blank" rel="noopener">搞定JVM垃圾回收就是这么简单</a></li>
+<li><a href="https://juejin.im/post/5b3b19856fb9a04fa42f8c71" target="_blank" rel="noopener">前端&amp;后端程序员必备的Linux基础知识</a></li>
+<li><a href="https://juejin.im/post/5b260ec26fb9a00e8e4b031a" target="_blank" rel="noopener">可能是把Docker的概念讲的最清楚的一篇文章</a></li>
+</ul>
+<h1 id="校园经历（可选）"><a href="#校园经历（可选）" class="headerlink" title="校园经历（可选）"></a>校园经历（可选）</h1><h2 id="2016-2017"><a href="#2016-2017" class="headerlink" title="2016-2017"></a>2016-2017</h2><p>担任学校社团-致深社副会长，主要负责团队每周活动的组建以及每周例会的主持。</p>
+<h2 id="2017-2018"><a href="#2017-2018" class="headerlink" title="2017-2018"></a>2017-2018</h2><p> 担任学校传媒组织：“长江大学在线信息传媒”的副站长以及安卓组成员。主要负责每周例会主持、活动策划以及学校校园通APP的研发工作。</p>
+<h1 id="技能清单"><a href="#技能清单" class="headerlink" title="技能清单"></a>技能清单</h1><p>以下均为我熟练使用的技能</p>
+<ul>
+<li>Web开发：PHP/Hack/Node</li>
+<li>Web框架：ThinkPHP/Yaf/Yii/Lavarel/LazyPHP</li>
+<li>前端框架：Bootstrap/AngularJS/EmberJS/HTML5/Cocos2dJS/ionic</li>
+<li>前端工具：Bower/Gulp/SaSS/LeSS/PhoneGap</li>
+<li>数据库相关：MySQL/PgSQL/PDO/SQLite</li>
+<li>版本管理、文档和自动化部署工具：Svn/Git/PHPDoc/Phing/Composer</li>
+<li>单元测试：PHPUnit/SimpleTest/Qunit</li>
+<li>云和开放平台：SAE/BAE/AWS/微博开放平台/微信应用开发</li>
+</ul>
+<h1 id="自我评价（可选）"><a href="#自我评价（可选）" class="headerlink" title="自我评价（可选）"></a>自我评价（可选）</h1><p>自我发挥。切记不要过度自夸！！！</p>
+<h3 id="感谢您花时间阅读我的简历，期待能有机会和您共事。"><a href="#感谢您花时间阅读我的简历，期待能有机会和您共事。" class="headerlink" title="感谢您花时间阅读我的简历，期待能有机会和您共事。"></a>感谢您花时间阅读我的简历，期待能有机会和您共事。</h3>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.youngboy.vip/youngboy/2019/05/28/11/124/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="youngboy">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/youngboy/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="youngboy">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/youngboy/2019/05/28/11/124/" itemprop="url">程序员的简历之道</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-28T17:18:24+08:00">
+                2019-05-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/youngboy/categories/面试必备/" itemprop="url" rel="index">
+                    <span itemprop="name">面试必备</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="程序员的简历就该这样写"><a href="#程序员的简历就该这样写" class="headerlink" title="程序员的简历就该这样写"></a>程序员的简历就该这样写</h1><h3 id="1-前言"><a href="#1-前言" class="headerlink" title="1 前言"></a>1 前言</h3><p><font color="red">一份好的简历可以在整个申请面试以及面试过程中起到非常好的作用。</font> 在不夸大自己能力的情况下，写出一份好的简历也是一项很棒的能力。</p>
+<h3 id="2-为什么说简历很重要？"><a href="#2-为什么说简历很重要？" class="headerlink" title="2 为什么说简历很重要？"></a>2 为什么说简历很重要？</h3><h4 id="2-1-先从面试前来说"><a href="#2-1-先从面试前来说" class="headerlink" title="2.1 先从面试前来说"></a>2.1 先从面试前来说</h4><p>假如你是网申，你的简历必然会经过HR的筛选，一张简历HR可能也就花费10秒钟看一下，然后HR就会决定你这一关是Fail还是Pass。</p>
+<p>假如你是内推，如果你的简历没有什么优势的话，就算是内推你的人再用心，也无能为力。</p>
+<p>另外，就算你通过了筛选，后面的面试中，面试官也会根据你的简历来判断你究竟是否值得他花费很多时间去面试。</p>
+<p>所以，简历就像是我们的一个门面一样，它在很大程度上决定了你能否进入到下一轮的面试中。</p>
+<h4 id="2-2-再从面试中来说"><a href="#2-2-再从面试中来说" class="headerlink" title="2.2 再从面试中来说"></a>2.2 再从面试中来说</h4><p>我发现大家比较喜欢看面经 ，这点无可厚非，但是大部分面经都没告诉你很多问题都是在特定条件下才问的。举个简单的例子：一般情况下你的简历上注明你会的东西才会被问到（Java、数据结构、网络、算法这些基础是每个人必问的），比如写了你会 redis,那面试官就很大概率会问你 redis 的一些问题。比如：redis的常见数据类型及应用场景、redis是单线程为什么还这么快、 redis 和 memcached 的区别、redis 内存淘汰机制等等。</p>
+<p>所以，首先，你要明确的一点是：<strong>你不会的东西就不要写在简历上</strong>。另外，<strong>你要考虑你该如何才能让你的亮点在简历中凸显出来</strong>，比如：你在某某项目做了什么事情解决了什么问题（只要有项目就一定有要解决的问题）、你的某一个项目里使用了什么技术后整体性能和并发量提升了很多等等。</p>
+<p>面试和工作是两回事，聪明的人会把面试官往自己擅长的领域领，其他人则被面试官牵着鼻子走。虽说面试和工作是两回事，但是你要想要获得自己满意的 offer ，你自身的实力必须要强。</p>
+<h3 id="3-下面这几点你必须知道"><a href="#3-下面这几点你必须知道" class="headerlink" title="3 下面这几点你必须知道"></a>3 下面这几点你必须知道</h3><ol>
+<li>大部分公司的HR都说我们不看重学历（骗你的！），但是如果你的学校不出众的话，很难在一堆简历中脱颖而出，除非你的简历上有特别的亮点，比如：某某大厂的实习经历、获得了某某大赛的奖等等。</li>
+<li><strong>大部分应届生找工作的硬伤是没有工作经验或实习经历，所以如果你是应届生就不要错过秋招和春招。一旦错过，你后面就极大可能会面临社招，这个时候没有工作经验的你可能就会面临各种碰壁，导致找不到一个好的工作</strong></li>
+<li><strong>写在简历上的东西一定要慎重，这是面试官大量提问的地方；</strong></li>
+<li><strong>将自己的项目经历完美的展示出来非常重要。</strong></li>
+</ol>
+<h3 id="4-必须了解的两大法则"><a href="#4-必须了解的两大法则" class="headerlink" title="4  必须了解的两大法则"></a>4  必须了解的两大法则</h3><p><strong>①STAR法则（Situation Task Action Result）：</strong></p>
+<ul>
+<li><strong>Situation：</strong> 事情是在什么情况下发生；</li>
+<li><strong>Task:：</strong> 你是如何明确你的任务的；</li>
+<li><strong>Action：</strong> 针对这样的情况分析，你采用了什么行动方式；</li>
+<li><strong>Result：</strong> 结果怎样，在这样的情况下你学习到了什么。</li>
+</ul>
+<p>简而言之，STAR法则，就是一种讲述自己故事的方式，或者说，是一个清晰、条理的作文模板。不管是什么，合理熟练运用此法则，可以轻松的对面试官描述事物的逻辑方式，表现出自己分析阐述问题的清晰性、条理性和逻辑性。</p>
+<p>下面这段内容摘自百度百科，我觉得写的非常不错：</p>
+<blockquote>
+<p>STAR法则，500强面试题回答时的技巧法则，备受面试者成功者和500强HR的推崇。<br>由于这个法则被广泛应用于面试问题的回答，尽管我们还在写简历阶段，但是，写简历时能把面试的问题就想好，会使自己更加主动和自信，做到简历，面试关联性，逻辑性强，不至于在一个月后去面试，却把简历里的东西都忘掉了（更何况有些朋友会稍微夸大简历内容）<br>在我们写简历时，每个人都要写上自己的工作经历，活动经历，想必每一个同学，都会起码花上半天甚至更长的时间去搜寻脑海里所有有关的经历，争取找出最好的东西写在简历上。<br>但是此时，我们要注意了，简历上的任何一个信息点都有可能成为日后面试时的重点提问对象，所以说，不能只管写上让自己感觉最牛的经历就完事了，要想到今后，在面试中，你所写的经历万一被面试官问到，你真的能回答得流利，顺畅，且能通过这段经历，证明自己正是适合这个职位的人吗？</p>
+</blockquote>
+<p><strong>②FAB 法则（Feature Advantage Benefit）：</strong></p>
+<ul>
+<li><strong>Feature：</strong> 是什么；</li>
+<li><strong>Advantage：</strong> 比别人好在哪些地方；</li>
+<li><strong>Benefit：</strong> 如果雇佣你，招聘方会得到什么好处。</li>
+</ul>
+<p>简单来说，这个法则主要是让你的面试官知道你的优势、招了你之后对公司有什么帮助。</p>
+<h3 id="5-项目经历怎么写？"><a href="#5-项目经历怎么写？" class="headerlink" title="5 项目经历怎么写？"></a>5 项目经历怎么写？</h3><p>简历上有一两个项目经历很正常，但是真正能把项目经历很好的展示给面试官的非常少。对于项目经历大家可以考虑从如下几点来写：</p>
+<ol>
+<li>对项目整体设计的一个感受</li>
+<li>在这个项目中你负责了什么、做了什么、担任了什么角色</li>
+<li>从这个项目中你学会了那些东西，使用到了那些技术，学会了那些新技术的使用</li>
+<li>另外项目描述中，最好可以体现自己的综合素质，比如你是如何协调项目组成员协同开发的或者在遇到某一个棘手的问题的时候你是如何解决的又或者说你在这个项目用了什么技术实现了什么功能比如:用redis做缓存提高访问速度和并发量、使用消息队列削峰和降流等等。</li>
+</ol>
+<h3 id="6-专业技能该怎么写？"><a href="#6-专业技能该怎么写？" class="headerlink" title="6 专业技能该怎么写？"></a>6 专业技能该怎么写？</h3><p>先问一下你自己会什么，然后看看你意向的公司需要什么。一般HR可能并不太懂技术，所以他在筛选简历的时候可能就盯着你专业技能的关键词来看。对于公司有要求而你不会的技能，你可以花几天时间学习一下，然后在简历上可以写上自己了解这个技能。比如你可以这样写(下面这部分内容摘自我的简历，大家可以根据自己的情况做一些修改和完善)：</p>
+<ul>
+<li>计算机网络、数据结构、算法、操作系统等课内基础知识：掌握</li>
+<li>Java 基础知识：掌握</li>
+<li>JVM 虚拟机（Java内存区域、虚拟机垃圾算法、虚拟垃圾收集器、JVM内存管理）：掌握</li>
+<li>高并发、高可用、高性能系统开发：掌握</li>
+<li>Struts2、Spring、Hibernate、Ajax、Mybatis、JQuery ：掌握</li>
+<li>SSH 整合、SSM 整合、 SOA 架构：掌握</li>
+<li>Dubbo： 掌握</li>
+<li>Zookeeper: 掌握</li>
+<li>常见消息队列: 掌握</li>
+<li>Linux：掌握</li>
+<li>MySQL常见优化手段：掌握 </li>
+<li>Spring Boot +Spring Cloud +Docker:了解</li>
+<li>Hadoop 生态相关技术中的 HDFS、Storm、MapReduce、Hive、Hbase ：了解</li>
+<li>Python 基础、一些常见第三方库比如OpenCV、wxpy、wordcloud、matplotlib：熟悉</li>
+</ul>
+<h3 id="7-开源程序员Markdown格式简历模板分享"><a href="#7-开源程序员Markdown格式简历模板分享" class="headerlink" title="7 开源程序员Markdown格式简历模板分享"></a>7 开源程序员Markdown格式简历模板分享</h3><p>分享一个Github上开源的程序员简历模板。包括PHP程序员简历模板、iOS程序员简历模板、Android程序员简历模板、Web前端程序员简历模板、Java程序员简历模板、C/C++程序员简历模板、NodeJS程序员简历模板、架构师简历模板以及通用程序员简历模板 。<br>Github地址：<a href="https://github.com/geekcompany/ResumeSample" target="_blank" rel="noopener">https://github.com/geekcompany/ResumeSample</a></p>
+<p>我的下面这篇文章讲了如何写一份Markdown格式的简历，另外，文中还提到了一种实现 Markdown 格式到PDF、HTML、JPEG这几种格式的转换方法。</p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzU4NDQ4MzU5OA==&amp;mid=2247484347&amp;idx=1&amp;sn=a986ea7e199871999a5257bd3ed78be1&amp;chksm=fd9855dacaefdccc2c5d5f8f79c4aa1b608ad5b42936bccaefb99a850a2e6e8e2e910e1b3153&amp;token=719595858&amp;lang=zh_CN#rd" target="_blank" rel="noopener">手把手教你用Markdown写一份高质量的简历</a></p>
+<h3 id="8-其他的一些小tips"><a href="#8-其他的一些小tips" class="headerlink" title="8 其他的一些小tips"></a>8 其他的一些小tips</h3><ol>
+<li>尽量避免主观表述，少一点语义模糊的形容词，尽量要简洁明了，逻辑结构清晰。</li>
+<li>注意排版（不需要花花绿绿的），尽量使用Markdown语法。</li>
+<li>如果自己有博客或者个人技术栈点的话，写上去会为你加分很多。</li>
+<li>如果自己的Github比较活跃的话，写上去也会为你加分很多。</li>
+<li>注意简历真实性，一定不要写自己不会的东西，或者带有欺骗性的内容</li>
+<li>项目经历建议以时间倒序排序，另外项目经历不在于多，而在于有亮点。</li>
+<li>如果内容过多的话，不需要非把内容压缩到一页，保持排版干净整洁就可以了。</li>
+<li>简历最后最好能加上：“感谢您花时间阅读我的简历，期待能有机会和您共事。”这句话，显的你会很有礼貌。</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.youngboy.vip/youngboy/2019/05/28/11/113/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="youngboy">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/youngboy/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="youngboy">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/youngboy/2019/05/28/11/113/" itemprop="url">手把手教你用Markdown写一份高质量的简历</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-28T17:18:24+08:00">
+                2019-05-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/youngboy/categories/面试必备/" itemprop="url" rel="index">
+                    <span itemprop="name">面试必备</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Markdown-简历模板样式一览"><a href="#Markdown-简历模板样式一览" class="headerlink" title="Markdown 简历模板样式一览"></a>Markdown 简历模板样式一览</h2><p><img src="https://user-gold-cdn.xitu.io/2018/9/3/1659f91e4843bd67?w=800&amp;h=1737&amp;f=png&amp;s=97357" alt><br><strong>可以看到我把联系方式放在第一位，因为公司一般会与你联系，所以把联系方式放在第一位也是为了方便联系考虑。</strong></p>
+<h2 id="为什么要用-Markdown-写简历？"><a href="#为什么要用-Markdown-写简历？" class="headerlink" title="为什么要用 Markdown 写简历？"></a>为什么要用 Markdown 写简历？</h2><p>Markdown 语法简单，易于上手。使用正确的 Markdown 语言写出来的简历不论是在排版还是格式上都比较干净，易于阅读。另外，使用 Markdown 写简历也会给面试官一种你比较专业的感觉。</p>
+<p>除了这些，我觉得使用 Markdown 写简历可以很方便将其与PDF、HTML、PNG格式之间转换。后面我会介绍到转换方法，只需要一条命令你就可以实现 Markdown 到 PDF、HTML 与 PNG之间的无缝切换。</p>
+<blockquote>
+<p>下面的一些内容我在之前的一篇文章中已经提到过，这里再说一遍，最后会分享如何实现Markdown 到 PDF、HTML、PNG格式之间转换。</p>
+</blockquote>
+<h2 id="为什么说简历很重要？"><a href="#为什么说简历很重要？" class="headerlink" title="为什么说简历很重要？"></a>为什么说简历很重要？</h2><p>假如你是网申，你的简历必然会经过HR的筛选，一张简历HR可能也就花费10秒钟看一下，然后HR就会决定你这一关是Fail还是Pass。</p>
+<p>假如你是内推，如果你的简历没有什么优势的话，就算是内推你的人再用心，也无能为力。</p>
+<p>另外，就算你通过了筛选，后面的面试中，面试官也会根据你的简历来判断你究竟是否值得他花费很多时间去面试。</p>
+<h2 id="写简历的两大法则"><a href="#写简历的两大法则" class="headerlink" title="写简历的两大法则"></a>写简历的两大法则</h2><p>目前写简历的方式有两种普遍被认可，一种是 STAR， 一种是 FAB。</p>
+<p><strong>STAR法则（Situation Task Action Result）：</strong></p>
+<ul>
+<li><strong>Situation：</strong> 事情是在什么情况下发生；</li>
+<li><strong>Task:：</strong> 你是如何明确你的任务的；</li>
+<li><strong>Action：</strong> 针对这样的情况分析，你采用了什么行动方式；</li>
+<li><strong>Result：</strong> 结果怎样，在这样的情况下你学习到了什么。</li>
+</ul>
+<p><strong>FAB 法则（Feature Advantage Benefit）：</strong></p>
+<ul>
+<li><strong>Feature：</strong> 是什么；</li>
+<li><strong>Advantage：</strong> 比别人好在哪些地方；</li>
+<li><strong>Benefit：</strong> 如果雇佣你，招聘方会得到什么好处。</li>
+</ul>
+<h2 id="项目经历怎么写？"><a href="#项目经历怎么写？" class="headerlink" title="项目经历怎么写？"></a>项目经历怎么写？</h2><p>简历上有一两个项目经历很正常，但是真正能把项目经历很好的展示给面试官的非常少。对于项目经历大家可以考虑从如下几点来写：</p>
+<ol>
+<li>对项目整体设计的一个感受</li>
+<li>在这个项目中你负责了什么、做了什么、担任了什么角色</li>
+<li>从这个项目中你学会了那些东西，使用到了那些技术，学会了那些新技术的使用</li>
+<li>另外项目描述中，最好可以体现自己的综合素质，比如你是如何协调项目组成员协同开发的或者在遇到某一个棘手的问题的时候你是如何解决的。</li>
+</ol>
+<h2 id="专业技能该怎么写？"><a href="#专业技能该怎么写？" class="headerlink" title="专业技能该怎么写？"></a>专业技能该怎么写？</h2><p>先问一下你自己会什么，然后看看你意向的公司需要什么。一般HR可能并不太懂技术，所以他在筛选简历的时候可能就盯着你专业技能的关键词来看。对于公司有要求而你不会的技能，你可以花几天时间学习一下，然后在简历上可以写上自己了解这个技能。比如你可以这样写：</p>
+<ul>
+<li>Dubbo：精通</li>
+<li>Spring：精通</li>
+<li>Docker：掌握</li>
+<li>SOA分布式开发 ：掌握</li>
+<li>Spring Cloud:了解</li>
+</ul>
+<h2 id="简历模板分享"><a href="#简历模板分享" class="headerlink" title="简历模板分享"></a>简历模板分享</h2><p><strong>开源程序员简历模板</strong>： <a href="https://github.com/geekcompany/ResumeSample" target="_blank" rel="noopener">https://github.com/geekcompany/ResumeSample</a>（包括PHP程序员简历模板、iOS程序员简历模板、Android程序员简历模板、Web前端程序员简历模板、Java程序员简历模板、C/C++程序员简历模板、NodeJS程序员简历模板、架构师简历模板以及通用程序员简历模板）</p>
+<p><strong>上述简历模板的改进版本：</strong> <a href="https://github.com/Snailclimb/Java-Guide/blob/master/面试必备/简历模板.md" target="_blank" rel="noopener">https://github.com/Snailclimb/Java-Guide/blob/master/面试必备/简历模板.md</a> </p>
+<h2 id="其他的一些小tips"><a href="#其他的一些小tips" class="headerlink" title="其他的一些小tips"></a>其他的一些小tips</h2><ol>
+<li>尽量避免主观表述，少一点语义模糊的形容词，尽量要简洁明了，逻辑结构清晰。</li>
+<li>注意排版（不需要花花绿绿的），尽量使用Markdown语法。</li>
+<li>如果自己有博客或者个人技术栈点的话，写上去会为你加分很多。</li>
+<li>如果自己的Github比较活跃的话，写上去也会为你加分很多。</li>
+<li>注意简历真实性，一定不要写自己不会的东西，或者带有欺骗性的内容</li>
+<li>项目经历建议以时间倒序排序，另外项目经历不在于多，而在于有亮点。</li>
+<li>如果内容过多的话，不需要非把内容压缩到一页，保持排版干净整洁就可以了。</li>
+<li>简历最后最好能加上：“感谢您花时间阅读我的简历，期待能有机会和您共事。”这句话，显的你会很有礼貌。</li>
+</ol>
+<blockquote>
+<p>我们刚刚讲了很多关于如何写简历的内容并且分享了一份 Markdown 格式的简历文档。下面我们来看看如何实现 Markdown 到 HTML格式、PNG格式之间转换。</p>
+</blockquote>
+<h2 id="Markdown-到-HTML格式、PNG格式之间转换"><a href="#Markdown-到-HTML格式、PNG格式之间转换" class="headerlink" title="Markdown 到 HTML格式、PNG格式之间转换"></a>Markdown 到 HTML格式、PNG格式之间转换</h2><p>网上很难找到一个比较方便并且效果好的转换方法，最后我是通过 Visual Studio Code 的 Markdown PDF 插件完美解决了这个问题！</p>
+<h3 id="安装-Markdown-PDF-插件"><a href="#安装-Markdown-PDF-插件" class="headerlink" title="安装 Markdown PDF 插件"></a>安装 Markdown PDF 插件</h3><p><strong>① 打开Visual Studio Code ，按快捷键 F1，选择安装扩展选项</strong></p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/9/3/1659f9a44103e551?w=1366&amp;h=688&amp;f=png&amp;s=104435" alt="① 打开Visual Studio Code ，按快捷键 F1，选择安装扩展选项"></p>
+<p><strong>② 搜索 “Markdown PDF” 插件并安装 ，然后重启</strong></p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/9/3/1659f9dbef0d06fb?w=1280&amp;h=420&amp;f=png&amp;s=70510" alt="② 搜索 “Markdown PDF” 插件并安装 ，然后重启"></p>
+<h3 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h3><p>随便打开一份 Markdown 文件 点击F1，然后输入export即可！</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/9/3/1659fa0292906150?w=1289&amp;h=468&amp;f=png&amp;s=72178" alt></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.youngboy.vip/youngboy/2019/05/28/7/8/83/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="youngboy">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/youngboy/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="youngboy">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/youngboy/2019/05/28/7/8/83/" itemprop="url">Redlock分布式锁</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-28T17:18:24+08:00">
+                2019-05-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/youngboy/categories/数据存储/" itemprop="url" rel="index">
+                    <span itemprop="name">数据存储</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/youngboy/categories/数据存储/Redis/" itemprop="url" rel="index">
+                    <span itemprop="name">Redis</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>这篇文章主要是对 Redis 官方网站刊登的 <a href="https://redis.io/topics/distlock" target="_blank" rel="noopener">Distributed locks with Redis</a> 部分内容的总结和翻译。</p>
+<h2 id="什么是-RedLock"><a href="#什么是-RedLock" class="headerlink" title="什么是 RedLock"></a>什么是 RedLock</h2><p>Redis 官方站这篇文章提出了一种权威的基于 Redis 实现分布式锁的方式名叫 <em>Redlock</em>，此种方式比原先的单节点的方法更安全。它可以保证以下特性：</p>
+<ol>
+<li>安全特性：互斥访问，即永远只有一个 client 能拿到锁</li>
+<li>避免死锁：最终 client 都可能拿到锁，不会出现死锁的情况，即使原本锁住某资源的 client crash 了或者出现了网络分区</li>
+<li>容错性：只要大部分 Redis 节点存活就可以正常提供服务</li>
+</ol>
+<h2 id="怎么在单节点上实现分布式锁"><a href="#怎么在单节点上实现分布式锁" class="headerlink" title="怎么在单节点上实现分布式锁"></a>怎么在单节点上实现分布式锁</h2><blockquote>
+<p>SET resource_name my_random_value NX PX 30000</p>
+</blockquote>
+<p>主要依靠上述命令，该命令仅当 Key 不存在时（NX保证）set 值，并且设置过期时间 3000ms （PX保证），值 my_random_value 必须是所有 client 和所有锁请求发生期间唯一的，释放锁的逻辑是：</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> redis.call(<span class="string">"get"</span>,KEYS[<span class="number">1</span>]) == ARGV[<span class="number">1</span>] <span class="keyword">then</span></span><br><span class="line">    <span class="keyword">return</span> redis.call(<span class="string">"del"</span>,KEYS[<span class="number">1</span>])</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p>上述实现可以避免释放另一个client创建的锁，如果只有 del 命令的话，那么如果 client1 拿到 lock1 之后因为某些操作阻塞了很长时间，此时 Redis 端 lock1 已经过期了并且已经被重新分配给了 client2，那么 client1 此时再去释放这把锁就会造成 client2 原本获取到的锁被 client1 无故释放了，但现在为每个 client 分配一个 unique 的 string 值可以避免这个问题。至于如何去生成这个 unique string，方法很多随意选择一种就行了。</p>
+<h2 id="Redlock-算法"><a href="#Redlock-算法" class="headerlink" title="Redlock 算法"></a>Redlock 算法</h2><p>算法很易懂，起 5 个 master 节点，分布在不同的机房尽量保证可用性。为了获得锁，client 会进行如下操作：</p>
+<ol>
+<li>得到当前的时间，微妙单位</li>
+<li>尝试顺序地在 5 个实例上申请锁，当然需要使用相同的 key 和 random value，这里一个 client 需要合理设置与 master 节点沟通的 timeout 大小，避免长时间和一个 fail 了的节点浪费时间</li>
+<li>当 client 在大于等于 3 个 master 上成功申请到锁的时候，且它会计算申请锁消耗了多少时间，这部分消耗的时间采用获得锁的当下时间减去第一步获得的时间戳得到，如果锁的持续时长（lock validity time）比流逝的时间多的话，那么锁就真正获取到了。</li>
+<li>如果锁申请到了，那么锁真正的 lock validity time 应该是 origin（lock validity time） - 申请锁期间流逝的时间</li>
+<li>如果 client 申请锁失败了，那么它就会在少部分申请成功锁的 master 节点上执行释放锁的操作，重置状态</li>
+</ol>
+<h2 id="失败重试"><a href="#失败重试" class="headerlink" title="失败重试"></a>失败重试</h2><p>如果一个 client 申请锁失败了，那么它需要稍等一会在重试避免多个 client 同时申请锁的情况，最好的情况是一个 client 需要几乎同时向 5 个 master 发起锁申请。另外就是如果 client 申请锁失败了它需要尽快在它曾经申请到锁的 master 上执行 unlock 操作，便于其他 client 获得这把锁，避免这些锁过期造成的时间浪费，当然如果这时候网络分区使得 client 无法联系上这些 master，那么这种浪费就是不得不付出的代价了。</p>
+<h2 id="放锁"><a href="#放锁" class="headerlink" title="放锁"></a>放锁</h2><p>放锁操作很简单，就是依次释放所有节点上的锁就行了</p>
+<h2 id="性能、崩溃恢复和-fsync"><a href="#性能、崩溃恢复和-fsync" class="headerlink" title="性能、崩溃恢复和 fsync"></a>性能、崩溃恢复和 fsync</h2><p>如果我们的节点没有持久化机制，client 从 5 个 master 中的 3 个处获得了锁，然后其中一个重启了，这是注意 <strong>整个环境中又出现了 3 个 master 可供另一个 client 申请同一把锁！</strong> 违反了互斥性。如果我们开启了 AOF 持久化那么情况会稍微好转一些，因为 Redis 的过期机制是语义层面实现的，所以在 server 挂了的时候时间依旧在流逝，重启之后锁状态不会受到污染。但是考虑断电之后呢，AOF部分命令没来得及刷回磁盘直接丢失了，除非我们配置刷回策略为 fsnyc = always，但这会损伤性能。解决这个问题的方法是，当一个节点重启之后，我们规定在 max TTL 期间它是不可用的，这样它就不会干扰原本已经申请到的锁，等到它 crash 前的那部分锁都过期了，环境不存在历史锁了，那么再把这个节点加进来正常工作。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.youngboy.vip/youngboy/2019/05/28/7/72/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="youngboy">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/youngboy/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="youngboy">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/youngboy/2019/05/28/7/72/" itemprop="url">MySQL</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-28T17:18:24+08:00">
+                2019-05-28
               </time>
             
 
@@ -625,54 +1476,127 @@
       
         
           
-            <h1 id="思维导图-索引篇"><a href="#思维导图-索引篇" class="headerlink" title="思维导图-索引篇"></a>思维导图-索引篇</h1><blockquote>
-<p>系列思维导图源文件（数据库+架构）以及思维导图制作软件—XMind8 破解安装，公众号后台回复：<strong>“思维导图”</strong> 免费领取！（下面的图片不是很清楚，原图非常清晰，另外提供给大家源文件也是为了大家根据自己需要进行修改）</p>
-</blockquote>
-<p><img src="http://my-blog-to-use.oss-cn-beijing.aliyuncs.com/18-10-2/70973487.jpg" alt="【思维导图-索引篇】"></p>
+            <p>Java面试通关手册（Java学习指南，欢迎Star，会一直完善下去，欢迎建议和指导）：<a href="https://github.com/Snailclimb/Java_Guide" target="_blank" rel="noopener">https://github.com/Snailclimb/Java_Guide</a></p>
 <blockquote>
-<p><strong>下面是我补充的一些内容</strong></p>
-</blockquote>
-<h1 id="为什么索引能提高查询速度"><a href="#为什么索引能提高查询速度" class="headerlink" title="为什么索引能提高查询速度"></a>为什么索引能提高查询速度</h1><blockquote>
-<p>以下内容整理自：<br> 地址： <a href="https://juejin.im/post/5b55b842f265da0f9e589e79" target="_blank" rel="noopener">https://juejin.im/post/5b55b842f265da0f9e589e79</a><br> 作者 ：Java3y</p>
-</blockquote>
-<h3 id="先从-MySQL-的基本存储结构说起"><a href="#先从-MySQL-的基本存储结构说起" class="headerlink" title="先从 MySQL 的基本存储结构说起"></a>先从 MySQL 的基本存储结构说起</h3><p>MySQL的基本存储结构是页(记录都存在页里边)：</p>
-<p><img src="http://my-blog-to-use.oss-cn-beijing.aliyuncs.com/18-10-2/28559421.jpg" alt="MySQL的基本存储结构是页"></p>
-<p><img src="http://my-blog-to-use.oss-cn-beijing.aliyuncs.com/18-10-2/82053134.jpg" alt></p>
+<h2 id="书籍推荐"><a href="#书籍推荐" class="headerlink" title="书籍推荐"></a>书籍推荐</h2></blockquote>
+<p><strong>《高性能MySQL : 第3版》</strong></p>
+<blockquote>
+<h2 id="文字教程推荐"><a href="#文字教程推荐" class="headerlink" title="文字教程推荐"></a>文字教程推荐</h2></blockquote>
+<p><a href="http://www.runoob.com/mysql/mysql-tutorial.html" target="_blank" rel="noopener">MySQL 教程（菜鸟教程）</a></p>
+<p><a href="https://www.yiibai.com/mysql/" target="_blank" rel="noopener">MySQL教程（易百教程）</a></p>
+<blockquote>
+<h2 id="视频教程推荐"><a href="#视频教程推荐" class="headerlink" title="视频教程推荐"></a>视频教程推荐</h2></blockquote>
+<p><strong>基础入门：</strong> <a href="https://www.imooc.com/learn/122" target="_blank" rel="noopener">与MySQL的零距离接触-慕课网</a></p>
+<p><strong>Mysql开发技巧：</strong> <a href="https://www.imooc.com/learn/398" target="_blank" rel="noopener">MySQL开发技巧（一）</a>　　<a href="https://www.imooc.com/learn/427" target="_blank" rel="noopener">MySQL开发技巧（二）</a>　　<a href="https://www.imooc.com/learn/449" target="_blank" rel="noopener">MySQL开发技巧（三）</a></p>
+<p><strong>Mysql5.7新特性及相关优化技巧：</strong> <a href="https://www.imooc.com/learn/533" target="_blank" rel="noopener">MySQL5.7版本新特性</a>　　<a href="https://www.imooc.com/learn/194" target="_blank" rel="noopener">性能优化之MySQL优化</a></p>
+<p><a href="https://www.imooc.com/learn/993" target="_blank" rel="noopener">MySQL集群（PXC）入门</a>　　<a href="https://www.imooc.com/learn/951" target="_blank" rel="noopener">MyCAT入门及应用</a></p>
+<blockquote>
+<h2 id="常见问题总结"><a href="#常见问题总结" class="headerlink" title="常见问题总结"></a>常见问题总结</h2></blockquote>
 <ul>
-<li><strong>各个数据页可以组成一个双向链表</strong></li>
-<li><strong>每个数据页中的记录又可以组成一个单向链表</strong><ul>
-<li>每个数据页都会为存储在它里边儿的记录生成一个页目录，在通过主键查找某条记录的时候可以在页目录中使用二分法快速定位到对应的槽，然后再遍历该槽对应分组中的记录即可快速找到指定的记录</li>
-<li>以其他列(非主键)作为搜索条件：只能从最小记录开始依次遍历单链表中的每条记录。</li>
-</ul>
+<li><h3 id="①存储引擎"><a href="#①存储引擎" class="headerlink" title="①存储引擎"></a>①存储引擎</h3><p><a href="https://juejin.im/post/5b1685bef265da6e5c3c1c34" target="_blank" rel="noopener">MySQL常见的两种存储引擎：MyISAM与InnoDB的爱恨情仇</a></p>
+</li>
+<li><h3 id="②字符集及校对规则"><a href="#②字符集及校对规则" class="headerlink" title="②字符集及校对规则"></a>②字符集及校对规则</h3><p> 字符集指的是一种从二进制编码到某类字符符号的映射。校对规则则是指某种字符集下的排序规则。Mysql中每一种字符集都会对应一系列的校对规则。</p>
+<p> Mysql采用的是类似继承的方式指定字符集的默认值，每个数据库以及每张数据表都有自己的默认值，他们逐层继承。比如：某个库中所有表的默认字符集将是该数据库所指定的字符集（这些表在没有指定字符集的情况下，才会采用默认字符集） PS：整理自《Java工程师修炼之道》</p>
+<p> 详细内容可以参考：   <a href="https://www.cnblogs.com/geaozhang/p/6724393.html#mysqlyuzifuji" target="_blank" rel="noopener">MySQL字符集及校对规则的理解</a></p>
+</li>
+<li><h3 id="③索引相关的内容（数据库使用中非常关键的技术，合理正确的使用索引可以大大提高数据库的查询性能）"><a href="#③索引相关的内容（数据库使用中非常关键的技术，合理正确的使用索引可以大大提高数据库的查询性能）" class="headerlink" title="③索引相关的内容（数据库使用中非常关键的技术，合理正确的使用索引可以大大提高数据库的查询性能）"></a>③索引相关的内容（数据库使用中非常关键的技术，合理正确的使用索引可以大大提高数据库的查询性能）</h3><p>　　Mysql索引使用的数据结构主要有<strong>BTree索引</strong> 和 <strong>哈希索引</strong> 。对于哈希索引来说，底层的数据结构就是哈希表，因此在绝大多数需求为单条记录查询的时候，可以选择哈希索引，查询性能最快；其余大部分场景，建议选择BTree索引。</p>
+<p>　　Mysql的BTree索引使用的是B数中的B+Tree，但对于主要的两种存储引擎的实现方式是不同的。</p>
+<p>　　<strong>MyISAM:</strong> B+Tree叶节点的data域存放的是数据记录的地址。在索引检索的时候，首先按照B+Tree搜索算法搜索索引，如果指定的Key存在，则取出其 data 域的值，然后以 data 域的值为地址读取相应的数据记录。这被称为“非聚簇索引”。</p>
+<p>　　<strong>InnoDB:</strong> 其数据文件本身就是索引文件。相比MyISAM，索引文件和数据文件是分离的，其表数据文件本身就是按B+Tree组织的一个索引结构，树的叶节点data域保存了完整的数据记录。这个索引的key是数据表的主键，因此InnoDB表数据文件本身就是主索引。这被称为“聚簇索引（或聚集索引）”。而其余的索引都作为辅助索引，辅助索引的data域存储相应记录主键的值而不是地址，这也是和MyISAM不同的地方。<strong>在根据主索引搜索时，直接找到key所在的节点即可取出数据；在根据辅助索引查找时，则需要先取出主键的值，在走一遍主索引。</strong> <strong>因此，在设计表的时候，不建议使用过长的字段作为主键，也不建议使用非单调的字段作为主键，这样会造成主索引频繁分裂。</strong> PS：整理自《Java工程师修炼之道》</p>
+<p> 详细内容可以参考：</p>
+<p> <a href="https://www.jianshu.com/p/1775b4ff123a" target="_blank" rel="noopener">干货：mysql索引的数据结构</a></p>
+<p> <a href="https://blog.csdn.net/Jack__Frost/article/details/72571540" target="_blank" rel="noopener">MySQL优化系列（三）–索引的使用、原理和设计优化</a></p>
+<p> <a href="https://juejin.im/post/5b55b842f265da0f9e589e79#comment" target="_blank" rel="noopener">数据库两大神器【索引和锁】</a></p>
+</li>
+<li><h3 id="④查询缓存的使用"><a href="#④查询缓存的使用" class="headerlink" title="④查询缓存的使用"></a>④查询缓存的使用</h3><p> my.cnf加入以下配置，重启Mysql开启查询缓存</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">query_cache_type=1</span><br><span class="line">query_cache_size=600000</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>所以说，如果我们写select * from user where indexname = ‘xxx’这样没有进行任何优化的sql语句，默认会这样做：</p>
-<ol>
-<li><strong>定位到记录所在的页:需要遍历双向链表，找到所在的页</strong></li>
-<li><strong>从所在的页内中查找相应的记录:由于不是根据主键查询，只能遍历所在页的单链表了</strong></li>
-</ol>
-<p>很明显，在数据量很大的情况下这样查找会很慢！这样的时间复杂度为O（n）。</p>
-<h3 id="使用索引之后"><a href="#使用索引之后" class="headerlink" title="使用索引之后"></a>使用索引之后</h3><p>索引做了些什么可以让我们查询加快速度呢？其实就是将无序的数据变成有序(相对)：</p>
-<p><img src="http://my-blog-to-use.oss-cn-beijing.aliyuncs.com/18-10-2/5373082.jpg" alt></p>
-<p>要找到id为8的记录简要步骤：</p>
-<p><img src="http://my-blog-to-use.oss-cn-beijing.aliyuncs.com/18-10-2/89338047.jpg" alt></p>
-<p>很明显的是：没有用索引我们是需要遍历双向链表来定位对应的页，现在通过 <strong>“目录”</strong> 就可以很快地定位到对应的页上了！（二分查找，时间复杂度近似为O(logn)）</p>
-<p>其实底层结构就是B+树，B+树作为树的一种实现，能够让我们很快地查找出对应的记录。</p>
-<h1 id="关于索引其他重要的内容补充"><a href="#关于索引其他重要的内容补充" class="headerlink" title="关于索引其他重要的内容补充"></a>关于索引其他重要的内容补充</h1><blockquote>
-<p>以下内容整理自：《Java工程师修炼之道》</p>
-</blockquote>
-<h3 id="最左前缀原则"><a href="#最左前缀原则" class="headerlink" title="最左前缀原则"></a>最左前缀原则</h3><p>MySQL中的索引可以以一定顺序引用多列，这种索引叫作联合索引。如User表的name和city加联合索引就是(name,city)o而最左前缀原则指的是，如果查询的时候查询条件精确匹配索引的左边连续一列或几列，则此列就可以被用到。如下：        </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">select * from user where name=xx and city=xx ; ／／可以命中索引</span><br><span class="line">select * from user where name=xx ; // 可以命中索引</span><br><span class="line">select * from user where city=xx; // 无法命中索引            </span><br><span class="line">```                                                          </span><br><span class="line">这里需要注意的是，查询的时候如果两个条件都用上了，但是顺序不同，如 `city= xx and name ＝xx`，那么现在的查询引擎会自动优化为匹配联合索引的顺序，这样是能够命中索引的.</span><br><span class="line"></span><br><span class="line">由于最左前缀原则，在创建联合索引时，索引字段的顺序需要考虑字段值去重之后的个数，较多的放前面。ORDERBY子句也遵循此规则。</span><br><span class="line"></span><br><span class="line">### 注意避免冗余索引</span><br><span class="line"></span><br><span class="line">冗余索引指的是索引的功能相同，能够命中 就肯定能命中 ，那么 就是冗余索引如（name,city ）和（name ）这两个索引就是冗余索引，能够命中后者的查询肯定是能够命中前者的 在大多数情况下，都应该尽量扩展已有的索引而不是创建新索引。</span><br><span class="line"></span><br><span class="line">MySQLS.7 版本后，可以通过查询 sys 库的 `schemal_r dundant_indexes` 表来查看冗余索引             </span><br><span class="line"></span><br><span class="line">### Mysql如何为表字段添加索引？？？</span><br><span class="line"></span><br><span class="line">1.添加PRIMARY KEY（主键索引）</span><br></pre></td></tr></table></figure>
-<p>ALTER TABLE <code>table_name</code> ADD PRIMARY KEY ( <code>column</code> )<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2.添加UNIQUE(唯一索引)</span><br></pre></td></tr></table></figure></p>
-<p>ALTER TABLE <code>table_name</code> ADD UNIQUE ( <code>column</code> )<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"> </span><br><span class="line">3.添加INDEX(普通索引)</span><br></pre></td></tr></table></figure></p>
-<p>ALTER TABLE <code>table_name</code> ADD INDEX index_name ( <code>column</code> )<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"> </span><br><span class="line">4.添加FULLTEXT(全文索引)</span><br></pre></td></tr></table></figure></p>
-<p>ALTER TABLE <code>table_name</code> ADD FULLTEXT ( <code>column</code>)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"> </span><br><span class="line">5.添加多列索引</span><br></pre></td></tr></table></figure></p>
-<p>ALTER TABLE <code>table_name</code> ADD INDEX index_name ( <code>column1</code>, <code>column2</code>, <code>column3</code> )<br><code>`</code></p>
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ul>
-<li>《Java工程师修炼之道》</li>
-<li>《MySQL高性能书籍_第3版》</li>
-<li><a href="https://juejin.im/post/5b55b842f265da0f9e589e79" target="_blank" rel="noopener">https://juejin.im/post/5b55b842f265da0f9e589e79</a></li>
+<p>   Mysql执行以下命令也可以开启查询缓存</p>
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">set global  query_cache_type=1;</span><br><span class="line">set global  query_cache_size=600000;</span><br></pre></td></tr></table></figure>
+<p>   如上，<strong>开启查询缓存后在同样的查询条件以及数据情况下，会直接在缓存中返回结果</strong>。这里的查询条件包括查询本身、当前要查询的数据库、客户端协议版本号等一些可能影响结果的信息。因此任何两个查询在任何字符上的不同都会导致缓存不命中。此外，如果查询中包含任何用户自定义函数、存储函数、用户变量、临时表、Mysql库中的系统表，其查询结果也不会被缓存。</p>
+<p>   缓存建立之后，Mysql的查询缓存系统会跟踪查询中涉及的每张表，如果这些表（数据或结构）发生变化，那么和这张表相关的所有缓存数据都将失效。</p>
+<p>   <strong>缓存虽然能够提升数据库的查询性能，但是缓存同时也带来了额外的开销，每次查询后都要做一次缓存操作，失效后还要销毁。</strong> 因此，开启缓存查询要谨慎，尤其对于写密集的应用来说更是如此。如果开启，要注意合理控制缓存空间大小，一般来说其大小设置为几十MB比较合适。此外，<strong>还可以通过sql_cache和sql_no_cache来控制某个查询语句是否需要缓存：</strong><br>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select sql_no_cache count(*) from usr;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><h3 id="⑤事务机制"><a href="#⑤事务机制" class="headerlink" title="⑤事务机制"></a>⑤事务机制</h3><p> <strong>关系性数据库需要遵循ACID规则，具体内容如下：</strong></p>
+</li>
 </ul>
+<p><img src="https://user-gold-cdn.xitu.io/2018/5/20/1637b08b98619455?w=312&amp;h=305&amp;f=png&amp;s=22430" alt="事务的特性"></p>
+<ol>
+<li><strong>原子性：</strong> 事务是最小的执行单位，不允许分割。事务的原子性确保动作要么全部完成，要么完全不起作用；</li>
+<li><strong>一致性：</strong> 执行事务前后，数据保持一致；</li>
+<li><strong>隔离性：</strong> 并发访问数据库时，一个用户的事物不被其他事物所干扰，各并发事务之间数据库是独立的；</li>
+<li><p><strong>持久性:</strong>  一个事务被提交之后。它对数据库中数据的改变是持久的，即使数据库 发生故障也不应该对其有任何影响。</p>
+<p><strong>为了达到上述事务特性，数据库定义了几种不同的事务隔离级别：</strong></p>
+</li>
+</ol>
+<ul>
+<li><strong>READ_UNCOMMITTED（未授权读取）:</strong> 最低的隔离级别，允许读取尚未提交的数据变更，<strong>可能会导致脏读、幻读或不可重复读</strong></li>
+<li><strong>READ_COMMITTED（授权读取）:</strong>     允许读取并发事务已经提交的数据，<strong>可以阻止脏读，但是幻读或不可重复读仍有可能发生</strong></li>
+<li><strong>REPEATABLE_READ（可重复读）:</strong>     对同一字段的多次读取结果都是一致的，除非数据是被本身事务自己所修改，<strong>可以阻止脏读和不可重复读，但幻读仍有可能发生。</strong></li>
+<li><p><strong>SERIALIZABLE（串行）:</strong>     最高的隔离级别，完全服从ACID的隔离级别。所有的事务依次逐个执行，这样事务之间就完全不可能产生干扰，也就是说，<strong>该级别可以防止脏读、不可重复读以及幻读</strong>。但是这将严重影响程序的性能。通常情况下也不会用到该级别。</p>
+<p>这里需要注意的是：<strong>Mysql 默认采用的 REPEATABLE_READ隔离级别 Oracle 默认采用的 READ_COMMITTED隔离级别.</strong></p>
+<p>事务隔离机制的实现基于锁机制和并发调度。其中并发调度使用的是MVVC（多版本并发控制），通过保存修改的旧版本信息来支持并发一致性读和回滚等特性。</p>
+<p> 详细内容可以参考：   <a href="https://blog.csdn.net/qq_34337272/article/details/80394121" target="_blank" rel="noopener">可能是最漂亮的Spring事务管理详解</a></p>
+</li>
+<li><h3 id="⑥锁机制与InnoDB锁算法"><a href="#⑥锁机制与InnoDB锁算法" class="headerlink" title="⑥锁机制与InnoDB锁算法"></a>⑥锁机制与InnoDB锁算法</h3><p> <strong>MyISAM和InnoDB存储引擎使用的锁：</strong></p>
+<ul>
+<li>MyISAM采用表级锁(table-level locking)。</li>
+<li><p>InnoDB支持行级锁(row-level locking)和表级锁,默认为行级锁</p>
+<p><strong>表级锁和行级锁对比：</strong></p>
+<ul>
+<li><strong>表级锁：</strong> Mysql中锁定 <strong>粒度最大</strong> 的一种锁，对当前操作的整张表加锁，实现简单，资源消耗也比较少，加锁快，不会出现死锁。其锁定粒度最大，触发锁冲突的概率最高，并发度最低，MyISAM和 InnoDB引擎都支持表级锁。</li>
+<li><strong>行级锁：</strong> Mysql中锁定 <strong>粒度最小</strong> 的一种锁，只针对当前操作的行进行加锁。 行级锁能大大减少数据库操作的冲突。其加锁粒度最小，并发度高，但加锁的开销也最大，加锁慢，会出现死锁。 </li>
+</ul>
+<p>详细内容可以参考：<br><a href="https://blog.csdn.net/qq_34337272/article/details/80611486" target="_blank" rel="noopener">Mysql锁机制简单了解一下</a></p>
+</li>
+</ul>
+<p><strong>InnoDB存储引擎的锁的算法有三种：</strong></p>
+<ul>
+<li>Record lock：单个行记录上的锁</li>
+<li>Gap lock：间隙锁，锁定一个范围，不包括记录本身</li>
+<li><p>Next-key lock：record+gap 锁定一个范围，包含记录本身</p>
+<p><strong>相关知识点：</strong></p>
+<ol>
+<li>innodb对于行的查询使用next-key lock</li>
+<li>Next-locking keying为了解决Phantom Problem幻读问题</li>
+<li>当查询的索引含有唯一属性时，将next-key lock降级为record key</li>
+<li>Gap锁设计的目的是为了阻止多个事务将记录插入到同一范围内，而这会导致幻读问题的产生</li>
+<li>有两种方式显式关闭gap锁：（除了外键约束和唯一性检查外，其余情况仅使用record lock） A. 将事务隔离级别设置为RC B. 将参数innodb_locks_unsafe_for_binlog设置为1</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><h3 id="⑦大表优化"><a href="#⑦大表优化" class="headerlink" title="⑦大表优化"></a>⑦大表优化</h3><p>当MySQL单表记录数过大时，数据库的CRUD性能会明显下降，一些常见的优化措施如下：</p>
+<ol>
+<li><strong>限定数据的范围：</strong> 务必禁止不带任何限制数据范围条件的查询语句。比如：我们当用户在查询订单历史的时候，我们可以控制在一个月的范围内。；</li>
+<li><strong>读/写分离：</strong> 经典的数据库拆分方案，主库负责写，从库负责读；</li>
+<li><strong>缓存：</strong> 使用MySQL的缓存，另外对重量级、更新少的数据可以考虑使用应用级别的缓存；</li>
+<li><p><strong>垂直分区：</strong> </p>
+<p><strong>根据数据库里面数据表的相关性进行拆分。</strong> 例如，用户表中既有用户的登录信息又有用户的基本信息，可以将用户表拆分成两个单独的表，甚至放到单独的库做分库。</p>
+<p><strong>简单来说垂直拆分是指数据表列的拆分，把一张列比较多的表拆分为多张表。</strong> 如下图所示，这样来说大家应该就更容易理解了。<br><img src="https://user-gold-cdn.xitu.io/2018/6/16/164084354ba2e0fd?w=950&amp;h=279&amp;f=jpeg&amp;s=26015" alt></p>
+<p><strong>垂直拆分的优点：</strong> 可以使得行数据变小，在查询时减少读取的Block数，减少I/O次数。此外，垂直分区可以简化表的结构，易于维护。</p>
+<p><strong>垂直拆分的缺点：</strong> 主键会出现冗余，需要管理冗余列，并会引起Join操作，可以通过在应用层进行Join来解决。此外，垂直分区会让事务变得更加复杂；</p>
+</li>
+<li><p><strong>水平分区：</strong> </p>
+</li>
+</ol>
+</li>
+</ul>
+<pre><code>**保持数据表结构不变，通过某种策略存储数据分片。这样每一片数据分散到不同的表或者库中，达到了分布式的目的。 水平拆分可以支撑非常大的数据量。** 
+
+水平拆分是指数据表行的拆分，表的行数超过200万行时，就会变慢，这时可以把一张的表的数据拆成多张表来存放。举个例子：我们可以将用户信息表拆分成多个用户信息表，这样就可以避免单一表数据量过大对性能造成影响。
+
+![数据库水平拆分](https://user-gold-cdn.xitu.io/2018/6/16/164084b7e9e423e3?w=690&amp;h=271&amp;f=jpeg&amp;s=23119)
+
+水品拆分可以支持非常大的数据量。需要注意的一点是:分表仅仅是解决了单一表数据过大的问题，但由于表的数据还是在同一台机器上，其实对于提升MySQL并发能力没有什么意义，所以 **水品拆分最好分库** 。
+
+水平拆分能够 **支持非常大的数据量存储，应用端改造也少**，但 **分片事务难以解决**  ，跨界点Join性能较差，逻辑复杂。《Java工程师修炼之道》的作者推荐 **尽量不要对数据进行分片，因为拆分会带来逻辑、部署、运维的各种复杂度** ，一般的数据表在优化得当的情况下支撑千万以下的数据量是没有太大问题的。如果实在要分片，尽量选择客户端分片架构，这样可以减少一次和中间件的网络I/O。
+
+**下面补充一下数据库分片的两种常见方案：**
+- **客户端代理：**  **分片逻辑在应用端，封装在jar包中，通过修改或者封装JDBC层来实现。** 当当网的 **Sharding-JDBC** 、阿里的TDDL是两种比较常用的实现。
+- **中间件代理：** **在应用和数据中间加了一个代理层。分片逻辑统一维护在中间件服务中。** 我们现在谈的 **Mycat** 、360的Atlas、网易的DDB等等都是这种架构的实现。
+</code></pre><p>  详细内容可以参考：<br>  <a href="https://segmentfault.com/a/1190000006158186" target="_blank" rel="noopener">MySQL大表优化方案</a></p>
 
           
         
@@ -721,7 +1645,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.youngboy.vip/youngboy/2019/05/05/5/53/">
+    <link itemprop="mainEntityOfPage" href="http://www.youngboy.vip/youngboy/2019/05/28/7/8/84/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="youngboy">
@@ -740,7 +1664,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/youngboy/2019/05/05/5/53/" itemprop="url">选择技术方向都要考虑哪些因素</a></h2>
+                <a class="post-title-link" href="/youngboy/2019/05/28/7/8/84/" itemprop="url">如何做可靠的分布式锁，Redlock真的可行么</a></h2>
         
 
         <div class="post-meta">
@@ -752,8 +1676,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-05T11:18:43+08:00">
-                2019-05-05
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-28T17:18:24+08:00">
+                2019-05-28
               </time>
             
 
@@ -775,8 +1699,19 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/youngboy/categories/其他/" itemprop="url" rel="index">
-                    <span itemprop="name">其他</span>
+                  <a href="/youngboy/categories/数据存储/" itemprop="url" rel="index">
+                    <span itemprop="name">数据存储</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/youngboy/categories/数据存储/Redis/" itemprop="url" rel="index">
+                    <span itemprop="name">Redis</span>
                   </a>
                 </span>
 
@@ -814,735 +1749,53 @@
       
         
           
-            <p>本文主要是作者读安晓辉老师的《程序员程序员职场进阶 32 讲 》中关于“选择技术方向都要考虑哪些因素”这部分做的一些笔记和自己的思考。在这里分享给各位！</p>
-<h3 id="选择一种技术可能会考虑到的决定因素"><a href="#选择一种技术可能会考虑到的决定因素" class="headerlink" title="选择一种技术可能会考虑到的决定因素"></a>选择一种技术可能会考虑到的决定因素</h3><ol>
-<li><p>就业机会</p>
-<p>选择一门就业面广的技术还是比较重要的。我的很多学PHP的同学现在都在培训班学Java，真的！！！</p>
-</li>
-<li><p>难易程度</p>
-<p> 我当时是在C/C++语言与Java中选择了Java，因为我感觉Java学起来确实要比C++简单一些。</p>
-</li>
-<li><p>个人兴趣</p>
-<p>兴趣是你能坚持下来的一个很重要的条件。</p>
-</li>
-<li><p>薪资水平</p>
-<p>薪资虽然不是人的唯一追求，但是一定是必备的追求。</p>
-</li>
-<li><p>发展前景</p>
-<p>你肯定不愿意看到这种情况发生：选择了一门技术，结果一年后它就没人用、没市场了。所以我们在选择时就要考虑这一点，做一些预判。</p>
-<p>选择技术时存在两种考虑：一种是选择稳定的、经典的技术；一种是卡位将来的市场缺口，选择将来可能需要用到的技术。</p>
-</li>
-<li><p>他人推荐</p>
-<p>我们在懵懵懂懂的时候，往往最容易听从别人的推荐，然后选择某种技术。</p>
-</li>
-<li><p>相近原则</p>
-<p>当我们已经掌握了一些技术，要学习新技术时，就可以根据一种新技术是否和自己已经掌握的技术比较接近来判断选择。相近的技术，学起来会更容易上手。</p>
-</li>
-<li><p>互补原则</p>
-<p>和相近性类似，互补性也常用在拓展我们技术能力的情景下。它指的是，有一些技术可以和你已经掌握的技术互相补充，组合在一起，形成更完整、更系统的技术图谱，给你带来更大的竞争力。关于相近原则与互补原则，我们也会在后面的文章里具体解读。</p>
-</li>
-<li><p>团队技术图谱</p>
-<p>我觉得这个可能就是团队开发过程中的需要。比如在做一个项目的时候，这个项目需要你去学习一下某个你没有接触过的新技术。</p>
-</li>
-</ol>
-<h3 id="入行时如何选择技术方向"><a href="#入行时如何选择技术方向" class="headerlink" title="入行时如何选择技术方向"></a>入行时如何选择技术方向</h3><p> 为了明确自己的求职目标，可以问问自己下面的问题：</p>
-<ul>
-<li>我想在哪个城市工作？</li>
-<li>我想在哪些行业、领域发展？</li>
-<li>我想去什么样的公司？</li>
-<li>我想做什么样的产品？   </li>
-</ul>
-<p>另外你要知道的是热门技术会有更多机会，相应竞争压力也会更大，并不能保证你找到合适的工作。<br>冷门技术，机会相对较少，而且机会相对确定 。</p>
-<h3 id="构建技能树时如何选择技术方向"><a href="#构建技能树时如何选择技术方向" class="headerlink" title="构建技能树时如何选择技术方向"></a>构建技能树时如何选择技术方向</h3><p>当我们过了专项能力提升的初级阶段之后，就应该开始构建自己的技能体系了。在为搭建技能树而选择技术时，通常考虑下面两个原则：</p>
-<ul>
-<li>相近原则</li>
-<li>互补原则</li>
-</ul>
-<p>“学习技术时一定要学对自己以后发展有用的技术”是我经常对自己强调的，另外我觉得很误导人同时也很错误的一个思想是：“只要是技术学了就会有用的”，这句话在我刚学编程时经常听到有人对我说。希望大家不要被误导，很多技术过时了就是过时了，没有必要再去花时间学。</p>
-<p>我觉得相近原则和互补原则互补原则就是你主精和自己技术方向相同的的东西或者对自己技术领域有提升的东西。比如我目前暂时选择了Java为我的主要发展语言，所以我就要求自己大部分时间还是搞和Java相关的东西比如：Spring、SpingBoot、Dubbo、Mybatis等等。但是千万不要被语言所束缚，在业余时间我学的比较多的就是Python以及JS、C/C++/C#也会偶尔接触。因为我经常会接触前端另外我自己偶尔有爬虫需求或者需要用Python的一些第三库解决一些问题，所以我业余学Pyton以及JS就比较多一点，我觉得这两门技术也是对我现有技术的一个补充了。</p>
-<h3 id="技术转型时的方向选择"><a href="#技术转型时的方向选择" class="headerlink" title="技术转型时的方向选择"></a>技术转型时的方向选择</h3><p>我觉得对于技术转型主要有一下几点建议</p>
-<ul>
-<li>与自己当前技术栈跨度不太大的领域，比如你做安卓的话转型可以选择做Java后端。</li>
-<li>真正适合自己去做的，并不是一味看着这个领域火了（比如人工智能），然后自己就不考虑实际的去转型到这个领域里去。</li>
-<li>技术转型方向尽量对自己以后的发展需要有帮助。</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.youngboy.vip/youngboy/2019/05/05/5/52/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="youngboy">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/youngboy/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="youngboy">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/youngboy/2019/05/05/5/52/" itemprop="url">个人阅读书籍清单</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-05T11:18:43+08:00">
-                2019-05-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/youngboy/categories/其他/" itemprop="url" rel="index">
-                    <span itemprop="name">其他</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>下面是个人阅读书籍的部分清单，我比较建议阅读的书籍前都加上了:thumbsup: 表情。</p>
-<blockquote>
-<h3 id="核心基础知识"><a href="#核心基础知识" class="headerlink" title="核心基础知识"></a>核心基础知识</h3></blockquote>
-<ul>
-<li><p>:thumbsup: <a href="https://book.douban.com/subject/25863515/" target="_blank" rel="noopener">《图解HTTP》</a></p>
-<p>讲漫画一样的讲HTTP，很有意思，不会觉得枯燥，大概也涵盖也HTTP常见的知识点。因为篇幅问题，内容可能不太全面。不过，如果不是专门做网络方向研究的小伙伴想研究HTTP相关知识的话，读这本书的话应该来说就差不多了。</p>
-</li>
-</ul>
-<blockquote>
-<h3 id="Java相关"><a href="#Java相关" class="headerlink" title="Java相关"></a>Java相关</h3></blockquote>
-<ul>
-<li><p>:thumbsup: <a href="https://book.douban.com/subject/2000732/" target="_blank" rel="noopener">《Head First Java.第二版》</a></p>
-<p>可以说是我的Java启蒙书籍了，特别适合新手读当然也适合我们用来温故Java知识点。</p>
-</li>
-<li><p><a href="https://book.douban.com/subject/26555197/" target="_blank" rel="noopener">《Java多线程编程核心技术》</a></p>
-<p>Java多线程入门级书籍还不错，但是说实话，质量不是很高，很快就可以阅读完。</p>
-</li>
-<li><p><a href="https://book.douban.com/subject/26259017/" target="_blank" rel="noopener">《JAVA网络编程 第4版》</a></p>
-<p>可以系统的学习一下网络的一些概念以及网络编程在Java中的使用。</p>
-</li>
-<li><p>:thumbsup: <a href="https://book.douban.com/subject/25762168/" target="_blank" rel="noopener">《Java核心技术卷1+卷2》</a></p>
-<p>很棒的两本书，建议有点Java基础之后再读，介绍的还是比较深入的，非常推荐。这两本书我一般也会用来巩固知识点，是两本适合放在自己身边的好书。</p>
-</li>
-<li><p>:thumbsup: <a href="https://book.douban.com/subject/2130190/" target="_blank" rel="noopener">《Java编程思想(第4版)》</a></p>
-<p>这本书要常读，初学者可以快速概览，中等程序员可以深入看看java，老鸟还可以用之回顾java的体系。这本书之所以厉害，因为它在无形中整合了设计模式，这本书之所以难读，也恰恰在于他对设计模式的整合是无形的。</p>
-</li>
-<li><p>:thumbsup: <a href="https://book.douban.com/subject/26591326/" target="_blank" rel="noopener">《Java并发编程的艺术》</a></p>
-<p>这本书不是很适合作为Java并发入门书籍，需要具备一定的JVM基础。我感觉有些东西讲的还是挺深入的，推荐阅读。</p>
-</li>
-<li><p>:thumbsup: <a href="https://book.douban.com/subject/26663605/" target="_blank" rel="noopener">《实战Java高并发程序设计》</a></p>
-<p>  豆瓣评分 8.3 ，书的质量没的说，推荐大家好好看一下。</p>
-</li>
-<li><p><a href="https://book.douban.com/subject/24841235/" target="_blank" rel="noopener">《Java程序员修炼之道》</a></p>
-<p>很杂，我只看了前面几章，不太推荐阅读。</p>
-</li>
-<li><p>:thumbsup: <a href="https://book.douban.com/subject/24722612/" target="_blank" rel="noopener">《深入理解Java虚拟机（第2版）周志明》</a></p>
-<p>神书！神书！神书！建议多刷几遍，书中的所有知识点可以通过JAVA运行时区域和JAVA的内存模型与线程两个大模块罗列完全。 </p>
-</li>
-</ul>
-<blockquote>
-<h3 id="JavaWeb相关"><a href="#JavaWeb相关" class="headerlink" title="JavaWeb相关"></a>JavaWeb相关</h3></blockquote>
-<ul>
-<li><p>:thumbsup: <a href="https://book.douban.com/subject/25953851/" target="_blank" rel="noopener">《深入分析Java Web技术内幕》</a></p>
-<p>感觉还行，涉及的东西也蛮多，推荐阅读。</p>
-</li>
-<li><p>:thumbsup: <a href="https://book.douban.com/subject/26767354/" target="_blank" rel="noopener">《Spring实战（第4版）》</a></p>
-<p>不建议当做入门书籍读，入门的话可以找点国人的书或者视频看。这本定位就相当于是关于Spring的新华字典，只有一些基本概念的介绍和示例，涵盖了Spring的各个方面，但都不够深入。就像作者在最后一页写的那样：“学习Spring，这才刚刚开始”。</p>
-</li>
-<li><p><a href="https://book.douban.com/subject/4189495/" target="_blank" rel="noopener">《Java Web整合开发王者归来》</a></p>
-<p>当时刚开始学的时候就是开的这本书，基本上是完完整整的看完了。不过，我不是很推荐大家看。这本书比较老了，里面很多东西都已经算是过时了。不过，这本书的一个很大优点是：基础知识点概括全面。</p>
-</li>
-<li><p>:thumbsup: <a href="https://book.douban.com/subject/26612779/" target="_blank" rel="noopener">《Redis实战》</a></p>
-<p> 如果你想了解Redis的一些概念性知识的话，这本书真的非常不错。</p>
-</li>
-</ul>
-<blockquote>
-<h3 id="架构相关"><a href="#架构相关" class="headerlink" title="架构相关"></a>架构相关</h3></blockquote>
-<ul>
-<li><p>:thumbsup: <a href="https://book.douban.com/subject/25723064/" target="_blank" rel="noopener">《大型网站技术架构：核心原理与案例分析+李智慧》</a></p>
-<p>这本书我读过，基本不需要你有什么基础啊~读起来特别轻松，但是却可以学到很多东西，非常推荐了。另外我写过这本书的思维导图，关注我的微信公众号：“Java面试通关手册”回复“大型网站技术架构”即可领取思维导图。</p>
-</li>
-<li><p><a href="https://book.douban.com/subject/27081188/" target="_blank" rel="noopener">《架构解密从分布式到微服务（Leaderus著）》</a></p>
-<p>很一般的书籍，我就是当做课后图书来阅读的。</p>
-</li>
-</ul>
-<blockquote>
-<h3 id="代码优化"><a href="#代码优化" class="headerlink" title="代码优化"></a>代码优化</h3></blockquote>
-<ul>
-<li><p>:thumbsup: <a href="https://book.douban.com/subject/4262627/" target="_blank" rel="noopener">《重构_改善既有代码的设计》</a></p>
-<p> 豆瓣 9.1 分，重构书籍的开山鼻祖。</p>
-</li>
-</ul>
-<blockquote>
-<h3 id="课外书籍"><a href="#课外书籍" class="headerlink" title="课外书籍"></a>课外书籍</h3></blockquote>
-<p>《技术奇点》 :thumbsup:《追风筝的人》 :thumbsup:《穆斯林的葬礼》  :thumbsup:《三体》 《人工智能——李开复》<br>:thumbsup:《活着——余华》  </p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.youngboy.vip/youngboy/2019/05/05/5/51/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="youngboy">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/youngboy/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="youngboy">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/youngboy/2019/05/05/5/51/" itemprop="url">2018 秋招</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-05T11:18:43+08:00">
-                2019-05-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/youngboy/categories/其他/" itemprop="url" rel="index">
-                    <span itemprop="name">其他</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="秋招历程流水账总结"><a href="#秋招历程流水账总结" class="headerlink" title="秋招历程流水账总结"></a>秋招历程流水账总结</h1><p>笔主大四准毕业生，在秋招末流比较幸运地进入了一家自己非常喜欢一家公司——ThoughtWorks.</p>
-<p><img src="https://images.gitbook.cn/1433af10-d5f7-11e8-841a-4f0b0cc7be7b" alt="今天去签约在门外拍的照片"></p>
-<p>从9-6号投递出去第一份简历，到10-18号左右拿到第一份 offer ，中间差不多有 1 个半月的时间了。可能自己比较随缘，而且自己所在的大学所处的位置并不是互联网比较发达的城市的原因。所以，很少会有公司愿意跑到我们学校那边来宣讲，来的公司也大多是一些自己没听过或者不太喜欢的公司。所以，在前期，我仅仅能够通过网上投递简历的方式来找工作。</p>
-<p>零零总总算了一下，自己在网上投了大概有 10 份左右的简历，都是些自己还算喜欢的公司。简单说一下自己投递的一些公司：网上投递的公司有：ThoughtWorks、网易、小米、携程、爱奇艺、知乎、小红书、搜狐、欢聚时代、京东；直接邮箱投递的有：烽火、中电数据、蚂蚁金服花呗部门、今日头条；线下宣讲会投递的有：玄武科技。</p>
-<p>网上投递的大部分简历都是在做完笔试之后就没有了下文了，即使有几场笔试自我感觉做的很不错的情况下，还是没有收到后续的面试邀请。还有些邮箱投递的简历，后面也都没了回应。所以，我总共也只参加了3个公司的面试，ThoughtWorks、玄武科技和中电数据，都算是拿到了 offer。拿到 ThoughtWorks 的 offer之后，后面的一些笔试和少部分面试都拒了。决定去 ThoughtWorks 了，春招的大部队会没有我的存在。</p>
-<p>我个人对 ThoughtWorks 最有好感，ThoughtWorks 也是我自己之前很想去的一家公司。不光是因为我投递简历的时候可以不用重新填一遍表格可以直接发送我已经编辑好的PDF格式简历的友好，这个公司的文化也让我很喜欢。每次投递一家公司几乎都要重新填写一遍简历真的很让人头疼，即使是用牛客网的简历助手也还是有很多东西需要自己重新填写。</p>
-<p>说句实话，自己在拿到第一份 offer 之前心里还是比较空的，虽然说对自己还是比较自信。包括自己当时来到武汉的原因，也是因为自己没有 offer ，就感觉心里空空的，我相信很多人在这个时候与我也有一样的感觉。然后，我就想到武汉参加一下别的学校宣讲会。现在看来，这个决定也是不必要的，因为我最后去的公司 ThoughtWorks，虽然就在我租的房子的附近，但之前投递的时候，选择的还是远程面试。来到武汉，简单的修整了一下之后，我就去参加了玄武科技在武理工的宣讲会，顺便做了笔试，然后接着就是技术面、HR面、高管面。总体来说，玄武科技的 HR 真的很热情，为他们点个赞，虽然自己最后没能去玄武科技，然后就是技术面非常简单，HR面和高管面也都还好，不会有压抑的感觉，总体聊得很愉快。需要注意的是 玄武科技和很多公司一样都有笔试中有逻辑题，我之前没有做过类似的题，所以当时第一次做有点懵逼。高管面的时候，高管还专门在我做的逻辑题上聊了一会，让我重新做了一些做错的题，并且给他讲一些题的思路，可以看出高层对于应聘者的这项能力还是比较看重的。</p>
-<p>中电数据的技术面试是电话进行的，花了1个多小时一点，个人感觉问的还是比较深的，感觉自己总体回答的还是比较不错的。</p>
-<p>这里我着重说一下 ThoughtWorks，也算是给想去 ThoughtWorks 的同学一点小小的提示。我是 9.11 号在官网：<a href="https://join.thoughtworks.cn/" target="_blank" rel="noopener">https://join.thoughtworks.cn/</a> 投递的简历，9.20 日邮件通知官网下载作业，作业总体来说不难，9.21 号花了半天多的时间做完，然后就直接在9.21 号下午提交了。然后等了挺长时间的，可能是因为 ThoughtWorks 在管理方面比较扁平化的原因，所以总体来说效率可能不算高。因为我选的是远程面试，所以直接下载好 zoom 之后，等HR打电话过来告诉你一个房间号，你就可以直接进去面试就好，一般技术面试有几个人看着你。技术面试的内容，首先就是在面试官让你在你之前做的作业的基础上新增加一个或者两个功能（20分钟）。所以，你在技术面试之前一定要保证你的程序的扩展性是不错的，另外就是你在技术面试之前最好能重构一下自己写的程序。重构本身就是你自己对你写的程序的理解加强很好的一种方式，另外重构也能让你发现你的程序的一些小问题。然后，这一步完成之后，面试官可能会问你一些基础问题，比较简单，所以我觉得 ThoughtWorks 可能更看重你的代码质量。ThoughtWorks 的 HR 面和其他公司的唯一不同可能在于，他会让你用英语介绍一下自己或者说自己的技术栈啊这些。</p>
-<p><img src="https://images.gitbook.cn/83f765e0-d5f6-11e8-9c1a-919e09988420" alt="思特沃克可爱的招聘官网"></p>
-<h1 id="关于面试一些重要的问题总结"><a href="#关于面试一些重要的问题总结" class="headerlink" title="关于面试一些重要的问题总结"></a>关于面试一些重要的问题总结</h1><p>另外，再给大家总结一些我个人想到一些关于面试非常重要的一些问题。</p>
-<h3 id="面试前"><a href="#面试前" class="headerlink" title="面试前"></a>面试前</h3><p><strong>如何准备</strong></p>
-<p>运筹帷幄之后，决胜千里之外！不打毫无准备的仗，我觉得大家可以先从下面几个方面来准备面试：</p>
+            <p>本文是对 <a href="https://martin.kleppmann.com/" target="_blank" rel="noopener">Martin Kleppmann</a> 的文章 <a href="https://martin.kleppmann.com/2016/02/08/how-to-do-distributed-locking.html" target="_blank" rel="noopener">How to do distributed locking</a> 部分内容的翻译和总结，上次写 Redlock 的原因就是看到了 Martin 的这篇文章，写得很好，特此翻译和总结。感兴趣的同学可以翻看原文，相信会收获良多。</p>
+<p>开篇作者认为现在 Redis 逐渐被使用到数据管理领域，这个领域需要更强的数据一致性和耐久性，这使得他感到担心，因为这不是 Redis 最初设计的初衷（事实上这也是很多业界程序员的误区，越来越把 Redis 当成数据库在使用），其中基于 Redis 的分布式锁就是令人担心的其一。</p>
+<p>Martin 指出首先你要明确你为什么使用分布式锁，为了性能还是正确性？为了帮你区分这二者，在这把锁 fail 了的时候你可以询问自己以下问题： </p>
 <ol>
-<li>自我介绍。（你可千万这样介绍：“我叫某某，性别，来自哪里，学校是那个，自己爱干什么”，记住：多说点简历上没有的，多说点自己哪里比别人强！）</li>
-<li>自己面试中可能涉及哪些知识点、那些知识点是重点。</li>
-<li>面试中哪些问题会被经常问到、面试中自己改如何回答。(强烈不推荐背题，第一：通过背这种方式你能记住多少？能记住多久？第二：背题的方式的学习很难坚持下去！)</li>
-<li>自己的简历该如何写。</li>
+<li><strong>要性能的：</strong> 拥有这把锁使得你不会重复劳动（例如一个 job 做了两次），如果这把锁 fail 了，两个节点同时做了这个 Job，那么这个 Job 增加了你的成本。</li>
+<li><strong>要正确性的：</strong> 拥有锁可以防止并发操作污染你的系统或者数据，如果这把锁 fail 了两个节点同时操作了一份数据，结果可能是数据不一致、数据丢失、file 冲突等，会导致严重的后果。</li>
 </ol>
-<p>另外，如果你想去类似阿里巴巴、腾讯这种比较大的互联网公司的话，一定要尽早做打算。像阿里巴巴在7月份左右就开始了提前批招聘，到了9月份差不多就已经招聘完毕了。所以，秋招没有参加到阿里的面试还是很遗憾的，毕竟面试即使失败了，也能从阿里难度Max的面试中学到很多东西。</p>
-<p><strong>关于着装</strong></p>
-<p>穿西装、打领带、小皮鞋？NO！NO！NO！这是互联网公司面试又不是去走红毯，所以你只需要穿的简单大方就好，不需要太正式。</p>
-<p><strong>关于自我介绍</strong></p>
-<p>如果你简历上写的基本信息就不要说了，比如性别、年龄、学校。另外，你也不要一上来就说自己爱好什么这方面内容。因为，面试官根本不关心这些东西。你直接挑和你岗位相关的重要经历和自己最突出的特点讲就好了。</p>
-<p><strong>提前准备</strong></p>
-<p>面试之前可以在网上找找有没有你要面试的公司的面经。在我面试 ThoughtWorks 的前几天我就在网上找了一些关于 ThoughtWorks 的技术面的一些文章。然后知道了 ThoughtWorks 的技术面会让我们在之前做的作业的基础上增加一个或两个功能，所以我提前一天就把我之前做的程序重新重构了一下。然后在技术面的时候，简单的改了几行代码之后写个测试就完事了。如果没有提前准备，我觉得 20 分钟我很大几率会完不成这项任务。</p>
-<h3 id="面试中"><a href="#面试中" class="headerlink" title="面试中"></a>面试中</h3><p>面试的时候一定要自信，千万不要怕自己哪里会答不出来，或者说某个问题自己忘记怎么回答了。面试过程中，很多问题可能是你之前没有碰到过的，这个时候你就要通过自己构建的知识体系来思考这些问题。如果某些问题你回答不上来，你也可以让面试官给你简单的提示一下。总之，你要自信，你自信的前提是自己要做好充分的准备。下面给大家总结一些面试非常常见的问题：</p>
-<ul>
-<li>SpringMVC 工作原理</li>
-<li>说一下自己对 IOC 、AOP 的理解</li>
-<li>Spring 中用到了那些设计模式，讲一下自己对于这些设计模式的理解</li>
-<li>Spring Bean 的作用域和生命周期了解吗</li>
-<li>Spring 事务中的隔离级别</li>
-<li>Spring 事务中的事务传播行为</li>
-<li>手写一个 LRU 算法</li>
-<li>知道那些排序算法，简单介绍一下快排的原理，能不能手写一下快排</li>
-<li>String 为什么是不可变的？String为啥要设计为不可变的？</li>
-<li>Arraylist 与 LinkedList 异同</li>
-<li>HashMap的底层实现</li>
-<li>HashMap 的长度为什么是2的幂次方</li>
-<li>ConcurrentHashMap 和 Hashtable 的区别</li>
-<li>ConcurrentHashMap线程安全的具体实现方式/底层具体实现</li>
-<li>如果你的简历写了redis 、dubbo、zookeeper、docker的话，面试官还会问一下这些东西。比如redis可能会问你：为什么要用 redis、为什么要用 redis 而不用 map/guava 做缓存、redis 常见数据结构以及使用场景分析、 redis 设置过期时间、redis 内存淘汰机制、 redis 持久化机制、 缓存雪崩和缓存穿透问题、如何解决 Redis 的并发竞争 Key 问题、如何保证缓存与数据库双写时的数据一致性。</li>
-<li>一些简单的 Linux 命令。</li>
-<li>为什么要用 消息队列</li>
-<li>关于 Java多线程，在面试的时候，问的比较多的就是①悲观锁和乐观锁②synchronized 和 ReenTrantLock 区别以及 volatile 和 synchronized 的区别，③可重入锁与非可重入锁的区别、④多线程是解决什么问题的、⑤线程池解决什么问题，为什么要用线程池 ⑥Synchronized 关键字使用、底层原理、JDK1.6 之后的底层优化以及 ReenTrantLock 对比；⑦线程池使用时的注意事项、⑧AQS 原理以及 AQS 同步组件：Semaphore、CountDownLatCh、 CyclicBarrier、ReadWriteLock、⑨ReentranLock源码，设计原理，整体过程 等等问题。</li>
-<li>关于 Java 虚拟机问的比较多的是：①Java内存区域、②虚拟机垃圾算法、③虚拟机垃圾收集器、④JVM内存管理、⑤JVM调优这些问题。 </li>
-</ul>
-<h3 id="面试后"><a href="#面试后" class="headerlink" title="面试后"></a>面试后</h3><p>如果失败，不要灰心；如果通过，切勿狂喜。面试和工作实际上是两回事，可能很多面试未通过的人，工作能力比你强的多，反之亦然。我个人觉得面试也像是一场全新的征程，失败和胜利都是平常之事。所以，劝各位不要因为面试失败而灰心、丧失斗志。也不要因为面试通过而沾沾自喜，等待你的将是更美好的未来，继续加油！</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.youngboy.vip/youngboy/2019/05/05/8/94/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="youngboy">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/youngboy/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="youngboy">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/youngboy/2019/05/05/8/94/" itemprop="url">数据结构</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-05T11:18:43+08:00">
-                2019-05-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/youngboy/categories/数据结构与算法/" itemprop="url" rel="index">
-                    <span itemprop="name">数据结构与算法</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <!-- MarkdownTOC -->
-<ul>
-<li><a href="#queue">Queue</a><ul>
-<li><a href="#什么是队列">什么是队列</a></li>
-<li><a href="#队列的种类">队列的种类</a></li>
-<li><a href="#java-集合框架中的队列-queue">Java 集合框架中的队列 Queue</a></li>
-<li><a href="#推荐文章">推荐文章</a></li>
-</ul>
-</li>
-<li><a href="#set">Set</a><ul>
-<li><a href="#什么是-set">什么是 Set</a></li>
-<li><a href="#补充：有序集合与无序集合说明">补充：有序集合与无序集合说明</a></li>
-<li><a href="#hashset-和-treeset-底层数据结构">HashSet 和 TreeSet 底层数据结构</a></li>
-<li><a href="#推荐文章-1">推荐文章</a></li>
-</ul>
-</li>
-<li><a href="#list">List</a><ul>
-<li><a href="#什么是list">什么是List</a></li>
-<li><a href="#list的常见实现类">List的常见实现类</a></li>
-<li><a href="#arraylist-和-linkedlist-源码学习">ArrayList 和 LinkedList 源码学习</a></li>
-<li><a href="#推荐阅读">推荐阅读</a></li>
-</ul>
-</li>
-<li><a href="#map">Map</a></li>
-<li><a href="#树">树</a></li>
-</ul>
-<!-- /MarkdownTOC -->
-<h2 id="Queue"><a href="#Queue" class="headerlink" title="Queue"></a>Queue</h2><h3 id="什么是队列"><a href="#什么是队列" class="headerlink" title="什么是队列"></a>什么是队列</h3><p>队列是数据结构中比较重要的一种类型，它支持 FIFO，尾部添加、头部删除（先进队列的元素先出队列），跟我们生活中的排队类似。</p>
-<h3 id="队列的种类"><a href="#队列的种类" class="headerlink" title="队列的种类"></a>队列的种类</h3><ul>
-<li><strong>单队列</strong>（单队列就是常见的队列, 每次添加元素时，都是添加到队尾，存在“假溢出”的问题也就是明明有位置却不能添加的情况）</li>
-<li><strong>循环队列</strong>（避免了“假溢出”的问题）</li>
-</ul>
-<h3 id="Java-集合框架中的队列-Queue"><a href="#Java-集合框架中的队列-Queue" class="headerlink" title="Java 集合框架中的队列 Queue"></a>Java 集合框架中的队列 Queue</h3><p>Java 集合中的 Queue 继承自 Collection 接口 ，Deque, LinkedList, PriorityQueue, BlockingQueue 等类都实现了它。<br>Queue 用来存放 等待处理元素 的集合，这种场景一般用于缓冲、并发访问。<br>除了继承 Collection 接口的一些方法，Queue 还添加了额外的 添加、删除、查询操作。</p>
-<h3 id="推荐文章"><a href="#推荐文章" class="headerlink" title="推荐文章"></a>推荐文章</h3><ul>
-<li><a href="https://blog.csdn.net/u011240877/article/details/52860924" target="_blank" rel="noopener">Java 集合深入理解（9）：Queue 队列</a></li>
-</ul>
-<h2 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h2><h3 id="什么是-Set"><a href="#什么是-Set" class="headerlink" title="什么是 Set"></a>什么是 Set</h3><p>Set 继承于 Collection 接口，是一个不允许出现重复元素，并且无序的集合，主要 HashSet 和 TreeSet 两大实现类。</p>
-<p>在判断重复元素的时候，Set 集合会调用 hashCode()和 equal()方法来实现。</p>
-<h3 id="补充：有序集合与无序集合说明"><a href="#补充：有序集合与无序集合说明" class="headerlink" title="补充：有序集合与无序集合说明"></a>补充：有序集合与无序集合说明</h3><ul>
-<li>有序集合：集合里的元素可以根据 key 或 index 访问 (List、Map)</li>
-<li>无序集合：集合里的元素只能遍历。（Set）</li>
-</ul>
-<h3 id="HashSet-和-TreeSet-底层数据结构"><a href="#HashSet-和-TreeSet-底层数据结构" class="headerlink" title="HashSet 和 TreeSet 底层数据结构"></a>HashSet 和 TreeSet 底层数据结构</h3><p><strong>HashSet</strong> 是哈希表结构，主要利用 HashMap 的 key 来存储元素，计算插入元素的 hashCode 来获取元素在集合中的位置；</p>
-<p><strong>TreeSet</strong> 是红黑树结构，每一个元素都是树中的一个节点，插入的元素都会进行排序；</p>
-<h3 id="推荐文章-1"><a href="#推荐文章-1" class="headerlink" title="推荐文章"></a>推荐文章</h3><ul>
-<li><a href="https://www.jianshu.com/p/b48c47a42916" target="_blank" rel="noopener">Java集合–Set(基础)</a></li>
-</ul>
-<h2 id="List"><a href="#List" class="headerlink" title="List"></a>List</h2><h3 id="什么是List"><a href="#什么是List" class="headerlink" title="什么是List"></a>什么是List</h3><p>在 List 中，用户可以精确控制列表中每个元素的插入位置，另外用户可以通过整数索引（列表中的位置）访问元素，并搜索列表中的元素。 与 Set 不同，List 通常允许重复的元素。 另外 List 是有序集合而 Set 是无序集合。</p>
-<h3 id="List的常见实现类"><a href="#List的常见实现类" class="headerlink" title="List的常见实现类"></a>List的常见实现类</h3><p><strong>ArrayList</strong> 是一个数组队列，相当于动态数组。它由数组实现，随机访问效率高，随机插入、随机删除效率低。</p>
-<p><strong>LinkedList</strong> 是一个双向链表。它也可以被当作堆栈、队列或双端队列进行操作。LinkedList随机访问效率低，但随机插入、随机删除效率高。</p>
-<p><strong>Vector</strong> 是矢量队列，和ArrayList一样，它也是一个动态数组，由数组实现。但是ArrayList是非线程安全的，而Vector是线程安全的。</p>
-<p><strong>Stack</strong> 是栈，它继承于Vector。它的特性是：先进后出(FILO, First In Last Out)。相关阅读：<a href="https://blog.csdn.net/javazejian/article/details/53362993" target="_blank" rel="noopener">java数据结构与算法之栈（Stack）设计与实现</a></p>
-<h3 id="ArrayList-和-LinkedList-源码学习"><a href="#ArrayList-和-LinkedList-源码学习" class="headerlink" title="ArrayList 和 LinkedList 源码学习"></a>ArrayList 和 LinkedList 源码学习</h3><ul>
-<li><a href="https://github.com/Snailclimb/Java-Guide/blob/master/Java相关/ArrayList.md" target="_blank" rel="noopener">ArrayList 源码学习</a>    </li>
-<li><a href="https://github.com/Snailclimb/Java-Guide/blob/master/Java相关/LinkedList.md" target="_blank" rel="noopener">LinkedList 源码学习</a>   </li>
-</ul>
-<h3 id="推荐阅读"><a href="#推荐阅读" class="headerlink" title="推荐阅读"></a>推荐阅读</h3><ul>
-<li><a href="https://blog.csdn.net/javazejian/article/details/52953190" target="_blank" rel="noopener">java 数据结构与算法之顺序表与链表深入分析</a></li>
-</ul>
-<h2 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h2><ul>
-<li><a href="https://juejin.im/post/5ab0568b5188255580020e56" target="_blank" rel="noopener">集合框架源码学习之 HashMap(JDK1.8)</a></li>
-<li><a href="https://link.juejin.im/?target=http%3A%2F%2Fwww.cnblogs.com%2Fchengxiao%2Fp%2F6842045.html" target="_blank" rel="noopener">ConcurrentHashMap 实现原理及源码分析</a></li>
-</ul>
-<h2 id="树"><a href="#树" class="headerlink" title="树"></a>树</h2><ul>
-<li><h3 id="1-二叉树"><a href="#1-二叉树" class="headerlink" title="1 二叉树"></a>1 二叉树</h3><p> <a href="https://baike.baidu.com/item/%E4%BA%8C%E5%8F%89%E6%A0%91" target="_blank" rel="noopener">二叉树</a>（百度百科）</p>
-<p>(1)<a href="https://baike.baidu.com/item/%E5%AE%8C%E5%85%A8%E4%BA%8C%E5%8F%89%E6%A0%91" target="_blank" rel="noopener">完全二叉树</a>——若设二叉树的高度为h，除第 h 层外，其它各层 (1～h-1) 的结点数都达到最大个数，第h层有叶子结点，并且叶子结点都是从左到右依次排布，这就是完全二叉树。</p>
-<p>(2)<a href="https://baike.baidu.com/item/%E5%AE%8C%E5%85%A8%E4%BA%8C%E5%8F%89%E6%A0%91" target="_blank" rel="noopener">满二叉树</a>——除了叶结点外每一个结点都有左右子叶且叶子结点都处在最底层的二叉树。</p>
-<p>(3)<a href="https://baike.baidu.com/item/%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91/10421057" target="_blank" rel="noopener">平衡二叉树</a>——平衡二叉树又被称为AVL树（区别于AVL算法），它是一棵二叉排序树，且具有以下性质：它是一棵空树或它的左右两个子树的高度差的绝对值不超过1，并且左右两个子树都是一棵平衡二叉树。 </p>
-</li>
-<li><h3 id="2-完全二叉树"><a href="#2-完全二叉树" class="headerlink" title="2 完全二叉树"></a>2 完全二叉树</h3><p><a href="https://baike.baidu.com/item/%E5%AE%8C%E5%85%A8%E4%BA%8C%E5%8F%89%E6%A0%91" target="_blank" rel="noopener">完全二叉树</a>（百度百科）</p>
-<p>完全二叉树：叶节点只能出现在最下层和次下层，并且最下面一层的结点都集中在该层最左边的若干位置的二叉树</p>
-</li>
-<li><h3 id="3-满二叉树"><a href="#3-满二叉树" class="headerlink" title="3 满二叉树"></a>3 满二叉树</h3><p> <a href="https://baike.baidu.com/item/%E6%BB%A1%E4%BA%8C%E5%8F%89%E6%A0%91" target="_blank" rel="noopener">满二叉树</a>（百度百科，国内外的定义不同）</p>
-<p> 国内教程定义：一个二叉树，如果每一个层的结点数都达到最大值，则这个二叉树就是满二叉树。也就是说，如果一个二叉树的层数为K，且结点总数是(2^k) -1 ，则它就是满二叉树。</p>
-</li>
-<li><h3 id="堆"><a href="#堆" class="headerlink" title="堆"></a>堆</h3><p> <a href="https://blog.csdn.net/qq_33186366/article/details/51876191" target="_blank" rel="noopener">数据结构之堆的定义</a></p>
-<p>堆是具有以下性质的完全二叉树：每个结点的值都大于或等于其左右孩子结点的值，称为大顶堆；或者每个结点的值都小于或等于其左右孩子结点的值，称为小顶堆</p>
-</li>
-<li><h3 id="4-二叉查找树（BST）"><a href="#4-二叉查找树（BST）" class="headerlink" title="4 二叉查找树（BST）"></a>4 二叉查找树（BST）</h3><p><a href="http://www.cnblogs.com/yangecnu/p/Introduce-Binary-Search-Tree.html" target="_blank" rel="noopener">浅谈算法和数据结构: 七 二叉查找树</a></p>
-<p> 二叉查找树的特点：</p>
+<p>上述二者都是需求锁的正确场景，但是你必须清楚自己是因为什么原因需要分布式锁。</p>
+<p>如果你只是为了性能，那没必要用 Redlock，它成本高且复杂，你只用一个 Redis 实例也够了，最多加个从防止主挂了。当然，你使用单节点的 Redis 那么断电或者一些情况下，你会丢失锁，但是你的目的只是加速性能且断电这种事情不会经常发生，这并不是什么大问题。并且如果你使用了单节点 Redis，那么很显然你这个应用需要的锁粒度是很模糊粗糙的，也不会是什么重要的服务。</p>
+<p>那么是否 Redlock 对于要求正确性的场景就合适呢？Martin 列举了若干场景证明 Redlock 这种算法是不可靠的。</p>
+<h2 id="用锁保护资源"><a href="#用锁保护资源" class="headerlink" title="用锁保护资源"></a>用锁保护资源</h2><p>这节里 Martin 先将 Redlock 放在了一边而是仅讨论总体上一个分布式锁是怎么工作的。在分布式环境下，锁比 mutex 这类复杂，因为涉及到不同节点、网络通信并且他们随时可能无征兆的 fail 。<br>Martin 假设了一个场景，一个 client 要修改一个文件，它先申请得到锁，然后修改文件写回，放锁。另一个 client 再申请锁 … 代码流程如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// THIS CODE IS BROKEN</span></span><br><span class="line"><span class="function">function <span class="title">writeData</span><span class="params">(filename, data)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> lock = lockService.acquireLock(filename);</span><br><span class="line">    <span class="keyword">if</span> (!lock) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="string">'Failed to acquire lock'</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="keyword">var</span> file = storage.readFile(filename);</span><br><span class="line">        <span class="keyword">var</span> updated = updateContents(file, data);</span><br><span class="line">        storage.writeFile(filename, updated);</span><br><span class="line">    &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">        lock.release();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>可惜即使你的锁服务非常完美，上述代码还是可能跪，下面的流程图会告诉你为什么：</p>
+<p><img src="https://martin.kleppmann.com/2016/02/unsafe-lock.png" alt></p>
+<p>上述图中，得到锁的 client1 在持有锁的期间 pause 了一段时间，例如 GC 停顿。锁有过期时间（一般叫租约，为了防止某个 client 崩溃之后一直占有锁），但是如果 GC 停顿太长超过了锁租约时间，此时锁已经被另一个 client2 所得到，原先的 client1 还没有感知到锁过期，那么奇怪的结果就会发生，曾经 HBase 就发生过这种 Bug。即使你在 client1 写回之前检查一下锁是否过期也无助于解决这个问题，因为 GC 可能在任何时候发生，即使是你非常不便的时候（在最后的检查与写操作期间）。<br>如果你认为自己的程序不会有长时间的 GC 停顿，还有其他原因会导致你的进程 pause。例如进程可能读取尚未进入内存的数据，所以它得到一个 page fault 并且等待 page 被加载进缓存；还有可能你依赖于网络服务；或者其他进程占用 CPU；或者其他人意外发生 SIGSTOP 等。</p>
+<p>… …. 这里 Martin 又增加了一节列举各种进程 pause 的例子，为了证明上面的代码是不安全的，无论你的锁服务多完美。</p>
+<h2 id="使用-Fencing-（栅栏）使得锁变安全"><a href="#使用-Fencing-（栅栏）使得锁变安全" class="headerlink" title="使用 Fencing （栅栏）使得锁变安全"></a>使用 Fencing （栅栏）使得锁变安全</h2><p>修复问题的方法也很简单：你需要在每次写操作时加入一个 fencing token。这个场景下，fencing token 可以是一个递增的数字（lock service 可以做到），每次有 client 申请锁就递增一次：</p>
+<p><img src="https://martin.kleppmann.com/2016/02/fencing-tokens.png" alt></p>
+<p>client1 申请锁同时拿到 token33，然后它进入长时间的停顿锁也过期了。client2 得到锁和 token34 写入数据，紧接着 client1 活过来之后尝试写入数据，自身 token33 比 34 小因此写入操作被拒绝。注意这需要存储层来检查 token，但这并不难实现。如果你使用 Zookeeper 作为 lock service 的话那么你可以使用 zxid 作为递增数字。<br>但是对于 Redlock 你要知道，没什么生成 fencing token 的方式，并且怎么修改 Redlock 算法使其能产生 fencing token 呢？好像并不那么显而易见。因为产生 token 需要单调递增，除非在单节点 Redis 上完成但是这又没有高可靠性，你好像需要引进一致性协议来让 Redlock 产生可靠的 fencing token。</p>
+<h2 id="使用时间来解决一致性"><a href="#使用时间来解决一致性" class="headerlink" title="使用时间来解决一致性"></a>使用时间来解决一致性</h2><p>Redlock 无法产生 fencing token 早该成为在需求正确性的场景下弃用它的理由，但还有一些值得讨论的地方。</p>
+<p>学术界有个说法，算法对时间不做假设：因为进程可能pause一段时间、数据包可能因为网络延迟延后到达、时钟可能根本就是错的。而可靠的算法依旧要在上述假设下做正确的事情。</p>
+<p>对于 failure detector 来说，timeout 只能作为猜测某个节点 fail 的依据，因为网络延迟、本地时钟不正确等其他原因的限制。考虑到 Redis 使用 gettimeofday，而不是单调的时钟，会受到系统时间的影响，可能会突然前进或者后退一段时间，这会导致一个 key 更快或更慢地过期。</p>
+<p>可见，Redlock 依赖于许多时间假设，它假设所有 Redis 节点都能对同一个 Key 在其过期前持有差不多的时间、跟过期时间相比网络延迟很小、跟过期时间相比进程 pause 很短。</p>
+<h2 id="用不可靠的时间打破-Redlock"><a href="#用不可靠的时间打破-Redlock" class="headerlink" title="用不可靠的时间打破 Redlock"></a>用不可靠的时间打破 Redlock</h2><p>这节 Martin 举了个因为时间问题，Redlock 不可靠的例子。</p>
 <ol>
-<li>若任意节点的左子树不空，则左子树上所有结点的     值均小于它的根结点的值；</li>
-<li>若任意节点的右子树不空，则右子树上所有结点的值均大于它的根结点的值；</li>
-<li>任意节点的左、右子树也分别为二叉查找树。</li>
-<li>没有键值相等的节点（no duplicate nodes）。</li>
+<li>client1 从 ABC 三个节点处申请到锁，DE由于网络原因请求没有到达</li>
+<li>C节点的时钟往前推了，导致 lock 过期</li>
+<li>client2 在CDE处获得了锁，AB由于网络原因请求未到达</li>
+<li>此时 client1 和 client2 都获得了锁</li>
 </ol>
-</li>
-<li><h3 id="5-平衡二叉树（Self-balancing-binary-search-tree）"><a href="#5-平衡二叉树（Self-balancing-binary-search-tree）" class="headerlink" title="5 平衡二叉树（Self-balancing binary search tree）"></a>5 平衡二叉树（Self-balancing binary search tree）</h3><p><a href="https://baike.baidu.com/item/%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91" target="_blank" rel="noopener"> 平衡二叉树</a>（百度百科，平衡二叉树的常用实现方法有红黑树、AVL、替罪羊树、Treap、伸展树等）</p>
-</li>
-<li><h3 id="6-红黑树"><a href="#6-红黑树" class="headerlink" title="6 红黑树"></a>6 红黑树</h3><ul>
-<li><p>红黑树特点:</p>
+<p><strong>在 Redlock 官方文档中也提到了这个情况，不过是C崩溃的时候，Redlock 官方本身也是知道 Redlock 算法不是完全可靠的，官方为了解决这种问题建议使用延时启动，相关内容可以看之前的<a href="https://zhuanlan.zhihu.com/p/40915772" target="_blank" rel="noopener">这篇文章</a>。但是 Martin 这里分析得更加全面，指出延时启动不也是依赖于时钟的正确性的么？</strong></p>
+<p>接下来 Martin 又列举了进程 Pause 时而不是时钟不可靠时会发生的问题：</p>
 <ol>
-<li>每个节点非红即黑；</li>
-<li>根节点总是黑色的；</li>
-<li>每个叶子节点都是黑色的空节点（NIL节点）；</li>
-<li>如果节点是红色的，则它的子节点必须是黑色的（反之不一定）；</li>
-<li>从根节点到叶节点或空子节点的每条路径，必须包含相同数目的黑色节点（即相同的黑色高度）</li>
+<li>client1 从 ABCDE 处获得了锁</li>
+<li>当获得锁的 response 还没到达 client1 时 client1 进入 GC 停顿</li>
+<li>停顿期间锁已经过期了</li>
+<li>client2 在 ABCDE 处获得了锁</li>
+<li>client1 GC 完成收到了获得锁的 response，此时两个 client 又拿到了同一把锁</li>
 </ol>
-</li>
-<li><p>红黑树的应用：</p>
-<p>  TreeMap、TreeSet以及JDK1.8之后的HashMap底层都用到了红黑树。</p>
-</li>
-<li><p>为什么要用红黑树</p>
-<p>简单来说红黑树就是为了解决二叉查找树的缺陷，因为二叉查找树在某些情况下会退化成一个线性结构。详细了解可以查看 <a href="https://juejin.im/post/5a27c6946fb9a04509096248#comment" target="_blank" rel="noopener">漫画：什么是红黑树？</a>（也介绍到了二叉查找树，非常推荐）</p>
-</li>
-<li><p>推荐文章： </p>
-<ul>
-<li><a href="https://juejin.im/post/5a27c6946fb9a04509096248#comment" target="_blank" rel="noopener">漫画：什么是红黑树？</a>（也介绍到了二叉查找树，非常推荐）</li>
-<li><a href="http://dandanlove.com/2018/03/18/red-black-tree/" target="_blank" rel="noopener">寻找红黑树的操作手册</a>（文章排版以及思路真的不错）</li>
-<li><a href="https://zhuanlan.zhihu.com/p/24367771" target="_blank" rel="noopener">红黑树深入剖析及Java实现</a>（美团点评技术团队）    </li>
-</ul>
-</li>
-</ul>
-</li>
-<li><h3 id="7-B-，B-，B-树"><a href="#7-B-，B-，B-树" class="headerlink" title="7 B-，B+，B*树"></a>7 B-，B+，B*树</h3><p> <a href="https://yq.aliyun.com/articles/38345" target="_blank" rel="noopener">二叉树学习笔记之B树、B+树、B*树 </a></p>
-<p> <a href="https://blog.csdn.net/aqzwss/article/details/53074186" target="_blank" rel="noopener">《B-树，B+树，B*树详解》</a></p>
-<p> <a href="https://blog.csdn.net/bigtree_3721/article/details/73632405" target="_blank" rel="noopener">《B-树，B+树与B*树的优缺点比较》</a></p>
-<p>B-树（或B树）是一种平衡的多路查找(又称排序)树，在文件系统中有所应用。主要用作文件的索引。其中的B就表示平衡(Balance) </p>
+<p><strong>同时长时间的网络延迟也有可能导致同样的问题。</strong></p>
+<h2 id="Redlock-的同步性假设"><a href="#Redlock-的同步性假设" class="headerlink" title="Redlock 的同步性假设"></a>Redlock 的同步性假设</h2><p>这些例子说明了，仅有在你假设了一个同步性系统模型的基础上，Redlock 才能正常工作，也就是系统能满足以下属性：</p>
 <ol>
-<li>B+ 树的叶子节点链表结构相比于 B- 树便于扫库，和范围检索。</li>
-<li>B+树支持range-query(区间查询)非常方便，而B树不支持。这是数据库选用B+树的最主要原因。</li>
-<li>B<em>树 是B+树的变体，B</em>树分配新结点的概率比B+树要低，空间使用率更高；</li>
+<li>网络延时边界，即假设数据包一定能在某个最大延时之内到达</li>
+<li>进程停顿边界，即进程停顿一定在某个最大时间之内</li>
+<li>时钟错误边界，即不会从一个坏的 NTP 服务器处取得时间</li>
 </ol>
-</li>
-<li><h3 id="8-LSM-树"><a href="#8-LSM-树" class="headerlink" title="8 LSM 树"></a>8 LSM 树</h3><p><a href="https://blog.csdn.net/dbanote/article/details/8897599" target="_blank" rel="noopener">[HBase] LSM树 VS B+树</a></p>
-<p>B+树最大的性能问题是会产生大量的随机IO</p>
-<p>为了克服B+树的弱点，HBase引入了LSM树的概念，即Log-Structured Merge-Trees。</p>
-<p><a href="http://www.cnblogs.com/yanghuahui/p/3483754.html" target="_blank" rel="noopener">LSM树由来、设计思想以及应用到HBase的索引</a></p>
-</li>
-</ul>
+<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>Martin 认为 Redlock 实在不是一个好的选择，对于需求性能的分布式锁应用它太重了且成本高；对于需求正确性的应用来说它不够安全。因为它对高危的时钟或者说其他上述列举的情况进行了不可靠的假设，如果你的应用只需要高性能的分布式锁不要求多高的正确性，那么单节点 Redis 够了；如果你的应用想要保住正确性，那么不建议 Redlock，建议使用一个合适的一致性协调系统，例如 Zookeeper，且保证存在 fencing token。</p>
 
           
         
@@ -1628,7 +1881,7 @@
               
                 <a href="/youngboy/archives/">
               
-                  <span class="site-state-item-count">126</span>
+                  <span class="site-state-item-count">127</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1639,7 +1892,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/youngboy/categories/index.html">
-                  <span class="site-state-item-count">40</span>
+                  <span class="site-state-item-count">41</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>

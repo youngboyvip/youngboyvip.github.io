@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/youngboy/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/youngboy/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/youngboy/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/youngboy/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/youngboy/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/youngboy/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/youngboy/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="youngboy">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="个人觉得这一节掌握基本的使用即可！  本节思维导图:  1 Atomic 原子类介绍Atomic 翻译成中文是原子的意思。在化学上，我们知道原子是构成一般物质的最小单位，在化学反应中是不可分割的。在我们这里 Atomic 是指一个操作是不可中断的。即使是在多个线程一起执行的时候，一个操作一旦开始，就不会被其他线程干扰。 所以，所谓原子类说简单点就是具有原子/原子操作特征的类。 并发包 java.">
+<meta name="keywords" content="youngboy的个人blog">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Atomic">
+<meta property="og:url" content="http://www.youngboy.vip/2019/05/28/3/4/42/index.html">
+<meta property="og:site_name" content="youngboy">
+<meta property="og:description" content="个人觉得这一节掌握基本的使用即可！  本节思维导图:  1 Atomic 原子类介绍Atomic 翻译成中文是原子的意思。在化学上，我们知道原子是构成一般物质的最小单位，在化学反应中是不可分割的。在我们这里 Atomic 是指一个操作是不可中断的。即使是在多个线程一起执行的时候，一个操作一旦开始，就不会被其他线程干扰。 所以，所谓原子类说简单点就是具有原子/原子操作特征的类。 并发包 java.">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/10/30/166c58b785368234?w=1200&h=657&f=png&s=49615">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/10/30/166c4ac08d4c5547?w=317&h=367&f=png&s=13267">
+<meta property="og:updated_time" content="2019-05-28T09:18:22.958Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Atomic">
+<meta name="twitter:description" content="个人觉得这一节掌握基本的使用即可！  本节思维导图:  1 Atomic 原子类介绍Atomic 翻译成中文是原子的意思。在化学上，我们知道原子是构成一般物质的最小单位，在化学反应中是不可分割的。在我们这里 Atomic 是指一个操作是不可中断的。即使是在多个线程一起执行的时候，一个操作一旦开始，就不会被其他线程干扰。 所以，所谓原子类说简单点就是具有原子/原子操作特征的类。 并发包 java.">
+<meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2018/10/30/166c58b785368234?w=1200&h=657&f=png&s=49615">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/youngboy/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.youngboy.vip/2019/05/28/3/4/42/">
+
+
+
+
+
+  <title>Atomic | youngboy</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/youngboy/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">youngboy</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">Java大杂烩</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/youngboy/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/youngboy/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/youngboy/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/youngboy/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/youngboy/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br>
+            
+            日程表
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.youngboy.vip/youngboy/2019/05/28/3/4/42/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="youngboy">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/youngboy/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="youngboy">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Atomic</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-28T17:18:24+08:00">
+                2019-05-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/youngboy/categories/Java相关/" itemprop="url" rel="index">
+                    <span itemprop="name">Java相关</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/youngboy/categories/Java相关/Multithread/" itemprop="url" rel="index">
+                    <span itemprop="name">Multithread</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>个人觉得这一节掌握基本的使用即可！</p>
+</blockquote>
+<p><strong>本节思维导图:</strong></p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/10/30/166c58b785368234?w=1200&amp;h=657&amp;f=png&amp;s=49615" alt></p>
+<h3 id="1-Atomic-原子类介绍"><a href="#1-Atomic-原子类介绍" class="headerlink" title="1 Atomic 原子类介绍"></a>1 Atomic 原子类介绍</h3><p>Atomic 翻译成中文是原子的意思。在化学上，我们知道原子是构成一般物质的最小单位，在化学反应中是不可分割的。在我们这里 Atomic 是指一个操作是不可中断的。即使是在多个线程一起执行的时候，一个操作一旦开始，就不会被其他线程干扰。</p>
+<p>所以，所谓原子类说简单点就是具有原子/原子操作特征的类。</p>
+<p>并发包 <code>java.util.concurrent</code> 的原子类都存放在<code>java.util.concurrent.atomic</code>下,如下图所示。</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/10/30/166c4ac08d4c5547?w=317&amp;h=367&amp;f=png&amp;s=13267" alt=" JUC 原子类概览"></p>
+<p>根据操作的数据类型，可以将JUC包中的原子类分为4类</p>
+<p><strong>基本类型</strong> </p>
+<p>使用原子的方式更新基本类型</p>
+<ul>
+<li>AtomicInteger：整形原子类</li>
+<li>AtomicLong：长整型原子类</li>
+<li>AtomicBoolean ：布尔型原子类</li>
+</ul>
+<p><strong>数组类型</strong></p>
+<p>使用原子的方式更新数组里的某个元素</p>
+<ul>
+<li>AtomicIntegerArray：整形数组原子类</li>
+<li>AtomicLongArray：长整形数组原子类</li>
+<li>AtomicReferenceArray ：引用类型数组原子类</li>
+</ul>
+<p><strong>引用类型</strong></p>
+<ul>
+<li>AtomicReference：引用类型原子类</li>
+<li>AtomicStampedRerence：原子更新引用类型里的字段原子类</li>
+<li>AtomicMarkableReference ：原子更新带有标记位的引用类型</li>
+</ul>
+<p><strong>对象的属性修改类型</strong></p>
+<ul>
+<li>AtomicIntegerFieldUpdater:原子更新整形字段的更新器</li>
+<li>AtomicLongFieldUpdater：原子更新长整形字段的更新器</li>
+<li>AtomicStampedReference ：原子更新带有版本号的引用类型。该类将整数值与引用关联起来，可用于解决原子的更新数据和数据的版本号，可以解决使用 CAS 进行原子更新时可能出现的 ABA 问题。</li>
+</ul>
+<p>下面我们来详细介绍一下这些原子类。</p>
+<h3 id="2-基本类型原子类"><a href="#2-基本类型原子类" class="headerlink" title="2 基本类型原子类"></a>2 基本类型原子类</h3><h4 id="2-1-基本类型原子类介绍"><a href="#2-1-基本类型原子类介绍" class="headerlink" title="2.1 基本类型原子类介绍"></a>2.1 基本类型原子类介绍</h4><p>使用原子的方式更新基本类型</p>
+<ul>
+<li>AtomicInteger：整形原子类</li>
+<li>AtomicLong：长整型原子类</li>
+<li>AtomicBoolean ：布尔型原子类</li>
+</ul>
+<p>上面三个类提供的方法几乎相同，所以我们这里以 AtomicInteger 为例子来介绍。</p>
+<p> <strong>AtomicInteger 类常用方法</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">int</span> <span class="title">get</span><span class="params">()</span> <span class="comment">//获取当前的值</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">int</span> <span class="title">getAndSet</span><span class="params">(<span class="keyword">int</span> newValue)</span><span class="comment">//获取当前的值，并设置新的值</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">int</span> <span class="title">getAndIncrement</span><span class="params">()</span><span class="comment">//获取当前的值，并自增</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">int</span> <span class="title">getAndDecrement</span><span class="params">()</span> <span class="comment">//获取当前的值，并自减</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">int</span> <span class="title">getAndAdd</span><span class="params">(<span class="keyword">int</span> delta)</span> <span class="comment">//获取当前的值，并加上预期的值</span></span></span><br><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">compareAndSet</span><span class="params">(<span class="keyword">int</span> expect, <span class="keyword">int</span> update)</span> <span class="comment">//如果输入的数值等于预期值，则以原子方式将该值设置为输入值（update）</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">void</span> <span class="title">lazySet</span><span class="params">(<span class="keyword">int</span> newValue)</span><span class="comment">//最终设置为newValue,使用 lazySet 设置之后可能导致其他线程在之后的一小段时间内还是可以读到旧的值。</span></span></span><br></pre></td></tr></table></figure>
+<h4 id="2-2-AtomicInteger-常见方法使用"><a href="#2-2-AtomicInteger-常见方法使用" class="headerlink" title="2.2 AtomicInteger 常见方法使用"></a>2.2 AtomicInteger 常见方法使用</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.concurrent.atomic.AtomicInteger;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AtomicIntegerTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		<span class="keyword">int</span> temvalue = <span class="number">0</span>;</span><br><span class="line">		AtomicInteger i = <span class="keyword">new</span> AtomicInteger(<span class="number">0</span>);</span><br><span class="line">		temvalue = i.getAndSet(<span class="number">3</span>);</span><br><span class="line">		System.out.println(<span class="string">"temvalue:"</span> + temvalue + <span class="string">";  i:"</span> + i);<span class="comment">//temvalue:0;  i:3</span></span><br><span class="line">		temvalue = i.getAndIncrement();</span><br><span class="line">		System.out.println(<span class="string">"temvalue:"</span> + temvalue + <span class="string">";  i:"</span> + i);<span class="comment">//temvalue:3;  i:4</span></span><br><span class="line">		temvalue = i.getAndAdd(<span class="number">5</span>);</span><br><span class="line">		System.out.println(<span class="string">"temvalue:"</span> + temvalue + <span class="string">";  i:"</span> + i);<span class="comment">//temvalue:4;  i:9</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="2-3-基本数据类型原子类的优势"><a href="#2-3-基本数据类型原子类的优势" class="headerlink" title="2.3 基本数据类型原子类的优势"></a>2.3 基本数据类型原子类的优势</h4><p>通过一个简单例子带大家看一下基本数据类型原子类的优势</p>
+<p><strong>①多线程环境不使用原子类保证线程安全（基本数据类型）</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">volatile</span> <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">        <span class="comment">//若要线程安全执行执行count++，需要加锁</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">increment</span><span class="params">()</span> </span>&#123;</span><br><span class="line">                  count++; </span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getCount</span><span class="params">()</span> </span>&#123;</span><br><span class="line">                  <span class="keyword">return</span> count;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>②多线程环境使用原子类保证线程安全（基本数据类型）</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test2</span> </span>&#123;</span><br><span class="line">        <span class="keyword">private</span> AtomicInteger count = <span class="keyword">new</span> AtomicInteger();</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">increment</span><span class="params">()</span> </span>&#123;</span><br><span class="line">                  count.incrementAndGet();</span><br><span class="line">        &#125;</span><br><span class="line">      <span class="comment">//使用AtomicInteger之后，不需要加锁，也可以实现线程安全。</span></span><br><span class="line">       <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getCount</span><span class="params">()</span> </span>&#123;</span><br><span class="line">                <span class="keyword">return</span> count.get();</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="2-4-AtomicInteger-线程安全原理简单分析"><a href="#2-4-AtomicInteger-线程安全原理简单分析" class="headerlink" title="2.4 AtomicInteger 线程安全原理简单分析"></a>2.4 AtomicInteger 线程安全原理简单分析</h4><p>AtomicInteger 类的部分源码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// setup to use Unsafe.compareAndSwapInt for updates（更新操作时提供“比较并替换”的作用）</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Unsafe unsafe = Unsafe.getUnsafe();</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">long</span> valueOffset;</span><br><span class="line"></span><br><span class="line"><span class="keyword">static</span> &#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        valueOffset = unsafe.objectFieldOffset</span><br><span class="line">            (AtomicInteger.class.getDeclaredField(<span class="string">"value"</span>));</span><br><span class="line">    &#125; <span class="keyword">catch</span> (Exception ex) &#123; <span class="keyword">throw</span> <span class="keyword">new</span> Error(ex); &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">volatile</span> <span class="keyword">int</span> value;</span><br></pre></td></tr></table></figure>
+<p>AtomicInteger 类主要利用 CAS (compare and swap) + volatile 和 native 方法来保证原子操作，从而避免 synchronized 的高开销，执行效率大为提升。</p>
+<p>CAS的原理是拿期望的值和原本的一个值作比较，如果相同则更新成新的值。UnSafe 类的 objectFieldOffset() 方法是一个本地方法，这个方法是用来拿到“原来的值”的内存地址，返回值是 valueOffset。另外 value 是一个volatile变量，在内存中可见，因此 JVM 可以保证任何时刻任何线程总能拿到该变量的最新值。</p>
+<h3 id="3-数组类型原子类"><a href="#3-数组类型原子类" class="headerlink" title="3 数组类型原子类"></a>3 数组类型原子类</h3><h4 id="3-1-数组类型原子类介绍"><a href="#3-1-数组类型原子类介绍" class="headerlink" title="3.1 数组类型原子类介绍"></a>3.1 数组类型原子类介绍</h4><p>使用原子的方式更新数组里的某个元素</p>
+<ul>
+<li>AtomicIntegerArray：整形数组原子类</li>
+<li>AtomicLongArray：长整形数组原子类</li>
+<li>AtomicReferenceArray ：引用类型数组原子类</li>
+</ul>
+<p>上面三个类提供的方法几乎相同，所以我们这里以 AtomicIntegerArray 为例子来介绍。</p>
+<p><strong>AtomicIntegerArray 类常用方法</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">int</span> <span class="title">get</span><span class="params">(<span class="keyword">int</span> i)</span> <span class="comment">//获取 index=i 位置元素的值</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">int</span> <span class="title">getAndSet</span><span class="params">(<span class="keyword">int</span> i, <span class="keyword">int</span> newValue)</span><span class="comment">//返回 index=i 位置的当前的值，并将其设置为新值：newValue</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">int</span> <span class="title">getAndIncrement</span><span class="params">(<span class="keyword">int</span> i)</span><span class="comment">//获取 index=i 位置元素的值，并让该位置的元素自增</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">int</span> <span class="title">getAndDecrement</span><span class="params">(<span class="keyword">int</span> i)</span> <span class="comment">//获取 index=i 位置元素的值，并让该位置的元素自减</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">int</span> <span class="title">getAndAdd</span><span class="params">(<span class="keyword">int</span> delta)</span> <span class="comment">//获取 index=i 位置元素的值，并加上预期的值</span></span></span><br><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">compareAndSet</span><span class="params">(<span class="keyword">int</span> expect, <span class="keyword">int</span> update)</span> <span class="comment">//如果输入的数值等于预期值，则以原子方式将 index=i 位置的元素值设置为输入值（update）</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">void</span> <span class="title">lazySet</span><span class="params">(<span class="keyword">int</span> i, <span class="keyword">int</span> newValue)</span><span class="comment">//最终 将index=i 位置的元素设置为newValue,使用 lazySet 设置之后可能导致其他线程在之后的一小段时间内还是可以读到旧的值。</span></span></span><br></pre></td></tr></table></figure>
+<h4 id="3-2-AtomicIntegerArray-常见方法使用"><a href="#3-2-AtomicIntegerArray-常见方法使用" class="headerlink" title="3.2 AtomicIntegerArray 常见方法使用"></a>3.2 AtomicIntegerArray 常见方法使用</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.atomic.AtomicIntegerArray;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AtomicIntegerArrayTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		<span class="keyword">int</span> temvalue = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">int</span>[] nums = &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span> &#125;;</span><br><span class="line">		AtomicIntegerArray i = <span class="keyword">new</span> AtomicIntegerArray(nums);</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; nums.length; j++) &#123;</span><br><span class="line">			System.out.println(i.get(j));</span><br><span class="line">		&#125;</span><br><span class="line">		temvalue = i.getAndSet(<span class="number">0</span>, <span class="number">2</span>);</span><br><span class="line">		System.out.println(<span class="string">"temvalue:"</span> + temvalue + <span class="string">";  i:"</span> + i);</span><br><span class="line">		temvalue = i.getAndIncrement(<span class="number">0</span>);</span><br><span class="line">		System.out.println(<span class="string">"temvalue:"</span> + temvalue + <span class="string">";  i:"</span> + i);</span><br><span class="line">		temvalue = i.getAndAdd(<span class="number">0</span>, <span class="number">5</span>);</span><br><span class="line">		System.out.println(<span class="string">"temvalue:"</span> + temvalue + <span class="string">";  i:"</span> + i);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="4-引用类型原子类"><a href="#4-引用类型原子类" class="headerlink" title="4 引用类型原子类"></a>4 引用类型原子类</h3><h4 id="4-1-引用类型原子类介绍"><a href="#4-1-引用类型原子类介绍" class="headerlink" title="4.1  引用类型原子类介绍"></a>4.1  引用类型原子类介绍</h4><p>基本类型原子类只能更新一个变量，如果需要原子更新多个变量，需要使用 引用类型原子类。</p>
+<ul>
+<li>AtomicReference：引用类型原子类</li>
+<li>AtomicStampedRerence：原子更新引用类型里的字段原子类</li>
+<li>AtomicMarkableReference ：原子更新带有标记位的引用类型</li>
+</ul>
+<p>上面三个类提供的方法几乎相同，所以我们这里以 AtomicReference 为例子来介绍。</p>
+<h4 id="4-2-AtomicReference-类使用示例"><a href="#4-2-AtomicReference-类使用示例" class="headerlink" title="4.2 AtomicReference 类使用示例"></a>4.2 AtomicReference 类使用示例</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.concurrent.atomic.AtomicReference;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AtomicReferenceTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		AtomicReference&lt;Person&gt; ar = <span class="keyword">new</span> AtomicReference&lt;Person&gt;();</span><br><span class="line">		Person person = <span class="keyword">new</span> Person(<span class="string">"SnailClimb"</span>, <span class="number">22</span>);</span><br><span class="line">		ar.set(person);</span><br><span class="line">		Person updatePerson = <span class="keyword">new</span> Person(<span class="string">"Daisy"</span>, <span class="number">20</span>);</span><br><span class="line">		ar.compareAndSet(person, updatePerson);</span><br><span class="line"></span><br><span class="line">		System.out.println(ar.get().getName());</span><br><span class="line">		System.out.println(ar.get().getAge());</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> String name;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">(String name, <span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">super</span>();</span><br><span class="line">		<span class="keyword">this</span>.name = name;</span><br><span class="line">		<span class="keyword">this</span>.age = age;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> name;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.name = name;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> age;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.age = age;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上述代码首先创建了一个 Person 对象，然后把 Person 对象设置进 AtomicReference 对象中，然后调用 compareAndSet 方法，该方法就是通过通过 CAS 操作设置 ar。如果 ar 的值为 person 的话，则将其设置为 updatePerson。实现原理与 AtomicInteger 类中的 compareAndSet 方法相同。运行上面的代码后的输出结果如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Daisy</span><br><span class="line">20</span><br></pre></td></tr></table></figure>
+<h3 id="5-对象的属性修改类型原子类"><a href="#5-对象的属性修改类型原子类" class="headerlink" title="5 对象的属性修改类型原子类"></a>5 对象的属性修改类型原子类</h3><h4 id="5-1-对象的属性修改类型原子类介绍"><a href="#5-1-对象的属性修改类型原子类介绍" class="headerlink" title="5.1 对象的属性修改类型原子类介绍"></a>5.1 对象的属性修改类型原子类介绍</h4><p>如果需要原子更新某个类里的某个字段时，需要用到对象的属性修改类型原子类。</p>
+<ul>
+<li>AtomicIntegerFieldUpdater:原子更新整形字段的更新器</li>
+<li>AtomicLongFieldUpdater：原子更新长整形字段的更新器</li>
+<li>AtomicStampedReference ：原子更新带有版本号的引用类型。该类将整数值与引用关联起来，可用于解决原子的更新数据和数据的版本号，可以解决使用 CAS 进行原子更新时可能出现的 ABA 问题。</li>
+</ul>
+<p>要想原子地更新对象的属性需要两步。第一步，因为对象的属性修改类型原子类都是抽象类，所以每次使用都必须使用静态方法 newUpdater()创建一个更新器，并且需要设置想要更新的类和属性。第二步，更新的对象属性必须使用 public volatile 修饰符。</p>
+<p>上面三个类提供的方法几乎相同，所以我们这里以 <code>AtomicIntegerFieldUpdater</code>为例子来介绍。</p>
+<h4 id="5-2-AtomicIntegerFieldUpdater-类使用示例"><a href="#5-2-AtomicIntegerFieldUpdater-类使用示例" class="headerlink" title="5.2 AtomicIntegerFieldUpdater 类使用示例"></a>5.2 AtomicIntegerFieldUpdater 类使用示例</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.concurrent.atomic.AtomicIntegerFieldUpdater;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AtomicIntegerFieldUpdaterTest</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		AtomicIntegerFieldUpdater&lt;User&gt; a = AtomicIntegerFieldUpdater.newUpdater(User.class, <span class="string">"age"</span>);</span><br><span class="line"></span><br><span class="line">		User user = <span class="keyword">new</span> User(<span class="string">"Java"</span>, <span class="number">22</span>);</span><br><span class="line">		System.out.println(a.getAndIncrement(user));<span class="comment">// 22</span></span><br><span class="line">		System.out.println(a.get(user));<span class="comment">// 23</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> String name;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">volatile</span> <span class="keyword">int</span> age;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">User</span><span class="params">(String name, <span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">super</span>();</span><br><span class="line">		<span class="keyword">this</span>.name = name;</span><br><span class="line">		<span class="keyword">this</span>.age = age;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> name;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.name = name;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> age;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.age = age;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">22</span><br><span class="line">23</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/youngboy/2019/05/28/3/4/41/" rel="next" title="AQS">
+                <i class="fa fa-chevron-left"></i> AQS
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/youngboy/2019/05/28/test5/" rel="prev" title>
+                 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">youngboy</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/youngboy/archives/">
+              
+                  <span class="site-state-item-count">127</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/youngboy/categories/index.html">
+                  <span class="site-state-item-count">41</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Atomic-原子类介绍"><span class="nav-number">1.</span> <span class="nav-text">1 Atomic 原子类介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-基本类型原子类"><span class="nav-number">2.</span> <span class="nav-text">2 基本类型原子类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-基本类型原子类介绍"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 基本类型原子类介绍</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-AtomicInteger-常见方法使用"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 AtomicInteger 常见方法使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-基本数据类型原子类的优势"><span class="nav-number">2.3.</span> <span class="nav-text">2.3 基本数据类型原子类的优势</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-4-AtomicInteger-线程安全原理简单分析"><span class="nav-number">2.4.</span> <span class="nav-text">2.4 AtomicInteger 线程安全原理简单分析</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-数组类型原子类"><span class="nav-number">3.</span> <span class="nav-text">3 数组类型原子类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-数组类型原子类介绍"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 数组类型原子类介绍</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-AtomicIntegerArray-常见方法使用"><span class="nav-number">3.2.</span> <span class="nav-text">3.2 AtomicIntegerArray 常见方法使用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-引用类型原子类"><span class="nav-number">4.</span> <span class="nav-text">4 引用类型原子类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1-引用类型原子类介绍"><span class="nav-number">4.1.</span> <span class="nav-text">4.1  引用类型原子类介绍</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-2-AtomicReference-类使用示例"><span class="nav-number">4.2.</span> <span class="nav-text">4.2 AtomicReference 类使用示例</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-对象的属性修改类型原子类"><span class="nav-number">5.</span> <span class="nav-text">5 对象的属性修改类型原子类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#5-1-对象的属性修改类型原子类介绍"><span class="nav-number">5.1.</span> <span class="nav-text">5.1 对象的属性修改类型原子类介绍</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-2-AtomicIntegerFieldUpdater-类使用示例"><span class="nav-number">5.2.</span> <span class="nav-text">5.2 AtomicIntegerFieldUpdater 类使用示例</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">youngboy</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/youngboy/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/youngboy/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/youngboy/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/youngboy/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/youngboy/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/youngboy/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/youngboy/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/youngboy/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/youngboy/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/youngboy/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/youngboy/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/youngboy/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/youngboy/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

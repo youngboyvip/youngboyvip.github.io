@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/youngboy/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/youngboy/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/youngboy/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/youngboy/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/youngboy/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/youngboy/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/youngboy/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="youngboy">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="List，Set,Map三者的区别及总结 Arraylist 与 LinkedList 区别 ArrayList 与 Vector 区别（为什么要用Arraylist取代Vector呢？） HashMap 和 Hashtable 的区别 HashSet 和 HashMap 区别 HashMap 和 ConcurrentHashMap 的区别 HashSet如何检查重复 comparable 和">
+<meta name="keywords" content="youngboy的个人blog">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java集合框架常见面试题总结">
+<meta property="og:url" content="http://www.youngboy.vip/2019/05/28/3/39/index.html">
+<meta property="og:site_name" content="youngboy">
+<meta property="og:description" content="List，Set,Map三者的区别及总结 Arraylist 与 LinkedList 区别 ArrayList 与 Vector 区别（为什么要用Arraylist取代Vector呢？） HashMap 和 Hashtable 的区别 HashSet 和 HashMap 区别 HashMap 和 ConcurrentHashMap 的区别 HashSet如何检查重复 comparable 和">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/3/2/161e717d734f3b23?w=896&h=363&f=jpeg&s=205536">
+<meta property="og:updated_time" content="2019-05-28T09:18:22.958Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java集合框架常见面试题总结">
+<meta name="twitter:description" content="List，Set,Map三者的区别及总结 Arraylist 与 LinkedList 区别 ArrayList 与 Vector 区别（为什么要用Arraylist取代Vector呢？） HashMap 和 Hashtable 的区别 HashSet 和 HashMap 区别 HashMap 和 ConcurrentHashMap 的区别 HashSet如何检查重复 comparable 和">
+<meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2018/3/2/161e717d734f3b23?w=896&h=363&f=jpeg&s=205536">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/youngboy/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.youngboy.vip/2019/05/28/3/39/">
+
+
+
+
+
+  <title>Java集合框架常见面试题总结 | youngboy</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/youngboy/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">youngboy</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">Java大杂烩</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/youngboy/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/youngboy/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/youngboy/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/youngboy/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/youngboy/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br>
+            
+            日程表
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.youngboy.vip/youngboy/2019/05/28/3/39/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="youngboy">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/youngboy/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="youngboy">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Java集合框架常见面试题总结</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-28T17:18:24+08:00">
+                2019-05-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/youngboy/categories/Java相关/" itemprop="url" rel="index">
+                    <span itemprop="name">Java相关</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <!-- MarkdownTOC -->
+<ol>
+<li><a href="#list，setmap三者的区别及总结">List，Set,Map三者的区别及总结</a></li>
+<li><a href="#arraylist-与-linkedlist-区别">Arraylist 与 LinkedList 区别</a></li>
+<li><a href="#arraylist-与-vector-区别">ArrayList 与 Vector 区别（为什么要用Arraylist取代Vector呢？）</a></li>
+<li><a href="#hashmap-和-hashtable-的区别">HashMap 和 Hashtable 的区别</a></li>
+<li><a href="#hashset-和-hashmap-区别">HashSet 和 HashMap 区别</a></li>
+<li><a href="#hashmap-和-concurrenthashmap-的区别">HashMap 和 ConcurrentHashMap 的区别</a></li>
+<li><a href="#hashset如何检查重复">HashSet如何检查重复</a></li>
+<li><a href="#comparable-和-comparator的区别">comparable 和 comparator的区别</a><ol>
+<li><a href="#comparator定制排序">Comparator定制排序</a></li>
+<li><a href="#重写compareto方法实现按年龄来排序">重写compareTo方法实现按年龄来排序</a></li>
+</ol>
+</li>
+<li><a href="#如何对object的list排序">如何对Object的list排序？</a></li>
+<li><a href="#如何实现数组与list的相互转换">如何实现数组与List的相互转换？</a></li>
+<li><a href="#如何求arraylist集合的交集-并集-差集-去重复并集">如何求ArrayList集合的交集 并集 差集 去重复并集</a></li>
+<li><a href="#hashmap-的工作原理及代码实现">HashMap 的工作原理及代码实现</a></li>
+<li><a href="#concurrenthashmap-的工作原理及代码实现">ConcurrentHashMap 的工作原理及代码实现</a></li>
+<li><a href="#集合框架底层数据结构总结">集合框架底层数据结构总结</a><ol>
+<li><a href="#--collection">- Collection</a><ol>
+<li><a href="#1-list">1. List</a></li>
+<li><a href="#2-set">2. Set</a></li>
+</ol>
+</li>
+<li><a href="#--map">- Map</a></li>
+</ol>
+</li>
+<li><a href="#集合的选用">集合的选用</a></li>
+<li><a href="#集合的常用方法">集合的常用方法</a></li>
+</ol>
+<!-- /MarkdownTOC -->
+<h2 id="List，Set-Map三者的区别及总结"><a href="#List，Set-Map三者的区别及总结" class="headerlink" title="List，Set,Map三者的区别及总结"></a><font face="楷体">List，Set,Map三者的区别及总结</font></h2><ul>
+<li><p><strong>List：对付顺序的好帮手</strong></p>
+<p>List接口存储一组不唯一（可以有多个元素引用相同的对象），有序的对象</p>
+</li>
+<li><p><strong>Set:注重独一无二的性质</strong></p>
+<p>不允许重复的集合。不会有多个元素引用相同的对象。</p>
+</li>
+<li><p><strong>Map:用Key来搜索的专家</strong></p>
+<p>使用键值对存储。Map会维护与Key有关联的值。两个Key可以引用相同的对象，但Key不能重复，典型的Key是String类型，但也可以是任何对象。</p>
+</li>
+</ul>
+<h2 id="Arraylist-与-LinkedList-区别"><a href="#Arraylist-与-LinkedList-区别" class="headerlink" title="Arraylist 与 LinkedList 区别"></a><font face="楷体">Arraylist 与 LinkedList 区别</font></h2><p>Arraylist底层使用的是数组（存读数据效率高，插入删除特定位置效率低），LinkedList底层使用的是双向循环链表数据结构（插入，删除效率特别高）。学过数据结构这门课后我们就知道采用链表存储，插入，删除元素时间复杂度不受元素位置的影响，都是近似O（1）而数组为近似O（n），因此当数据特别多，而且经常需要插入删除元素时建议选用LinkedList.一般程序只用Arraylist就够用了，因为一般数据量都不会蛮大，Arraylist是使用最多的集合类。</p>
+<h2 id="ArrayList-与-Vector-区别"><a href="#ArrayList-与-Vector-区别" class="headerlink" title="ArrayList 与 Vector 区别"></a><font face="楷体">ArrayList 与 Vector 区别</font></h2><p>Vector类的所有方法都是同步的。可以由两个线程安全地访问一个Vector对象、但是一个线程访问Vector<br>，代码要在同步操作上耗费大量的时间。Arraylist不是同步的，所以在不需要同步时建议使用Arraylist。</p>
+<h2 id="HashMap-和-Hashtable-的区别"><a href="#HashMap-和-Hashtable-的区别" class="headerlink" title="HashMap 和 Hashtable 的区别"></a><font face="楷体">HashMap 和 Hashtable 的区别</font></h2><ol>
+<li><p>HashMap是非线程安全的，HashTable是线程安全的；HashTable内部的方法基本都经过synchronized修饰。</p>
+</li>
+<li><p>因为线程安全的问题，HashMap要比HashTable效率高一点，HashTable基本被淘汰。</p>
+</li>
+<li>HashMap允许有null值的存在，而在HashTable中put进的键值只要有一个null，直接抛出NullPointerException。</li>
+</ol>
+<p>Hashtable和HashMap有几个主要的不同：线程安全以及速度。仅在你需要完全的线程安全的时候使用Hashtable，而如果你使用Java5或以上的话，请使用ConcurrentHashMap吧</p>
+<h2 id="HashSet-和-HashMap-区别"><a href="#HashSet-和-HashMap-区别" class="headerlink" title="HashSet 和 HashMap 区别"></a><font face="楷体">HashSet 和 HashMap 区别</font></h2><p><img src="https://user-gold-cdn.xitu.io/2018/3/2/161e717d734f3b23?w=896&amp;h=363&amp;f=jpeg&amp;s=205536" alt="HashSet 和 HashMap 区别"></p>
+<h2 id="HashMap-和-ConcurrentHashMap-的区别"><a href="#HashMap-和-ConcurrentHashMap-的区别" class="headerlink" title="HashMap 和 ConcurrentHashMap 的区别"></a><font face="楷体">HashMap 和 ConcurrentHashMap 的区别</font></h2><p><a href="https://blog.csdn.net/xuefeng0707/article/details/40834595" target="_blank" rel="noopener">HashMap与ConcurrentHashMap的区别</a></p>
+<ol>
+<li>ConcurrentHashMap对整个桶数组进行了分割分段(Segment)，然后在每一个分段上都用lock锁进行保护，相对于HashTable的synchronized锁的粒度更精细了一些，并发性能更好，而HashMap没有锁机制，不是线程安全的。（JDK1.8之后ConcurrentHashMap启用了一种全新的方式实现,利用CAS算法。）</li>
+<li>HashMap的键值对允许有null，但是ConCurrentHashMap都不允许。</li>
+</ol>
+<h2 id="HashSet如何检查重复"><a href="#HashSet如何检查重复" class="headerlink" title="HashSet如何检查重复"></a><font face="楷体">HashSet如何检查重复</font></h2><p>当你把对象加入HashSet时，HashSet会先计算对象的hashcode值来判断对象加入的位置，同时也会与其他加入的对象的hashcode值作比较，如果没有相符的hashcode，HashSet会假设对象没有重复出现。但是如果发现有相同hashcode值的对象，这时会调用equals（）方法来检查hashcode相等的对象是否真的相同。如果两者相同，HashSet就不会让加入操作成功。（摘自我的Java启蒙书《Head fist java》第二版）</p>
+<p><strong>hashCode（）与equals（）的相关规定：</strong></p>
+<ol>
+<li>如果两个对象相等，则hashcode一定也是相同的</li>
+<li>两个对象相等,对两个equals方法返回true</li>
+<li>两个对象有相同的hashcode值，它们也不一定是相等的</li>
+<li>综上，equals方法被覆盖过，则hashCode方法也必须被覆盖</li>
+<li>hashCode()的默认行为是对堆上的对象产生独特值。如果没有重写hashCode()，则该class的两个对象无论如何都不会相等（即使这两个对象指向相同的数据）。</li>
+</ol>
+<p><strong>==与equals的区别</strong></p>
+<ol>
+<li>==是判断两个变量或实例是不是指向同一个内存空间    equals是判断两个变量或实例所指向的内存空间的值是不是相同</li>
+<li>==是指对内存地址进行比较    equals()是对字符串的内容进行比较3.==指引用是否相同    equals()指的是值是否相同</li>
+</ol>
+<h2 id="comparable-和-comparator的区别"><a href="#comparable-和-comparator的区别" class="headerlink" title="comparable 和 comparator的区别"></a><font face="楷体">comparable 和 comparator的区别</font></h2><ul>
+<li>comparable接口实际上是出自java.lang包 它有一个 compareTo(Object obj)方法用来排序</li>
+<li>comparator接口实际上是出自 java.util 包它有一个compare(Object obj1, Object obj2)方法用来排序</li>
+</ul>
+<p>一般我们需要对一个集合使用自定义排序时，我们就要重写compareTo方法或compare方法，当我们需要对某一个集合实现两种排序方式，比如一个song对象中的歌名和歌手名分别采用一种排序方法的话，我们可以重写compareTo方法和使用自制的Comparator方法或者以两个Comparator来实现歌名排序和歌星名排序，第二种代表我们只能使用两个参数版的Collections.sort().</p>
+<h3 id="Comparator定制排序"><a href="#Comparator定制排序" class="headerlink" title="Comparator定制排序"></a><font face="楷体">Comparator定制排序<font face="楷体"></font></font></h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.Collections;</span><br><span class="line"><span class="keyword">import</span> java.util.Comparator;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * TODO Collections类方法测试之排序</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> 寇爽</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span> 2017年11月20日</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@version</span> 1.8</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CollectionsSort</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		ArrayList&lt;Integer&gt; arrayList = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</span><br><span class="line">		arrayList.add(-<span class="number">1</span>);</span><br><span class="line">		arrayList.add(<span class="number">3</span>);</span><br><span class="line">		arrayList.add(<span class="number">3</span>);</span><br><span class="line">		arrayList.add(-<span class="number">5</span>);</span><br><span class="line">		arrayList.add(<span class="number">7</span>);</span><br><span class="line">		arrayList.add(<span class="number">4</span>);</span><br><span class="line">		arrayList.add(-<span class="number">9</span>);</span><br><span class="line">		arrayList.add(-<span class="number">7</span>);</span><br><span class="line">		System.out.println(<span class="string">"原始数组:"</span>);</span><br><span class="line">		System.out.println(arrayList);</span><br><span class="line">		<span class="comment">// void reverse(List list)：反转</span></span><br><span class="line">		Collections.reverse(arrayList);</span><br><span class="line">		System.out.println(<span class="string">"Collections.reverse(arrayList):"</span>);</span><br><span class="line">		System.out.println(arrayList);</span><br><span class="line"><span class="comment">/*		</span></span><br><span class="line"><span class="comment">		 * void rotate(List list, int distance),旋转。</span></span><br><span class="line"><span class="comment">		 * 当distance为正数时，将list后distance个元素整体移到前面。当distance为负数时，将</span></span><br><span class="line"><span class="comment">		 * list的前distance个元素整体移到后面。</span></span><br><span class="line"><span class="comment">		 </span></span><br><span class="line"><span class="comment">		Collections.rotate(arrayList, 4);</span></span><br><span class="line"><span class="comment">		System.out.println("Collections.rotate(arrayList, 4):");</span></span><br><span class="line"><span class="comment">		System.out.println(arrayList);*/</span></span><br><span class="line">		</span><br><span class="line">		<span class="comment">// void sort(List list),按自然排序的升序排序</span></span><br><span class="line">		Collections.sort(arrayList);</span><br><span class="line">		System.out.println(<span class="string">"Collections.sort(arrayList):"</span>);</span><br><span class="line">		System.out.println(arrayList);</span><br><span class="line"></span><br><span class="line">		<span class="comment">// void shuffle(List list),随机排序</span></span><br><span class="line">		Collections.shuffle(arrayList);</span><br><span class="line">		System.out.println(<span class="string">"Collections.shuffle(arrayList):"</span>);</span><br><span class="line">		System.out.println(arrayList);</span><br><span class="line"></span><br><span class="line">		<span class="comment">// 定制排序的用法</span></span><br><span class="line">		Collections.sort(arrayList, <span class="keyword">new</span> Comparator&lt;Integer&gt;() &#123;</span><br><span class="line"></span><br><span class="line">			<span class="meta">@Override</span></span><br><span class="line">			<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(Integer o1, Integer o2)</span> </span>&#123;</span><br><span class="line">				<span class="keyword">return</span> o2.compareTo(o1);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;);</span><br><span class="line">		System.out.println(<span class="string">"定制排序后："</span>);</span><br><span class="line">		System.out.println(arrayList);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="重写compareTo方法实现按年龄来排序"><a href="#重写compareTo方法实现按年龄来排序" class="headerlink" title="重写compareTo方法实现按年龄来排序"></a><font face="楷体">重写compareTo方法实现按年龄来排序</font></h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> map;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Set;</span><br><span class="line"><span class="keyword">import</span> java.util.TreeMap;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TreeMap2</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		TreeMap&lt;Person, String&gt; pdata = <span class="keyword">new</span> TreeMap&lt;Person, String&gt;();</span><br><span class="line">		pdata.put(<span class="keyword">new</span> Person(<span class="string">"张三"</span>, <span class="number">30</span>), <span class="string">"zhangsan"</span>);</span><br><span class="line">		pdata.put(<span class="keyword">new</span> Person(<span class="string">"李四"</span>, <span class="number">20</span>), <span class="string">"lisi"</span>);</span><br><span class="line">		pdata.put(<span class="keyword">new</span> Person(<span class="string">"王五"</span>, <span class="number">10</span>), <span class="string">"wangwu"</span>);</span><br><span class="line">		pdata.put(<span class="keyword">new</span> Person(<span class="string">"小红"</span>, <span class="number">5</span>), <span class="string">"xiaohong"</span>);</span><br><span class="line">		<span class="comment">// 得到key的值的同时得到key所对应的值</span></span><br><span class="line">		Set&lt;Person&gt; keys = pdata.keySet();</span><br><span class="line">		<span class="keyword">for</span> (Person key : keys) &#123;</span><br><span class="line">			System.out.println(key.getAge() + <span class="string">"-"</span> + key.getName());</span><br><span class="line"></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// person对象没有实现Comparable接口，所以必须实现，这样才不会出错，才可以使treemap中的数据按顺序排列</span></span><br><span class="line"><span class="comment">// 前面一个例子的String类已经默认实现了Comparable接口，详细可以查看String类的API文档，另外其他</span></span><br><span class="line"><span class="comment">// 像Integer类等都已经实现了Comparable接口，所以不需要另外实现了</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> <span class="keyword">implements</span> <span class="title">Comparable</span>&lt;<span class="title">Person</span>&gt; </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> String name;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">(String name, <span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">super</span>();</span><br><span class="line">		<span class="keyword">this</span>.name = name;</span><br><span class="line">		<span class="keyword">this</span>.age = age;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> name;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.name = name;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> age;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.age = age;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * TODO重写compareTo方法实现按年龄来排序</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compareTo</span><span class="params">(Person o)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		<span class="keyword">if</span> (<span class="keyword">this</span>.age &gt; o.getAge()) &#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">this</span>.age &lt; o.getAge()) &#123;</span><br><span class="line">			<span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> age;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="如何对Object的list排序"><a href="#如何对Object的list排序" class="headerlink" title="如何对Object的list排序"></a><font face="楷体">如何对Object的list排序</font></h2><ul>
+<li>对objects数组进行排序，我们可以用Arrays.sort()方法</li>
+<li>对objects的集合进行排序，需要使用Collections.sort()方法</li>
+</ul>
+<h2 id="如何实现数组与List的相互转换"><a href="#如何实现数组与List的相互转换" class="headerlink" title="如何实现数组与List的相互转换"></a><font face="楷体">如何实现数组与List的相互转换</font></h2><p>List转数组：toArray(arraylist.size()方法；数组转List:Arrays的asList(a)方法<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; arrayList = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">		arrayList.add(<span class="string">"s"</span>);</span><br><span class="line">		arrayList.add(<span class="string">"e"</span>);</span><br><span class="line">		arrayList.add(<span class="string">"n"</span>);</span><br><span class="line">		<span class="comment">/**</span></span><br><span class="line"><span class="comment">		 * ArrayList转数组</span></span><br><span class="line"><span class="comment">		 */</span></span><br><span class="line">		<span class="keyword">int</span> size=arrayList.size();</span><br><span class="line">		String[] a = arrayList.toArray(<span class="keyword">new</span> String[size]);</span><br><span class="line">		<span class="comment">//输出第二个元素</span></span><br><span class="line">		System.out.println(a[<span class="number">1</span>]);<span class="comment">//结果：e</span></span><br><span class="line">		<span class="comment">//输出整个数组</span></span><br><span class="line">		System.out.println(Arrays.toString(a));<span class="comment">//结果：[s, e, n]</span></span><br><span class="line">		<span class="comment">/**</span></span><br><span class="line"><span class="comment">		 * 数组转list</span></span><br><span class="line"><span class="comment">		 */</span></span><br><span class="line">		List&lt;String&gt; list=Arrays.asList(a);</span><br><span class="line">		<span class="comment">/**</span></span><br><span class="line"><span class="comment">		 * list转Arraylist</span></span><br><span class="line"><span class="comment">		 */</span></span><br><span class="line">		List&lt;String&gt; arrayList2 = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">		arrayList2.addAll(list);</span><br><span class="line">		System.out.println(list);</span><br></pre></td></tr></table></figure></p>
+<h2 id="如何求ArrayList集合的交集-并集-差集-去重复并集"><a href="#如何求ArrayList集合的交集-并集-差集-去重复并集" class="headerlink" title="如何求ArrayList集合的交集 并集 差集 去重复并集"></a><font face="楷体">如何求ArrayList集合的交集 并集 差集 去重复并集</font></h2><p>需要用到List接口中定义的几个方法：</p>
+<ul>
+<li>addAll(Collection&lt;? extends E&gt; c) :按指定集合的Iterator返回的顺序将指定集合中的所有元素追加到此列表的末尾<br>实例代码：</li>
+<li>retainAll(Collection&lt;?&gt; c): 仅保留此列表中包含在指定集合中的元素。 </li>
+<li>removeAll(Collection&lt;?&gt; c) :从此列表中删除指定集合中包含的所有元素。 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> list;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> *TODO 两个集合之间求交集 并集 差集 去重复并集</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> 寇爽</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span> 2017年11月21日</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@version</span> 1.8</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MethodDemo</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		List&lt;Integer&gt; list1 = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</span><br><span class="line">		list1.add(<span class="number">1</span>);</span><br><span class="line">		list1.add(<span class="number">2</span>);</span><br><span class="line">		list1.add(<span class="number">3</span>);</span><br><span class="line">		list1.add(<span class="number">4</span>);</span><br><span class="line"></span><br><span class="line">		List&lt;Integer&gt; list2 = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</span><br><span class="line">		list2.add(<span class="number">2</span>);</span><br><span class="line">		list2.add(<span class="number">3</span>);</span><br><span class="line">		list2.add(<span class="number">4</span>);</span><br><span class="line">		list2.add(<span class="number">5</span>);</span><br><span class="line">		<span class="comment">// 并集</span></span><br><span class="line">		<span class="comment">// list1.addAll(list2);</span></span><br><span class="line">		<span class="comment">// 交集</span></span><br><span class="line">		<span class="comment">//list1.retainAll(list2);</span></span><br><span class="line">		<span class="comment">// 差集</span></span><br><span class="line">		<span class="comment">// list1.removeAll(list2);</span></span><br><span class="line">		<span class="comment">// 无重复并集</span></span><br><span class="line">		list2.removeAll(list1);</span><br><span class="line">		list1.addAll(list2);</span><br><span class="line">		<span class="keyword">for</span> (Integer i : list1) &#123;</span><br><span class="line">			System.out.println(i);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="HashMap-的工作原理及代码实现"><a href="#HashMap-的工作原理及代码实现" class="headerlink" title="HashMap 的工作原理及代码实现"></a><font face="楷体">HashMap 的工作原理及代码实现</font></h2><p><a href="https://juejin.im/post/5ab0568b5188255580020e56" target="_blank" rel="noopener">集合框架源码学习之HashMap(JDK1.8)</a></p>
+<h2 id="ConcurrentHashMap-的工作原理及代码实现"><a href="#ConcurrentHashMap-的工作原理及代码实现" class="headerlink" title="ConcurrentHashMap 的工作原理及代码实现"></a><font face="楷体">ConcurrentHashMap 的工作原理及代码实现</font></h2><p><a href="http://www.cnblogs.com/chengxiao/p/6842045.html" target="_blank" rel="noopener">ConcurrentHashMap实现原理及源码分析</a></p>
+<h2 id="集合框架底层数据结构总结"><a href="#集合框架底层数据结构总结" class="headerlink" title="集合框架底层数据结构总结"></a><font face="楷体">集合框架底层数据结构总结</font></h2><h3 id="Collection"><a href="#Collection" class="headerlink" title="- Collection"></a>- Collection</h3><h4 id="1-List"><a href="#1-List" class="headerlink" title="1. List"></a>1. List</h4><ul>
+<li>Arraylist：数组（查询快,增删慢   线程不安全,效率高  ）</li>
+<li>Vector：数组（查询快,增删慢 线程安全,效率低  ）</li>
+<li>LinkedList：链表（查询慢,增删快  线程不安全,效率高  ）</li>
+</ul>
+<h4 id="2-Set"><a href="#2-Set" class="headerlink" title="2. Set"></a>2. Set</h4><ul>
+<li>HashSet（无序，唯一）:哈希表或者叫散列集(hash table)</li>
+<li>LinkedHashSet：链表和哈希表组成 。 由链表保证元素的排序 ， 由哈希表证元素的唯一性  </li>
+<li>TreeSet（有序，唯一）：红黑树(自平衡的排序二叉树。)</li>
+</ul>
+<h3 id="Map"><a href="#Map" class="headerlink" title="- Map"></a>- Map</h3><ul>
+<li>HashMap：基于哈希表的Map接口实现（哈希表对键进行散列，Map结构即映射表存放键值对）</li>
+<li>LinkedHashMap:HashMap  的基础上加上了链表数据结构</li>
+<li>HashTable:哈希表</li>
+<li>TreeMap:红黑树（自平衡的排序二叉树）</li>
+</ul>
+<h2 id="集合的选用"><a href="#集合的选用" class="headerlink" title="集合的选用"></a><font face="楷体">集合的选用</font></h2><p>主要根据集合的特点来选用，比如我们需要根据键值获取到元素值时就选用Map接口下的集合，需要排序时选择TreeMap,不需要排序时就选择HashMap,需要保证线程安全就选用ConcurrentHashMap.当我们只需要存放元素值时，就选择实现Collection接口的集合，需要保证元素唯一时选择实现Set接口的集合比如TreeSet或HashSet，不需要就选择实现List接口的比如ArrayList或LinkedList，然后再根据实现这些接口的集合的特点来选用。</p>
+<p>2018/3/11更新</p>
+<h2 id="集合的常用方法"><a href="#集合的常用方法" class="headerlink" title="集合的常用方法"></a><font face="楷体">集合的常用方法</font></h2><p>今天下午无意看见一道某大厂的面试题，面试题的内容就是问你某一个集合常见的方法有哪些。虽然平时也经常见到这些集合，但是猛一下让我想某一个集合的常用的方法难免会有遗漏或者与其他集合搞混，所以建议大家还是照着API文档把常见的那几个集合的常用方法看一看。</p>
+<p>会持续更新。。。</p>
+<p><strong>参考书籍：</strong></p>
+<p>《Head first java 》第二版 推荐阅读真心不错 （适合基础较差的）</p>
+<p> 《Java核心技术卷1》推荐阅读真心不错 （适合基础较好的）</p>
+<p> 《算法》第四版 （适合想对数据结构的Java实现感兴趣的）</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/youngboy/2019/05/28/3/38/" rel="next" title="Java虚拟机（jvm）">
+                <i class="fa fa-chevron-left"></i> Java虚拟机（jvm）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/youngboy/2019/05/28/3/412/" rel="prev" title="synchronized">
+                synchronized <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">youngboy</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/youngboy/archives/">
+              
+                  <span class="site-state-item-count">127</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/youngboy/categories/index.html">
+                  <span class="site-state-item-count">41</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#List，Set-Map三者的区别及总结"><span class="nav-number">1.</span> <span class="nav-text">List，Set,Map三者的区别及总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Arraylist-与-LinkedList-区别"><span class="nav-number">2.</span> <span class="nav-text">Arraylist 与 LinkedList 区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ArrayList-与-Vector-区别"><span class="nav-number">3.</span> <span class="nav-text">ArrayList 与 Vector 区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HashMap-和-Hashtable-的区别"><span class="nav-number">4.</span> <span class="nav-text">HashMap 和 Hashtable 的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HashSet-和-HashMap-区别"><span class="nav-number">5.</span> <span class="nav-text">HashSet 和 HashMap 区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HashMap-和-ConcurrentHashMap-的区别"><span class="nav-number">6.</span> <span class="nav-text">HashMap 和 ConcurrentHashMap 的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HashSet如何检查重复"><span class="nav-number">7.</span> <span class="nav-text">HashSet如何检查重复</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#comparable-和-comparator的区别"><span class="nav-number">8.</span> <span class="nav-text">comparable 和 comparator的区别</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Comparator定制排序"><span class="nav-number">8.1.</span> <span class="nav-text">Comparator定制排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重写compareTo方法实现按年龄来排序"><span class="nav-number">8.2.</span> <span class="nav-text">重写compareTo方法实现按年龄来排序</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何对Object的list排序"><span class="nav-number">9.</span> <span class="nav-text">如何对Object的list排序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何实现数组与List的相互转换"><span class="nav-number">10.</span> <span class="nav-text">如何实现数组与List的相互转换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何求ArrayList集合的交集-并集-差集-去重复并集"><span class="nav-number">11.</span> <span class="nav-text">如何求ArrayList集合的交集 并集 差集 去重复并集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HashMap-的工作原理及代码实现"><span class="nav-number">12.</span> <span class="nav-text">HashMap 的工作原理及代码实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ConcurrentHashMap-的工作原理及代码实现"><span class="nav-number">13.</span> <span class="nav-text">ConcurrentHashMap 的工作原理及代码实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#集合框架底层数据结构总结"><span class="nav-number">14.</span> <span class="nav-text">集合框架底层数据结构总结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Collection"><span class="nav-number">14.1.</span> <span class="nav-text">- Collection</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-List"><span class="nav-number">14.1.1.</span> <span class="nav-text">1. List</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-Set"><span class="nav-number">14.1.2.</span> <span class="nav-text">2. Set</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Map"><span class="nav-number">14.2.</span> <span class="nav-text">- Map</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#集合的选用"><span class="nav-number">15.</span> <span class="nav-text">集合的选用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#集合的常用方法"><span class="nav-number">16.</span> <span class="nav-text">集合的常用方法</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">youngboy</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/youngboy/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/youngboy/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/youngboy/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/youngboy/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/youngboy/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/youngboy/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/youngboy/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/youngboy/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/youngboy/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/youngboy/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/youngboy/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/youngboy/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/youngboy/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
